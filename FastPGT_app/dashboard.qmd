@@ -1,0 +1,81 @@
+---
+title: "FastPGT Calculator"
+format: dashboard
+server: shiny
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(shiny)
+source("R/simulator.R")
+
+```
+
+## Inputs {.sidebar}
+
+```{r}
+shiny::sliderInput("n", "Muestras por corrida", min = 2, max = 24, value = 8)
+shiny::sliderInput("r", "Número de corridas", min = 1, max = 12, value = 6)
+```
+
+
+## Resultados
+
+
+```{r}
+
+renderPrint({
+
+  sim <- run_simulation(
+    input$n,
+    input$r
+  )
+
+  sim$resumen
+
+})
+
+```
+
+
+## Decisión
+
+```{r}
+
+renderPrint({
+
+  decision_run(
+    input$n,
+    input$r
+  )
+
+})
+
+```
+
+## Grafico
+
+```{r}
+
+renderPlot({
+
+  sim <- run_simulation(
+    input$n,
+    input$r
+  )
+
+  sim$detalle %>%
+    ggplot(aes(x = corrida, y = costo_promedio_global)) +
+    geom_line() +
+    geom_point() +
+    theme_minimal()
+
+})
+
+```
+
+
+

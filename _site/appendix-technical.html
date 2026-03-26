@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Apéndice Técnico – FastPGT</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ff63373b1067ca6f91cf1456aa1f00a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-technical.html">Apéndice Técnico</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">FastPGT</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FastPGT: Producto 2pq</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-technical.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Apéndice Técnico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-experimental.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apéndice Experimental</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-costsRBKRAA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apéndice Económico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-simulations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apéndice Costos Simulados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-clinico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apéndice Médico-Clínico</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-inversion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apéndice Inversión</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix-modelo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Apéndice Modelo</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#consideraciones-básicas-del-pgt-a" id="toc-consideraciones-básicas-del-pgt-a" class="nav-link active" data-scroll-target="#consideraciones-básicas-del-pgt-a">1. Consideraciones básicas del PGT-A</a></li>
+  <li><a href="#sec-pgt-illumina" id="toc-sec-pgt-illumina" class="nav-link" data-scroll-target="#sec-pgt-illumina">2.1. PGT-A: Illumina</a></li>
+  <li><a href="#sec-pgt-ont" id="toc-sec-pgt-ont" class="nav-link" data-scroll-target="#sec-pgt-ont">2.2. PGT-A: Tan y col., (2023) ONT</a></li>
+  <li><a href="#sec-PGT-fast" id="toc-sec-PGT-fast" class="nav-link" data-scroll-target="#sec-PGT-fast">2.3. PGT-A: Fast</a></li>
+  <li><a href="#sec-pgt-compara" id="toc-sec-pgt-compara" class="nav-link" data-scroll-target="#sec-pgt-compara">2.4. Comparativa de Tecnologías PGT-A</a></li>
+  <li><a href="#sec-flujo" id="toc-sec-flujo" class="nav-link" data-scroll-target="#sec-flujo">3. Flujo de trabajo FastPGT</a></li>
+  <li><a href="#dinámica-de-la-producción-de-secuencias" id="toc-dinámica-de-la-producción-de-secuencias" class="nav-link" data-scroll-target="#dinámica-de-la-producción-de-secuencias">4.1. Dinámica de la producción de secuencias</a></li>
+  <li><a href="#dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" id="toc-dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" class="nav-link" data-scroll-target="#dinámica-del-uso-de-poros-y-calidad-de-las-secuencias">4.2. Dinámica del uso de poros y calidad de las secuencias</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Apéndice Técnico</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span><strong>Contenido</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Consideraciones básicas sobre el PGT-A</li>
+<li>PGT-A Illumina (convencional), PGT-A ONT y FastPGT
+<ul>
+<li>Comparación de parámetros:
+<ul>
+<li>Número de muestras, cobertura, longitud de lecturas, rendimiento total por corrida y por muestra (entre otras), para una comprensión exhaustiva de cada tecnología y sus diferencias.</li>
+</ul></li>
+</ul></li>
+<li>Flujo de trabajo FastPGT en el laboratorio.</li>
+<li>Dinámica de producción de secuencias.</li>
+<li>Dinámica del uso de poros y calidad de las secuencias.</li>
+<li>Concepto de Early Stop.</li>
+</ol>
+<p><strong>Insumos</strong>: Protocolo de formación de librerias ONT<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. <a href="inputs/FCEN/report_Nanopore_seq.html">Reporte Havanna - FCEN</a></p>
+<p><strong>Delivery 4</strong>: <a href="./index.html">Documento principal</a>. <a href="./appendix-experimental.html">Apéndice experimental</a>. <a href="appendix-costs.qmd">Apéndice económico</a>.</p>
+</div>
+</div>
+<section id="consideraciones-básicas-del-pgt-a" class="level2">
+<h2 class="anchored" data-anchor-id="consideraciones-básicas-del-pgt-a">1. Consideraciones básicas del PGT-A</h2>
+<p>En los estudios de PGT-A, el parámetro crítico es la <strong>cobertura horizontal uniforme</strong>, entendida como el muestreo distribuido de regiones genómicas a lo largo de todos los cromosomas.</p>
+<p>La detección de <strong>CNVs</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> en cada cromosoma se basa en<strong>comparaciones relativas de densidad de lecturas</strong> entre regiones genómicas, evaluadas mediante ventanas móviles (<em>bins</em>) de tamaño fijo, típicamente del orden de <strong>0.5–1 Mb</strong>.</p>
+<p>La sensibilidad y estabilidad del análisis dependen principalmente de:</p>
+<ol type="1">
+<li>la <strong>uniformidad global</strong> de la amplificación genómica,</li>
+<li>el <strong>número total de lecturas válidas</strong>,</li>
+<li>el <strong>tamaño de esas lecturas</strong>,</li>
+<li>el <strong>tamaño de ventana</strong> utilizado,</li>
+<li>y el <strong>coeficiente de variación (CV)</strong> del perfil de cobertura.</li>
+</ol>
+<p>En este régimen, <strong>la profundidad local puntual es irrelevante</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>; lo determinante es la estabilidad estadística del perfil relativo entre regiones.</p>
+</section>
+<section id="sec-pgt-illumina" class="level2">
+<h2 class="anchored" data-anchor-id="sec-pgt-illumina">2.1. PGT-A: Illumina</h2>
+<p>En el contexto del PGT-A, la <strong>tecnología Illumina representa el enfoque convencional</strong> , basado en secuenciación de lecturas cortas y en la adquisición completa de los datos antes de iniciar el análisis. En este esquema, el volumen de secuenciación esta fijado <em>a priori</em> y la corrida debe completarse independientemente de si la información obtenida es suficiente para la inferencia diagnóstica.</p>
+<p>Las <a href="#fig-illumina" class="quarto-xref">Figura&nbsp;1</a> <strong>A</strong> y <strong>B</strong> muestra el proceso de análisis y variación de parámetros de un estudio PGT-A con valores standard de tecnología Illumina. Las figuras <strong>C</strong> y <strong>D</strong> muestran la evolución de los parámetros de calidad en diferentes estudios. Nótese la perdida de definición a medida que aumenta el CV desde ~ 0.1 a ~ 0.25.</p>
+<div id="fig-illumina" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-illumina-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="figures/illumina/fig2.png" class="img-fluid figure-img" style="width:100.0%"> <strong>A</strong></p>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/illumina/fig1.png" class="img-fluid figure-img" style="width:100.0%"> <strong>B</strong></p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="figures/illumina/fig3.png" class="img-fluid figure-img" style="width:100.0%"> <strong>C</strong></p>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/illumina/fig4.png" class="img-fluid figure-img" style="width:100.0%"> <strong>D</strong></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-illumina-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-pgt-ont" class="level2">
+<h2 class="anchored" data-anchor-id="sec-pgt-ont">2.2. PGT-A: Tan y col., (2023) ONT</h2>
+<p>En su ensayo comparativo ONT vs Illumina, <strong>Tan, V.J., et al., (2023)<span class="citation" data-cites="Tang_2023"><sup><a href="#ref-Tang_2023" role="doc-biblioref">1</a></sup></span></strong> demostraron que la tecnología <strong>Oxford Nanopore Technologies (ONT)</strong> puede utilizarse de manera equivalente para resolver los PGT-A, alcanzando resoluciones diagnósticas comparables mediante un enfoque de secuenciación de ultra-baja cobertura. Sin embargo, en dicho estudio la secuenciación ONT se emplea bajo un paradigma esencialmente <strong><em>batch-completo</em></strong>, en el cual la corrida se extiende por un tiempo predefinido y el análisis se realiza una vez completada la adquisición de datos.</p>
+<p>La <a href="#fig-minion-fc" class="quarto-xref">Figura&nbsp;2</a> muestra el <strong>secuenciador MinION</strong> (<strong>A</strong>) y un flow cell (<strong>B</strong>) como el utilizado en este ensayo <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<div id="fig-minion-fc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-minion-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="figures/MinION.png" class="img-fluid figure-img" style="width:100.0%"> <strong>A</strong></p>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/fc_minion.png" class="img-fluid figure-img" style="width:100.0%"> <strong>B</strong></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-minion-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-PGT-fast" class="level2">
+<h2 class="anchored" data-anchor-id="sec-PGT-fast">2.3. PGT-A: Fast</h2>
+<p><strong>FastPGT</strong> introduce una variante operativa sobre este enfoque, explotando una característica intrínseca de la tecnología ONT que no está disponible en otras plataformas NGS: la <strong>generación y evaluación de datos en tiempo real</strong>. En lugar de fijar el tiempo de corrida, FastPGT define criterios de corte temprano (<em>early stop</em>) basados en la cantidad acumulada de datos que superan los filtros de calidad, expresados en términos de cobertura horizontal agregada.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>De este modo, <strong>FastPGT no modifica el objetivo diagnóstico</strong> ni los criterios de resolución del PGT-A, sino que <strong>optimiza el flujo operativo</strong>, permitiendo detener la secuenciación una vez alcanzada la <strong>información mínima para la detección robusta de CNVs ≥10 Mb</strong>. Esta estrategia, sumada a la reducción del número de muestras en la corrida, reduce de manera significativa el tiempo total del ensayo, mejorando la eficiencia en el uso del flow cell y habilita escenarios clínicos incompatibles con los enfoques batch-completos de Tan, et al (2023), como la transferencia embrionaria en fresco.</p>
+</div>
+</div>
+</section>
+<section id="sec-pgt-compara" class="level2">
+<h2 class="anchored" data-anchor-id="sec-pgt-compara">2.4. Comparativa de Tecnologías PGT-A</h2>
+<p>La <a href="#tbl-comp-illumina-ont" class="quarto-xref">Tabla&nbsp;1</a> muestra las principales diferencias operativas entre estas tres estrategias de PGT-A.</p>
+<div class="small-section">
+<p>A pesar de las diferencias en la longitud de lectura y el número de lecturas por muestra, los enfoques operan en un régimen de ultra-baja cobertura con volúmenes totales de datos comparables y <strong>resoluciones de cobertura genómica equivalentes para la detección de CNV ≥10 Mb</strong>.</p>
+</div>
+<div id="tbl-comp-illumina-ont" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comp-illumina-ont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Comparación de métricas operativas entre PGT-A estándar (Illumina), PGT-A ONT y FastPGT.
+</figcaption>
+<div aria-describedby="tbl-comp-illumina-ont-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div style="width: 100%; margin: 0 auto; font-size: 0.8em;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Parámetro</th>
+<th style="text-align: right;">PGT-A estándar (Illumina)</th>
+<th style="text-align: right;">PGT-A ONT</th>
+<th style="text-align: right;">FastPGT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Plataforma</td>
+<td style="text-align: right;">Illumina (MiSeq)</td>
+<td style="text-align: right;">Oxford Nanopore MinION</td>
+<td style="text-align: right;">Oxford Nanopore MinION</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tipo de lectura</td>
+<td style="text-align: right;">Corta</td>
+<td style="text-align: right;">Larga</td>
+<td style="text-align: right;">Larga</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Muestras por corrida</td>
+<td style="text-align: right;">~22–27</td>
+<td style="text-align: right;">~24</td>
+<td style="text-align: right;">~5–10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Longitud efectiva lectura</td>
+<td style="text-align: right;">~50–75 bp</td>
+<td style="text-align: right;">~445 bp</td>
+<td style="text-align: right;">~445 bp</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lecturas crudas por muestra</td>
+<td style="text-align: right;">~0.7–1.2 M</td>
+<td style="text-align: right;">~100.000–200.000</td>
+<td style="text-align: right;">~135.000 Variable</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lecturas válidas por muestra</td>
+<td style="text-align: right;">~750–1.000 K</td>
+<td style="text-align: right;">~100.000</td>
+<td style="text-align: right;">~100.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bases totales por muestra</td>
+<td style="text-align: right;">~41–80 Mb</td>
+<td style="text-align: right;">~45 Mb</td>
+<td style="text-align: right;">45 Mb (objetivo)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bases totales por corrida</td>
+<td style="text-align: right;">~1.0–1.5 Gb</td>
+<td style="text-align: right;">~1.0–1.1 Gb</td>
+<td style="text-align: right;">~0.23–0.45 Gb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cobertura horizontal</td>
+<td style="text-align: right;">~1.0–1.5%</td>
+<td style="text-align: right;">~1–2%</td>
+<td style="text-align: right;">~1–2%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tamaño de ventana (bin)</td>
+<td style="text-align: right;">~1 Mb</td>
+<td style="text-align: right;">~1 Mb</td>
+<td style="text-align: right;">~1 Mb</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Resolución CNV</td>
+<td style="text-align: right;">≥10 Mb</td>
+<td style="text-align: right;">≥10 Mb</td>
+<td style="text-align: right;">≥10 Mb</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tiempo de secuenciación</td>
+<td style="text-align: right;">≥7 - 8 h</td>
+<td style="text-align: right;">~ 24 h</td>
+<td style="text-align: right;">2 – 3 h</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Criterio de corte de corrida</td>
+<td style="text-align: right;">Tiempo fijo / reads fijos</td>
+<td style="text-align: right;">Tiempo fijo</td>
+<td style="text-align: right;">Gb Passed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Early stop</td>
+<td style="text-align: right;">No disponible</td>
+<td style="text-align: right;">No utilizado</td>
+<td style="text-align: right;">Implementado</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reuso del flow cell</td>
+<td style="text-align: right;">No aplicable</td>
+<td style="text-align: right;">Posible</td>
+<td style="text-align: right;">Si, parte del diseño</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Flexibilidad operativa</td>
+<td style="text-align: right;">Baja</td>
+<td style="text-align: right;">Media</td>
+<td style="text-align: right;">Alta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Transferencia en fresco</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Posible</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La adquisición de datos en tiempo real, la definición de criterios de corte temprano (<em>early stop</em>) y el reuso controlado del flow cell introducen ventajas operativas específicas del enfoque ONT, particularmente relevantes para estrategias orientadas a la transferencia embrionaria en fresco.</p>
+<p><em>Esta combinación de posibilidades en pos del objetivo de lograr transferencias en fresco no fue mencionada por Tan, y col.&nbsp;2023</em>.</p>
+</div>
+</div>
+</section>
+<section id="sec-flujo" class="level2">
+<h2 class="anchored" data-anchor-id="sec-flujo">3. Flujo de trabajo FastPGT</h2>
+<p>La <strong><a href="#fig-fastpgt-workflow" class="quarto-xref">Figura&nbsp;3</a></strong> representa el flujo de trabajo del FastPGT <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>El esquema resume las etapas principales desde la biopsia embrionaria y la amplificación genómica completa hasta la adquisición de datos en tiempo real y la generación de lecturas demultiplexadas para el análisis de aneuploidías. La posibilidad de corte temprano permite optimizar tiempos de secuenciación y reutilizar el flowcell.</p>
+<div id="fig-fastpgt-workflow" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fastpgt-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/fullONT.png" id="fig-fastpgt-workflow" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fastpgt-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3
+</figcaption>
+</figure>
+</div>
+<p>El proceso integra amplificación genómica, construcción de librerías y secuenciación en tiempo real, incorporando criterios operativos de corte temprano que optimizan tiempos y recursos.</p>
+<p>A partir de la biopsia embrionaria, el ADN genómico es sometido a una etapa de <strong>Whole Genome Amplification (WGA)</strong>, utilizando amplificación isotérmica (p.&nbsp;ej. phi29-XT) o amplificación por PCR múltiple (p.&nbsp;ej. SurePlex). El objetivo de esta etapa no es alcanzar cobertura profunda, sino generar una representación suficientemente uniforme del genoma que permita inferencias fiables a ultra-baja cobertura, condición clave para el análisis de aneuploidías en PGT-A.</p>
+<p>El ADN amplificado es procesado mediante <strong>end-repair y dA-tailing</strong>, seguido de la <strong>ligación de barcodes nativos</strong>, asignando un identificador molecular único a cada embrión. Este esquema permite la multiplexación de múltiples muestras en una misma corrida de secuenciación sin perder trazabilidad individual. Tras la purificación y cuantificación, las muestras barcodiadas se combinan en un <strong>pool equimolar</strong>, sobre el cual se realiza una única reacción de <strong>ligación de adaptadores Nanopore</strong>.</p>
+<p>La librería final se prepara en la mezcla de carga y se secuencia en un <strong>flowcell R10.4.1</strong>. Durante la corrida, el sistema MinKNOW adquiere señales eléctricas en tiempo real que son convertidas en secuencias mediante algoritmos de basecalling. Esta adquisición continua habilita la definición de <strong>criterios operativos de corte temprano (<em>early stop</em>)</strong>, basados en la cantidad acumulada de datos por embrión (por ejemplo, ~45 Mb), optimizando el uso del flowcell y permitiendo su lavado y reutilización en corridas sucesivas.</p>
+<p>El resultado del proceso es un conjunto de lecturas demultiplexadas por barcode, con cobertura horizontal suficiente para el control de calidad, la estimación de cobertura genómica y la detección de aneuploidías. Este enfoque integra eficiencia técnica, control temporal y optimización de recursos, y constituye la base operativa que diferencia al FastPGT de los esquemas convencionales de PGT-A.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los supuestos operativos asociados a la amplificación genómica, la profundidad de secuenciación y los criterios de suficiencia de datos se evalúan de manera empírica en los apéndices experimentales y económicos que acompañan este documento.</p>
+</div>
+</div>
+</section>
+<section id="dinámica-de-la-producción-de-secuencias" class="level2">
+<h2 class="anchored" data-anchor-id="dinámica-de-la-producción-de-secuencias">4.1. Dinámica de la producción de secuencias</h2>
+<p>Como hemos insistido en el <a href="./index.html">Documento principal</a>, la tecnología ONT nos permite evaluar en <strong>tiempo real</strong> un aspecto central del ensayo: la <strong>dinámica temporal de producción de datos</strong>, expresada tanto en <strong>bases secuenciadas</strong> como en <strong>número de lecturas</strong> a lo largo de la corrida.</p>
+<p>La <a href="#fig-tiempos" class="quarto-xref">Figura&nbsp;4</a> muestra la <strong>evolución temporal</strong> de producción de bases (<strong>A</strong>) y lecturas (<strong>B</strong>) producidas en el <a href="./appendix-experimental.html#sec-Havanna-assay">Ensayo Havanna</a>. Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (<em>estimated</em>) y filtradas por calidad (<em>passed</em>)— presentan un <strong>crecimiento continuo y aproximadamente lineal</strong> a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.</p>
+<div id="fig-tiempos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tiempos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="figures/dinamica_mb.png" class="img-fluid figure-img" style="width:100.0%"> <strong>A</strong></p>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/dinamica_lecturas.png" class="img-fluid figure-img" style="width:100.0%"> <strong>B</strong></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-tiempos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4
+</figcaption>
+</figure>
+</div>
+<p>Este parámetro es importante ya que <strong>nos permitiría predecir en los primero minutos de corrida si el flow cell es apto y puede completar el ensayo</strong>. Si no lo es, se opta por detener la corrida y utilizar un nuevo flow cell.</p>
+</section>
+<section id="dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" class="level2">
+<h2 class="anchored" data-anchor-id="dinámica-del-uso-de-poros-y-calidad-de-las-secuencias">4.2. Dinámica del uso de poros y calidad de las secuencias</h2>
+<p>Para analizar el rendimiento de la corrida se consideran <strong>dos variables dinámicas principales</strong>:<br>
+(i) el <strong>número de poros activos</strong> disponibles para secuenciación y<br>
+(ii) la <strong>calidad de las lecturas</strong> generadas a lo largo del tiempo.</p>
+<p>Ambas variables evolucionan durante la corrida y constituyen <strong>parámetros críticos de monitoreo</strong>, que deben ser evaluados tanto en la fase inicial como durante la ejecución del ensayo, ya que condicionan directamente el rendimiento efectivo del flow cell y la confiabilidad de los datos obtenidos.</p>
+<p>La <a href="#fig-porosQC" class="quarto-xref">Figura&nbsp;5</a> muestra la <strong>dinámica temporal</strong> del uso de poros en el flow cell (<strong>A</strong>) y la <strong>distribución de calidad de las lecturas</strong> (<strong>B</strong>) a lo largo de la corrida. Como puede observarse, a lo largo de aproximadamente <strong>18 h de secuenciación</strong>, el número de poros activos disminuye progresivamente —un comportamiento esperado— mientras que la <strong>calidad de las lecturas se mantiene estable</strong>, lo cual representa una condición deseable para ensayos de secuenciación orientados a aplicaciones clínicas.</p>
+<div id="fig-porosQC" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-porosQC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="figures/dinamica_poros.png" class="img-fluid figure-img" style="width:100.0%"> <strong>A</strong></p>
+</div><div class="column" style="width:50%;">
+<p><img src="figures/dinamica_qc.png" class="img-fluid figure-img" style="width:100.0%"> <strong>B</strong></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-porosQC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Early Stop</strong></p>
+<p>El monitoreo sistemático de estos parámetros —tanto durante la corrida como antes de una eventual reutilización del flow cell— permite un control ajustado del uso de los recursos de secuenciación, garantizando estándares elevados de calidad. En este contexto, la disponibilidad de métricas en tiempo real habilita además la definición de criterios operativos de <strong>corte temprano (early stop)</strong>, basados en la cantidad de datos efectivos generados (Gb passed), evitando corridas innecesariamente prolongadas y optimizando la eficiencia global del ensayo.</p>
+</div>
+</div>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Tang_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Tan, V. J. <em>et&nbsp;al.</em> <a href="https://doi.org/10.1093/clinchem/hvad062"><span>Third-Generation Single-Molecule Sequencing for Preimplantation Genetic Testing of Aneuploidy and Segmental Imbalances</span></a>. <em>Clinical Chemistry</em> <strong>69</strong>, 881-889 (2023).</div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Protocolo de trabajo ONT: Ligation sequencing amplicons - Native Barcoding Kit 24 V14 (SQK-NBD114.24)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Este FC contiene 512 poros, y dada la fecha del estudio, posiblemente hayan utilizado el modelo <strong>R9.4.1</strong> (FLO-MIN106).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Este parámetro, sin embargo, es fundamental en el descubrimiento de variantes, como en el <strong>Proyecto Yaguarecito</strong>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Este FC contiene 512 poros, y dada la fecha del estudio, posiblemente hayan utilizado el modelo <strong>R9.4.1</strong> (FLO-MIN106).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Protocolo de trabajo ONT: Ligation sequencing amplicons - Native Barcoding Kit 24 V14 (SQK-NBD114.24)<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

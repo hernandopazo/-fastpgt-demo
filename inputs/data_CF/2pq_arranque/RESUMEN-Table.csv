@@ -1,0 +1,28 @@
+ITEM;Project;Detalle;Mes;Muestras;Valor
+Gastos Capital;FastPGT;Equipamiento Arranque;-1;-;US$	24.500,00
+GO  Variable;FastPGT;Serie Experimental 94;-1;-;US$	15.282,00
+GO  Variable;FastPGT;Serie Gratuita 100;0;-;US$	20.000,00
+GO  Fijos;2PQ;Salarios y Alquiler Anualizado;1;-;US$	155.500,00
+Gastos Capital;FastPGT;Segundo MinION;6;-;US$	4.500,00
+EGRESOS;FastPGT;Gastos totales;12;-;US$	362.792,00
+VENTA;FastPGT;Ventas FastPGT;12;517;US$	155.100,00
+VENTA;RegPGT;Ventas Reg PGT;12;530;US$	132.500,00
+VENTAS TOTALES;FastPGT;Ventas PGT Totales;12;1047;US$	287.600,00
+RESUMEN;FastPGT;Ventas menos egresos;12;-;US$	(75.192,00)
+GO  Variable;rWGS;Primera fase 25;13;-;US$	23.000,00
+GO  Variable;rWGS;Segunda fase 25;18;-;US$	16.250,00
+Gastos Capital;FastPGT;Consilidacion Labo;24;-;US$	24.500,00
+VENTA;FastPGT;Ventas FastPGT;24;805;US$	265.650,00
+EGRESOS;FastPGT;Gastos totales;24;-;US$	509.405,00
+VENTA;RegPGT;Ventas Reg PGT;24;1140;US$	313.500,00
+VENTAS TOTALES;FastPGT;Ventas PGT Totales;24;1945;US$	579.150,00
+RESUMEN;FastPGT;Ventas menos egresos;24;-;US$	69.745,00
+Gastos Capital;rWGS;PrometION 2 y Equipos;25;-;US$	74.000,00
+EGRESOS;rWGS;Gastos totales;36;-;US$	63.750,00
+EGRESOS;FastPGT;Gastos totales;36;-;US$	744.051,50
+VENTA TOTALES;rWGS;Ventas Yaguarecito;36;72;US$	375.000,00
+VENTA;FastPGT;Ventas FastPGT;36;1520;US$	551.760,00
+VENTA;RegPGT;Ventas Reg PGT;36;1720;US$	520.300,00
+VENTAS TOTALES;FastPGT;Ventas PGT Totales;36;3240;US$	1.072.060,00
+RESUMEN ;FastPGT;Ventas menos egresos;36;-;US$	328.008,50
+RESUMEN ;FastPGT + rWGS;Ventas menos egresos;36;-;US$	515.840,50

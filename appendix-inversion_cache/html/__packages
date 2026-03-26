@@ -1,0 +1,10 @@
+readr
+dplyr
+tidyr
+stringr
+ggplot2
+scales
+knitr
+here
+janitor
+kableExtra

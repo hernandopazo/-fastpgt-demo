@@ -1,0 +1,617 @@
+---
+title: "Apéndice Económico"
+subtitle: "Análisis de costos FastPGT"
+number-sections: false
+
+lang: es
+bibliography: ONT-PGT.bib
+csl: nature.csl
+
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+::: callout-note
+## **Contenido**
+
+1. Introducción del sistea de costos  
+2. Formulación del modelo  
+3. Insumos: costos y rendimiento  
+4. Espacio global de costos  
+5. Espacio operativa  
+
+**Presupuestos**:
+
+1. Migliore Laclaustra: [WGA phi29-XT](/inputs/insumos/Migliori/SNEB00058.pdf)  
+2. Analytical: [Insumos ONT](/inputs/insumos/Analytical/LP-1102D3.pdf)  
+
+**Links relevantes**:
+
+1. Starter kit: [Paquete MiniION Mk1D](https://store.nanoporetech.com/minion.html)  
+2. Library RBK: [Rapid Barcoding Kit 24 V14](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html)  
+3. Extension RAA114: [Adaptador Rápido Auxiliar V14](https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html)  
+
+**Delivery 4**:  
+[Documento Principal](/index.html) / [Apéndice CAPEX 2PQ](/appendix-capex2pq/)
+:::
+
+---
+
+## 1. Introducción al sistema de costos
+
+El modelo económico de FastPGT se basa en la utilización eficiente de insumos genómicos, organizados en tres categorías:
+
+### Costos directos por muestra
+- **WGA (Whole Genome Amplification)**: amplificación del ADN embrionario. Este costo es estrictamente proporcional al número de muestras y no depende de la estrategia operativa.
+
+### Costos variables
+- **Flow Cells (FC)**: recurso limitado por:
+  - número de corridas
+  - número de muestras acumuladas
+
+### Costos amortizables
+- **RBK (Rapid Barcoding Kit)**: librería genómica de 6 reacciones y 24 barcodes con capacidad de análisis de 144 muestras.
+- **RAA (Rapid Adapter Auxiliary)**: reactivos complementario de 6 reacciones de hasta 24 muestras que permite extender el uso del RBK optimizando los barcodes no utilizados en corridas pequeñas de FastPGT.
+
+
+::: callout-important
+### Condiciones de contorno iniciales
+
+- Se adquiere un RBK completo con capacidad para 144 muestras.
+- El número máximo de corridas por FC ≤ 6.
+- El número de muestras acumuladas en 1 mismo FC ≤ 48.
+- El rendimiento de la libreria puede optimizarse utilizando  insumos complementarios (RAA).
+- La primera corrida en cada flow cell no requiere lavado.  
+- Las corridas subsiguientes requieren un ciclo de lavado previo. 
+
+👉 El desafío operativo consiste en **modelar un sistema dinámico de corridas independientes que minimice el costo por muestra**.
+
+:::
+
+## 2. Formulación del modelo
+
+El costo por muestra se define como:
+
+$$
+C_{muestra} = \frac{C_{total}}{N}
+$$
+
+El costo total del sistema de corridas se define como:
+
+$$
+C_{total} =
+N \cdot C_{WGA} +
+RBK \cdot C_{RBK} +
+RAA \cdot C_{RAA} +
+FC \cdot C_{FC} +
+(R - FC) \cdot C_{wash}
+$$
+
+donde:
+
+- $N$: número total de muestras procesadas  
+- $R$: número total de corridas realizadas  
+- $RBK$: número de kits Rapid Barcoding requeridos  
+- $RAA$: número de kits Rapid Adapter utilizados  
+- $FC$: número total de flow cells requeridas  
+
+---
+
+### Costos unitarios
+
+- $C_{WGA}$: costo de amplificación por muestra  
+- $C_{RBK}$: costo por kit RBK  
+- $C_{RAA}$: costo por kit RAA  
+- $C_{FC}$: costo por flow cell  
+- $C_{wash}$: costo por ciclo de lavado  
+
+---
+
+
+
+### Reglas de consumo de uso
+
+
+1. $RBK = \left\lceil \frac{N}{144} \right\rceil$
+
+2. $RAA = \left\lceil \frac{R}{6} \right\rceil$
+
+3. $FC = \max\left( \left\lceil \frac{N}{48} \right\rceil,\ \left\lceil \frac{R}{6} \right\rceil \right)$  
+
+
+
+> El número de flow cells requeridas está determinado por el recurso que se agota primero:  
+> la capacidad total de muestras procesadas por flow cell o el número máximo de corridas permitido por unidad.
+
+
+
+
+### Naturaleza del sistema
+
+A diferencia de modelos lineales clásicos, este sistema presenta:
+
+- **Discontinuidades (saltos discretos)**: asociadas a la compra de nuevos insumos.
+
+- **Restricciones acopladas**: donde el uso de flow cells depende simultáneamente de:
+  - acumulación de muestras,
+  - número de corridas realizadas previamente.
+  - esto se evalua antes de cada corrida a través del rendimiento de poros operativos del FC.
+
+- **Amortización progresiva**: donde el costo unitario disminuye al distribuir insumos parcialmente utilizados (ej. RBK) en múltiples corridas mediante RAA.
+
+
+
+## 3. Insumos: costos y rendimiento
+
+::: {style="width: 100%; margin: 0 auto; font-size: 0.85em;"}
+| Componente | Costo total (USD) | Rendimiento | Costo unitario |
+|:-----------|-----------------:|------------:|---------------:|
+| Flow Cell | 1,125.20 | 6 corridas | 187.53 / corrida |
+| Wash kit | 194.00 | 6 lavados | 32.33 / lavado |
+| RBK Library (24) | 1,300.00 | 144 muestras | 9.03 / muestra |
+| RAA114 Extension | 543.00 | 6 corridas | 90.50 / corrida |
+| WGA phi29 | 1,890.00 | 100 muestras | 18.90 / muestra |
+:::
+
+
+
+## 4. Espacio global de costos
+
+El comportamiento económico del sistema FastPGT puede representarse como una función del volumen total de muestras ($N$) y del número de corridas ($R$):
+
+$$
+C = f(N, R)
+$$
+
+La siguiente representación muestra el costo por muestra en todo el espacio de configuraciones posibles.
+
+Cada punto corresponde a un escenario completo de operación, evaluado mediante el simulador dinámico, incorporando:
+
+- límites de las flow cells  
+- consumo discreto de insumos (RBK, RAA)  
+- efectos acumulativos de la secuencia de corridas  
+
+
+```{r}
+# ============================================================
+# SETUP GLOBAL
+# ============================================================
+
+library(tidyverse)
+library(tidyr)
+library(purrr)
+library(gt)
+library(plotly)
+library(scales)
+
+
+# -----------------------------
+# PARÁMETROS
+# -----------------------------
+
+C_FC   <- 1125.20
+C_RBK  <- 1300
+C_RAA  <- 543
+C_WGA  <- 22.33
+C_wash <- 32.33
+
+# ============================================================
+# FUNCIÓN PRINCIPAL (SIMULADOR)
+# ============================================================
+
+simulate_runs <- function(runs){
+
+  FC_count <- 1
+  RBK_count <- 1
+  WGA_count <- 1
+
+  run_in_fc <- 0
+  samples_in_fc <- 0
+  total_samples <- 0
+
+  reactions_left <- 6
+
+  total_cost <- C_FC + C_RBK + C_RAA
+
+  log <- list()
+
+  for(i in seq_along(runs)){
+
+    n <- runs[i]
+    evento <- c()
+
+    # -----------------------------
+    # CAMBIO DE FC
+    # -----------------------------
+    if(samples_in_fc + n > 48 || run_in_fc >= 6){
+      FC_count <- FC_count + 1
+      run_in_fc <- 0
+      samples_in_fc <- 0
+      total_cost <- total_cost + C_FC
+      evento <- c(evento, "Nuevo FC")
+    }
+
+    # -----------------------------
+    # WASH
+    # -----------------------------
+    wash_cost <- 0
+    if(run_in_fc > 0){
+      total_cost <- total_cost + C_wash
+      wash_cost <- C_wash
+      evento <- c(evento, "Wash")
+    }
+
+    # -----------------------------
+    # RBK
+    # -----------------------------
+    RBK_needed <- ceiling((total_samples + n) / 144)
+    if(RBK_needed > RBK_count){
+      RBK_count <- RBK_needed
+      total_cost <- total_cost + C_RBK
+      evento <- c(evento, "Compra RBK")
+    }
+
+    # -----------------------------
+    # WGA
+    # -----------------------------
+    WGA_needed <- ceiling((total_samples + n) / 96)
+    if(WGA_needed > WGA_count){
+      WGA_count <- WGA_needed
+      total_cost <- total_cost + C_WGA * 96
+      evento <- c(evento, "Compra WGA")
+    }
+
+    # -----------------------------
+    # UPDATE TOTAL
+    # -----------------------------
+    total_samples <- total_samples + n
+
+    # -----------------------------
+    # RAA
+    # -----------------------------
+    if(reactions_left == 0){
+      reactions_left <- reactions_left + 6
+      total_cost <- total_cost + C_RAA
+      evento <- c(evento, "Compra RAA")
+    }
+
+    reactions_left <- reactions_left - 1
+
+    # -----------------------------
+    # COSTO MODELO (clave)
+    # -----------------------------
+    costo_run_modelado <- 
+      (n * C_WGA) +
+      wash_cost +
+      (C_FC / 6) +
+      (C_RAA / 6) +
+      (n * (C_RBK / 144))
+
+    # -----------------------------
+    # UPDATE FC
+    # -----------------------------
+    run_in_fc <- run_in_fc + 1
+    samples_in_fc <- samples_in_fc + n
+
+    log[[i]] <- tibble(
+      corrida = i,
+      muestras = n,
+      muestras_totales = total_samples,
+      muestras_en_FC = samples_in_fc,
+      FC_actual = FC_count,
+      evento = ifelse(length(evento)==0, "Normal", paste(evento, collapse=" + ")),
+      costo_run_modelado = costo_run_modelado,
+      costo_acumulado = total_cost,
+      costo_promedio_global = total_cost / total_samples
+    )
+  }
+
+  bind_rows(log)
+}
+
+# ============================================================
+# FUNCIÓN AUXILIAR PARA GRID
+# ============================================================
+
+calc_cost <- function(n, r){
+
+  runs <- rep(n, r)
+
+  res <- simulate_runs(runs)
+
+  return(max(res$costo_acumulado) / sum(res$muestras))
+}
+
+```
+
+```{r}
+# ============================================================
+# HEATMAP — costo por muestra
+# ============================================================
+
+grid <- expand.grid(
+  muestras = seq(10, 144, by = 2),
+  corridas = seq(1, 12, by = 1)
+)
+
+
+calc_cost <- function(N, R){
+  if(R > N) return(NA_real_)   # 👈 clave
+  base <- floor(N / R)
+  extra <- N %% R
+  runs <- c(
+    rep(base + 1, extra),
+    rep(base, R - extra)
+  )
+  res <- simulate_runs(runs)
+  tail(res$costo_promedio_global, 1)
+}
+
+heatmap_data <- grid %>%
+  mutate(
+    costo = map2_dbl(muestras, corridas, calc_cost)
+  )
+
+invalid_region <- grid %>%
+  filter(corridas > muestras)
+
+ggplot(heatmap_data, aes(x = muestras, y = corridas, fill = costo)) +
+
+  geom_tile(
+    data = invalid_region,
+    aes(x = muestras, y = corridas),
+    fill = "grey80",
+    alpha = 0.6,
+    inherit.aes = FALSE
+  ) +
+
+  # ✔ región válida (ESTO FALTABA)
+  geom_tile() +
+
+  scale_fill_gradientn(
+    colors = c("green", "yellow", "orange", "red"),
+    limits = c(40, 200),
+    oob = scales::squish
+  ) +
+
+  scale_y_continuous(
+    breaks = seq(1, 12, 1),
+    minor_breaks = NULL  
+  ) +   
+
+  scale_x_continuous(
+    breaks = seq(0, 145, 10),
+    minor_breaks = NULL  
+  ) +  
+
+  labs(
+    title = "Espacio global de costos FastPGT",
+    subtitle = "Costo por muestra según volumen y número de corridas",
+    x = "Muestras totales",
+    y = "Número de corridas",
+    fill = "USD / muestra"
+  ) +
+
+  theme_minimal()
+```
+
+
+### Interpretación
+
+- valores altos → configuraciones ineficientes (alta fragmentación)  
+- valores bajos → configuraciones eficientes (mejor amortización)  
+
+---
+
+### Idea clave
+
+> El costo no depende únicamente del volumen total,  
+> sino de cómo ese volumen se distribuye en corridas.
+
+
+
+
+### Superficie global de costos
+
+La misma información puede representarse como una superficie tridimensional, donde el costo por muestra se interpreta como una función continua sobre el espacio $(N, R)$.
+
+Esta visualización permite observar:
+
+- pendientes → sensibilidad del costo a cambios operativos  
+- valles → regiones de eficiencia económica  
+- mesetas → zonas de estabilidad  
+
+---
+
+### Interpretación
+
+La superficie no es estrictamente continua, sino una aproximación de un sistema discreto con eventos de costo.
+
+Sin embargo, permite identificar tendencias globales y regiones de interés.
+
+---
+
+### Idea clave
+
+> El sistema presenta un paisaje de costos con regiones de eficiencia local,  
+> no un único óptimo global operativo.
+
+
+
+
+```{r}
+
+library(plotly)
+
+heatmap_data_valid <- heatmap_data %>%
+  mutate(costo = ifelse(corridas > muestras, NA, costo))
+
+z_matrix <- heatmap_data_valid %>%
+  arrange(corridas, muestras) %>%
+  pivot_wider(names_from = muestras, values_from = costo) %>%
+  select(-corridas) %>%
+  as.matrix()
+
+plot_ly(
+  x = unique(heatmap_data$muestras),
+  y = unique(heatmap_data$corridas),
+  z = z_matrix,
+  type = "surface",
+  colorscale = "Viridis",
+  reversescale = TRUE,
+  cmin = 40,   # 👈 ajustar
+  cmax = 100   # 👈 ajustar
+)%>%
+  layout(
+    title = "Superficie global de costos FastPGT",
+    scene = list(
+      xaxis = list(title = "Muestras totales (N)"),
+      yaxis = list(title = "Número de corridas (R)"),
+      zaxis = list(title = "USD / muestra")
+    )
+  )
+
+```
+
+
+## 5. Espacio operativo
+
+Para la toma de decisiones reales, el sistema FastPGT debe analizarse como una secuencia continua de corridas, potencialmente distribuidas a lo largo de múltiples flow cells.
+
+Se define el espacio:
+
+$$
+C = f(n, r)
+$$
+
+donde:
+
+- $n$: número de muestras por corrida  
+- $r$: número total de corridas acumuladas  
+
+---
+
+### Estructura del sistema
+
+El sistema presenta una organización modular:
+
+- cada 6 corridas consume una flow cell  
+- múltiples bloques implican múltiples flow cells  
+- el límite superior está definido por la capacidad del RBK (≈ 144 muestras)  
+
+$$
+FC = \left\lceil \frac{r}{6} \right\rceil
+$$
+
+---
+
+### Interpretación operativa
+
+El costo por muestra depende no solo del volumen, sino de cómo se distribuyen las corridas en el tiempo.
+
+Para cada número de corridas ($r$), se define una eficiencia relativa respecto al mejor escenario posible. Esto permite clasificar cada configuración en:
+
+- **Óptima** → costo mínimo alcanzable  
+- **Aceptable** → leve pérdida de eficiencia  
+- **Ineficiente** → fragmentación excesiva
+
+Las líneas discontinuas en $r = 6$ y $r = 12$ indican los puntos de transición entre flow cells.
+
+Cada bloque de 6 corridas corresponde al uso completo de una flow cell. Al superar este límite, se requiere la apertura de una nueva flow cell, introduciendo un incremento discreto en el costo y modificando el régimen de amortización del sistema.
+
+```{r}
+# ============================================================
+# MODELO OPERATIVO + SEMÁFORO
+# ============================================================
+
+library(tidyverse)
+
+# función
+calc_cost_operativo <- function(n, r){
+  runs <- rep(n, r)
+  res <- simulate_runs(runs)
+  tail(res$costo_promedio_global, 1)
+}
+
+# grid
+grid_operativo <- expand.grid(
+  muestras_run = seq(2, 24, by = 1),
+  corridas_total = seq(1, 12, by = 1)
+)
+
+# cálculo
+heatmap_operativo <- grid_operativo %>%
+  mutate(
+    costo = map2_dbl(muestras_run, corridas_total, calc_cost_operativo)
+  )
+
+# eficiencia relativa
+heatmap_operativo <- heatmap_operativo %>%
+  group_by(corridas_total) %>%
+  mutate(
+    costo_min = min(costo, na.rm = TRUE),
+    eficiencia = costo / costo_min
+  ) %>%
+  ungroup()
+
+# semáforo
+heatmap_operativo <- heatmap_operativo %>%
+  mutate(
+    decision = case_when(
+      eficiencia <= 1.05 ~ "Óptimo",
+      eficiencia <= 1.20 ~ "Aceptable",
+      TRUE ~ "Ineficiente"
+    )
+  )
+
+# plot
+ggplot(
+  heatmap_operativo,
+  aes(x = muestras_run, y = corridas_total, fill = decision)
+) +
+  geom_tile() +
+
+  scale_fill_manual(
+    values = c(
+      "Óptimo" = "green",
+      "Aceptable" = "yellow",
+      "Ineficiente" = "red"
+    )
+  ) +
+
+  geom_hline(yintercept = c(6, 12), linetype = "dashed", color = "black") +
+
+  scale_y_continuous(
+    breaks = seq(1, 12, 1),
+    minor_breaks = NULL
+  ) +
+
+  labs(
+    title = "Estrategia operativa FastPGT",
+    subtitle = "Decisión de corrida según eficiencia relativa",
+    x = "Muestras por corrida",
+    y = "Número total de corridas",
+    fill = "Decisión"
+  ) +
+
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank())
+
+```
+
+Las líneas discontinuas en $r = 6$ y $r = 12$ indican los puntos de transición entre flow cells.
+
+Cada bloque de 6 corridas corresponde al uso completo de una flow cell. Al superar este límite, se requiere la apertura de una nueva flow cell, introduciendo un incremento discreto en el costo y modificando el régimen de amortización del sistema.
+
+
+::: callout-note
+La optimización del sistema ocurre a nivel de trayectoria: cada decisión de corrida impacta el costo final acumulado.
+:::
+
+A partir de este modelo, se desarrolla una calculadora dinámica que permite evaluar escenarios específicos de operación en tiempo real.
+
+
+
+

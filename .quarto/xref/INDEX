@@ -1,0 +1,48 @@
+{
+  "appendix-havanna.qmd": {
+    "appendix-havanna.html": "cb1c9830"
+  },
+  "primer_report.qmd": {
+    "primer_report.html": "4a974909"
+  },
+  "index.qmd": {
+    "index.html": "852204fb"
+  },
+  "appendix-costs.qmd": {
+    "appendix-costs.html": "bba66998"
+  },
+  "appendix-technical.qmd": {
+    "appendix-technical.html": "5f534243"
+  },
+  "appendix-capex2pq.qmd": {
+    "appendix-capex2pq.html": "2d3706ed"
+  },
+  "appendix-experimental.qmd": {
+    "appendix-experimental.html": "49392161"
+  },
+  "appendix-clinico.qmd": {
+    "appendix-clinico.html": "6199baed"
+  },
+  "appendix-inversion.qmd": {
+    "appendix-inversion.html": "a8c6a28e"
+  },
+  "appendix-modelo.qmd": {
+    "appendix-modelo.html": "efb25aaf"
+  },
+  "appendix-costsRBK.qmd": {
+    "appendix-costsRBK.html": "aaf81202",
+    "appendix-costsRBK.tex": "90aa8a4e"
+  },
+  "appendix-costsRBKRAA.qmd": {
+    "appendix-costsRBKRAA.html": "b527891b"
+  },
+  "appendix-simulador.qmd": {
+    "appendix-simulador.html": "9aee0320"
+  },
+  "dashboard.qmd": {
+    "dashboard.html": "d7498d0d"
+  },
+  "appendix-simulations.qmd": {
+    "appendix-simulations.html": "534e5169"
+  }
+}

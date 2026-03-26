@@ -1,0 +1,319 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100">
+  <defs>
+    <!-- Gradients for traditional workflow (red/pink tones) -->
+    <linearGradient id="redGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4909D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A6687A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C8829D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9A5A6D;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradients for FastPGT-A (blue tones) -->
+    <linearGradient id="blueGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E5C8A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B9BD5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3A6EA5;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Arrow markers -->
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#A6687A"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2E5C8A"/>
+    </marker>
+  </defs>
+  
+  <!-- TITLE -->
+  <text x="800" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">
+    PGT-A Workflow Comparison
+  </text>
+  
+  <!-- ==================== TRADITIONAL WORKFLOW ==================== -->
+  <text x="800" y="85" font-family="Arial" font-size="20" font-weight="bold" fill="#A6687A" text-anchor="middle">
+    Traditional PGT-A (with Vitrification)
+  </text>
+  
+  <!-- Step 1: Stimulation -->
+  <g id="trad-step1">
+    <circle cx="120" cy="180" r="50" fill="url(#redGrad1)" stroke="#8A5566" stroke-width="2"/>
+    <text x="120" y="175" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">OVARIAN</text>
+    <text x="120" y="190" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">STIMULATION</text>
+    <text x="120" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">10-14 DAYS</text>
+  </g>
+  
+  <line x1="170" y1="180" x2="230" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 2: Egg Retrieval -->
+  <g id="trad-step2">
+    <circle cx="280" cy="180" r="50" fill="url(#redGrad1)" stroke="#8A5566" stroke-width="2"/>
+    <text x="280" y="175" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">EGG</text>
+    <text x="280" y="190" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">RETRIEVAL</text>
+    <text x="280" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">DAY 0</text>
+  </g>
+  
+  <line x1="330" y1="180" x2="390" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 3: Embryo Development -->
+  <g id="trad-step3">
+    <circle cx="440" cy="180" r="50" fill="url(#redGrad1)" stroke="#8A5566" stroke-width="2"/>
+    <circle cx="435" cy="175" r="6" fill="#FFF" opacity="0.8"/>
+    <circle cx="445" cy="175" r="6" fill="#FFF" opacity="0.8"/>
+    <circle cx="435" cy="185" r="6" fill="#FFF" opacity="0.8"/>
+    <circle cx="445" cy="185" r="6" fill="#FFF" opacity="0.8"/>
+    <text x="440" y="210" font-family="Arial" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">DEVELOPMENT</text>
+    <text x="440" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">5 DAYS</text>
+  </g>
+  
+  <line x1="490" y1="180" x2="550" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 4: Biopsy -->
+  <g id="trad-step4">
+    <circle cx="600" cy="180" r="50" fill="url(#redGrad2)" stroke="#8A5566" stroke-width="2"/>
+    <circle cx="600" cy="175" r="8" fill="#FFF" opacity="0.8"/>
+    <circle cx="588" cy="185" r="8" fill="#FFF" opacity="0.8"/>
+    <circle cx="612" cy="185" r="8" fill="#FFF" opacity="0.8"/>
+    <line x1="610" y1="165" x2="625" y2="150" stroke="#8A5566" stroke-width="2.5"/>
+    <text x="600" y="210" font-family="Arial" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">BIOPSY</text>
+    <text x="600" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">DAY 5-6</text>
+  </g>
+  
+  <line x1="650" y1="180" x2="710" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 5: VITRIFICATION (highlighted) -->
+  <g id="trad-step5">
+    <circle cx="760" cy="180" r="50" fill="url(#redGrad2)" stroke="#8A5566" stroke-width="3"/>
+    <path d="M 745 170 L 750 180 L 745 190 M 755 165 L 760 175 L 755 185 M 765 165 L 770 175 L 765 185 M 775 170 L 780 180 L 775 190" 
+          stroke="#FFF" stroke-width="2.5" fill="none"/>
+    <text x="760" y="205" font-family="Arial" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">VITRIFICATION</text>
+    <text x="760" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">DAY 5-6</text>
+  </g>
+  
+  <line x1="810" y1="180" x2="870" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 6: NGS Sequencing -->
+  <g id="trad-step6">
+    <circle cx="920" cy="180" r="50" fill="url(#redGrad1)" stroke="#8A5566" stroke-width="2"/>
+    <rect x="905" y="165" width="30" height="25" rx="2" fill="#FFF" opacity="0.9"/>
+    <line x1="910" y1="172" x2="930" y2="172" stroke="#A6687A" stroke-width="1.5"/>
+    <line x1="910" y1="177" x2="930" y2="177" stroke="#A6687A" stroke-width="1.5"/>
+    <line x1="910" y1="182" x2="925" y2="182" stroke="#A6687A" stroke-width="1.5"/>
+    <text x="920" y="205" font-family="Arial" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">NGS</text>
+    <text x="920" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">10-14 DAYS</text>
+  </g>
+  
+  <line x1="970" y1="180" x2="1030" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 7: Results -->
+  <g id="trad-step7">
+    <circle cx="1080" cy="180" r="50" fill="url(#redGrad1)" stroke="#8A5566" stroke-width="2"/>
+    <rect x="1065" y="165" width="30" height="35" rx="2" fill="#FFF"/>
+    <line x1="1070" y1="173" x2="1090" y2="173" stroke="#A6687A" stroke-width="1.5"/>
+    <line x1="1070" y1="179" x2="1090" y2="179" stroke="#A6687A" stroke-width="1.5"/>
+    <polyline points="1072,188 1077,193 1085,183" stroke="#8A5566" stroke-width="2.5" fill="none"/>
+    <text x="1080" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">RESULTS</text>
+  </g>
+  
+  <line x1="1130" y1="180" x2="1190" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 8: FET Cycle (highlighted) -->
+  <g id="trad-step8">
+    <circle cx="1240" cy="180" r="50" fill="url(#redGrad2)" stroke="#8A5566" stroke-width="3"/>
+    <text x="1240" y="175" font-family="Arial" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">ENDOMETRIAL</text>
+    <text x="1240" y="188" font-family="Arial" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">PREP + FET</text>
+    <text x="1240" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">10-15 DAYS</text>
+  </g>
+  
+  <line x1="1290" y1="180" x2="1350" y2="180" stroke="#A6687A" stroke-width="3" marker-end="url(#arrowRed)"/>
+  
+  <!-- Step 9: Transfer -->
+  <g id="trad-step9">
+    <circle cx="1400" cy="180" r="50" fill="url(#redGrad1)" stroke="#8A5566" stroke-width="2"/>
+    <path d="M 1385 175 Q 1400 165, 1415 175 L 1400 195 Z" fill="#FFF" opacity="0.9"/>
+    <circle cx="1400" cy="178" r="5" fill="#D4909D"/>
+    <text x="1400" y="210" font-family="Arial" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">TRANSFER</text>
+    <text x="1400" y="250" font-family="Arial" font-size="13" font-weight="bold" fill="#A6687A" text-anchor="middle">DAY 1</text>
+  </g>
+  
+  <!-- Total time for traditional -->
+  <rect x="50" y="280" width="1420" height="50" rx="5" fill="#FFE8EC" stroke="#A6687A" stroke-width="2"/>
+  <text x="760" y="310" font-family="Arial" font-size="18" font-weight="bold" fill="#A6687A" text-anchor="middle">
+    TOTAL TIME: ~35-50 DAYS (5-7 weeks from egg retrieval to transfer)
+  </text>
+  
+  <!-- ==================== FASTPGT-A WORKFLOW ==================== -->
+  <text x="800" y="410" font-family="Arial" font-size="20" font-weight="bold" fill="#2E5C8A" text-anchor="middle">
+    FastPGT-A with ONT (Fresh Transfer)
+  </text>
+  
+  <!-- Step 1: Stimulation -->
+  <g id="fast-step1">
+    <circle cx="120" cy="505" r="50" fill="url(#blueGrad1)" stroke="#1E4D7B" stroke-width="2"/>
+    <text x="120" y="500" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">OVARIAN</text>
+    <text x="120" y="515" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">STIMULATION</text>
+    <text x="120" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">10-14 DAYS</text>
+  </g>
+  
+  <line x1="170" y1="505" x2="230" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 2: Egg Retrieval -->
+  <g id="fast-step2">
+    <circle cx="280" cy="505" r="50" fill="url(#blueGrad1)" stroke="#1E4D7B" stroke-width="2"/>
+    <text x="280" y="500" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">EGG</text>
+    <text x="280" y="515" font-family="Arial" font-size="11" font-weight="bold" fill="#FFF" text-anchor="middle">RETRIEVAL</text>
+    <text x="280" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">DAY 0</text>
+  </g>
+  
+  <line x1="330" y1="505" x2="390" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 3: Embryo Development -->
+  <g id="fast-step3">
+    <circle cx="440" cy="505" r="50" fill="url(#blueGrad1)" stroke="#1E4D7B" stroke-width="2"/>
+    <circle cx="435" cy="500" r="6" fill="#FFF" opacity="0.8"/>
+    <circle cx="445" cy="500" r="6" fill="#FFF" opacity="0.8"/>
+    <circle cx="435" cy="510" r="6" fill="#FFF" opacity="0.8"/>
+    <circle cx="445" cy="510" r="6" fill="#FFF" opacity="0.8"/>
+    <text x="440" y="535" font-family="Arial" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">DEVELOPMENT</text>
+    <text x="440" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">5 DAYS</text>
+  </g>
+  
+  <line x1="490" y1="505" x2="550" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 4: Biopsy -->
+  <g id="fast-step4">
+    <circle cx="600" cy="505" r="50" fill="url(#blueGrad2)" stroke="#1E4D7B" stroke-width="2"/>
+    <circle cx="600" cy="500" r="8" fill="#FFF" opacity="0.8"/>
+    <circle cx="588" cy="510" r="8" fill="#FFF" opacity="0.8"/>
+    <circle cx="612" cy="510" r="8" fill="#FFF" opacity="0.8"/>
+    <line x1="610" y1="490" x2="625" y2="475" stroke="#1E4D7B" stroke-width="2.5"/>
+    <text x="600" y="535" font-family="Arial" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">BIOPSY</text>
+    <text x="600" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">DAY 5</text>
+  </g>
+  
+  <line x1="650" y1="505" x2="710" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 5: Library Prep (highlighted) -->
+  <g id="fast-step5">
+    <circle cx="760" cy="505" r="50" fill="url(#blueGrad2)" stroke="#1E4D7B" stroke-width="3"/>
+    <rect x="750" y="492" width="20" height="30" rx="2" fill="none" stroke="#FFF" stroke-width="2"/>
+    <ellipse cx="760" cy="492" rx="10" ry="2.5" fill="#FFF" opacity="0.7"/>
+    <rect x="752" y="508" width="16" height="12" fill="#7FB3D5" opacity="0.8"/>
+    <text x="760" y="535" font-family="Arial" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">LIBRARY PREP</text>
+    <text x="760" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">30-60 MIN</text>
+  </g>
+  
+  <line x1="810" y1="505" x2="870" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 6: MinION ONT (highlighted) -->
+  <g id="fast-step6">
+    <circle cx="920" cy="505" r="50" fill="url(#blueGrad2)" stroke="#1E4D7B" stroke-width="3"/>
+    <rect x="895" y="490" width="50" height="32" rx="3" fill="#E8F4F8" stroke="#2E5C8A" stroke-width="2"/>
+    <rect x="943" y="503" width="8" height="8" fill="#2E5C8A"/>
+    <!-- Grid -->
+    <line x1="900" y1="497" x2="940" y2="497" stroke="#4A90E2" stroke-width="0.5"/>
+    <line x1="900" y1="503" x2="940" y2="503" stroke="#4A90E2" stroke-width="0.5"/>
+    <line x1="900" y1="509" x2="940" y2="509" stroke="#4A90E2" stroke-width="0.5"/>
+    <line x1="900" y1="515" x2="940" y2="515" stroke="#4A90E2" stroke-width="0.5"/>
+    <text x="920" y="535" font-family="Arial" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">MinION</text>
+    <text x="920" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">3-6 HOURS</text>
+  </g>
+  
+  <line x1="970" y1="505" x2="1030" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 7: Real-time Analysis (highlighted) -->
+  <g id="fast-step7">
+    <circle cx="1080" cy="505" r="50" fill="url(#blueGrad2)" stroke="#1E4D7B" stroke-width="3"/>
+    <rect x="1060" y="490" width="40" height="30" rx="2" fill="#E8F4F8" stroke="#2E5C8A" stroke-width="2"/>
+    <rect x="1063" y="493" width="34" height="21" fill="#2E5C8A"/>
+    <polyline points="1068,505 1073,500 1078,508 1083,498 1088,502 1093,495" 
+              stroke="#7FB3D5" stroke-width="2" fill="none"/>
+    <text x="1080" y="535" font-family="Arial" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">ANALYSIS</text>
+    <text x="1080" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">REAL-TIME</text>
+  </g>
+  
+  <line x1="1130" y1="505" x2="1190" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 8: Results -->
+  <g id="fast-step8">
+    <circle cx="1240" cy="505" r="50" fill="url(#blueGrad1)" stroke="#1E4D7B" stroke-width="2"/>
+    <rect x="1225" y="490" width="30" height="35" rx="2" fill="#FFF"/>
+    <line x1="1230" y1="498" x2="1250" y2="498" stroke="#2E5C8A" stroke-width="1.5"/>
+    <line x1="1230" y1="504" x2="1250" y2="504" stroke="#2E5C8A" stroke-width="1.5"/>
+    <polyline points="1232,513 1237,518 1245,508" stroke="#1E4D7B" stroke-width="2.5" fill="none"/>
+    <text x="1240" y="535" font-family="Arial" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">RESULTS</text>
+    <text x="1240" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">SAME DAY</text>
+  </g>
+  
+  <line x1="1290" y1="505" x2="1350" y2="505" stroke="#2E5C8A" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Step 9: Fresh Transfer (highlighted) -->
+  <g id="fast-step9">
+    <circle cx="1400" cy="505" r="50" fill="url(#blueGrad2)" stroke="#1E4D7B" stroke-width="3"/>
+    <path d="M 1385 500 Q 1400 490, 1415 500 L 1400 520 Z" fill="#FFF" opacity="0.9"/>
+    <circle cx="1400" cy="503" r="5" fill="#4A90E2"/>
+    <text x="1400" y="530" font-family="Arial" font-size="8" font-weight="bold" fill="#FFF" text-anchor="middle">FRESH</text>
+    <text x="1400" y="540" font-family="Arial" font-size="8" font-weight="bold" fill="#FFF" text-anchor="middle">TRANSFER</text>
+    <text x="1400" y="575" font-family="Arial" font-size="13" font-weight="bold" fill="#2E5C8A" text-anchor="middle">DAY 5-6</text>
+  </g>
+  
+  <!-- Total time for FastPGT-A -->
+  <rect x="50" y="605" width="1420" height="50" rx="5" fill="#E8F4F8" stroke="#2E5C8A" stroke-width="2"/>
+  <text x="760" y="635" font-family="Arial" font-size="18" font-weight="bold" fill="#2E5C8A" text-anchor="middle">
+    TOTAL TIME: ~15-20 DAYS (2-3 weeks from egg retrieval to transfer)
+  </text>
+  
+  <!-- ==================== KEY DIFFERENCES SECTION ==================== -->
+  <rect x="50" y="700" width="1500" height="350" rx="10" fill="#F5F5F5" stroke="#666" stroke-width="2"/>
+  <text x="800" y="735" font-family="Arial" font-size="22" font-weight="bold" fill="#333" text-anchor="middle">
+    Key Differences
+  </text>
+  
+  <!-- Comparison table -->
+  <g id="comparison-table">
+    <!-- Headers -->
+    <text x="250" y="775" font-family="Arial" font-size="15" font-weight="bold" fill="#333" text-anchor="middle">Aspect</text>
+    <text x="650" y="775" font-family="Arial" font-size="15" font-weight="bold" fill="#A6687A" text-anchor="middle">Traditional PGT-A</text>
+    <text x="1200" y="775" font-family="Arial" font-size="15" font-weight="bold" fill="#2E5C8A" text-anchor="middle">FastPGT-A (ONT)</text>
+    
+    <!-- Row 1: Time to results -->
+    <rect x="80" y="790" width="1460" height="45" fill="#FFF" stroke="#DDD" stroke-width="1"/>
+    <text x="250" y="817" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Time to Results</text>
+    <text x="650" y="817" font-family="Arial" font-size="14" fill="#A6687A" text-anchor="middle">10-14 days</text>
+    <text x="1200" y="817" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5C8A" text-anchor="middle">3-6 hours ✓</text>
+    
+    <!-- Row 2: Total cycle time -->
+    <rect x="80" y="835" width="1460" height="45" fill="#F9F9F9" stroke="#DDD" stroke-width="1"/>
+    <text x="250" y="862" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Total Cycle Time</text>
+    <text x="650" y="862" font-family="Arial" font-size="14" fill="#A6687A" text-anchor="middle">5-7 weeks</text>
+    <text x="1200" y="862" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5C8A" text-anchor="middle">2-3 weeks ✓</text>
+    
+    <!-- Row 3: Vitrification -->
+    <rect x="80" y="880" width="1460" height="45" fill="#FFF" stroke="#DDD" stroke-width="1"/>
+    <text x="250" y="907" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Vitrification</text>
+    <text x="650" y="907" font-family="Arial" font-size="14" fill="#A6687A" text-anchor="middle">Required ✗</text>
+    <text x="1200" y="907" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5C8A" text-anchor="middle">Avoided ✓</text>
+    
+    <!-- Row 4: FET Cycle -->
+    <rect x="80" y="925" width="1460" height="45" fill="#F9F9F9" stroke="#DDD" stroke-width="1"/>
+    <text x="250" y="952" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">FET Cycle</text>
+    <text x="650" y="952" font-family="Arial" font-size="14" fill="#A6687A" text-anchor="middle">Required (10-15 days) ✗</text>
+    <text x="1200" y="952" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5C8A" text-anchor="middle">Avoided ✓</text>
+    
+    <!-- Row 5: Cost Savings -->
+    <rect x="80" y="970" width="1460" height="45" fill="#FFF" stroke="#DDD" stroke-width="1"/>
+    <text x="250" y="997" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Cost Savings</text>
+    <text x="650" y="997" font-family="Arial" font-size="14" fill="#A6687A" text-anchor="middle">Baseline</text>
+    <text x="1200" y="997" font-family="Arial" font-size="14" font-weight="bold" fill="#2E5C8A" text-anchor="middle">~$3,800-6,800 per patient ✓</text>
+  </g>
+  
+  <!-- Bottom note -->
+  <text x="800" y="1035" font-family="Arial" font-size="13" fill="#666" text-anchor="middle" font-style="italic">
+    FastPGT-A reduces time-to-pregnancy by 4-6 weeks and eliminates vitrification/FET costs
+  </text>
+  
+</svg>

@@ -1,0 +1,422 @@
+---
+title: "Apéndice Inversión"
+number-sections: false
+
+lang: es
+bibliography: ONT-PGT.bib
+csl: nature.csl
+
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+::: callout-note
+## **Contenido**
+
+1. GASTOS FIJOS
+2. Proyecto Fast y Regular PGT
+3. Yaguarecito
+4. Cash Flow a 3 años
+
+**Insumos**: [Apéndice técnico](appendix-technical.qmd). Analytical: [Insumos ONT](/inputs/insumos/Analytical/LP-1102D.pdf)
+
+**Delivery 4**:  [Apéndice económico](appendix-costs.qmd). [Documento Ppal](index.qmd).
+:::
+
+
+# Objetivo del Apéndice
+
+Este apéndice detalla la **inversión inicial necesaria** para el arranque de **2PQ: Precision & Quick Genomics**, considerando **FastPGT** como su primer producto y la **rWGS de Yaguarecito**, como segundo producto luego de su puesta a punto. 
+
+El flujo de fondos (Cash-flow) y el retorno se estima en 3 años sucesivos de incremento de ventas.
+
+A continuación se muestran la siguiente estimación de gastos anuales: 
+
+
+1. Estimación de **Gastos de Capital (GC)**
+   - **Año 1**: Arranque FastPGT, equipamiento básico.
+   - **Año 2**: Consolidación, y equipamiento adicional.
+   - **Año 3**: Yaguarecito. Equipamiento específico y secuenciador.
+   
+2. Estimación de **Gastos Operativos (GO)**
+   - **Año 1 a 3**. GO Fijos : salarios, alquiler de laboratorio, marketing, asesoramiento normativo, legal, etc.
+   - **Años 1 a 3**. GO Variables: insumos FastPGT, Yaguarecito, Nube AWS y otros costos.
+
+3. Resumen del **cash-flow** a 3 años.
+
+
+## Año 1. Ingresos y Egresos
+### Tabla resumen
+
+
+```{r setup}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(here)
+library(janitor)
+library(kableExtra)
+```
+
+```{r}
+path <- here("inputs", "data_CF", "2pq_arranque", "RESUMEN-Table.csv")
+stopifnot(file.exists(path))
+
+df <- read_delim(path, delim = ";", show_col_types = FALSE) %>%
+  clean_names()
+
+# ---- Parser robusto USD (acepta ES y US) ----
+to_usd <- function(x){
+  x <- as.character(x)
+  x <- str_replace_all(x, "\u00A0", " ")
+  x <- str_replace_all(x, "\t", " ")
+  x <- str_trim(x)
+
+  neg <- str_detect(x, "^\\(") | str_detect(x, "US\\$\\s*\\(") | str_detect(x, "^\\s*-")
+
+  x <- str_replace_all(x, "US\\$", "")
+  x <- str_replace_all(x, "\\$", "")
+  x <- str_replace_all(x, "[()]", "")
+  x <- str_replace_all(x, "\\s+", "")
+
+  # vectorizado:
+  is_es <- str_detect(x, ",\\d{1,2}$")  # decimal coma al final => ES
+
+  x_es <- x %>%
+    str_replace_all("\\.", "") %>%
+    str_replace_all(",", ".")
+
+  x_us <- x %>%
+    str_replace_all(",", "")
+
+  x2 <- if_else(is_es, x_es, x_us)
+
+  out <- suppressWarnings(as.numeric(x2))
+  if_else(neg, -abs(out), out)
+}
+
+fmt_usd <- function(x) dollar(x, accuracy = 0.01, big.mark = ",", decimal.mark = ".")
+lab_usd <- label_dollar(accuracy = 1, big.mark = ",", decimal.mark = ".")
+
+# Validar columnas esperadas (si falla, te dice exactamente cuál falta)
+need <- c("item","project","detalle","mes","muestras","valor")
+stopifnot(all(need %in% names(df)))
+
+df <- df %>%
+  mutate(
+    item = str_squish(item),
+    project = str_squish(project),
+    detalle = str_squish(detalle),
+    mes = as.integer(mes),
+    muestras = suppressWarnings(as.numeric(muestras)),
+    valor = to_usd(valor),
+    anio = case_when(
+      mes <= 12 ~ "Año 1",
+      mes <= 24 ~ "Año 2",
+      mes <= 36 ~ "Año 3",
+      TRUE ~ NA_character_
+    )
+  )
+
+# ---- 1) PGT por año (ingresos = VENTAS TOTALES, egresos = EGRESOS) ----
+res_pgt <- df %>%
+  filter(project == "FastPGT", item %in% c("VENTAS TOTALES","EGRESOS")) %>%
+  mutate(key = if_else(item == "VENTAS TOTALES","ingresos_total","egresos_total")) %>%
+  group_by(anio, key) %>%
+  summarise(valor = sum(valor, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(names_from = key, values_from = valor) %>%
+  mutate(escenario = "PGT")
+
+
+fmt_usd_latam <- function(x) {
+  scales::dollar(
+    x,
+    prefix = "$",
+    big.mark = ",",
+    decimal.mark = ".",
+    accuracy = 0.01
+  )
+}
+
+df_der <- df %>%
+  mutate(valor_fmt = fmt_usd_latam(valor))
+
+df_Y1 <- df_der %>%
+  filter(mes <= 12) %>%
+  filter(!(item == "VENTA" & project %in% c("FastPGT", "RegPGT"))) %>%
+  select(-mes) %>%
+  select(-anio) %>%
+    select(-valor) %>%  
+  select(-muestras)
+
+kbl_obj <- df_Y1 %>%
+  knitr::kable(format = "html", escape = FALSE) %>%
+  kable_styling(full_width = FALSE)
+
+# (opcional) resaltar fila resumen
+kbl_obj <- kbl_obj %>%
+  row_spec(
+    which(df_Y1$item == "RESUMEN" & df_Y1$project == "FastPGT"),
+    bold = TRUE,
+    background = "cadetblue4",
+    color = "white"
+  )
+ 
+
+df_Y1 %>%
+  knitr::kable(format = "html", escape = FALSE) %>%
+  kable_styling(full_width = FALSE) %>%
+  row_spec(
+    which(df_Y1$item == "RESUMEN" & df_Y1$project == "FastPGT"),
+    bold = TRUE,
+    background = "darkred",
+    color = "white"
+  )
+
+```
+ 
+## Año 2. Ingresos y Egresos
+### Tabla resumen
+
+```{r}
+
+df_Y2 <- df_der %>%
+  filter(mes > 12 & mes <= 24) %>%
+  filter(!(item == "VENTA" & project %in% c("FastPGT", "RegPGT"))) %>%
+  select(-mes) %>%
+  select(-anio) %>%
+    select(-valor) %>%  
+  select(-muestras)
+
+
+
+df_Y2 %>%
+  knitr::kable(format = "html", escape = FALSE) %>%
+  kable_styling(full_width = FALSE) %>%
+  row_spec(
+    which(df_Y2$item == "RESUMEN" & df_Y2$project == "FastPGT"),
+    bold = TRUE,
+    background = "yellow3",
+    color = "white"
+  )
+```
+
+## Año 3. Ingresos y Egresos
+
+```{r}
+
+df_Y3 <- df_der %>%
+  filter(mes > 24 & mes <= 36) %>%
+  filter(!(item == "VENTA" & project %in% c("FastPGT", "RegPGT"))) %>%
+  select(-mes) %>%
+  select(-anio) %>%
+    select(-valor) %>%  
+  select(-muestras)
+
+
+
+df_Y3 %>%
+  knitr::kable(format = "html", escape = FALSE) %>%
+  kable_styling(full_width = FALSE) %>%
+  row_spec(
+    which(df_Y3$item == "RESUMEN" & df_Y3$project == "FastPGT + rWGS"),
+    bold = TRUE,
+    background = "darkgreen",
+    color = "white"
+  ) %>%
+  row_spec(
+    which(df_Y3$item == "RESUMEN" & df_Y3$project == "FastPGT"),
+    bold = TRUE,
+    background = "cadetblue4",
+    color = "white"
+  ) 
+```
+
+
+---
+## Tabla resumen anual
+
+
+
+
+```{r}
+# ---- 2) Año 3 combinado (PGT + rWGS)
+# ingresos = VENTAS TOTALES (FastPGT) + VENTA TOTALES/VENTA (rWGS)
+# egresos  = EGRESOS (FastPGT) + EGRESOS (rWGS)
+
+res_mix <- df %>%
+  filter(anio == "Año 3") %>%
+  summarise(
+    ingresos_total =
+      sum(valor[item == "VENTAS TOTALES" & project == "FastPGT"], na.rm = TRUE) +
+      sum(valor[item == "VENTA TOTALES" & project == "rWGS"], na.rm = TRUE),
+
+    egresos_total =
+      sum(valor[item == "EGRESOS" & project == "FastPGT"], na.rm = TRUE) +
+      sum(valor[item == "EGRESOS" & project == "rWGS"], na.rm = TRUE) +
+      sum(valor[item == "Gastos Capital" & project == "rWGS"], na.rm = TRUE)
+  ) %>%
+  mutate(anio = "Año 3", escenario = "PGT + rWGS")
+
+# ---- 3) Tabla final ----
+res_anual <- bind_rows(res_pgt, res_mix) %>%
+  mutate(
+    ingresos_total = coalesce(ingresos_total, 0),
+    egresos_total  = coalesce(egresos_total, 0),
+    resultado_calc = ingresos_total - egresos_total,
+    etiqueta = paste0(anio, " (", escenario, ")")
+  ) %>%
+  arrange(anio, escenario)
+
+
+# Tabla ejecutiva (con formato USD lindo)
+res_anual %>%
+  transmute(
+    Escenario = etiqueta,
+    Ingresos_USD = fmt_usd(ingresos_total),
+    Egresos_USD  = fmt_usd(egresos_total),
+    Resultado_USD = fmt_usd(resultado_calc)
+  ) %>%
+  kable(format = "html", escape = FALSE)
+
+res_anual <- res_anual %>%
+  mutate(
+    etiqueta = factor(
+      etiqueta,
+      levels = c(
+        "Año 1 (PGT)",
+        "Año 2 (PGT)",
+        "Año 3 (PGT)",
+        "Año 3 (PGT + rWGS)"
+      )
+    )
+  )
+
+```
+
+
+
+## Gráfico Ingresos vs Egresos Anuales
+
+```{r}
+
+# ---- 4) Gráfico Ingresos vs Egresos ----
+
+res_anual <- res_anual %>%
+  mutate(
+    muestras = case_when(
+      etiqueta == "Año 1 (PGT)" ~ sum(df$muestras[df$anio=="Año 1" & df$item=="VENTA" & df$project %in% c("FastPGT","RegPGT")], na.rm=TRUE),
+      etiqueta == "Año 2 (PGT)" ~ sum(df$muestras[df$anio=="Año 2" & df$item=="VENTA" & df$project %in% c("FastPGT","RegPGT")], na.rm=TRUE),
+      etiqueta == "Año 3 (PGT)" ~ sum(df$muestras[df$anio=="Año 3" & df$item=="VENTA" & df$project %in% c("FastPGT","RegPGT")], na.rm=TRUE),
+      etiqueta == "Año 3 (PGT + rWGS)" ~
+        sum(df$muestras[df$anio=="Año 3" & df$item=="VENTA" & df$project %in% c("FastPGT","RegPGT")], na.rm=TRUE) +
+        sum(df$muestras[df$anio=="Año 3" & df$item %in% c("VENTA","VENTA TOTALES") & df$project=="rWGS"], na.rm=TRUE),
+      TRUE ~ NA_real_
+    )
+  )
+
+
+long_ie <- res_anual %>%
+  select(etiqueta, ingresos_total, egresos_total, muestras) %>%
+  pivot_longer(
+    cols = c(ingresos_total, egresos_total),
+    names_to = "tipo",
+    values_to = "usd"
+  ) %>%
+  mutate(tipo = recode(tipo,
+                       ingresos_total = "Ingresos",
+                       egresos_total = "Egresos"))
+
+
+# Base: long_ie ya existe (etiqueta, tipo, usd, muestras)
+# Para ubicar "muestras" en el centro del par, armamos un df aparte:
+muestras_mid <- long_ie %>%
+  group_by(etiqueta) %>%
+  summarise(
+    muestras = first(muestras),
+    y_mid = max(usd, na.rm = TRUE) * 0.45,   # altura "media" del par (ajustable)
+    .groups = "drop"
+  )
+
+ggplot(long_ie, aes(x = etiqueta, y = usd, fill = tipo)) +
+  geom_col(position = position_dodge(width = 0.9)) +
+
+  # 1) & 2) valores USD arriba de CADA barra (ingresos y egresos)
+  geom_text(
+    aes(label = lab_usd(usd)),
+    position = position_dodge(width = 0.9),
+    vjust = -0.6,
+    size = 3.3,
+    fontface = "bold",
+    color = "black"
+  ) +
+
+  # 3) muestras en el centro del par de barras
+  geom_label(
+    data = muestras_mid,
+    aes(x = etiqueta, y = y_mid, label = paste0("n=", scales::comma(muestras))),
+    inherit.aes = FALSE,
+    fill = "white",
+    label.size = 0,
+    color = "black",
+    fontface = "bold",
+    size = 3.4
+  ) +
+
+  scale_fill_manual(
+    values = c(
+      "Ingresos" = "cadetblue3",
+      "Egresos"  = "cadetblue"
+    )
+  ) +
+  scale_y_continuous(
+    labels = lab_usd,
+    expand = expansion(mult = c(0.02, 0.18))  # espacio arriba para las etiquetas
+  ) +
+  labs(
+    x = NULL,
+    y = "USD",
+    fill = NULL,
+    title = "Ingresos vs Egresos (n = muestras)"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+
+```
+
+
+## Gráfico Resultado Neto
+
+```{r}
+# ---- 5) Gráfico Resultado neto ----
+
+ggplot(res_anual, aes(x = etiqueta, y = resultado_calc)) +
+  geom_col(fill = "cadetblue3") +
+  geom_hline(yintercept = 0, linewidth = 0.5) +
+  geom_text(
+    aes(label = scales::dollar(resultado_calc,
+                               big.mark = ",",
+                               decimal.mark = ".",
+                               accuracy = 1)),
+    vjust = ifelse(res_anual$resultado_calc >= 0, -0.5, 1.2),
+    fontface = "bold",
+    size = 3.5
+  ) +
+  scale_y_continuous(labels = lab_usd) +
+  labs(
+    x = NULL,
+    y = "USD",
+    title = ""
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 25, hjust = 1))
+
+
+```
+
+

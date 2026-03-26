@@ -1,0 +1,11 @@
+SEGMENTO;CONCEPTO;Unidad;Valor;Total
+Laboratorio;WGS;25;US$	700,00;US$	17.500,00
+A-lysis;Bioinformatics;25;US$	70,00;US$	1.750,00
+Medicos;Colecta;25;US$	150,00;US$	3.750,00
+Coco;Direccion de Proy;25;US$	100,00;US$	2.500,00
+TOTAL Fase 1;;;;US$ 23.000,00
+Laboratorio;WGS;25;US$	450,00;US$	11.250,00
+A-lysis;Bioinformatics;25;US$	50,00;US$	1.250,00
+Medicos;Colecta;25;US$	150,00;US$	3.750,00
+Coco;Direccion de Proy;25;US$	100,00;US$	2.500,00
+TOTAL Fase 2;;;;US$ 16.250,00

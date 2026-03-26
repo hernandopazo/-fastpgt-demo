@@ -1,0 +1,61 @@
+Cuentas raw y mail inicial
+
+
+el item 1 librerías y  eso sirve para 6 tandas de 24 muestras 
+
+1400 / 6 = 235 ... 1 tanda de 1 embrion o 1 tanda de 24 
+
+wash 100  100
+
+FC 600 
+
+extraccion + sureplex 
+
+NEB 3 enzimas 30
+
+10 embriones... 235 + 100 + *300* = 1.000
+
+150 
+
+6 embriones ... 235 + 100 + 0
+
+
+
+----------------------
+
+Hola Hernan y Vanesa, 
+
+Estuvimos revisando en detalle el trabajo que compartieron y queríamos acercarles algunas consideraciones importantes para que puedan evaluar correctamente los requisitos y el alcance del protocolo:
+
+• Amplificación previa del ADN
+El procedimiento descrito en el paper requiere realizar una amplificación completa del genoma utilizando el kit SurePlex Whole Genome Amplification. 
+
+• Preparación de librerías y enzimas adicionales
+Si bien los autores se basan en el protocolo de Native Barcoding de Oxford Nanopore, realizan varias modificaciones respecto al protocolo estándar: Hay enzimas NEB que no usan, ajustan volúmenes y omiten algunos pasos. Por lo que conversamos sé que está claro y es un poco el punto de todo el proyecto pero es un flujo de trabajo totalmente custom. Si quisieran es recomendable que puedan contactar a los autores para obtener una guía precisa del procedimiento. 
+
+• Compatibilidad de equipos
+El estudio fue realizado con Mk1B/Mk1C, por lo que el protocolo es compatible con Mk1D y flowcells de MinION que es lo que les estoy cotizando.
+
+• Reutilización de flowcells
+El paper no reutiliza las celdas, aunque menciona la posibilidad en las conclusiones. Es importante definir si planean reutilizarlas, ya que esto impacta en la cantidad de flowcells necesarias y en la necesidad de un wash kit. Les coticé uno de cada uno. Se espera una reutilización de flowcells de un máximo de 2 reutilizaciones pero siempre va a depender de la cantidad de poros disponibles. 
+
+• Tiempos estimados
+La preparación de librerías del Native Barcoding demanda aproximadamente 2,5 horas, a lo que deben sumarse los tiempos de extracción y amplificación.
+En su experiencia, los autores secuenciaron 24 muestras en 24 horas. Con esa referencia, correr 16 muestras implicaría un tiempo total aproximado de 18,5 horas (preparación + secuenciación). Tener en cuenta que si son menos muestras, como 6, el tiempo se acorta. Calculen 1 hora de secuenciación por muestra.
+
+• Costos mencionados en el paper
+El trabajo incluye estimaciones de costo por muestra. Lo mencionamos porque podría diferir de los valores actuales.
+
+Entonces, adjunto cotización con lo mencionado. 
+
+Por otro lado, lo que nos quedaría pendiente es el equipo de automatización por el cual nos habían preguntado. Oxford tiene su propio equipo de automatización pero no se los puedo cotizar aún porque no lo tenemos en la lista de precios. Esto seguro se puede solucionar y les cotizaremos en cuanto se haga. Mientras tanto, adjunto información para la automatización del protocolo de Native Barcoding en el equipo. 
+
+Quedamos a disposición para avanzar con lo que necesiten.
+
+Saludos,
+
+Laura Prechi
+Consultora de ventas de Biociencias y Diagnóstico
+Email: lprechi@analytical.com
+
+Cel.: +549 1153273789

@@ -1,0 +1,9 @@
+SEGMENTO;ITEM;CANTIDAD;MESES;VALOR;TOTAL
+Laboratorio;Alquiler y Oficinas;1;12;US$	4.000,00;US$	48.000,00
+Salarios;Administrativo;1;13;US$	1.000,00;US$	13.000,00
+Salarios;Técnico (se suma 1 x año);1;13;US$	1.500,00;US$	19.500,00
+Salarios;Bioinformatico;1;13;US$	1.500,00;US$	19.500,00
+Salarios;Genetista Firma;1;13;US$	1.500,00;US$	19.500,00
+Salarios;Socios;3;6;US$	2.000,00;US$	36.000,00
+;;;;;
+TOTAL;;;;;US$ 155.500,00
