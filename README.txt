@@ -129,5 +129,13 @@ Hernán Dopazo
 
 zip -r FastPGT_site.zip _site
 
-  
+Bash
+quarto render
+
+git add .    
+git commit -m "test deploy"
+git push
+
+https://2pq-fastpgt.netlify.app
+
   
