@@ -21,6 +21,7 @@ execute:
 3. Insumos: costos y rendimiento  
 4. Espacio global de costos  
 5. Espacio operativa  
+6. Test deploy
 
 **Presupuestos**:
 
