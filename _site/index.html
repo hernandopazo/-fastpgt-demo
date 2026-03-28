@@ -233,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">9 de febrero de 2026</p>
+      <p class="date">28 de marzo de 2026</p>
     </div>
   </div>
   
@@ -258,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="problema" class="level2">
 <h2 class="anchored" data-anchor-id="problema">2. Problema</h2>
-<p>En los esquemas convencionales de Diagnóstico Genético Preimplantacional de Aneuploidías <strong>(PGT-A)</strong>, el <strong>tiempo de entrega de resultados</strong> suele extenderse entre varios días o semanas. Esta limitación temporal obliga, en la práctica del laboratorio de embriología, a <strong>vitrificar el embrión</strong> luego de la biopsia y <strong>posponer la transferencia del o de los embriones seleccionados a un ciclo posterior</strong> (<a href="#fig-cycle" class="quarto-xref">Figura&nbsp;1</a>).</p>
+<p>En los esquemas convencionales de Diagnóstico Genético Preimplantacional de Aneuploidías <strong>(PGT-A)</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, el <strong>tiempo de entrega de resultados</strong> suele extenderse entre varios días o semanas. Esta limitación temporal obliga, en la práctica del laboratorio de embriología, a <strong>vitrificar el embrión</strong> luego de la biopsia y <strong>posponer la transferencia del o de los embriones seleccionados a un ciclo posterior</strong> (<a href="#fig-cycle" class="quarto-xref">Figura&nbsp;1</a>).</p>
 <div id="fig-cycle" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -282,7 +282,7 @@ Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El PGT-A convencional genera <strong>flujos de trabajo fragmentados</strong>, regulando de manera obligada la operatividad de las clínicas de reproducción asistida.</p>
+<p>El PGT-A convencional genera <strong>flujos de trabajo fragmentados</strong> en el tratamiento de los pacientes de las clínicas de IVF.</p>
 </div>
 </div>
 </section>
@@ -301,70 +301,78 @@ Figura&nbsp;2
 </figcaption>
 </figure>
 </div>
-<p>El enfoque se basa en el uso de <strong>secuenciación en tiempo real</strong> mediante Oxford Nanopore Technologies (ONT), y explota tres características operativas clave de esta tecnología:</p>
+<p>El enfoque se basa en el uso de <strong>secuenciación en tiempo real</strong> mediante Oxford Nanopore Technologies (ONT), y explota diversas características operativas clave de esta tecnología:</p>
 <ul>
 <li><strong>Adquisición y evaluación dinámica de los datos</strong>,</li>
 <li><strong>Corte temprano (<em>early stop</em>)</strong> una vez alcanzada la información mínima requerida,</li>
 <li><strong>Reuso controlado del flow cell</strong>, optimizando el costo por ensayo.</li>
+<li><strong>Optimización del uso de bardoces</strong> a través de la extensión de reactivos, lo que evita el desperdicio de insumos costosos en corridas de pocas muestras.</li>
 </ul>
 <p>Estas propiedades permiten adaptar el ensayo al número real de embriones disponibles y al tiempo clínico efectivo, sin comprometer la robustez diagnóstica requerida para PGT-A.</p>
-<p>Como consecuencia, <strong>FastPGT elimina la necesidad de vitrificación post-biopsia</strong>, reduce la fragmentación del proceso clínico y <strong>devuelve a la clínica un mayor control sobre los tiempos del tratamiento</strong>, sin dependencia de laboratorios externos ni calendarios diferidos.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>FastPGT elimina la necesidad de vitrificación post-biopsia</strong>, reduce la fragmentación del proceso clínico y <strong>devuelve a la clínica un mayor control sobre los tiempos del tratamiento</strong>, sin dependencia de laboratorios externos ni calendarios diferidos.</p>
+</div>
+</div>
 </section>
 <section id="escenarios-operativos-de-fastpgt" class="level2">
 <h2 class="anchored" data-anchor-id="escenarios-operativos-de-fastpgt">4. Escenarios operativos de FastPGT</h2>
-<p>El análisis conjunto de los resultados experimentales y del modelo económico permite definir un <strong>conjunto acotado de escenarios operativos viables</strong> para la implementación clínica de FastPGT. Estos escenarios se derivan directamente de:</p>
+<p>El análisis conjunto de los resultados experimentales y del modelo económico permite definir un <strong>serie de escenarios operativos viables</strong> para la implementación clínica de FastPGT. Estos escenarios se derivan directamente de:</p>
 <ul>
-<li>los <strong>umbrales de datos por embrión</strong> evaluados experimentalmente (45–75 Mb),</li>
+<li>los <strong>umbrales de datos por embrión</strong> evaluados experimentalmente (45–75 Mb<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>),</li>
 <li>los <strong>tiempos de secuenciación estimados</strong> bajo esquemas de <em>early stop</em>,</li>
 <li>y el <strong>prorrateo de costos por corrida y por embrión</strong> bajo políticas realistas de reutilización del <em>flow cell</em>.</li>
 </ul>
-<p>Los fundamentos técnicos de estos escenarios se desarrollan en el <a href="./appendix-experimental.html#sec-times"><strong>Apéndice Experimental</strong></a> y los supuestos económicos en el <a href="appendix-costs.qmd#sec-costos-corridas"><strong>Apéndice Económico</strong></a>.</p>
+<p>Los fundamentos técnicos de estos escenarios se desarrollan en el <a href="./appendix-experimental.html#sec-times"><strong>Apéndice Experimental</strong></a> y los supuestos económicos en el <a href="./appendix-costsRBKRAA.html#sec-costos-corridas"><strong>Apéndice Económico</strong></a>.</p>
 <section id="resumen-operativo-de-escenarios-fastpgt" class="level3">
 <h3 class="anchored" data-anchor-id="resumen-operativo-de-escenarios-fastpgt">4.1. Resumen operativo de escenarios FastPGT</h3>
 <div style="width: 100%; margin: 0 auto; font-size: 0.80em;">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Escenario</th>
 <th style="text-align: right;">Embriones</th>
 <th style="text-align: right;">Mb / embrión</th>
-<th style="text-align: center;">Tiempo / seq*</th>
-<th style="text-align: right;">Costo total**</th>
-<th style="text-align: right;">Costo / embrión**</th>
+<th style="text-align: center;">Tiempo seq*</th>
+<th style="text-align: right;">Costo / embrión (US$)**</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">FastPGT (baja carga)</td>
-<td style="text-align: right;">5–6</td>
+<td style="text-align: right;">4–10</td>
 <td style="text-align: right;">~45 Mb</td>
 <td style="text-align: center;">~1–2 h</td>
-<td style="text-align: right;">~760–920</td>
-<td style="text-align: right;">~150–170</td>
+<td style="text-align: right;">~87.0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FastPGT (carga intermedia)</td>
-<td style="text-align: right;">7–10</td>
+<td style="text-align: right;">10–21</td>
 <td style="text-align: right;">~45–75 Mb</td>
-<td style="text-align: center;">~1.5–3 h</td>
-<td style="text-align: right;">~880–1,150</td>
-<td style="text-align: right;">~110–140</td>
+<td style="text-align: center;">~10-20 h</td>
+<td style="text-align: right;">~70.0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Batch no-FastPGT</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: left;">Batch : PGT clásico</td>
+<td style="text-align: right;">22-24</td>
 <td style="text-align: right;">~45 Mb</td>
-<td style="text-align: center;">≥3–4 h</td>
-<td style="text-align: right;">~2,050–2,240</td>
-<td style="text-align: right;">~85–95</td>
+<td style="text-align: center;">≥20 h</td>
+<td style="text-align: right;">~50.0</td>
 </tr>
 </tbody>
 </table>
@@ -376,23 +384,36 @@ Figura&nbsp;2
 <h3 class="anchored" data-anchor-id="interpretación-operativa">4.2. Interpretación operativa</h3>
 <ul>
 <li>Los escenarios <strong>FastPGT (5–10 embriones)</strong> permiten obtener resultados genéticos dentro de <strong>ventanas temporales compatibles con transferencia embrionaria en fresco</strong>, sin requerir vitrificación post-biopsia.</li>
-<li>El costo por embrión en estos escenarios se mantiene <strong>competitivo</strong> y queda ampliamente compensado por los <strong>ahorros clínicos indirectos</strong> asociados a la eliminación de ciclos FET.</li>
-<li>El escenario <strong>batch (24 embriones)</strong> representa una alternativa económicamente eficiente cuando el tiempo no es crítico, pero <strong>no habilita transferencia en fresco</strong> y reproduce la lógica operativa del PGT-A convencional.</li>
+<li>El costo por embrión en estos escenarios se mantiene <strong>competitivo</strong> sin necesidad de aumentar su precio de venta.</li>
+<li>En el caso de proponer un aumento del precio de venta para este preoducto, este queda ampliamente compensado por los <strong>ahorros directos del laboratorio y de la clínica</strong> asociados a la necesidad de congelar embriones.</li>
+<li>El escenario intermedio es un escenario de prueba de costos. No representa hoy una ventaja plantearlo como alternativa.</li>
+<li>El escenario <strong>clásico o de batch (24 embriones)</strong> representa una alternativa económicamente eficiente cuando el tiempo no es crítico, pero <strong>no habilita transferencia en fresco</strong> y reproduce la lógica operativa del PGT-A convencional.</li>
 </ul>
-<p>En conjunto, estos escenarios definen un <strong>marco operativo flexible</strong>, en el cual FastPGT puede adaptarse tanto a contextos clínicos orientados a rapidez de decisión como a esquemas de procesamiento por volumen, manteniendo coherencia técnica y económica.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Estos escenarios definen un <strong>marco operativo flexible</strong>, en el cual nuestra tecnología de FastPGT puede adaptarse tanto, a contextos clínicos (FET) orientados a rapidez de decisión,como a esquemas de procesamiento por volumen, manteniendo coherencia clínica, técnica y económica.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="impacto-clínico-y-económico" class="level2">
 <h2 class="anchored" data-anchor-id="impacto-clínico-y-económico">5. Impacto clínico y económico</h2>
 <p>La posibilidad de realizar transferencia embrionaria en fresco reduce manipulaciones técnicas, simplifica el flujo asistencial y preserva la sincronía embrión–endometrio. Desde el punto de vista económico, los ahorros asociados a la eliminación de vitrificación, warming y ciclos diferidos superan ampliamente el costo incremental del test genético.</p>
-<p>FastPGT permite así redistribuir el costo del diagnóstico genético dentro del proceso global de FIV, mejorando la eficiencia clínica y la experiencia del paciente.</p>
-<p>Para una descripción completa sobre los costos asociados a la eliminación de estos pasos intermedios en las clínica de IVF, ver <a href="appendix-costs.qmd#sec-ecofet">Ventajas económicas del FET</a>.</p>
+<p><strong>Desde el punto de vista de la clínica, FastPGT permite redistribuir el costo del diagnóstico genético dentro del proceso global de FIV</strong>, mejorando la eficiencia clínica y la experiencia del paciente.</p>
+<p>Para una descripción detallada sobre el ahorro implícito de la adopción de FastPGT en la clínica, ver <a href="./appendix-costsRBKRAA.html#sec-ecofet">Ventajas económicas del FET</a>.</p>
 </section>
 <section id="fastpgt-primer-producto-2pq" class="level2">
 <h2 class="anchored" data-anchor-id="fastpgt-primer-producto-2pq">6. FastPGT primer producto 2PQ</h2>
-<p>FastPGT no constituye únicamente una optimización técnica del PGT-A, sino un <strong>habilitador tecnológico</strong> para nuevos modelos de servicio basados en diagnóstico genómico rápido. Yaguarecito es otro!</p>
+<p>FastPGT no constituye únicamente una optimización técnica del PGT-A, sino un <strong>habilitador tecnológico</strong> para nuevos modelos de servicio basados en diagnóstico genómico rápido. Esta puede ser una variable importante de la genómica, no explotada en el país. La secuenciación rápida del genoma completo (rWGS) experimentada en otros países, y presentada a referentes d eneonatología nacional, a través del <strong>Proyecto Yaguarecito</strong> puede ser otro de los productos 2PQ que nos diferencien como marca.</p>
 <p>En este contexto, <strong>2PQ: Precision &amp; Quick Genomics</strong> se plantea como una plataforma orientada a proveer diagnóstico genómico de alta precisión en escenarios donde el tiempo de respuesta es crítico, tanto en reproducción asistida como en medicina neonatal.</p>
-<p>Queda desarrollar el apéndice CAPEX 2PQ..</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -404,7 +425,7 @@ Figura&nbsp;2
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>FastPGT es técnicamente viable</strong>, basado en principios sólidos de cobertura genómica y secuenciación en tiempo real.</li>
+<li>Dados los estudios de cobertura genómica y secuenciación en tiempo real, <strong>FastPGT es técnicamente viable</strong>.</li>
 <li>La <strong>evidencia experimental disponible</strong> demuestra equivalencia diagnóstica con el PGT-A convencional para CNV ≥10 Mb.</li>
 <li>El modelo operativo permite <strong>corridas flexibles de 5–10 embriones</strong>, compatibles con transferencia embrionaria en fresco.</li>
 <li>Desde el punto de vista económico, FastPGT es <strong>competitivo por embrión</strong> y genera <strong>ahorros netos relevantes</strong> al eliminar vitrificación y ciclos diferidos.</li>
@@ -416,7 +437,7 @@ Figura&nbsp;2
 </section>
 <section id="calculadora-interactiva-fastpgt" class="level2">
 <h2 class="anchored" data-anchor-id="calculadora-interactiva-fastpgt">7. Calculadora interactiva FastPGT</h2>
-<p>La aplicación puede ejecutarse desde cualquier ubicación en la terminal:</p>
+<p>La simulación de costos por corrida de FastPGT puede ensayarse utilizando la <strong>Calculadora FastPGT-A</strong>. La aplicación puede ejecutarse desde cualquier ubicación en la terminal:</p>
 <div id="fastpgt-command" style="background-color:#f4f4f4; padding:15px; border-radius:8px; font-family:monospace;">
 <p>cd ~/Documents/2pq/FastPGT &amp;&amp; R -e “shiny::runApp(‘FastPGT_app’)”</p>
 </div>
@@ -443,7 +464,14 @@ function copyCommand() {
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>El objetivo del PGT-A es detectar ganancias o pérdidas de material genético (aneuploidias) antes de la transferencia del emnbrión al útero.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Mb = Megabases de nucleótidos del ADN<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
