@@ -45,7 +45,9 @@ En los esquemas convencionales de Diagnóstico Genético Preimplantacional de An
 
 Este enfoque introduce una serie de **consecuencias clínicas y operativas** relevantes en el centro de fertilización asistida, entre las que se incluyen la interrupción del desarrollo embrionario mediante **vitrificación y desvitrificación (warming)**, el aumento de manipulaciones técnicas, la necesidad de **ciclos diferidos** con mayor **complejidad logística de las clínicas**, y un **incremento significativo del costo total del tratamiento** para el paciente. Adicionalmente, la prolongación del proceso se asocia a mayor **ansiedad del paciente** y mayores tasas de abandono.
 
+::: callout-note
 El PGT-A convencional genera **flujos de trabajo fragmentados**, regulando de manera obligada la operatividad de las clínicas de reproducción asistida.
+:::
 
 ## 3. Solución: FastPGT
 
