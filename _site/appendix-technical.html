@@ -186,13 +186,14 @@ div.csl-indent {
    
   <ul>
   <li><a href="#consideraciones-básicas-del-pgt-a" id="toc-consideraciones-básicas-del-pgt-a" class="nav-link active" data-scroll-target="#consideraciones-básicas-del-pgt-a">1. Consideraciones básicas del PGT-A</a></li>
-  <li><a href="#sec-pgt-illumina" id="toc-sec-pgt-illumina" class="nav-link" data-scroll-target="#sec-pgt-illumina">2.1. PGT-A: Illumina</a></li>
-  <li><a href="#sec-pgt-ont" id="toc-sec-pgt-ont" class="nav-link" data-scroll-target="#sec-pgt-ont">2.2. PGT-A: Tan y col., (2023) ONT</a></li>
-  <li><a href="#sec-PGT-fast" id="toc-sec-PGT-fast" class="nav-link" data-scroll-target="#sec-PGT-fast">2.3. PGT-A: Fast</a></li>
+  <li><a href="#sec-pgt-illumina" id="toc-sec-pgt-illumina" class="nav-link" data-scroll-target="#sec-pgt-illumina">2.1. PGT-A: Secuenciación Illumina</a></li>
+  <li><a href="#sec-pgt-ont" id="toc-sec-pgt-ont" class="nav-link" data-scroll-target="#sec-pgt-ont">2.2. PGT-A: Secuenciación ONT</a></li>
+  <li><a href="#sec-PGT-fast" id="toc-sec-PGT-fast" class="nav-link" data-scroll-target="#sec-PGT-fast">2.3. PGT-A: Secuenciación FastPGT</a></li>
   <li><a href="#sec-pgt-compara" id="toc-sec-pgt-compara" class="nav-link" data-scroll-target="#sec-pgt-compara">2.4. Comparativa de Tecnologías PGT-A</a></li>
-  <li><a href="#sec-flujo" id="toc-sec-flujo" class="nav-link" data-scroll-target="#sec-flujo">3. Flujo de trabajo FastPGT</a></li>
-  <li><a href="#dinámica-de-la-producción-de-secuencias" id="toc-dinámica-de-la-producción-de-secuencias" class="nav-link" data-scroll-target="#dinámica-de-la-producción-de-secuencias">4.1. Dinámica de la producción de secuencias</a></li>
-  <li><a href="#dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" id="toc-dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" class="nav-link" data-scroll-target="#dinámica-del-uso-de-poros-y-calidad-de-las-secuencias">4.2. Dinámica del uso de poros y calidad de las secuencias</a></li>
+  <li><a href="#amplificación-genómica-formación-de-librerías-y-tiempos-comparados" id="toc-amplificación-genómica-formación-de-librerías-y-tiempos-comparados" class="nav-link" data-scroll-target="#amplificación-genómica-formación-de-librerías-y-tiempos-comparados">3. Amplificación genómica, formación de librerías y tiempos comparados</a></li>
+  <li><a href="#sec-flujo" id="toc-sec-flujo" class="nav-link" data-scroll-target="#sec-flujo">4. Flujo de trabajo FastPGT</a></li>
+  <li><a href="#dinámica-de-la-producción-de-secuencias" id="toc-dinámica-de-la-producción-de-secuencias" class="nav-link" data-scroll-target="#dinámica-de-la-producción-de-secuencias">5.1. Dinámica de la producción de secuencias</a></li>
+  <li><a href="#dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" id="toc-dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" class="nav-link" data-scroll-target="#dinámica-del-uso-de-poros-y-calidad-de-las-secuencias">5.2. Dinámica del uso de poros y calidad de las secuencias</a></li>
   </ul>
 </nav>
     </div>
@@ -228,14 +229,31 @@ Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Insumos</strong>: <a href="https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24">Ligation sequencing amplicons - Native Barcoding Kit 24 V14</a>. <a href="inputs/FCEN/report_Nanopore_seq.html">Reporte Havanna - FCEN</a></p>
+<p><strong>Insumos</strong>:</p>
+<ol type="1">
+<li>Library Original: [<a href="https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24">Ligation sequencing amplicons - Native Barcoding Kit 24 V14</a>.</li>
+<li>Library RBK: <a href="https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html">Rapid Barcoding Kit 24 V14</a><br>
+</li>
+<li>Extension RAA114: <a href="https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html">Adaptador Rápido Auxiliar V14</a></li>
+<li><a href="inputs/FCEN/report_Nanopore_seq.html">Reporte Havanna - FCEN</a>.</li>
+</ol>
 <p><strong>Delivery 4</strong>: <a href="./appendix-experimental.html">Apéndice experimental</a>.</p>
 </div>
 </div>
 <section id="consideraciones-básicas-del-pgt-a" class="level2">
 <h2 class="anchored" data-anchor-id="consideraciones-básicas-del-pgt-a">1. Consideraciones básicas del PGT-A</h2>
-<p>En los estudios de PGT-A, el parámetro crítico es la <strong>cobertura horizontal uniforme</strong>, entendida como el muestreo distribuido de regiones genómicas a lo largo de todos los cromosomas.</p>
-<p>La detección de <strong>CNVs</strong> en cada cromosoma se basa en<strong>comparaciones relativas de densidad de lecturas</strong> entre regiones genómicas, evaluadas mediante ventanas móviles (<em>bins</em>) de tamaño fijo, típicamente del orden de <strong>0.5–1 Mb</strong>.</p>
+<p>En los estudios de PGT-A, el parámetro que garantiza el diagnóstico preciso es la <strong>cobertura horizontal uniforme</strong>. Este parámetro se mide a través de la distribución de lecturas secuenciadas a lo largo de los 23 pares de cromosomas. Cuanto más homogénea la distribución de lecturas, más preciso es el análisis informático posterior.</p>
+<p>Esta <strong>homogeneidad de lecturas</strong> no depende solamente del proceso de secuenciación, sino de otros parámeros como:</p>
+<ol type="1">
+<li>Método de WGA</li>
+<li>Sesgo de amplificación</li>
+<li>GC bias</li>
+<li>Filtrado de lecturas</li>
+<li>Mapeo genómico</li>
+<li>Tamaño de bins</li>
+<li>Variabilidad entre muestras</li>
+</ol>
+<p>Para la detección de aneuploidías, se utiliza software de descubrimiento de <strong>CNVs</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> que analizan, de diferentes maneras, muchos de estos parámetros. Estos programas realizan <strong>comparaciones relativas de densidad de lecturas</strong> para determinar la ganancia o pérdida de regiones genómicas específicas. Para esto, se utiliza una estrategia de descubrimiento de ventanas móviles (<em>bins</em>), típicamente del orden de <strong>0.5–1 Mb</strong>.</p>
 <p>La sensibilidad y estabilidad del análisis dependen principalmente de:</p>
 <ol type="1">
 <li>la <strong>uniformidad global</strong> de la amplificación genómica,</li>
@@ -244,12 +262,25 @@ Nota
 <li>el <strong>tamaño de ventana</strong> utilizado,</li>
 <li>y el <strong>coeficiente de variación (CV)</strong> del perfil de cobertura.</li>
 </ol>
-<p>En este régimen, <strong>la profundidad local puntual es irrelevante</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>; lo determinante es la estabilidad estadística del perfil relativo entre regiones.</p>
+<p>En cualquier tipo de PGT-A, <strong>la mayor o menor profundidad local (en unra región determinada del genoma) es irrelevante</strong>; lo verdaderamente determinante es <strong>la estabilidad estadística de cobertura relativa entre regiones</strong>.</p>
 </section>
 <section id="sec-pgt-illumina" class="level2">
-<h2 class="anchored" data-anchor-id="sec-pgt-illumina">2.1. PGT-A: Illumina</h2>
-<p>En el contexto del PGT-A, la <strong>tecnología Illumina representa el enfoque convencional</strong> , basado en secuenciación de lecturas cortas y en la adquisición completa de los datos antes de iniciar el análisis. En este esquema, el volumen de secuenciación esta fijado <em>a priori</em> y la corrida debe completarse independientemente de si la información obtenida es suficiente para la inferencia diagnóstica.</p>
-<p>Las <a href="#fig-illumina" class="quarto-xref">Figura&nbsp;1</a> <strong>A</strong> y <strong>B</strong> muestra el proceso de análisis y variación de parámetros de un estudio PGT-A con valores standard de tecnología Illumina. Las figuras <strong>C</strong> y <strong>D</strong> muestran la evolución de los parámetros de calidad en diferentes estudios. Nótese la perdida de definición a medida que aumenta el CV desde ~ 0.1 a ~ 0.25.</p>
+<h2 class="anchored" data-anchor-id="sec-pgt-illumina">2.1. PGT-A: Secuenciación Illumina</h2>
+<p>En el contexto del PGT-A, la <strong>tecnología de secuenciación Illumina representa el standard</strong>. Esta se basa en la secuenciación de lecturas cortas de tamaño fijo a través de ciclos de secuenciación, donde el volumen de secuencia esta fijado <em>a priori</em> por la cantidad de insumos que contiene el cartucho de secuenciación y la capacidad del flow-cell utilizado. El esquema general es de 24 muestras, una celda de flujo pequeña (económica), lecturas de 55 pb, 1 Mb de cobertura genómica por embrión de 1Mb y un tiempo total de secuenciación de no menos de 6-7 hs, a las que hay que sumar otro tanto de formación de librerías.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En Illuimina el esquema de secuenciación se define de antemano, por lo que la duración de la corrida, como el volumen de datos generado no puede modificarse. Es decir, no existe una opción de <em>“early-stop”</em>.</p>
+</div>
+</div>
+<p>Las <a href="#fig-illumina" class="quarto-xref">Figura&nbsp;1</a> <strong>A</strong> y <strong>B</strong> muestra el proceso de análisis y variación de parámetros de un estudio PGT-A con valores standard de tecnología Illumina. Las figuras <strong>C</strong> y <strong>D</strong> muestran la evolución de los parámetros de calidad en diferentes estudios. Nótese la perdida de definición a medida que aumenta el coeficiente e variación (CV) desde ~ 0.1 a ~ 0.25.</p>
 <div id="fig-illumina" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-illumina-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -275,7 +306,7 @@ Figura&nbsp;1
 </div>
 </section>
 <section id="sec-pgt-ont" class="level2">
-<h2 class="anchored" data-anchor-id="sec-pgt-ont">2.2. PGT-A: Tan y col., (2023) ONT</h2>
+<h2 class="anchored" data-anchor-id="sec-pgt-ont">2.2. PGT-A: Secuenciación ONT</h2>
 <p>En su ensayo comparativo ONT vs Illumina, <strong>Tan, V.J., et al., (2023)<span class="citation" data-cites="Tang_2023"><sup><a href="#ref-Tang_2023" role="doc-biblioref">1</a></sup></span></strong> demostraron que la tecnología <strong>Oxford Nanopore Technologies (ONT)</strong> puede utilizarse de manera equivalente para resolver los PGT-A, alcanzando resoluciones diagnósticas comparables mediante un enfoque de secuenciación de ultra-baja cobertura. Sin embargo, en dicho estudio la secuenciación ONT se emplea bajo un paradigma esencialmente <strong><em>batch-completo</em></strong>, en el cual la corrida se extiende por un tiempo predefinido y el análisis se realiza una vez completada la adquisición de datos.</p>
 <p>La <a href="#fig-minion-fc" class="quarto-xref">Figura&nbsp;2</a> muestra el <strong>secuenciador MinION</strong> (<strong>A</strong>) y un flow cell (<strong>B</strong>) como el utilizado en este ensayo <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <div id="fig-minion-fc" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -296,19 +327,20 @@ Figura&nbsp;2
 </div>
 </section>
 <section id="sec-PGT-fast" class="level2">
-<h2 class="anchored" data-anchor-id="sec-PGT-fast">2.3. PGT-A: Fast</h2>
-<p><strong>FastPGT</strong> introduce una variante operativa sobre este enfoque, explotando una característica intrínseca de la tecnología ONT que no está disponible en otras plataformas NGS: la <strong>generación y evaluación de datos en tiempo real</strong>. En lugar de fijar el tiempo de corrida, FastPGT define criterios de corte temprano (<em>early stop</em>) basados en la cantidad acumulada de datos que superan los filtros de calidad, expresados en términos de cobertura horizontal agregada.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<h2 class="anchored" data-anchor-id="sec-PGT-fast">2.3. PGT-A: Secuenciación FastPGT</h2>
+<p><strong>FastPGT</strong> introduce una variante operativa fundamental sobre el enfoque de Tan et al (2023): la <strong>posibilidad de terminar la corrida en el momento deseado</strong> evaluando dne tiempo real la calidad y cantidad de los datos secuenciados. Es decir, en lugar de fijar el tiempo de corrida, FastPGT define criterios de corte temprano (<em>early stop</em>) basados en la cantidad acumulada de datos de calidad agregados por muestra. Solo los necesarios para una lectura robusta del PGT-A.</p>
+<p><strong>FastPGT no modifica el objetivo diagnóstico</strong> ni los criterios de resolución del PGT-A, sino que <strong>optimiza el flujo operativo</strong>, permitiendo detener la secuenciación una vez alcanzada la <strong>información mínima para la detección robusta de CNVs ≥10 Mb</strong>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota
+Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>De este modo, <strong>FastPGT no modifica el objetivo diagnóstico</strong> ni los criterios de resolución del PGT-A, sino que <strong>optimiza el flujo operativo</strong>, permitiendo detener la secuenciación una vez alcanzada la <strong>información mínima para la detección robusta de CNVs ≥10 Mb</strong>. Esta estrategia, sumada a la reducción del número de muestras en la corrida, reduce de manera significativa el tiempo total del ensayo, mejorando la eficiencia en el uso del flow cell y habilita escenarios clínicos incompatibles con los enfoques batch-completos de Tan, et al (2023), como la transferencia embrionaria en fresco.</p>
+<p>Esta estrategia, sumada a la reducción del número de muestras por corrida, reduce de manera significativa el tiempo total del secuenciación, <strong>habilitando escenarios clínicos como la transferencia embrionaria en fresco (FET)</strong> la cual es <strong>incompatible con los enfoques en batch realizados de forma clásica en los PGT-A realizados hasat la fecha</strong>.</p>
 </div>
 </div>
 </section>
@@ -432,12 +464,18 @@ Tabla&nbsp;1: Comparación de métricas operativas entre PGT-A estándar (Illumi
 <td style="text-align: right;">Si, parte del diseño</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Reuso del Kit de Librería</td>
+<td style="text-align: right;">No aplicable</td>
+<td style="text-align: right;">No necesario</td>
+<td style="text-align: right;">Si, parte del diseño</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Flexibilidad operativa</td>
 <td style="text-align: right;">Baja</td>
 <td style="text-align: right;">Media</td>
 <td style="text-align: right;">Alta</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Transferencia en fresco</td>
 <td style="text-align: right;">No</td>
 <td style="text-align: right;">No</td>
@@ -460,27 +498,76 @@ Importante
 </div>
 <div class="callout-body-container callout-body">
 <p>La adquisición de datos en tiempo real, la definición de criterios de corte temprano (<em>early stop</em>) y el reuso controlado del flow cell introducen ventajas operativas específicas del enfoque ONT, particularmente relevantes para estrategias orientadas a la transferencia embrionaria en fresco.</p>
-<p><em>Esta combinación de posibilidades en pos del objetivo de lograr transferencias en fresco no fue mencionada por Tan, y col.&nbsp;2023</em>.</p>
+</div>
+</div>
+</section>
+<section id="amplificación-genómica-formación-de-librerías-y-tiempos-comparados" class="level2">
+<h2 class="anchored" data-anchor-id="amplificación-genómica-formación-de-librerías-y-tiempos-comparados">3. Amplificación genómica, formación de librerías y tiempos comparados</h2>
+<p>La <strong><a href="#fig-time-comparison" class="quarto-xref">Figura&nbsp;3</a></strong> resume el flujo de trabajo completo del PGT-A, incluyendo no solo la etapa de secuenciación sino también los pasos previos de amplificación genómica completa (WGA) y formación de librerías.</p>
+<div id="fig-time-comparison" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-time-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/IllvsONTtimes.png" id="fig-time-comparison" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-time-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3
+</figcaption>
+</figure>
+</div>
+<p>En los esquemas convencionales basados en Illumina, estos pasos representan una fracción sustancial del tiempo total del ensayo, con una WGA típicamente basada en PCR (p.&nbsp;ej. SurePlex) de ~2.5–3 h, seguida de protocolos de preparación de librerías de ~2-3 h adicionales. En conjunto, el tiempo previo a la secuenciación se sitúa en el orden de 6-7 horas, al que se suma un tiempo de corrida de ~6–8 horas, configurando un proceso total (12-15 hs) para 24 muestras, los cual no sólo excede ampliamente la ventana temporal deseable para el FastPGT, sino que lo hace económicamente imposible para un número de muestras menor a 24.</p>
+<p>Si bien existen alternativas comerciales económicas para la preparación de librerías compatibles con plataformas Illumina (p.&nbsp;ej. Yikon Genomics u otros proveedores), estas estrategias no modifican de manera sustancial la estructura temporal ni económica del flujo de trabajo en batch.</p>
+<p>En particular, la etapa de WGA continúa siendo el principal cuello de botella inicial, y los protocolos de preparación de librerías —aunque puedan reducir costos por muestra o simplificar ciertos pasos— mantienen tiempos operativos comparables y <strong>no eliminan la necesidad de corridas en batch completas</strong>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En consecuencia, el esquema Illumina permanece condicionado por una lógica secuencial rígida, en la cual ni el volumen de datos ni el tiempo total pueden adaptarse dinámicamente a la necesidad clínica para posibilitar la transferencia en fresco.</p>
+</div>
+</div>
+<p>En contraste, el esquema FastPGT representado en la <strong><a href="#fig-time-comparison" class="quarto-xref">Figura&nbsp;3</a></strong> introduce una optimización simultánea de tiempos y costos a lo largo de todo el flujo. Esto incluye:</p>
+<ol type="1">
+<li><p>el uso de WGA isotérmica (p.&nbsp;ej. phi29-XT), con tiempos más cortos y menor complejidad operativa;</p></li>
+<li><p>protocolos rápidos de formación de librerías (ONT Rapid Barcoding y Rapid Adapter), del orden de 30–60 minutos;</p></li>
+<li><p>una secuenciación basada en adquisición en tiempo real con criterios de corte temprano (early stop), y</p></li>
+<li><p>el reuso del flowcell</p></li>
+</ol>
+<p><strong>A este esquema se le suma un elemento económico diferencial clave</strong>: la posibilidad de maximizar el rendimiento de todos los barcodes del kit (RBK) mediante el uso de insumos de extendión (RAA) que minimizan la pérdida de reactivos en corridas de pocas muestras y el reuso del flowcell en múltiples corridas</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En conjunto, estas características transforman el proceso en un sistema dinámico, en el cual tanto el tiempo como el costo efectivo por muestra se ajustan a la cantidad real de datos requeridos, minimizando al máximo los tiempos y los costos.</p>
 </div>
 </div>
 </section>
 <section id="sec-flujo" class="level2">
-<h2 class="anchored" data-anchor-id="sec-flujo">3. Flujo de trabajo FastPGT</h2>
-<p>La <strong><a href="#fig-fastpgt-workflow" class="quarto-xref">Figura&nbsp;3</a></strong> representa el flujo de trabajo del FastPGT.</p>
-<p>El esquema resume las etapas principales desde la biopsia embrionaria y la amplificación genómica completa hasta la adquisición de datos en tiempo real y la generación de lecturas demultiplexadas para el análisis de aneuploidías. La posibilidad de corte temprano permite optimizar tiempos de secuenciación y reutilizar el flowcell.</p>
+<h2 class="anchored" data-anchor-id="sec-flujo">4. Flujo de trabajo FastPGT</h2>
+<p>La <strong><a href="#fig-fastpgt-workflow" class="quarto-xref">Figura&nbsp;4</a></strong> representa el flujo de trabajo del FastPGT.</p>
+<p>El proceso integra amplificación genómica, construcción de librerías y secuenciación en tiempo real, incorporando criterios operativos de corte temprano que optimizan tiempos y recursos.</p>
 <div id="fig-fastpgt-workflow" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fastpgt-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figures/fullONT.png" id="fig-fastpgt-workflow" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fastpgt-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3
+Figura&nbsp;4
 </figcaption>
 </figure>
 </div>
-<p>El proceso integra amplificación genómica, construcción de librerías y secuenciación en tiempo real, incorporando criterios operativos de corte temprano que optimizan tiempos y recursos.</p>
-<p>A partir de la biopsia embrionaria, el ADN genómico es sometido a una etapa de <strong>Whole Genome Amplification (WGA)</strong>, utilizando amplificación isotérmica (p.&nbsp;ej. phi29-XT) o amplificación por PCR múltiple (p.&nbsp;ej. SurePlex). El objetivo de esta etapa no es alcanzar cobertura profunda, sino generar una representación suficientemente uniforme del genoma que permita inferencias fiables a ultra-baja cobertura, condición clave para el análisis de aneuploidías en PGT-A.</p>
-<p>El ADN amplificado es procesado mediante <strong>end-repair y dA-tailing</strong>, seguido de la <strong>ligación de barcodes nativos</strong>, asignando un identificador molecular único a cada embrión. Este esquema permite la multiplexación de múltiples muestras en una misma corrida de secuenciación sin perder trazabilidad individual. Tras la purificación y cuantificación, las muestras barcodiadas se combinan en un <strong>pool equimolar</strong>, sobre el cual se realiza una única reacción de <strong>ligación de adaptadores Nanopore</strong>.</p>
+<p>A partir de la biopsia embrionaria, el ADN genómico es sometido a una etapa de <strong>Whole Genome Amplification (WGA)</strong>, utilizando amplificación isotérmica (p.&nbsp;ej. phi29-XT). El objetivo de esta etapa no es alcanzar cobertura profunda, sino generar una representación suficientemente uniforme del genoma que permita inferencias fiables a ultra-baja cobertura, condición clave para el análisis de aneuploidías en PGT-A.</p>
+<p>El ADN amplificado es procesado mediante <strong>sequence tagmentation</strong>, seguido de la <strong>ligación de barcodes nativos</strong>, asignando un identificador molecular único a cada embrión. Este esquema permite la multiplexación de múltiples muestras en una misma corrida de secuenciación sin perder trazabilidad individual. Tras la purificación y cuantificación, las muestras barcodiadas se combinan en un <strong>pool equimolar</strong>, sobre el cual se realiza una única reacción de <strong>ligación de adaptadores Nanopore</strong>.</p>
 <p>La librería final se prepara en la mezcla de carga y se secuencia en un <strong>flowcell R10.4.1</strong>. Durante la corrida, el sistema MinKNOW adquiere señales eléctricas en tiempo real que son convertidas en secuencias mediante algoritmos de basecalling. Esta adquisición continua habilita la definición de <strong>criterios operativos de corte temprano (<em>early stop</em>)</strong>, basados en la cantidad acumulada de datos por embrión (por ejemplo, ~45 Mb), optimizando el uso del flowcell y permitiendo su lavado y reutilización en corridas sucesivas.</p>
 <p>El resultado del proceso es un conjunto de lecturas demultiplexadas por barcode, con cobertura horizontal suficiente para el control de calidad, la estimación de cobertura genómica y la detección de aneuploidías. Este enfoque integra eficiencia técnica, control temporal y optimización de recursos, y constituye la base operativa que diferencia al FastPGT de los esquemas convencionales de PGT-A.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -498,9 +585,9 @@ Importante
 </div>
 </section>
 <section id="dinámica-de-la-producción-de-secuencias" class="level2">
-<h2 class="anchored" data-anchor-id="dinámica-de-la-producción-de-secuencias">4.1. Dinámica de la producción de secuencias</h2>
+<h2 class="anchored" data-anchor-id="dinámica-de-la-producción-de-secuencias">5.1. Dinámica de la producción de secuencias</h2>
 <p>Como hemos insistido en el <a href="./index.html">Documento principal</a>, la tecnología ONT nos permite evaluar en <strong>tiempo real</strong> un aspecto central del ensayo: la <strong>dinámica temporal de producción de datos</strong>, expresada tanto en <strong>bases secuenciadas</strong> como en <strong>número de lecturas</strong> a lo largo de la corrida.</p>
-<p>La <a href="#fig-tiempos" class="quarto-xref">Figura&nbsp;4</a> muestra la <strong>evolución temporal</strong> de producción de bases (<strong>A</strong>) y lecturas (<strong>B</strong>) producidas en el <a href="./appendix-experimental.html#sec-Havanna-assay">Ensayo Havanna</a>. Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (<em>estimated</em>) y filtradas por calidad (<em>passed</em>)— presentan un <strong>crecimiento continuo y aproximadamente lineal</strong> a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.</p>
+<p>La <a href="#fig-tiempos" class="quarto-xref">Figura&nbsp;5</a> muestra la <strong>evolución temporal</strong> de producción de bases (<strong>A</strong>) y lecturas (<strong>B</strong>) producidas en el <a href="./appendix-experimental.html#sec-Havanna-assay">Ensayo Havanna</a>. Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (<em>estimated</em>) y filtradas por calidad (<em>passed</em>)— presentan un <strong>crecimiento continuo y aproximadamente lineal</strong> a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.</p>
 <div id="fig-tiempos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tiempos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -513,19 +600,19 @@ Importante
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-tiempos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4
+Figura&nbsp;5
 </figcaption>
 </figure>
 </div>
 <p>Este parámetro es importante ya que <strong>nos permitiría predecir en los primero minutos de corrida si el flow cell es apto y puede completar el ensayo</strong>. Si no lo es, se opta por detener la corrida y utilizar un nuevo flow cell.</p>
 </section>
 <section id="dinámica-del-uso-de-poros-y-calidad-de-las-secuencias" class="level2">
-<h2 class="anchored" data-anchor-id="dinámica-del-uso-de-poros-y-calidad-de-las-secuencias">4.2. Dinámica del uso de poros y calidad de las secuencias</h2>
+<h2 class="anchored" data-anchor-id="dinámica-del-uso-de-poros-y-calidad-de-las-secuencias">5.2. Dinámica del uso de poros y calidad de las secuencias</h2>
 <p>Para analizar el rendimiento de la corrida se consideran <strong>dos variables dinámicas principales</strong>:<br>
 (i) el <strong>número de poros activos</strong> disponibles para secuenciación y<br>
 (ii) la <strong>calidad de las lecturas</strong> generadas a lo largo del tiempo.</p>
 <p>Ambas variables evolucionan durante la corrida y constituyen <strong>parámetros críticos de monitoreo</strong>, que deben ser evaluados tanto en la fase inicial como durante la ejecución del ensayo, ya que condicionan directamente el rendimiento efectivo del flow cell y la confiabilidad de los datos obtenidos.</p>
-<p>La <a href="#fig-porosQC" class="quarto-xref">Figura&nbsp;5</a> muestra la <strong>dinámica temporal</strong> del uso de poros en el flow cell (<strong>A</strong>) y la <strong>distribución de calidad de las lecturas</strong> (<strong>B</strong>) a lo largo de la corrida. Como puede observarse, a lo largo de aproximadamente <strong>18 h de secuenciación</strong>, el número de poros activos disminuye progresivamente —un comportamiento esperado— mientras que la <strong>calidad de las lecturas se mantiene estable</strong>, lo cual representa una condición deseable para ensayos de secuenciación orientados a aplicaciones clínicas.</p>
+<p>La <a href="#fig-porosQC" class="quarto-xref">Figura&nbsp;6</a> muestra la <strong>dinámica temporal</strong> del uso de poros en el flow cell (<strong>A</strong>) y la <strong>distribución de calidad de las lecturas</strong> (<strong>B</strong>) a lo largo de la corrida. Como puede observarse, a lo largo de aproximadamente <strong>18 h de secuenciación</strong>, el número de poros activos disminuye progresivamente —un comportamiento esperado— mientras que la <strong>calidad de las lecturas se mantiene estable</strong>, lo cual representa una condición deseable para ensayos de secuenciación orientados a aplicaciones clínicas.</p>
 <div id="fig-porosQC" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-porosQC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -538,7 +625,7 @@ Figura&nbsp;4
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-porosQC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5
+Figura&nbsp;6
 </figcaption>
 </figure>
 </div>
@@ -569,7 +656,7 @@ Importante
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
 
 <ol>
-<li id="fn1"><p>Este parámetro, sin embargo, es fundamental en el descubrimiento de variantes, como en el <strong>Proyecto Yaguarecito</strong>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Copy Number Variants<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Este FC contiene 512 poros, y dada la fecha del estudio, posiblemente hayan utilizado el modelo <strong>R9.4.1</strong> (FLO-MIN106).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
