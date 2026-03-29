@@ -8,20 +8,10 @@ csl: nature.csl
 ---
 
 ::: callout-note
-## **Contenido**
 
-1. Consideraciones básicas sobre el PGT-A
-2. PGT-A Illumina (convencional), PGT-A ONT y FastPGT
-   - Comparación de parámetros:
-     * Número de muestras, cobertura, longitud de lecturas, rendimiento total por corrida y por muestra (entre otras), para una comprensión exhaustiva de cada tecnología y sus diferencias.
-3. Flujo de trabajo FastPGT en el laboratorio.
-4. Dinámica de producción de secuencias.
-5. Dinámica del uso de poros y calidad de las secuencias.
-6. Concepto de Early Stop.
+**Insumos**: [Ligation sequencing amplicons - Native Barcoding Kit 24 V14](https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24). [Reporte Havanna - FCEN](inputs/FCEN/report_Nanopore_seq.html)
 
-**Insumos**: Protocolo de formación de librerias ONT[^flujo-ONT]. [Reporte Havanna - FCEN](inputs/FCEN/report_Nanopore_seq.html)
-
-**Delivery 4**: [Documento principal](index.qmd). [Apéndice experimental](appendix-experimental.qmd). [Apéndice económico](appendix-costs.qmd). 
+**Delivery 4**: [Apéndice experimental](appendix-experimental.qmd). 
 
 :::
 
@@ -31,9 +21,8 @@ csl: nature.csl
 
 En los estudios de PGT-A, el parámetro crítico es la **cobertura horizontal uniforme**, entendida como el muestreo distribuido de regiones genómicas a lo largo de todos los cromosomas.
 
-La detección de **CNVs**[^1] en cada cromosoma se basa en**comparaciones relativas de densidad de lecturas** entre regiones genómicas, evaluadas mediante ventanas móviles (*bins*) de tamaño fijo, típicamente del orden de **0.5–1 Mb**.
+La detección de **CNVs** en cada cromosoma se basa en**comparaciones relativas de densidad de lecturas** entre regiones genómicas, evaluadas mediante ventanas móviles (*bins*) de tamaño fijo, típicamente del orden de **0.5–1 Mb**.
 
-[^1]: **C**opy **N**umber **V**ariants en forma de aneuploidías o mosaicismos
 
 La sensibilidad y estabilidad del análisis dependen principalmente de:
 
@@ -149,7 +138,7 @@ La adquisición de datos en tiempo real, la definición de criterios de corte te
 ## 3. Flujo de trabajo FastPGT {#sec-flujo}
 
 
-La **@fig-fastpgt-workflow** representa el flujo de trabajo del FastPGT [^flujo-ONT].
+La **@fig-fastpgt-workflow** representa el flujo de trabajo del FastPGT.
 
 El esquema resume las etapas principales desde la biopsia embrionaria y la amplificación genómica completa hasta la adquisición de datos en tiempo real y la generación de lecturas demultiplexadas para el análisis de aneuploidías. La posibilidad de corte temprano permite optimizar tiempos de secuenciación y reutilizar el flowcell.
 

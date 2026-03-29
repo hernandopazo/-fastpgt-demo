@@ -224,32 +224,18 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span><strong>Contenido</strong>
+Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Consideraciones básicas sobre el PGT-A</li>
-<li>PGT-A Illumina (convencional), PGT-A ONT y FastPGT
-<ul>
-<li>Comparación de parámetros:
-<ul>
-<li>Número de muestras, cobertura, longitud de lecturas, rendimiento total por corrida y por muestra (entre otras), para una comprensión exhaustiva de cada tecnología y sus diferencias.</li>
-</ul></li>
-</ul></li>
-<li>Flujo de trabajo FastPGT en el laboratorio.</li>
-<li>Dinámica de producción de secuencias.</li>
-<li>Dinámica del uso de poros y calidad de las secuencias.</li>
-<li>Concepto de Early Stop.</li>
-</ol>
-<p><strong>Insumos</strong>: Protocolo de formación de librerias ONT<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. <a href="inputs/FCEN/report_Nanopore_seq.html">Reporte Havanna - FCEN</a></p>
-<p><strong>Delivery 4</strong>: <a href="./index.html">Documento principal</a>. <a href="./appendix-experimental.html">Apéndice experimental</a>. <a href="appendix-costs.qmd">Apéndice económico</a>.</p>
+<p><strong>Insumos</strong>: <a href="https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24">Ligation sequencing amplicons - Native Barcoding Kit 24 V14</a>. <a href="inputs/FCEN/report_Nanopore_seq.html">Reporte Havanna - FCEN</a></p>
+<p><strong>Delivery 4</strong>: <a href="./appendix-experimental.html">Apéndice experimental</a>.</p>
 </div>
 </div>
 <section id="consideraciones-básicas-del-pgt-a" class="level2">
 <h2 class="anchored" data-anchor-id="consideraciones-básicas-del-pgt-a">1. Consideraciones básicas del PGT-A</h2>
 <p>En los estudios de PGT-A, el parámetro crítico es la <strong>cobertura horizontal uniforme</strong>, entendida como el muestreo distribuido de regiones genómicas a lo largo de todos los cromosomas.</p>
-<p>La detección de <strong>CNVs</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> en cada cromosoma se basa en<strong>comparaciones relativas de densidad de lecturas</strong> entre regiones genómicas, evaluadas mediante ventanas móviles (<em>bins</em>) de tamaño fijo, típicamente del orden de <strong>0.5–1 Mb</strong>.</p>
+<p>La detección de <strong>CNVs</strong> en cada cromosoma se basa en<strong>comparaciones relativas de densidad de lecturas</strong> entre regiones genómicas, evaluadas mediante ventanas móviles (<em>bins</em>) de tamaño fijo, típicamente del orden de <strong>0.5–1 Mb</strong>.</p>
 <p>La sensibilidad y estabilidad del análisis dependen principalmente de:</p>
 <ol type="1">
 <li>la <strong>uniformidad global</strong> de la amplificación genómica,</li>
@@ -258,7 +244,7 @@ div.csl-indent {
 <li>el <strong>tamaño de ventana</strong> utilizado,</li>
 <li>y el <strong>coeficiente de variación (CV)</strong> del perfil de cobertura.</li>
 </ol>
-<p>En este régimen, <strong>la profundidad local puntual es irrelevante</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>; lo determinante es la estabilidad estadística del perfil relativo entre regiones.</p>
+<p>En este régimen, <strong>la profundidad local puntual es irrelevante</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>; lo determinante es la estabilidad estadística del perfil relativo entre regiones.</p>
 </section>
 <section id="sec-pgt-illumina" class="level2">
 <h2 class="anchored" data-anchor-id="sec-pgt-illumina">2.1. PGT-A: Illumina</h2>
@@ -291,7 +277,7 @@ Figura&nbsp;1
 <section id="sec-pgt-ont" class="level2">
 <h2 class="anchored" data-anchor-id="sec-pgt-ont">2.2. PGT-A: Tan y col., (2023) ONT</h2>
 <p>En su ensayo comparativo ONT vs Illumina, <strong>Tan, V.J., et al., (2023)<span class="citation" data-cites="Tang_2023"><sup><a href="#ref-Tang_2023" role="doc-biblioref">1</a></sup></span></strong> demostraron que la tecnología <strong>Oxford Nanopore Technologies (ONT)</strong> puede utilizarse de manera equivalente para resolver los PGT-A, alcanzando resoluciones diagnósticas comparables mediante un enfoque de secuenciación de ultra-baja cobertura. Sin embargo, en dicho estudio la secuenciación ONT se emplea bajo un paradigma esencialmente <strong><em>batch-completo</em></strong>, en el cual la corrida se extiende por un tiempo predefinido y el análisis se realiza una vez completada la adquisición de datos.</p>
-<p>La <a href="#fig-minion-fc" class="quarto-xref">Figura&nbsp;2</a> muestra el <strong>secuenciador MinION</strong> (<strong>A</strong>) y un flow cell (<strong>B</strong>) como el utilizado en este ensayo <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
+<p>La <a href="#fig-minion-fc" class="quarto-xref">Figura&nbsp;2</a> muestra el <strong>secuenciador MinION</strong> (<strong>A</strong>) y un flow cell (<strong>B</strong>) como el utilizado en este ensayo <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <div id="fig-minion-fc" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-minion-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -480,7 +466,7 @@ Importante
 </section>
 <section id="sec-flujo" class="level2">
 <h2 class="anchored" data-anchor-id="sec-flujo">3. Flujo de trabajo FastPGT</h2>
-<p>La <strong><a href="#fig-fastpgt-workflow" class="quarto-xref">Figura&nbsp;3</a></strong> representa el flujo de trabajo del FastPGT <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>La <strong><a href="#fig-fastpgt-workflow" class="quarto-xref">Figura&nbsp;3</a></strong> representa el flujo de trabajo del FastPGT.</p>
 <p>El esquema resume las etapas principales desde la biopsia embrionaria y la amplificación genómica completa hasta la adquisición de datos en tiempo real y la generación de lecturas demultiplexadas para el análisis de aneuploidías. La posibilidad de corte temprano permite optimizar tiempos de secuenciación y reutilizar el flowcell.</p>
 <div id="fig-fastpgt-workflow" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
 <figure class="quarto-float quarto-float-fig figure">
@@ -583,11 +569,8 @@ Importante
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
 
 <ol>
-<li id="fn1"><p>Protocolo de trabajo ONT: Ligation sequencing amplicons - Native Barcoding Kit 24 V14 (SQK-NBD114.24)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Este parámetro, sin embargo, es fundamental en el descubrimiento de variantes, como en el <strong>Proyecto Yaguarecito</strong>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Este FC contiene 512 poros, y dada la fecha del estudio, posiblemente hayan utilizado el modelo <strong>R9.4.1</strong> (FLO-MIN106).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Este parámetro, sin embargo, es fundamental en el descubrimiento de variantes, como en el <strong>Proyecto Yaguarecito</strong>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Este FC contiene 512 poros, y dada la fecha del estudio, posiblemente hayan utilizado el modelo <strong>R9.4.1</strong> (FLO-MIN106).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Protocolo de trabajo ONT: Ligation sequencing amplicons - Native Barcoding Kit 24 V14 (SQK-NBD114.24)<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
