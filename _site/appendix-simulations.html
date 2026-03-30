@@ -206,7 +206,7 @@ window.Quarto = {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#simulación-de-costos-en-corridas-de-baja-densidad-fastpgt" id="toc-simulación-de-costos-en-corridas-de-baja-densidad-fastpgt" class="nav-link active" data-scroll-target="#simulación-de-costos-en-corridas-de-baja-densidad-fastpgt">1. Simulación de costos en corridas de baja densidad (FastPGT)</a>
+  <li><a href="#simulación-de-costos-fastpgt" id="toc-simulación-de-costos-fastpgt" class="nav-link active" data-scroll-target="#simulación-de-costos-fastpgt">1. Simulación de costos FastPGT</a>
   <ul class="collapse">
   <li><a href="#modelo-de-generación-de-corridas" id="toc-modelo-de-generación-de-corridas" class="nav-link" data-scroll-target="#modelo-de-generación-de-corridas">1.1 Modelo de generación de corridas</a></li>
   <li><a href="#naturaleza-estocástica-del-modelo" id="toc-naturaleza-estocástica-del-modelo" class="nav-link" data-scroll-target="#naturaleza-estocástica-del-modelo">1.2 Naturaleza estocástica del modelo</a></li>
@@ -277,8 +277,8 @@ window.Quarto = {
 </div>
 </div>
 <hr>
-<section id="simulación-de-costos-en-corridas-de-baja-densidad-fastpgt" class="level2">
-<h2 class="anchored" data-anchor-id="simulación-de-costos-en-corridas-de-baja-densidad-fastpgt">1. Simulación de costos en corridas de baja densidad (FastPGT)</h2>
+<section id="simulación-de-costos-fastpgt" class="level2">
+<h2 class="anchored" data-anchor-id="simulación-de-costos-fastpgt">1. Simulación de costos FastPGT</h2>
 <p>A continuación modelamos el uso completo de un kit Rapid Barcoding (RBK) con capacidad total de 144 muestras bajo un régimen operativo FAST.</p>
 <p>A diferencia de los modelos determinísticos previos, las corridas no se consideran independientes, sino que forman una secuencia acumulativa tal que:</p>
 <p><span class="math display">\[
@@ -382,12 +382,12 @@ C_{\text{muestra}} \sim f(\{n_i\})
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">72</td>
-<td style="text-align: center;">83.28</td>
-<td style="text-align: center;">3.36</td>
+<td style="text-align: center;">72.23</td>
+<td style="text-align: center;">83.4</td>
+<td style="text-align: center;">3.17</td>
 <td style="text-align: center;">84.04</td>
-<td style="text-align: center;">84.48</td>
-<td style="text-align: center;">84.93</td>
+<td style="text-align: center;">84.71</td>
+<td style="text-align: center;">85.16</td>
 </tr>
 </tbody>
 </table>
@@ -428,9 +428,9 @@ C_{\text{muestra}} \sim f(\{n_i\})
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">22</td>
-<td style="text-align: center;">27</td>
-<td style="text-align: center;">29</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">30</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">5</td>
 <td style="text-align: center;">5</td>
@@ -518,15 +518,11 @@ Corresponde a escenarios excepcionalmente eficientes, en los que:</p>
 </section>
 <section id="simulación-bajo-régimen-intermedio" class="level2">
 <h2 class="anchored" data-anchor-id="simulación-bajo-régimen-intermedio">2. Simulación bajo régimen intermedio</h2>
-<p>La secuencia de corridas se define como:</p>
-<p><span class="math display">\[
-\sum_{i=1}^{R} n_i = 144
-\]</span></p>
-<p>donde:</p>
-<p><span class="math inline">\(R\)</span> es el número total de corridas, y <span class="math inline">\(n_i\)</span> es el número de muestras por corrida, la cual tiene las siguientes propiedades:</p>
+<p>Modificando el escenario anterior, definimos:</p>
 <p><span class="math display">\[
 n_i \sim \mathcal{N}(\mu = 16,\ \sigma = 2), \quad n_i \in [11,22]
-\]</span></p>
+\]</span> donde:</p>
+<p><span class="math inline">\(n_i\)</span> es el número de muestras por corrida, que siguen una distribución normal truncada <span class="math inline">\((N)\)</span> con extremos entre 11 y 22, de media: <span class="math inline">\(\mu\)</span> y distribución standard: <span class="math inline">\(\sigma\)</span>,</p>
 <p>Este modelo refleja condiciones operativas donde las muestras se agrupan antes de ser procesadas, optimizando el uso de recursos.</p>
 <section id="tabla-de-costos" class="level3">
 <h3 class="anchored" data-anchor-id="tabla-de-costos">Tabla de Costos</h3>
@@ -545,8 +541,8 @@ n_i \sim \mathcal{N}(\mu = 16,\ \sigma = 2), \quad n_i \in [11,22]
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">61.5</td>
-<td style="text-align: center;">0.87</td>
+<td style="text-align: center;">61.6</td>
+<td style="text-align: center;">0.46</td>
 <td style="text-align: center;">61.5</td>
 <td style="text-align: center;">61.5</td>
 <td style="text-align: center;">61.8</td>
@@ -586,10 +582,10 @@ n_i \sim \mathcal{N}(\mu = 16,\ \sigma = 2), \quad n_i \in [11,22]
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">8</td>
+<td style="text-align: center;">9</td>
 <td style="text-align: center;">9</td>
 <td style="text-align: center;">10</td>
-<td style="text-align: center;">10</td>
+<td style="text-align: center;">11</td>
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">4</td>
@@ -628,14 +624,15 @@ n_i \sim \mathcal{N}(\mu = 16,\ \sigma = 2), \quad n_i \in [11,22]
 </section>
 <section id="simulación-bajo-régimen-pgt-clásico-batch" class="level2">
 <h2 class="anchored" data-anchor-id="simulación-bajo-régimen-pgt-clásico-batch">3. Simulación bajo régimen PGT clásico / batch</h2>
-<p>En este escenario se modela un régimen operativo con corridas de mayor tamaño, representativo de un flujo de trabajo tipo batch.</p>
-<p>A diferencia del régimen FAST, las corridas presentan menor fragmentación y un mayor número de muestras por corrida.</p>
-<p>La secuencia de corridas se define como en el escenario anterior.</p>
+<p>En este escenario, el tamaño de corrida es fijo y determinístico, por lo que no se modela como una variable aleatoria. En consecuencia, la variabilidad del sistema desaparece y el costo por muestra converge a un valor único.</p>
 <p>donde:</p>
 <p><span class="math display">\[
-n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
-\]</span></p>
-<p>Este modelo refleja condiciones operativas donde las muestras se agrupan antes de ser procesadas, optimizando el uso de recursos.</p>
+\sum_{i=1}^{R} n_i = 144, \quad n_i = 24 \ \forall i
+\]</span> Siendo el valor <span class="math inline">\(R\)</span>:</p>
+<p><span class="math display">\[
+R = \frac{144}{24} = 6
+\]</span> En este régimen, el sistema deja de ser estocástico y pasa a ser completamente determinístico. La estructura de corridas está completamente definida a priori, eliminando la variabilidad observada en los escenarios FAST e intermedio.</p>
+<p>Este modelo refleja condiciones operativas donde las muestras se guardan hasta completar un batch de corrida, exactamente como se hace en los escenarios clásicos de PGT-A.</p>
 <section id="tabla-de-costos-1" class="level3">
 <h3 class="anchored" data-anchor-id="tabla-de-costos-1">Tabla de Costos</h3>
 <div class="cell">
@@ -734,8 +731,8 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 </section>
 <section id="interpretación-del-régimen-pgt-clásico-o-batch" class="level3">
 <h3 class="anchored" data-anchor-id="interpretación-del-régimen-pgt-clásico-o-batch">Interpretación del régimen PGT clásico o batch</h3>
-<p>El régimen batch presenta una reducción significativa en la variabilidad del sistema, con un menor número de corridas necesarias para consumir un kit RBK y, en consecuencia, un menor número de flow cells utilizados.</p>
-<p>La distribución del costo en el régimen batch presenta una varianza extremadamente baja, lo que hace que la estimación de densidad resulte poco informativa. Por este motivo, se utilizan representaciones basadas en histogramas, que reflejan mejor la concentración de valores.</p>
+<p>El régimen batch presenta la reducción máxima de la variabilidad del sistema, con el menor número de corridas necesarias para consumir un kit RBK.</p>
+<p>La distribución del costo en el régimen batch no presenta varianza baja, lo que hace que la estimación de densidad resulte poco informativa. Por este motivo, se utilizan representaciones basadas en histogramas, que reflejan mejor la concentración de valores.</p>
 <p>El aumento en el tamaño promedio de corrida reduce la fragmentación del proceso, lo que se traduce en una mayor eficiencia económica y una disminución del costo por muestra.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -743,12 +740,12 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Comparación del costos por muestra: FAST vs Intermedio vs PGT clásico
+<span class="screen-reader-only">Nota</span>Comparación de los costos por muestra: FAST vs Intermedio vs PGT clásico / batch
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>En comparación con el régimen FAST, el escenario e intermedio representan un comportamiento más estable y predecible, con una la reducción de costos importantes, y curiosamnete, no tan diferentes, lo cual genera una ventaja operacional importante: <strong>No hay mucha diferencia entre los costos BATCH vs INTERMEDIO</strong> lo cual relaja la decisión del laboratorio sobre qué procedimiento y cuanto tiempo deben esperar las muestras.</li>
+<li>En comparación con el régimen FAST, el escenario intermedio y batch representan un comportamiento más estable y predecible, con una la reducción de costos importantes, y curiosamnete, no tan diferentes, lo cual genera una ventaja operacional importante: <strong>No hay mucha diferencia entre los costos BATCH vs INTERMEDIO</strong> lo cual relaja la decisión del laboratorio sobre qué procedimiento y cuanto tiempo deben esperar las muestras.</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -791,21 +788,21 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">8</td>
+<td style="text-align: left;">5.00</td>
+<td style="text-align: left;">5</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">Arranca_RBK</td>
-<td style="text-align: left;">410.92</td>
+<td style="text-align: left;">256.83</td>
 <td style="text-align: left;">2,968.00</td>
-<td style="text-align: left;">371.00</td>
+<td style="text-align: left;">593.60</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">14</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">11</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">0</td>
@@ -813,38 +810,38 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">340.52</td>
 <td style="text-align: left;">3,000.33</td>
-<td style="text-align: left;">214.31</td>
+<td style="text-align: left;">272.76</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">19</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;">15</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">289.16</td>
+<td style="text-align: left;">237.79</td>
 <td style="text-align: left;">3,032.67</td>
-<td style="text-align: left;">159.61</td>
+<td style="text-align: left;">202.18</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">25</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;">19</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">340.52</td>
+<td style="text-align: left;">237.79</td>
 <td style="text-align: left;">3,065.00</td>
-<td style="text-align: left;">122.60</td>
+<td style="text-align: left;">161.32</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">5</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">30</td>
+<td style="text-align: left;">5.00</td>
+<td style="text-align: left;">24</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">0</td>
@@ -852,12 +849,12 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">289.16</td>
 <td style="text-align: left;">3,097.33</td>
-<td style="text-align: left;">103.24</td>
+<td style="text-align: left;">129.06</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">6</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">35</td>
+<td style="text-align: left;">5.00</td>
+<td style="text-align: left;">29</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">0</td>
@@ -865,38 +862,38 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">289.16</td>
 <td style="text-align: left;">3,129.67</td>
-<td style="text-align: left;">89.42</td>
+<td style="text-align: left;">107.92</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">41</td>
+<td style="text-align: left;">5.00</td>
+<td style="text-align: left;">34</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">7</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Nuevo FC + Compra RAA</td>
-<td style="text-align: left;">398.69</td>
+<td style="text-align: left;">347.33</td>
 <td style="text-align: left;">4,797.67</td>
-<td style="text-align: left;">117.02</td>
+<td style="text-align: left;">141.11</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">8</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">47</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;">38</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">431.02</td>
+<td style="text-align: left;">328.29</td>
 <td style="text-align: left;">4,830.00</td>
-<td style="text-align: left;">102.77</td>
+<td style="text-align: left;">127.11</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">9</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">53</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">44</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">9</td>
 <td style="text-align: left;">3</td>
@@ -904,51 +901,51 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">431.02</td>
 <td style="text-align: left;">4,862.33</td>
-<td style="text-align: left;">91.74</td>
+<td style="text-align: left;">110.51</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">10</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">59</td>
+<td style="text-align: left;">8.00</td>
+<td style="text-align: left;">52</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">431.02</td>
+<td style="text-align: left;">533.76</td>
 <td style="text-align: left;">4,894.67</td>
-<td style="text-align: left;">82.96</td>
+<td style="text-align: left;">94.13</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">11</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">66</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">58</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">11</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">482.39</td>
+<td style="text-align: left;">431.02</td>
 <td style="text-align: left;">4,927.00</td>
-<td style="text-align: left;">74.65</td>
+<td style="text-align: left;">84.95</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">12</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">72</td>
+<td style="text-align: left;">5.00</td>
+<td style="text-align: left;">63</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">12</td>
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">431.02</td>
+<td style="text-align: left;">379.66</td>
 <td style="text-align: left;">4,959.33</td>
-<td style="text-align: left;">68.88</td>
+<td style="text-align: left;">78.72</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">13</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">78</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">69</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">13</td>
 <td style="text-align: left;">1</td>
@@ -956,25 +953,25 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Nuevo FC + Compra RAA</td>
 <td style="text-align: left;">398.69</td>
 <td style="text-align: left;">6,627.33</td>
-<td style="text-align: left;">84.97</td>
+<td style="text-align: left;">96.05</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">14</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">83</td>
+<td style="text-align: left;">7.00</td>
+<td style="text-align: left;">76</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">14</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">379.66</td>
+<td style="text-align: left;">482.39</td>
 <td style="text-align: left;">6,659.67</td>
-<td style="text-align: left;">80.24</td>
+<td style="text-align: left;">87.63</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">15</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">90</td>
+<td style="text-align: left;">7.00</td>
+<td style="text-align: left;">83</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">15</td>
 <td style="text-align: left;">3</td>
@@ -982,12 +979,12 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">482.39</td>
 <td style="text-align: left;">6,692.00</td>
-<td style="text-align: left;">74.36</td>
+<td style="text-align: left;">80.63</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">16</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">96</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">89</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">16</td>
 <td style="text-align: left;">4</td>
@@ -995,90 +992,90 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">431.02</td>
 <td style="text-align: left;">6,724.33</td>
-<td style="text-align: left;">70.05</td>
+<td style="text-align: left;">75.55</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">17</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">101</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">95</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">17</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">Wash + Compra WGA</td>
-<td style="text-align: left;">379.66</td>
-<td style="text-align: left;">8,571.07</td>
-<td style="text-align: left;">84.86</td>
+<td style="text-align: left;">Wash</td>
+<td style="text-align: left;">431.02</td>
+<td style="text-align: left;">6,756.67</td>
+<td style="text-align: left;">71.12</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">18</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">105</td>
+<td style="text-align: left;">6.00</td>
+<td style="text-align: left;">101</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">18</td>
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">Wash</td>
-<td style="text-align: left;">328.29</td>
+<td style="text-align: left;">Wash + Compra WGA</td>
+<td style="text-align: left;">431.02</td>
 <td style="text-align: left;">8,603.40</td>
-<td style="text-align: left;">81.94</td>
+<td style="text-align: left;">85.18</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">19</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">111</td>
+<td style="text-align: left;">5.00</td>
+<td style="text-align: left;">106</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">19</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Nuevo FC + Compra RAA</td>
-<td style="text-align: left;">398.69</td>
+<td style="text-align: left;">347.33</td>
 <td style="text-align: left;">10,271.40</td>
-<td style="text-align: left;">92.54</td>
+<td style="text-align: left;">96.90</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">20</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">119</td>
+<td style="text-align: left;">7.00</td>
+<td style="text-align: left;">113</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">20</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">533.76</td>
+<td style="text-align: left;">482.39</td>
 <td style="text-align: left;">10,303.73</td>
-<td style="text-align: left;">86.59</td>
+<td style="text-align: left;">91.18</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">21</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">128</td>
+<td style="text-align: left;">8.00</td>
+<td style="text-align: left;">121</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">21</td>
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">585.12</td>
+<td style="text-align: left;">533.76</td>
 <td style="text-align: left;">10,336.07</td>
-<td style="text-align: left;">80.75</td>
+<td style="text-align: left;">85.42</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">22</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">136</td>
+<td style="text-align: left;">7.00</td>
+<td style="text-align: left;">128</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">22</td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">533.76</td>
+<td style="text-align: left;">482.39</td>
 <td style="text-align: left;">10,368.40</td>
-<td style="text-align: left;">76.24</td>
+<td style="text-align: left;">81.00</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">23</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">140</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;">132</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">23</td>
 <td style="text-align: left;">5</td>
@@ -1086,12 +1083,12 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">328.29</td>
 <td style="text-align: left;">10,400.73</td>
-<td style="text-align: left;">74.29</td>
+<td style="text-align: left;">78.79</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">24</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">144</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;">136</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">24</td>
 <td style="text-align: left;">6</td>
@@ -1099,20 +1096,46 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <td style="text-align: left;">Wash</td>
 <td style="text-align: left;">328.29</td>
 <td style="text-align: left;">10,433.07</td>
-<td style="text-align: left;">72.45</td>
+<td style="text-align: left;">76.71</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">7.00</td>
+<td style="text-align: left;">143</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Nuevo FC + Compra RAA</td>
+<td style="text-align: left;">450.06</td>
+<td style="text-align: left;">12,101.07</td>
+<td style="text-align: left;">84.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">1.00</td>
+<td style="text-align: left;">144</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Wash</td>
+<td style="text-align: left;">174.20</td>
+<td style="text-align: left;">12,133.40</td>
+<td style="text-align: left;">84.26</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">NA</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">6</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">5.54</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">144</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">1</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">NA</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">NA</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">4</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">5</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">PROMEDIO</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">403.01</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">10,433.07</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">72.45</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">380.22</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">12,133.40</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">84.26</td>
 </tr>
 </tbody>
 </table>
@@ -1133,8 +1156,8 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <p>This simulation output contains all operational state variables and is provided here for reproducibility.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-a0bcb1d994802559561e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a0bcb1d994802559561e">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],[8,6,5,6,5,5,6,6,6,6,7,6,6,5,7,6,5,4,6,8,9,8,4,4],[8,14,19,25,30,35,41,47,53,59,66,72,78,83,90,96,101,105,111,119,128,136,140,144],[8,14,19,25,30,35,6,12,18,24,31,37,6,11,18,24,29,33,6,14,23,31,35,39],[1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4],["Arranca_RBK","Wash","Wash","Wash","Wash","Wash","Nuevo FC + Compra RAA","Wash","Wash","Wash","Wash","Wash","Nuevo FC + Compra RAA","Wash","Wash","Wash","Wash + Compra WGA","Wash","Nuevo FC + Compra RAA","Wash","Wash","Wash","Wash","Wash"],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],[0,0,0,0,0,0,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6],[0,0,0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,3],[151.2,113.4,94.5,113.4,94.5,94.5,113.4,113.4,113.4,113.4,132.3,113.4,113.4,94.5,132.3,113.4,94.5,75.59999999999999,113.4,151.2,170.1,151.2,75.59999999999999,75.59999999999999],[187.5,140.625,117.1875,140.625,117.1875,117.1875,140.625,140.625,140.625,140.625,164.0625,140.625,140.625,117.1875,164.0625,140.625,117.1875,93.75,140.625,187.5,210.9375,187.5,93.75,93.75],[0,0,0,0,0,0,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5],[72.22222222222223,54.16666666666667,45.13888888888889,54.16666666666667,45.13888888888889,45.13888888888889,54.16666666666667,54.16666666666667,54.16666666666667,54.16666666666667,63.19444444444445,54.16666666666667,54.16666666666667,45.13888888888889,63.19444444444445,54.16666666666667,45.13888888888889,36.11111111111111,54.16666666666667,72.22222222222223,81.25,72.22222222222223,36.11111111111111,36.11111111111111],[0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334],[18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9],[23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375],[0,0,0,0,0,0,15.08333333333333,15.08333333333333,15.08333333333333,15.08333333333333,12.92857142857143,15.08333333333333,15.08333333333333,18.1,12.92857142857143,15.08333333333333,18.1,22.625,15.08333333333333,11.3125,10.05555555555556,11.3125,22.625,22.625],[9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779],[0,5.388888888888889,6.466666666666667,5.388888888888889,6.466666666666667,6.466666666666667,0,5.388888888888889,5.388888888888889,5.388888888888889,4.61904761904762,5.388888888888889,0,6.466666666666667,4.61904761904762,5.388888888888889,6.466666666666667,8.083333333333334,0,4.041666666666667,3.592592592592593,4.041666666666667,8.083333333333334,8.083333333333334],[410.9222222222222,340.525,289.1597222222222,340.525,289.1597222222222,289.1597222222222,398.6916666666667,431.025,431.025,431.025,482.3902777777777,431.025,398.6916666666667,379.6597222222222,482.3902777777777,431.025,379.6597222222222,328.2944444444444,398.6916666666667,533.7555555555556,585.1208333333334,533.7555555555556,328.2944444444444,328.2944444444444],[2968,3000.333333333333,3032.666666666667,3065,3097.333333333334,3129.666666666667,4797.666666666668,4830.000000000001,4862.333333333334,4894.666666666667,4927,4959.333333333333,6627.333333333333,6659.666666666666,6691.999999999999,6724.333333333332,8571.066666666666,8603.4,10271.4,10303.73333333333,10336.06666666667,10368.4,10400.73333333334,10433.06666666667],[371,214.3095238095238,159.6140350877193,122.6,103.2444444444445,89.41904761904765,117.0162601626017,102.7659574468085,91.74213836477989,82.96045197740114,74.65151515151516,68.87962962962962,84.96581196581197,80.23694779116465,74.35555555555554,70.04513888888887,84.86204620462046,81.93714285714286,92.53513513513514,86.58599439775911,80.75052083333334,76.23823529411766,74.29095238095239,72.45185185185187]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>corrida<\/th>\n      <th>muestras<\/th>\n      <th>muestras_totales<\/th>\n      <th>muestras_en_FC<\/th>\n      <th>FC_actual<\/th>\n      <th>evento<\/th>\n      <th>RBK_id<\/th>\n      <th>run_in_rbk_counter<\/th>\n      <th>raa_counter<\/th>\n      <th>raa_cycle_global<\/th>\n      <th>costo_WGA<\/th>\n      <th>costo_FC<\/th>\n      <th>costo_RAA<\/th>\n      <th>costo_RBK<\/th>\n      <th>costo_wash<\/th>\n      <th>costo_WGA_unit<\/th>\n      <th>costo_FC_unit<\/th>\n      <th>costo_RAA_unit<\/th>\n      <th>costo_RBK_unit<\/th>\n      <th>costo_wash_unit<\/th>\n      <th>costo_run_modelado<\/th>\n      <th>costo_acumulado<\/th>\n      <th>costo_promedio_global<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":15,"scrollX":true,"columnDefs":[{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":21,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":22,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":0,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},{"name":"corrida","targets":0},{"name":"muestras","targets":1},{"name":"muestras_totales","targets":2},{"name":"muestras_en_FC","targets":3},{"name":"FC_actual","targets":4},{"name":"evento","targets":5},{"name":"RBK_id","targets":6},{"name":"run_in_rbk_counter","targets":7},{"name":"raa_counter","targets":8},{"name":"raa_cycle_global","targets":9},{"name":"costo_WGA","targets":10},{"name":"costo_FC","targets":11},{"name":"costo_RAA","targets":12},{"name":"costo_RBK","targets":13},{"name":"costo_wash","targets":14},{"name":"costo_WGA_unit","targets":15},{"name":"costo_FC_unit","targets":16},{"name":"costo_RAA_unit","targets":17},{"name":"costo_RBK_unit","targets":18},{"name":"costo_wash_unit","targets":19},{"name":"costo_run_modelado","targets":20},{"name":"costo_acumulado","targets":21},{"name":"costo_promedio_global","targets":22}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,15,25,50,100]}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.columnDefs.20.render","options.columnDefs.21.render","options.columnDefs.22.render"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-8cc1d6986fe278b305fa" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-8cc1d6986fe278b305fa">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],[5,6,4,4,5,5,5,4,6,8,6,5,6,7,7,6,6,6,5,7,8,7,4,4,7,1],[5,11,15,19,24,29,34,38,44,52,58,63,69,76,83,89,95,101,106,113,121,128,132,136,143,144],[5,11,15,19,24,29,5,9,15,23,29,34,6,13,20,26,32,38,5,12,20,27,31,35,7,8],[1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,3,4,4,4,4,4,4,5,5],["Arranca_RBK","Wash","Wash","Wash","Wash","Wash","Nuevo FC + Compra RAA","Wash","Wash","Wash","Wash","Wash","Nuevo FC + Compra RAA","Wash","Wash","Wash","Wash","Wash + Compra WGA","Nuevo FC + Compra RAA","Wash","Wash","Wash","Wash","Wash","Nuevo FC + Compra RAA","Wash"],[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26],[0,0,0,0,0,0,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2],[0,0,0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,3,4,4],[94.5,113.4,75.59999999999999,75.59999999999999,94.5,94.5,94.5,75.59999999999999,113.4,151.2,113.4,94.5,113.4,132.3,132.3,113.4,113.4,113.4,94.5,132.3,151.2,132.3,75.59999999999999,75.59999999999999,132.3,18.9],[117.1875,140.625,93.75,93.75,117.1875,117.1875,117.1875,93.75,140.625,187.5,140.625,117.1875,140.625,164.0625,164.0625,140.625,140.625,140.625,117.1875,164.0625,187.5,164.0625,93.75,93.75,164.0625,23.4375],[0,0,0,0,0,0,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5,90.5],[45.13888888888889,54.16666666666667,36.11111111111111,36.11111111111111,45.13888888888889,45.13888888888889,45.13888888888889,36.11111111111111,54.16666666666667,72.22222222222223,54.16666666666667,45.13888888888889,54.16666666666667,63.19444444444445,63.19444444444445,54.16666666666667,54.16666666666667,54.16666666666667,45.13888888888889,63.19444444444445,72.22222222222223,63.19444444444445,36.11111111111111,36.11111111111111,63.19444444444445,9.027777777777779],[0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,32.33333333333334,0,32.33333333333334],[18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9],[23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375],[0,0,0,0,0,0,18.1,22.625,15.08333333333333,11.3125,15.08333333333333,18.1,15.08333333333333,12.92857142857143,12.92857142857143,15.08333333333333,15.08333333333333,15.08333333333333,18.1,12.92857142857143,11.3125,12.92857142857143,22.625,22.625,12.92857142857143,90.5],[9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779],[0,5.388888888888889,8.083333333333334,8.083333333333334,6.466666666666667,6.466666666666667,0,8.083333333333334,5.388888888888889,4.041666666666667,5.388888888888889,6.466666666666667,0,4.61904761904762,4.61904761904762,5.388888888888889,5.388888888888889,5.388888888888889,0,4.61904761904762,4.041666666666667,4.61904761904762,8.083333333333334,8.083333333333334,0,32.33333333333334],[256.8263888888889,340.525,237.7944444444445,237.7944444444445,289.1597222222222,289.1597222222222,347.3263888888889,328.2944444444444,431.025,533.7555555555556,431.025,379.6597222222222,398.6916666666667,482.3902777777777,482.3902777777777,431.025,431.025,431.025,347.3263888888889,482.3902777777777,533.7555555555556,482.3902777777777,328.2944444444444,328.2944444444444,450.0569444444444,174.1986111111111],[2968,3000.333333333333,3032.666666666667,3065,3097.333333333334,3129.666666666667,4797.666666666668,4830.000000000001,4862.333333333334,4894.666666666667,4927,4959.333333333333,6627.333333333333,6659.666666666666,6691.999999999999,6724.333333333332,6756.666666666665,8603.399999999998,10271.4,10303.73333333333,10336.06666666667,10368.4,10400.73333333333,10433.06666666667,12101.06666666667,12133.4],[593.6,272.7575757575758,202.1777777777778,161.3157894736842,129.0555555555556,107.9195402298851,141.1078431372549,127.1052631578948,110.5075757575758,94.12820512820514,84.94827586206897,78.71957671957672,96.04830917874396,87.62719298245614,80.62650602409637,75.55430711610485,71.12280701754385,85.18217821782176,96.89999999999998,91.18348082595868,85.4220385674931,81.003125,78.79343434343434,76.71372549019608,84.62284382284383,84.25972222222224]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>corrida<\/th>\n      <th>muestras<\/th>\n      <th>muestras_totales<\/th>\n      <th>muestras_en_FC<\/th>\n      <th>FC_actual<\/th>\n      <th>evento<\/th>\n      <th>RBK_id<\/th>\n      <th>run_in_rbk_counter<\/th>\n      <th>raa_counter<\/th>\n      <th>raa_cycle_global<\/th>\n      <th>costo_WGA<\/th>\n      <th>costo_FC<\/th>\n      <th>costo_RAA<\/th>\n      <th>costo_RBK<\/th>\n      <th>costo_wash<\/th>\n      <th>costo_WGA_unit<\/th>\n      <th>costo_FC_unit<\/th>\n      <th>costo_RAA_unit<\/th>\n      <th>costo_RBK_unit<\/th>\n      <th>costo_wash_unit<\/th>\n      <th>costo_run_modelado<\/th>\n      <th>costo_acumulado<\/th>\n      <th>costo_promedio_global<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":15,"scrollX":true,"columnDefs":[{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":21,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":22,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":0,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},{"name":"corrida","targets":0},{"name":"muestras","targets":1},{"name":"muestras_totales","targets":2},{"name":"muestras_en_FC","targets":3},{"name":"FC_actual","targets":4},{"name":"evento","targets":5},{"name":"RBK_id","targets":6},{"name":"run_in_rbk_counter","targets":7},{"name":"raa_counter","targets":8},{"name":"raa_cycle_global","targets":9},{"name":"costo_WGA","targets":10},{"name":"costo_FC","targets":11},{"name":"costo_RAA","targets":12},{"name":"costo_RBK","targets":13},{"name":"costo_wash","targets":14},{"name":"costo_WGA_unit","targets":15},{"name":"costo_FC_unit","targets":16},{"name":"costo_RAA_unit","targets":17},{"name":"costo_RBK_unit","targets":18},{"name":"costo_wash_unit","targets":19},{"name":"costo_run_modelado","targets":20},{"name":"costo_acumulado","targets":21},{"name":"costo_promedio_global","targets":22}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,15,25,50,100]}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.columnDefs.20.render","options.columnDefs.21.render","options.columnDefs.22.render"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -1165,133 +1188,146 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">18</td>
+<td style="text-align: left;">14.0</td>
+<td style="text-align: left;">14</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">Arranca_RBK</td>
-<td style="text-align: left;">924.58</td>
+<td style="text-align: left;">719.11</td>
 <td style="text-align: left;">2,968.00</td>
-<td style="text-align: left;">164.89</td>
+<td style="text-align: left;">212.00</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">33</td>
+<td style="text-align: left;">16.0</td>
+<td style="text-align: left;">30</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">802.81</td>
+<td style="text-align: left;">854.18</td>
 <td style="text-align: left;">3,000.33</td>
-<td style="text-align: left;">90.92</td>
+<td style="text-align: left;">100.01</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">50</td>
+<td style="text-align: left;">15.0</td>
+<td style="text-align: left;">45</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Nuevo FC</td>
-<td style="text-align: left;">873.21</td>
-<td style="text-align: left;">4,125.33</td>
-<td style="text-align: left;">82.51</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Wash</td>
+<td style="text-align: left;">802.81</td>
+<td style="text-align: left;">3,032.67</td>
+<td style="text-align: left;">67.39</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">65</td>
+<td style="text-align: left;">13.0</td>
+<td style="text-align: left;">58</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Nuevo FC</td>
+<td style="text-align: left;">667.75</td>
+<td style="text-align: left;">4,157.67</td>
+<td style="text-align: left;">71.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">17.0</td>
+<td style="text-align: left;">75</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">5</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">802.81</td>
-<td style="text-align: left;">4,157.67</td>
-<td style="text-align: left;">63.96</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">18</td>
-<td style="text-align: left;">83</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Nuevo FC</td>
-<td style="text-align: left;">924.58</td>
-<td style="text-align: left;">5,282.67</td>
-<td style="text-align: left;">63.65</td>
+<td style="text-align: left;">905.54</td>
+<td style="text-align: left;">4,190.00</td>
+<td style="text-align: left;">55.87</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">6</td>
-<td style="text-align: left;">17</td>
-<td style="text-align: left;">100</td>
+<td style="text-align: left;">14.0</td>
+<td style="text-align: left;">89</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Wash + Compra WGA</td>
-<td style="text-align: left;">905.54</td>
-<td style="text-align: left;">7,129.40</td>
-<td style="text-align: left;">71.29</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Wash</td>
+<td style="text-align: left;">751.45</td>
+<td style="text-align: left;">4,222.33</td>
+<td style="text-align: left;">47.44</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">20</td>
+<td style="text-align: left;">12.0</td>
+<td style="text-align: left;">101</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Nuevo FC + Compra WGA + Compra RAA</td>
+<td style="text-align: left;">706.88</td>
+<td style="text-align: left;">7,704.73</td>
+<td style="text-align: left;">76.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">19.0</td>
 <td style="text-align: left;">120</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">7</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Nuevo FC + Compra RAA</td>
-<td style="text-align: left;">1,117.81</td>
-<td style="text-align: left;">8,797.40</td>
-<td style="text-align: left;">73.31</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">15</td>
-<td style="text-align: left;">135</td>
-<td style="text-align: left;">1</td>
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">893.31</td>
-<td style="text-align: left;">8,829.73</td>
-<td style="text-align: left;">65.41</td>
+<td style="text-align: left;">1,098.77</td>
+<td style="text-align: left;">7,737.07</td>
+<td style="text-align: left;">64.48</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">9</td>
-<td style="text-align: left;">9</td>
-<td style="text-align: left;">144</td>
+<td style="text-align: left;">16.0</td>
+<td style="text-align: left;">136</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">9</td>
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
 <td style="text-align: left;">Wash</td>
-<td style="text-align: left;">585.12</td>
-<td style="text-align: left;">8,862.07</td>
-<td style="text-align: left;">61.54</td>
+<td style="text-align: left;">944.68</td>
+<td style="text-align: left;">7,769.40</td>
+<td style="text-align: left;">57.13</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">8.0</td>
+<td style="text-align: left;">144</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Nuevo FC</td>
+<td style="text-align: left;">501.42</td>
+<td style="text-align: left;">8,894.40</td>
+<td style="text-align: left;">61.77</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">NA</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">16</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">14.4</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">144</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">1</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">NA</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">NA</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">4</td>
 <td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">PROMEDIO</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">869.97</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">8,862.07</td>
-<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">61.54</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">795.26</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">8,894.40</td>
+<td style="text-align: left; font-weight: bold; background-color: rgba(239, 239, 239, 255) !important;">61.77</td>
 </tr>
 </tbody>
 </table>
@@ -1312,8 +1348,8 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <p>This simulation output contains all operational state variables and is provided here for reproducibility.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-91801ae7d40f1694a01f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-91801ae7d40f1694a01f">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4,5,6,7,8,9],[18,15,17,15,18,17,20,15,9],[18,33,50,65,83,100,120,135,144],[18,33,17,32,18,35,20,35,44],[1,1,2,2,3,3,4,4,4],["Arranca_RBK","Wash","Nuevo FC","Wash","Nuevo FC","Wash + Compra WGA","Nuevo FC + Compra RAA","Wash","Wash"],[1,1,1,1,1,1,1,1,1],[1,2,3,4,5,6,7,8,9],[0,0,0,0,0,0,1,2,3],[0,0,0,0,0,0,1,1,1],[340.2,283.5,321.3,283.5,340.2,321.3,378,283.5,170.1],[421.875,351.5625,398.4375,351.5625,421.875,398.4375,468.75,351.5625,210.9375],[0,0,0,0,0,0,90.5,90.5,90.5],[162.5,135.4166666666667,153.4722222222222,135.4166666666667,162.5,153.4722222222222,180.5555555555556,135.4166666666667,81.25],[0,32.33333333333334,0,32.33333333333334,0,32.33333333333334,0,32.33333333333334,32.33333333333334],[18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9],[23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375],[0,0,0,0,0,0,4.525,6.033333333333333,10.05555555555556],[9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779],[0,2.155555555555556,0,2.155555555555556,0,1.901960784313726,0,2.155555555555556,3.592592592592593],[924.575,802.8125000000001,873.2097222222221,802.8125000000001,924.575,905.5430555555555,1117.805555555556,893.3125000000001,585.1208333333334],[2968,3000.333333333333,4125.333333333334,4157.666666666667,5282.666666666667,7129.4,8797.4,8829.733333333334,8862.066666666668],[164.8888888888889,90.91919191919192,82.50666666666667,63.96410256410257,63.64658634538153,71.294,73.31166666666667,65.40543209876543,61.54212962962963]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>corrida<\/th>\n      <th>muestras<\/th>\n      <th>muestras_totales<\/th>\n      <th>muestras_en_FC<\/th>\n      <th>FC_actual<\/th>\n      <th>evento<\/th>\n      <th>RBK_id<\/th>\n      <th>run_in_rbk_counter<\/th>\n      <th>raa_counter<\/th>\n      <th>raa_cycle_global<\/th>\n      <th>costo_WGA<\/th>\n      <th>costo_FC<\/th>\n      <th>costo_RAA<\/th>\n      <th>costo_RBK<\/th>\n      <th>costo_wash<\/th>\n      <th>costo_WGA_unit<\/th>\n      <th>costo_FC_unit<\/th>\n      <th>costo_RAA_unit<\/th>\n      <th>costo_RBK_unit<\/th>\n      <th>costo_wash_unit<\/th>\n      <th>costo_run_modelado<\/th>\n      <th>costo_acumulado<\/th>\n      <th>costo_promedio_global<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":15,"scrollX":true,"columnDefs":[{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":21,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":22,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":0,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},{"name":"corrida","targets":0},{"name":"muestras","targets":1},{"name":"muestras_totales","targets":2},{"name":"muestras_en_FC","targets":3},{"name":"FC_actual","targets":4},{"name":"evento","targets":5},{"name":"RBK_id","targets":6},{"name":"run_in_rbk_counter","targets":7},{"name":"raa_counter","targets":8},{"name":"raa_cycle_global","targets":9},{"name":"costo_WGA","targets":10},{"name":"costo_FC","targets":11},{"name":"costo_RAA","targets":12},{"name":"costo_RBK","targets":13},{"name":"costo_wash","targets":14},{"name":"costo_WGA_unit","targets":15},{"name":"costo_FC_unit","targets":16},{"name":"costo_RAA_unit","targets":17},{"name":"costo_RBK_unit","targets":18},{"name":"costo_wash_unit","targets":19},{"name":"costo_run_modelado","targets":20},{"name":"costo_acumulado","targets":21},{"name":"costo_promedio_global","targets":22}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,15,25,50,100]}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.columnDefs.20.render","options.columnDefs.21.render","options.columnDefs.22.render"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-b90a4be0e377094ecac3" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b90a4be0e377094ecac3">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4,5,6,7,8,9,10],[14,16,15,13,17,14,12,19,16,8],[14,30,45,58,75,89,101,120,136,144],[14,30,45,13,30,44,12,31,47,8],[1,1,1,2,2,2,3,3,3,4],["Arranca_RBK","Wash","Wash","Nuevo FC","Wash","Wash","Nuevo FC + Compra WGA + Compra RAA","Wash","Wash","Nuevo FC"],[1,1,1,1,1,1,1,1,1,1],[1,2,3,4,5,6,7,8,9,10],[0,0,0,0,0,0,1,2,3,4],[0,0,0,0,0,0,1,1,1,1],[264.6,302.4,283.5,245.7,321.3,264.6,226.8,359.1,302.4,151.2],[328.125,375,351.5625,304.6875,398.4375,328.125,281.25,445.3125,375,187.5],[0,0,0,0,0,0,90.5,90.5,90.5,90.5],[126.3888888888889,144.4444444444445,135.4166666666667,117.3611111111111,153.4722222222222,126.3888888888889,108.3333333333333,171.5277777777778,144.4444444444445,72.22222222222223],[0,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,0,32.33333333333334,32.33333333333334,0],[18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9,18.9],[23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375,23.4375],[0,0,0,0,0,0,7.541666666666667,4.763157894736842,5.65625,11.3125],[9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779],[0,2.020833333333333,2.155555555555556,0,1.901960784313726,2.30952380952381,0,1.701754385964912,2.020833333333333,0],[719.1138888888888,854.1777777777778,802.8125000000001,667.7486111111111,905.5430555555555,751.4472222222222,706.8833333333333,1098.773611111111,944.6777777777778,501.4222222222222],[2968,3000.333333333333,3032.666666666667,4157.666666666667,4190,4222.333333333333,7704.733333333333,7737.066666666666,7769.399999999999,8894.399999999998],[212,100.0111111111111,67.39259259259259,71.68390804597702,55.86666666666667,47.44194756554307,76.28448844884488,64.47555555555554,57.12794117647058,61.76666666666665]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>corrida<\/th>\n      <th>muestras<\/th>\n      <th>muestras_totales<\/th>\n      <th>muestras_en_FC<\/th>\n      <th>FC_actual<\/th>\n      <th>evento<\/th>\n      <th>RBK_id<\/th>\n      <th>run_in_rbk_counter<\/th>\n      <th>raa_counter<\/th>\n      <th>raa_cycle_global<\/th>\n      <th>costo_WGA<\/th>\n      <th>costo_FC<\/th>\n      <th>costo_RAA<\/th>\n      <th>costo_RBK<\/th>\n      <th>costo_wash<\/th>\n      <th>costo_WGA_unit<\/th>\n      <th>costo_FC_unit<\/th>\n      <th>costo_RAA_unit<\/th>\n      <th>costo_RBK_unit<\/th>\n      <th>costo_wash_unit<\/th>\n      <th>costo_run_modelado<\/th>\n      <th>costo_acumulado<\/th>\n      <th>costo_promedio_global<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":15,"scrollX":true,"columnDefs":[{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":21,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":22,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":0,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},{"name":"corrida","targets":0},{"name":"muestras","targets":1},{"name":"muestras_totales","targets":2},{"name":"muestras_en_FC","targets":3},{"name":"FC_actual","targets":4},{"name":"evento","targets":5},{"name":"RBK_id","targets":6},{"name":"run_in_rbk_counter","targets":7},{"name":"raa_counter","targets":8},{"name":"raa_cycle_global","targets":9},{"name":"costo_WGA","targets":10},{"name":"costo_FC","targets":11},{"name":"costo_RAA","targets":12},{"name":"costo_RBK","targets":13},{"name":"costo_wash","targets":14},{"name":"costo_WGA_unit","targets":15},{"name":"costo_FC_unit","targets":16},{"name":"costo_RAA_unit","targets":17},{"name":"costo_RBK_unit","targets":18},{"name":"costo_wash_unit","targets":19},{"name":"costo_run_modelado","targets":20},{"name":"costo_acumulado","targets":21},{"name":"costo_promedio_global","targets":22}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,15,25,50,100]}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.columnDefs.20.render","options.columnDefs.21.render","options.columnDefs.22.render"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -1451,8 +1487,8 @@ n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-909f7c424788d409e307" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-909f7c424788d409e307">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4,5,6],[24,24,24,24,24,24],[24,48,72,96,120,144],[24,48,24,48,24,48],[1,1,2,2,3,3],["Arranca_RBK","Wash","Nuevo FC","Wash","Nuevo FC + Compra WGA","Wash"],[1,1,1,1,1,1],[1,2,3,4,5,6],[0,0,0,0,0,0],[0,0,0,0,0,0],[453.6,453.6,453.6,453.6,453.6,453.6],[562.5,562.5,562.5,562.5,562.5,562.5],[0,0,0,0,0,0],[216.6666666666667,216.6666666666667,216.6666666666667,216.6666666666667,216.6666666666667,216.6666666666667],[0,32.33333333333334,0,32.33333333333334,0,32.33333333333334],[18.9,18.9,18.9,18.9,18.9,18.9],[23.4375,23.4375,23.4375,23.4375,23.4375,23.4375],[0,0,0,0,0,0],[9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779],[0,1.347222222222222,0,1.347222222222222,0,1.347222222222222],[1232.766666666667,1265.1,1232.766666666667,1265.1,1232.766666666667,1265.1],[2968,3000.333333333333,4125.333333333334,4157.666666666667,7097.066666666667,7129.4],[123.6666666666667,62.50694444444445,57.2962962962963,43.30902777777778,59.14222222222222,49.50972222222222]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>corrida<\/th>\n      <th>muestras<\/th>\n      <th>muestras_totales<\/th>\n      <th>muestras_en_FC<\/th>\n      <th>FC_actual<\/th>\n      <th>evento<\/th>\n      <th>RBK_id<\/th>\n      <th>run_in_rbk_counter<\/th>\n      <th>raa_counter<\/th>\n      <th>raa_cycle_global<\/th>\n      <th>costo_WGA<\/th>\n      <th>costo_FC<\/th>\n      <th>costo_RAA<\/th>\n      <th>costo_RBK<\/th>\n      <th>costo_wash<\/th>\n      <th>costo_WGA_unit<\/th>\n      <th>costo_FC_unit<\/th>\n      <th>costo_RAA_unit<\/th>\n      <th>costo_RBK_unit<\/th>\n      <th>costo_wash_unit<\/th>\n      <th>costo_run_modelado<\/th>\n      <th>costo_acumulado<\/th>\n      <th>costo_promedio_global<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":15,"scrollX":true,"columnDefs":[{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":21,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":22,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":0,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},{"name":"corrida","targets":0},{"name":"muestras","targets":1},{"name":"muestras_totales","targets":2},{"name":"muestras_en_FC","targets":3},{"name":"FC_actual","targets":4},{"name":"evento","targets":5},{"name":"RBK_id","targets":6},{"name":"run_in_rbk_counter","targets":7},{"name":"raa_counter","targets":8},{"name":"raa_cycle_global","targets":9},{"name":"costo_WGA","targets":10},{"name":"costo_FC","targets":11},{"name":"costo_RAA","targets":12},{"name":"costo_RBK","targets":13},{"name":"costo_wash","targets":14},{"name":"costo_WGA_unit","targets":15},{"name":"costo_FC_unit","targets":16},{"name":"costo_RAA_unit","targets":17},{"name":"costo_RBK_unit","targets":18},{"name":"costo_wash_unit","targets":19},{"name":"costo_run_modelado","targets":20},{"name":"costo_acumulado","targets":21},{"name":"costo_promedio_global","targets":22}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,15,25,50,100]}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.columnDefs.20.render","options.columnDefs.21.render","options.columnDefs.22.render"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-02ba016e89afa34be10e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-02ba016e89afa34be10e">{"x":{"filter":"none","vertical":false,"data":[[1,2,3,4,5,6],[24,24,24,24,24,24],[24,48,72,96,120,144],[24,48,24,48,24,48],[1,1,2,2,3,3],["Arranca_RBK","Wash","Nuevo FC","Wash","Nuevo FC + Compra WGA","Wash"],[1,1,1,1,1,1],[1,2,3,4,5,6],[0,0,0,0,0,0],[0,0,0,0,0,0],[453.6,453.6,453.6,453.6,453.6,453.6],[562.5,562.5,562.5,562.5,562.5,562.5],[0,0,0,0,0,0],[216.6666666666667,216.6666666666667,216.6666666666667,216.6666666666667,216.6666666666667,216.6666666666667],[0,32.33333333333334,0,32.33333333333334,0,32.33333333333334],[18.9,18.9,18.9,18.9,18.9,18.9],[23.4375,23.4375,23.4375,23.4375,23.4375,23.4375],[0,0,0,0,0,0],[9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779,9.027777777777779],[0,1.347222222222222,0,1.347222222222222,0,1.347222222222222],[1232.766666666667,1265.1,1232.766666666667,1265.1,1232.766666666667,1265.1],[2968,3000.333333333333,4125.333333333334,4157.666666666667,7097.066666666667,7129.4],[123.6666666666667,62.50694444444445,57.2962962962963,43.30902777777778,59.14222222222222,49.50972222222222]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>corrida<\/th>\n      <th>muestras<\/th>\n      <th>muestras_totales<\/th>\n      <th>muestras_en_FC<\/th>\n      <th>FC_actual<\/th>\n      <th>evento<\/th>\n      <th>RBK_id<\/th>\n      <th>run_in_rbk_counter<\/th>\n      <th>raa_counter<\/th>\n      <th>raa_cycle_global<\/th>\n      <th>costo_WGA<\/th>\n      <th>costo_FC<\/th>\n      <th>costo_RAA<\/th>\n      <th>costo_RBK<\/th>\n      <th>costo_wash<\/th>\n      <th>costo_WGA_unit<\/th>\n      <th>costo_FC_unit<\/th>\n      <th>costo_RAA_unit<\/th>\n      <th>costo_RBK_unit<\/th>\n      <th>costo_wash_unit<\/th>\n      <th>costo_run_modelado<\/th>\n      <th>costo_acumulado<\/th>\n      <th>costo_promedio_global<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":15,"scrollX":true,"columnDefs":[{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":13,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":14,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":15,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":16,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":17,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":18,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":19,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":20,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":21,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":22,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":0,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":1,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[0,1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},{"name":"corrida","targets":0},{"name":"muestras","targets":1},{"name":"muestras_totales","targets":2},{"name":"muestras_en_FC","targets":3},{"name":"FC_actual","targets":4},{"name":"evento","targets":5},{"name":"RBK_id","targets":6},{"name":"run_in_rbk_counter","targets":7},{"name":"raa_counter","targets":8},{"name":"raa_cycle_global","targets":9},{"name":"costo_WGA","targets":10},{"name":"costo_FC","targets":11},{"name":"costo_RAA","targets":12},{"name":"costo_RBK","targets":13},{"name":"costo_wash","targets":14},{"name":"costo_WGA_unit","targets":15},{"name":"costo_FC_unit","targets":16},{"name":"costo_RAA_unit","targets":17},{"name":"costo_RBK_unit","targets":18},{"name":"costo_wash_unit","targets":19},{"name":"costo_run_modelado","targets":20},{"name":"costo_acumulado","targets":21},{"name":"costo_promedio_global","targets":22}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,15,25,50,100]}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render","options.columnDefs.9.render","options.columnDefs.10.render","options.columnDefs.11.render","options.columnDefs.12.render","options.columnDefs.13.render","options.columnDefs.14.render","options.columnDefs.15.render","options.columnDefs.16.render","options.columnDefs.17.render","options.columnDefs.18.render","options.columnDefs.19.render","options.columnDefs.20.render","options.columnDefs.21.render","options.columnDefs.22.render"],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
