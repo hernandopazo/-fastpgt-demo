@@ -8,17 +8,10 @@ csl: nature.csl
 ---
 
 ::: callout-note
-## **Contenido**
-
-1. Primer ensayo Havanna.
-   - Reporte de resultados del ensayo.
-   - Reporte de resultados por muestra.
-   - Comparación de resultados clínicos.
-2. Estrategias de downsampling y tiempos de corrida.
-
+## Links
 **Insumos**: [Apéndice técnico](appendix-technical.qmd). [Reporte Havanna FCEN](inputs/FCEN/report_Nanopore_seq.html).
 
-**Delivery 4**:  [Apéndice económico](appendix-costs.qmd). [Documento Ppal](index.qmd).
+**Delivery 4**:  [Apéndice económico](appendix-costsRBKRAA.qmd).
 :::
 
 

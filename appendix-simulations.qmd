@@ -1,6 +1,6 @@
 ---
 title: "Apéndice Costos Simulados"
-subtitle: "Simulaciones de costos en diferentes regímenes de carga (FastPGT vs Classic PGT)"
+subtitle: "Simulación de costos FastPGT vs Classic PGT"
 number-sections: false
 
 lang: es
@@ -14,33 +14,17 @@ execute:
 ---
 
 ::: callout-note
-## **Contenido**
+## Links
 
-1. Introducción del sistea de costos  
-2. Formulación del modelo  
-3. Insumos: costos y rendimiento  
-4. Espacio global de costos  
-5. Espacio operativa  
+**Presupuestos**: [Apéndice económico](appendix-costsRBKRAA.qmd)
 
-**Presupuestos**:
-
-1. Migliore Laclaustra: [WGA phi29-XT](/inputs/insumos/Migliori/SNEB00058.pdf)  
-2. Analytical: [Insumos ONT](/inputs/insumos/Analytical/LP-1102D3.pdf)  
-
-**Links relevantes**:
-
-1. Starter kit: [Paquete MiniION Mk1D](https://store.nanoporetech.com/minion.html)  
-2. Library RBK: [Rapid Barcoding Kit 24 V14](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html)  
-3. Extension RAA114: [Adaptador Rápido Auxiliar V14](https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html)  
-
-**Delivery 4**:  
-[Documento Principal](/index.html) / [Apéndice CAPEX 2PQ](/appendix-capex2pq/)
+**Delivery 4**:  [Documento Principal](/index.html)
 :::
 
 ---
 
 
-## 1. Simulación de costos bajo corridas de baja densidad (FastPGT)
+## 1. Simulación de costos en corridas de baja densidad (FastPGT)
 
 A continuación modelamos el uso completo de un kit Rapid Barcoding (RBK) con capacidad total de 144 muestras bajo un régimen operativo FAST.
 
@@ -85,7 +69,6 @@ El objetivo de esta simulación es:
  - Se realizaron **300 simulaciones independientes**, cada una correspondiente a un ciclo completo de consumo de un kit RBK (144 barcodes), modelado como una secuencia de corridas hasta alcanzar dicha capacidad.
 
 ::: 
-
 
 
 ### 1.2 Naturaleza estocástica del modelo
@@ -189,7 +172,7 @@ runs_all <- purrr::map_df(1:300, function(i){
 })
 
  ggplot(runs_all, aes(x = n)) +
-  geom_histogram(binwidth = 1, fill = "#5F9EA0", color = "white") +
+  geom_histogram(binwidth = 1, fill = "#e1886f", color = "white") +
   theme_minimal() +
   labs(
     title = "",
@@ -301,7 +284,7 @@ La tabla muestra que:
 ggplot(results, aes(x = cost_per_sample)) +
   
   geom_density(
-    fill = "#2F4F4F",
+    fill = "#e1886f",
     alpha = 0.5,
     color = "black",
     linewidth = 0.6
@@ -400,15 +383,10 @@ En conjunto, el modelo proporciona una herramienta robusta para la toma de decis
 
 :::
 
+---
 
+## 2. Simulación bajo régimen intermedio
 
-----
-
-## 2. Simulación bajo régimen PGT estándar / batch
-
-En este escenario se modela un régimen operativo con corridas de mayor tamaño, representativo de un flujo de trabajo tipo batch.
-
-A diferencia del régimen FAST, las corridas presentan menor fragmentación y un mayor número de muestras por corrida.
 
 La secuencia de corridas se define como:
 
@@ -418,8 +396,187 @@ $$
 
 donde:
 
+$R$ es el número total de corridas, y $n_i$ es el número de muestras por corrida, la cual tiene las siguientes propiedades:
+
 $$
-n_i \sim \mathcal{N}(\mu = 21,\ \sigma = 2), \quad n_i \in [15,24]
+n_i \sim \mathcal{N}(\mu = 16,\ \sigma = 2), \quad n_i \in [11,22]
+$$
+
+Este modelo refleja condiciones operativas donde las muestras se agrupan antes de ser procesadas, optimizando el uso de recursos.
+
+
+```{r}
+# =========================================================
+# Escenario INTERMEDIO / PGT estándar
+# =========================================================
+
+simulate_interm_runs <- function() {
+  
+  total <- 0
+  runs <- c()
+  
+  while (total < 144) {
+    
+    n <- round(rnorm(1, mean = 16, sd = 2))
+    n <- pmin(pmax(n, 11), 22)
+    
+    if (total + n > 144) {
+      n <- 144 - total
+    }
+    
+    runs <- c(runs, n)
+    total <- total + n
+  }
+  
+  runs
+}
+
+# ---------------------------------------------------------
+# Simulación
+# ---------------------------------------------------------
+
+results_interm <- purrr::map_df(1:300, function(i){
+  
+  runs <- simulate_interm_runs()
+  df <- simulate_runs(runs, params = params)
+  
+  tibble(
+    sim = i,
+    total_runs = length(runs),
+    total_muestras = sum(df$muestras),
+    flow_cells = max(df$FC_actual),
+    total_cost = max(df$costo_acumulado),
+    cost_per_sample = max(df$costo_acumulado) / sum(df$muestras)
+  )
+})
+
+```
+
+### Tabla de Costos
+
+```{r}
+cost_table_interm <- results_interm %>%
+  summarise(
+    `Costo medio (USD)` = round(mean(cost_per_sample), 1),
+    `Desvío estándar` = round(sd(cost_per_sample), 2),
+    `P10` = round(quantile(cost_per_sample, 0.10), 1),
+    `Mediana (P50)` = round(quantile(cost_per_sample, 0.50), 1),
+    `P90` = round(quantile(cost_per_sample, 0.90), 1)
+  )
+
+cost_table_interm %>%
+  knitr::kable(
+    align = "c",
+    caption = "Resumen de costos bajo régimen intermedio"
+  )
+
+```
+
+
+### Tabla de Operación
+
+```{r}
+ops_table_interm <- results_interm %>%
+  summarise(
+    `Corridas (min)` = min(total_runs),
+    `Corridas (mediana)` = median(total_runs),
+    `Corridas (p90)` = quantile(total_runs, 0.90),
+    `Corridas (max)` = max(total_runs),
+    
+    `FC (min)` = min(flow_cells),
+    `FC (mediana)` = median(flow_cells),
+    `FC (p90)` = quantile(flow_cells, 0.90),
+    `FC (max)` = max(flow_cells)
+  )
+
+ops_table_interm %>%
+  knitr::kable(
+    align = "c",
+    caption = "Resumen operativo bajo régimen intermedio"
+  )
+
+```
+
+### Distribución de muestras por corrida (PGT intermedio)
+
+```{r}
+
+
+runs_interm_all <- purrr::map_df(1:300, function(i){
+  tibble(n = simulate_interm_runs())
+})
+
+ggplot(runs_interm_all, aes(x = n)) +
+  geom_histogram(binwidth = 1, fill = "#81afaf", color = "white") +
+  theme_minimal() +
+  labs(
+    title = "",
+    x = "Número de muestras por corrida",
+    y = "Frecuencia"
+  )
+
+```
+
+### Gráfico de Costos
+
+```{r}
+
+ggplot(results_interm, aes(x = cost_per_sample)) +
+  geom_density(
+    fill = "#81afaf",
+    alpha = 0.5,
+    adjust = 0.4
+  ) +
+  
+  geom_vline(
+    aes(xintercept = mean(cost_per_sample)),
+    linetype = "dashed",
+    color = "#b80c09",
+    linewidth = 0.8
+  ) +
+  
+  annotate(
+    "text",
+    x = mean(results_interm$cost_per_sample),
+    y = 1.4,
+    label = paste0("Mean = ", round(mean(results_interm$cost_per_sample),1)),
+    color = "#b80c09",
+    vjust = 2,
+    hjust = 1.1
+  ) +
+  
+  # scale_x_continuous(
+  #   breaks = seq(50, 104, 5),
+  #   limits = c(55, 100),
+  #   expand = c(0, 0)
+  # ) +
+  
+  theme_minimal() +
+  labs(
+    title = "Distribución del costo por muestra (PGT intermedio)",
+    x = "USD por muestra",
+    y = "Densidad"
+  )
+
+```
+
+
+
+
+----
+
+## 3. Simulación bajo régimen PGT clásico / batch
+
+En este escenario se modela un régimen operativo con corridas de mayor tamaño, representativo de un flujo de trabajo tipo batch.
+
+A diferencia del régimen FAST, las corridas presentan menor fragmentación y un mayor número de muestras por corrida.
+
+La secuencia de corridas se define como en el escenario anterior.
+
+donde:
+
+$$
+n_i \sim \mathcal{N}(\mu = 24,\ \sigma = 0), \quad n_i \in [24,24]
 $$
 
 Este modelo refleja condiciones operativas donde las muestras se agrupan antes de ser procesadas, optimizando el uso de recursos.
@@ -438,8 +595,8 @@ simulate_batch_runs <- function() {
   
   while (total < 144) {
     
-    n <- round(rnorm(1, mean = 21, sd = 2))
-    n <- pmin(pmax(n, 15), 24)
+    n <- round(rnorm(1, mean = 24, sd = 0))
+    n <- pmin(pmax(n, 24), 24)
     
     if (total + n > 144) {
       n <- 144 - total
@@ -522,15 +679,23 @@ ops_table_batch %>%
 
 ```{r}
 
-
 runs_batch_all <- purrr::map_df(1:300, function(i){
   tibble(n = simulate_batch_runs())
 })
 
-ggplot(runs_batch_all, aes(x = n)) +
-  geom_histogram(binwidth = 1, fill = "#5F9EA0", color = "white") +
-  theme_minimal() +
-  labs(
+
+ggplot(runs_batch_all, aes(x = factor(n))) +
+  geom_bar(fill = "#347266", width = 0.3) +
+annotate(
+  "text",
+  x = 1,
+  y = max(table(runs_batch_all$n)) * 0.5,
+  label = " n = 24 ",
+  color = "white",
+  size = 5
+) +
+  theme_minimal()+
+    labs(
     title = "",
     x = "Número de muestras por corrida",
     y = "Frecuencia"
@@ -542,22 +707,33 @@ ggplot(runs_batch_all, aes(x = n)) +
 
 ```{r}
 
-ggplot(results_batch, aes(x = cost_per_sample)) +
-  geom_density(
-    fill = "#5F9EA0",
-    alpha = 0.5,
-    adjust = 0.4
+mean_cost <- mean(results_batch$cost_per_sample)
+
+ggplot() +
+  geom_segment(
+    aes(x = mean_cost, xend = mean_cost, y = 0, yend = 1),
+    color = "#347266",
+    linewidth = 1.5
   ) +
-  theme_minimal() +
-  labs(
-    title = "Distribución del costo por muestra (PGT estándar)",
+  annotate(
+    "text",
+    x = mean_cost,
+    y = 1.05,
+    label = paste0("Mean =", round(mean_cost,1), ""),
+    vjust = 0
+  ) +
+  xlim(40, 100) +
+  ylim(0, 1.2) +
+  theme_minimal()+
+    labs(
+    title = "Distribución del costo por muestra (PGT clásico / batch)",
     x = "USD por muestra",
     y = "Densidad"
   )
 
 ```
 
-### Interpretación del régimen PGT estandard o batch
+### Interpretación del régimen PGT clásico o batch
 
 El régimen batch presenta una reducción significativa en la variabilidad del sistema, con un menor número de corridas necesarias para consumir un kit RBK y, en consecuencia, un menor número de flow cells utilizados.
 
@@ -567,49 +743,74 @@ El aumento en el tamaño promedio de corrida reduce la fragmentación del proces
 
 ::: callout-note
 
-## Comparación del costos por muestra: FAST vs PGT estándar
+## Comparación del costos por muestra: FAST vs Intermedio vs PGT clásico
 
-- En comparación con el régimen FAST, este escenario representa un comportamiento más estable y predecible, a costa de una menor inmediatez en el procesamiento de muestras.
+- En comparación con el régimen FAST, el escenario e intermedio representan un comportamiento más estable y predecible, con una la reducción de costos importantes, y curiosamnete, no tan diferentes, lo cual genera una ventaja operacional importante: **No hay mucha diferencia entre los costos BATCH vs INTERMEDIO** lo cual relaja la decisión del laboratorio sobre qué procedimiento y cuanto tiempo deben esperar las muestras.
 
 
 
 ```{r}
 
+
 # =========================================================
-# Comparación FAST vs BATCH
+# Comparación FAST vs INTERMEDIO vs BATCH
 # =========================================================
+
+library(dplyr)
+library(ggplot2)
 
 # Etiquetar datasets
-results_fast <- results %>%
+results_fast_plot <- results %>%
   mutate(regimen = "FAST")
 
-results_batch <- results_batch %>%
-  mutate(regimen = "STANDARD")
+results_intermedio_plot <- results_interm %>%
+  mutate(regimen = "INTERMEDIO")
 
-# Unir
-results_all <- bind_rows(results_fast, results_batch)
+results_batch_plot <- results_batch %>%
+  mutate(regimen = "BATCH")
 
-# Plot
-ggplot(results_all, aes(x = cost_per_sample, fill = regimen)) +
-  
+# Unir solo FAST + INTERMEDIO para density
+results_density <- bind_rows(results_fast_plot, results_intermedio_plot)
+
+# Valor único batch
+batch_cost <- unique(results_batch_plot$cost_per_sample)[1]
+
+
+batch_df <- data.frame(
+  regimen = "BATCH",
+  xintercept = batch_cost
+)
+
+ggplot() +
   geom_density(
-    color = "black",   # 👈 contorno neutro
+    data = results_density,
+    aes(x = cost_per_sample, fill = regimen),
+    color = "black",
     alpha = 0.4,
     linewidth = 0.6
   ) +
-  
-  scale_fill_manual(values = c("FAST" = "#5F9EA0", "STANDARD" = "red")) +
-  scale_color_manual(values = c("FAST" = "#5F9EA0", "STANDARD" = "red")) +
-  
-coord_cartesian(xlim = c(50, 90), ylim = c(0, 4)) +
-  
+  geom_vline(
+    data = batch_df,
+    aes(xintercept = xintercept, color = regimen),
+    linewidth = 1.2,
+    linetype = "dashed"
+  ) +
+  scale_fill_manual(
+    values = c(
+      "FAST" = "#e1886f",
+      "INTERMEDIO" = "#347266"
+    )
+  ) +
+  scale_color_manual(
+    values = c("BATCH" = "#B80C09")
+  ) +
+  coord_cartesian(xlim = c(45, 90), ylim = c(0, 4)) +
   labs(
     x = "Costo por muestra (USD)",
     y = "Densidad",
-    fill = "Régimen",
-    color = "Régimen"
+    fill = "",
+    color = ""
   ) +
-  
   theme_minimal()
 
 ```
@@ -618,9 +819,9 @@ coord_cartesian(xlim = c(50, 90), ylim = c(0, 4)) +
 
 
 ----
-## 3. Ejemplo de simulaciones
+## 4. Tabla de simulaciones
 
-### 3.1. FastPGT
+### 4.1. FastPGT
 
 The full simulation output contains 23 variables capturing operational and economic states. 
 For clarity, a reduced subset of key variables is presented here.
@@ -737,13 +938,14 @@ df_final %>%
 ## Click to see the full simulation
 
 This simulation output contains all operational state variables and is provided here for reproducibility.
+
 ```{r}
 library(DT)
 
 DT::datatable(
   df,
   options = list(
-    pageLength = 10,
+    pageLength = 15,
     scrollX = TRUE
   ),
   rownames = FALSE
@@ -756,10 +958,127 @@ DT::datatable(
 :::
 
 
-### 3.2. PGT Standard o batch
 
-The full simulation output contains 23 variables capturing operational and economic states. 
-For clarity, a reduced subset of key variables is presented here.
+
+
+
+### 4.2. PGT Intermedio
+
+
+```{r}
+
+# =========================================================
+# Summary Simulation Table — BATCH
+# =========================================================
+
+library(dplyr)
+library(kableExtra)
+library(scales)
+
+# generar corridas interm
+runs_interm_all <- simulate_interm_runs()
+
+df_interm <- simulate_runs(runs_interm_all, params)
+
+# -------------------------
+# TABLA REDUCIDA
+# -------------------------
+
+df_interm_reducido <- df_interm %>%
+  select(
+    corrida,
+    muestras,
+    muestras_totales,
+    RBK_id,
+    run_in_rbk_counter,
+    raa_counter,
+    FC_actual,
+    evento,
+    costo_run_modelado,
+    costo_acumulado,
+    costo_promedio_global
+  ) %>%
+  rename(
+    "Run" = corrida,
+    "Samples" = muestras,
+    "Total Samples" = muestras_totales,
+    "RBK #" = RBK_id,
+    "RBK Cycle" = run_in_rbk_counter,
+    "RAA Cycle" = raa_counter,
+    "Flow Cell #" = FC_actual,
+    "Event" = evento,
+    "Run Cost (USD)" = costo_run_modelado,
+    "Cumulative Cost (USD)" = costo_acumulado,
+    "Avg Cost / Sample (USD)" = costo_promedio_global
+  )
+
+# -------------------------
+# FILA PROMEDIO
+# -------------------------
+
+fila_promedio_interm <- df_interm_reducido %>%
+  summarise(
+    Run = NA,
+    Samples = mean(Samples),
+    `Total Samples` = max(`Total Samples`),
+    `RBK #` = max(`RBK #`),
+    `RBK Cycle` = NA,
+    `RAA Cycle` = NA,
+    `Flow Cell #` = max(`Flow Cell #`),
+    Event = "PROMEDIO",
+    `Run Cost (USD)` = mean(`Run Cost (USD)`),
+    `Cumulative Cost (USD)` = max(`Cumulative Cost (USD)`),
+    `Avg Cost / Sample (USD)` = max(`Cumulative Cost (USD)`) / max(`Total Samples`)
+  )
+
+# unir
+df_interm_final <- bind_rows(df_interm_reducido, fila_promedio_interm)
+
+# -------------------------
+# TABLA FORMATEADA
+# -------------------------
+
+df_interm_final %>%
+  mutate(
+    across(
+      where(is.numeric),
+      ~format(round(.x, 2), big.mark = ",", decimal.mark = ".")
+    )
+  ) %>%
+  kbl(booktabs = TRUE, caption = "Resumen de simulación (Intermedio)") %>%
+  kable_styling(full_width = FALSE) %>%
+  row_spec(nrow(df_interm_final), bold = TRUE, background = "#EFEFEF")
+
+```
+
+
+::: {.callout-note collapse="true"}
+## Click to see the full simulation
+
+This simulation output contains all operational state variables and is provided here for reproducibility.
+
+```{r}
+library(DT)
+
+DT::datatable(
+  df_interm,
+  options = list(
+    pageLength = 15,
+    scrollX = TRUE
+  ),
+  rownames = FALSE
+) %>%
+  DT::formatRound(
+    columns = which(sapply(df_interm, is.numeric)),
+    digits = 2
+  )
+```
+:::
+
+
+
+
+### 4.3. PGT Clásico o batch
 
 
 ```{r}
@@ -870,3 +1189,6 @@ DT::datatable(
 
 ```
 :::
+
+
+

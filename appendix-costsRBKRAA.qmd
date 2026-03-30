@@ -14,27 +14,12 @@ execute:
 ---
 
 ::: callout-note
-## **Contenido**
-
-1. Introducción del sistea de costos  
-2. Formulación del modelo  
-3. Insumos: costos y rendimiento  
-4. Espacio global de costos  
-5. Espacio operativa  
+## Links
 
 **Presupuestos**:
+Migliore Laclaustra: [WGA phi29-XT](/inputs/insumos/Migliori/SNEB00058.pdf). Analytical: 1. [MinION + Wask kit + FC + Library Inicial ONT](/inputs/insumos/Analytical/LP-1102D.pdf). 2. [Starter kit + RAA ONT](/inputs/insumos/Analytical/LP-1102D3.pdf).  3. [RBK.6x24](/inputs/insumos/Analytical/LP-1163D.pdf).  4. [RBK.6x96](/inputs/insumos/Analytical/LP-1163D2.pdf)
 
-1. Migliore Laclaustra: [WGA phi29-XT](/inputs/insumos/Migliori/SNEB00058.pdf)  
-2. Analytical: [Insumos ONT](/inputs/insumos/Analytical/LP-1102D3.pdf)  
-
-**Links relevantes**:
-
-1. Starter kit: [Paquete MiniION Mk1D](https://store.nanoporetech.com/minion.html)  
-2. Library RBK: [Rapid Barcoding Kit 24 V14](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html)  
-3. Extension RAA114: [Adaptador Rápido Auxiliar V14](https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html)  
-
-**Delivery 4**:  
-[Documento Principal](/index.html) / [Apéndice CAPEX 2PQ](/appendix-capex2pq/)
+**Delivery 4**: [Documento Principal](/index.html)
 :::
 
 ---

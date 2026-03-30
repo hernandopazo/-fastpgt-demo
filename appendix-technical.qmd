@@ -8,13 +8,9 @@ csl: nature.csl
 ---
 
 ::: callout-note
-
-**Insumos**: 
-
-1. Library Original: [[Ligation sequencing amplicons - Native Barcoding Kit 24 V14](https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24). 
-1. Library RBK: [Rapid Barcoding Kit 24 V14](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html)  
-1. Extension RAA114: [Adaptador Rápido Auxiliar V14](https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html) 
-1. [Reporte Havanna - FCEN](inputs/FCEN/report_Nanopore_seq.html). 
+## Links
+**Insumos**: [Library Original](https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24). [Library RBK](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html).  [Extension RAA114](https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html). [Starter kit. MiniION Mk1D](https://store.nanoporetech.com/minion.html).  [Reporte Havanna - FCEN](inputs/FCEN/report_Nanopore_seq.html). 
+ 
 
 **Delivery 4**: [Apéndice experimental](appendix-experimental.qmd). 
 
@@ -175,7 +171,7 @@ En consecuencia, el esquema Illumina permanece condicionado por una lógica secu
 :::
 
 
-En contraste, el esquema FastPGT representado en la **@fig-time-comparison** introduce una optimización simultánea de tiempos y costos a lo largo de todo el flujo. Esto incluye: 
+En contraste, el esquema FastPGT representado en la **@fig-time-comparison** y **@fig-fastpgt-workflow** introduce una optimización simultánea de tiempos y costos a lo largo de todo el flujo. Esto incluye: 
 
 1.  el uso de WGA isotérmica (p. ej. phi29-XT), con tiempos más cortos y menor complejidad operativa; 
 
@@ -221,7 +217,7 @@ Los supuestos operativos asociados a la amplificación genómica, la profundidad
 
 
 
-## 5.1. Dinámica de la producción de secuencias
+## 5. Dinámica de la producción de secuencias
 
 Como hemos insistido en el [Documento principal](index.qmd), la tecnología ONT nos permite evaluar en **tiempo real** un  aspecto central del ensayo:  la **dinámica temporal de producción de datos**, expresada tanto en **bases secuenciadas** como en **número de lecturas** a lo largo de la corrida.
 
@@ -244,7 +240,7 @@ Este parámetro es importante ya que **nos permitiría predecir en los primero m
 
 
 
-## 5.2. Dinámica del uso de poros y calidad de las secuencias
+### 5.1. Dinámica del uso de poros y calidad de las secuencias
 
 Para analizar el rendimiento de la corrida se consideran **dos variables
 dinámicas principales**:\
