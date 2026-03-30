@@ -96,7 +96,7 @@ Los fundamentos técnicos de estos escenarios se desarrollan en el [**Apéndice 
 ::: {style="width: 100%; margin: 0 auto; font-size: 0.80em;"}
 | Escenario | Embriones | Mb / embrión | Tiempo seq\* |  Costo / embrión (US$)\*\* |
 |:-----------|-----------:|-----------:|:----------:|-----------:|
-| FastPGT (baja carga) | 4–10 | \~45 Mb | \~1–2 h |  \~82.9|
+| FastPGT (baja carga) | 4–10 | \~45 Mb | \~1–2 h |  \~83.3|
 | FastPGT (carga intermedia) | 11–22 | \~45–75 Mb | \~10-20 h |  \~61.6 |
 | Batch : PGT clásico | 24 | \~45 Mb | ≥20 h |  \~49.5 |
 
