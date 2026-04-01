@@ -52,7 +52,7 @@ El modelo económico de PGT con tecnología ONT se basa en la utilización efici
 -   La primera corrida en cada flow cell no requiere lavado.\
 -   Las corridas subsiguientes requieren un ciclo de lavado previo.
 
-👉 El desafío operativo consiste en **modelar un sistema dinámico de corridas independientes que minimice el costo por muestra**.
+El desafío operativo consiste en **modelar un sistema dinámico de corridas independientes que minimice el costo por muestra**.
 :::
 
 ## 2. Formulación del modelo
@@ -141,9 +141,7 @@ $$
 
 En esta representación, cada punto del mapa corresponde a un escenario promedio en el cual las $N$ muestras se distribuyen de la manera más homogénea posible entre $R$ corridas. Cuando $N$ no es divisible exactamente por $R$, el modelo asigna corridas de tamaño $\lfloor N/R \rfloor$ y $\lceil N/R \rceil$, preservando la mínima diferencia posible entre corridas.
 
-Este mapa no describe trayectorias clínicas específicas, sino un paisaje económico promedio que permite identificar regiones de mayor y menor eficiencia del sistema.
 
-Cuando $N$ no es divisible exactamente por $R$, el modelo asigna corridas de tamaño $\lfloor N/R \rfloor$ y $\lceil N/R \rceil$, preservando la diferencia mínima posible entre corridas.
 
 Esta representación no describe trayectorias clínicas específicas como las simulaciones estocásticas del Apéndice de Costos Simulados, sino un espacio económico promedio que permite visualizar tendencias globales de eficiencia e ineficiencia del sistema.
 
@@ -282,18 +280,21 @@ De este modo, el mapa describe exclusivamente el dominio operativo relevante del
 
 ### Representación combinada: costo absoluto y eficiencia relativa
 
-La figura presenta un mapa unificado en el que se combinan dos dimensiones complementarias:
+La figura presenta una representación integrada en la que:
 
--   Costo absoluto por muestra, en USD dentro de las celdas,
--   Pérdida relativa de eficiencia respecto al mejor escenario posible para cada valor de $r$
+- el color indica el costo absoluto por muestra (USD),
+-  la escala está estructurada para reflejar la eficiencia relativa respecto al óptimo.
 
-La pérdida relativa se define como:
+La pérdida relativa de eficiencia se define como:
 
 $$
-\text{Exceso}(n,r) = \frac{C(n,r)}{C_{\text{opt}}(r)} - 1
+\text{exc}(n,r) = \frac{C(n,r)}{C_{\text{opt}}(r)} - 1
 $$
 
-donde $C_{\text{opt}}(r)$ corresponde al menor costo alcanzable dentro de cada columna (es decir, para un número fijo de corridas).
+donde $C_{\text{opt}}(r)$ es el menor costo alcanzable para un número fijo de corridas.
+
+
+De este modo, el gráfico permite interpretar simultáneamente el costo real del sistema y su desviación respecto al óptimo operativo.
 
 ```{r}
 # ============================================================
@@ -439,19 +440,62 @@ grid_op <- grid_op %>%
 
 ggplot(grid_op, aes(x = r, y = n, fill = exceso_pct)) +
 
-  geom_tile() +
+  geom_tile(color = NA) +
 
+  # -------------------------
+  # GRILLA (encima del heatmap)
+  # -------------------------
+  geom_vline(
+    xintercept = seq(1, 30, by = 1),
+    color = "grey90", linewidth = 0.15
+  ) +
+
+  geom_hline(
+    yintercept = seq(1, 24, by = 1),
+    color = "grey90", linewidth = 0.15
+  ) +
+
+  # -------------------------
+  # BLOQUES DE FLOW CELL (cada 6)
+  # -------------------------
+  geom_vline(
+    xintercept = seq(6.5, 30, by = 6),
+    linetype = "dashed",
+    linewidth = 0.5,
+    color = "black"
+  ) +
+
+  # -------------------------
+  # TEXTO (USD)
+  # -------------------------
   geom_text(
     data = grid_op %>% filter(n %% 4 == 0, r %% 3 == 0),
     aes(label = round(costo, 0)),
-    size = 2.6, color= "white",
+    size = 2.6,
+    color = "white"
   ) +
 
+  # -------------------------
+  # ESCALA
+  # -------------------------
   scale_fill_gradientn(
     colors = c("#2C7FB8", "#41B6C4", "#A1DAB4", "#FDD870", "#F46D43", "#D73027"),
     limits = c(0, 100),
     oob = scales::squish,
-    name = "% sobre óptimo"
+    name = "% exceso"
+  ) +
+
+  # -------------------------
+  # EJES
+  # -------------------------
+  scale_x_continuous(
+    breaks = seq(0, 30, by = 2),
+    expand = c(0, 0)
+  ) +
+
+  scale_y_continuous(
+    breaks = seq(0, 24, by = 2),
+    expand = c(0, 0)
   ) +
 
   labs(
@@ -461,71 +505,60 @@ ggplot(grid_op, aes(x = r, y = n, fill = exceso_pct)) +
     y = "Muestras por corrida (n)"
   ) +
 
-  theme_minimal(base_size = 12)
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid = element_blank(),
+    axis.text.x = element_text(size = 8),
+    legend.text = element_text(size = 8)
+  )
 
 
 ```
 
-De este modo, el gráfico permite interpretar simultáneamente el costo real del sistema y su desviación respecto al óptimo operativo.
+El gráfico revela que la eficiencia del sistema depende críticamente de la organización de las corridas:
 
-### Interpretación del gráfico
+-   tamaños de corrida grandes $n \geq 20$ se sitúan sistemáticamente cerca del óptimo
+-   corridas pequeñas $n \leq 6$ inducen aumentos abruptos del costo
+-   el impacto negativo se amplifica a medida que aumenta el número total de corridas
 
-El gráfico permite visualizar simultáneamente:
+Esto refleja directamente la naturaleza discreta del sistema, dominada por:
 
--   el costo absoluto por muestra (gradiente de color), y 
--  la eficiencia relativa dentro de cada régimen de corridas.
+-   límite de 6 corridas por flow cell
+-   capacidad máxima de 48 muestras por flow cell
+-   consumo escalonado de insumos
 
-Las regiones azules corresponden a configuraciones cercanas al óptimo para ese valor de $r$, mientras que las regiones amarillas y rojas indican pérdidas progresivas de eficiencia asociadas a la fragmentación del sistema.
+Las líneas verticales discontinuas marcan las transiciones entre bloques de 6 corridas, indicando el punto en el que es necesario abrir una nueva flow cell.
 
-Se observa que:
 
--   los tamaños de corrida grandes ($n \geq 20$) tienden a concentrarse en zonas cercanas al óptimo,
--   mientras que corridas pequeñas ($n \leq 6$) generan aumentos abruptos del costo por muestra,
--   especialmente cuando se incrementa el número total de corridas.
+El mapa permite identificar rápidamente:
 
-Estos efectos reflejan directamente la estructura discreta del sistema, dominada por:
+-   configuraciones cercanas al óptimo
+-   zonas de operación aceptables
+-   regiones altamente ineficientes
 
--   límites de uso de flow cells (máximo 6 corridas),
--   capacidad máxima de muestras por flow cell (48),
--   consumo escalonado de insumos (RBK, RAA, WGA).
+En particular, evidencia que la eficiencia no depende únicamente del volumen total procesado, sino de cómo se agrupan las muestras en cada corrida.
 
-### Estructura discreta y transiciones operativas
-
-El gráfico presenta una geometría escalonada característica, resultado de las transiciones discretas del sistema. Estas transiciones generan discontinuidades en el costo que no pueden capturarse mediante modelos continuos, y constituyen el principal determinante de la eficiencia operativa.
-
-Estas transiciones reflejan directamente:
-
-los límites de uso de flow cells (máximo 6 corridas),
-la capacidad máxima de muestras por flow cell (48),
-y el consumo escalonado de insumos (RBK, RAA, WGA).
-
-En conjunto, estas restricciones generan discontinuidades en el costo que no pueden capturarse mediante modelos continuos y constituyen el principal determinante de la eficiencia operativa.
-
-### Lectura operativa
-
-Desde el punto de vista práctico, el mapa permite identificar rápidamente:
-
--   configuraciones óptimas para un número dado de corridas,
--   regiones de operación aceptables,
--   y zonas de alto costo que deben evitarse.
-
-En particular, el gráfico evidencia que la eficiencia no depende únicamente del volumen total procesado, sino fundamentalmente de cómo se agrupan las muestras en cada corrida.
 
 ### Relación con el espacio global
 
-A diferencia del mapa global de costos ($C = f(N, R)$), que describe el comportamiento promedio del sistema, el presente mapa representa configuraciones operativas concretas.
+
+El mapa global describe el comportamiento promedio del sistema:
+
+ $$ C = f(N, R) $$
+
+mientras que el presente mapa representa configuraciones operativas concretas:
+
+ $$ C = f(n, r) $$
 
 Ambas representaciones son complementarias:
 
--   el espacio global captura la **tendencia económica promedio** del sistema,
+-   el espacio global captura la tendencia económica
+-   el espacio operativo describe estrategias de laboratorio
 
--   mientras que el espacio operativo describe **estrategias reales de ejecución**.
-
-En conjunto, permiten comprender tanto la física económica del sistema como las decisiones prácticas necesarias para optimizar su desempeño.
-
+En conjunto, permiten comprender tanto la estructura económica del sistema como las decisiones necesarias para optimizar su desempeño.
 
 
-::: callout-important
+::: callout-note
 Las ecuaciones analíticas presentadas en este apéndice son compatibles con el simulador utilizado en el Apéndice de Costos Simulados, ya que ambos comparten las mismas variables agregadas de salida —número total de corridas, muestras procesadas, flow cells requeridas, costo total y costo por muestra— así como las mismas reglas generales de consumo de insumos. Sin embargo, el modelo analítico constituye una representación agregada y determinística del sistema, mientras que la simulación reproduce trayectorias secuenciales explícitas de corridas y eventos operativos. Por este motivo, ambos enfoques deben considerarse complementarios y no estrictamente equivalentes.
 :::
 

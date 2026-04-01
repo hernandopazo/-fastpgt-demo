@@ -215,9 +215,6 @@ window.Quarto = {
   <li><a href="#espacio-operativo" id="toc-espacio-operativo" class="nav-link" data-scroll-target="#espacio-operativo">5. Espacio operativo</a>
   <ul class="collapse">
   <li><a href="#representación-combinada-costo-absoluto-y-eficiencia-relativa" id="toc-representación-combinada-costo-absoluto-y-eficiencia-relativa" class="nav-link" data-scroll-target="#representación-combinada-costo-absoluto-y-eficiencia-relativa">Representación combinada: costo absoluto y eficiencia relativa</a></li>
-  <li><a href="#interpretación-del-gráfico" id="toc-interpretación-del-gráfico" class="nav-link" data-scroll-target="#interpretación-del-gráfico">Interpretación del gráfico</a></li>
-  <li><a href="#estructura-discreta-y-transiciones-operativas" id="toc-estructura-discreta-y-transiciones-operativas" class="nav-link" data-scroll-target="#estructura-discreta-y-transiciones-operativas">Estructura discreta y transiciones operativas</a></li>
-  <li><a href="#lectura-operativa" id="toc-lectura-operativa" class="nav-link" data-scroll-target="#lectura-operativa">Lectura operativa</a></li>
   <li><a href="#relación-con-el-espacio-global" id="toc-relación-con-el-espacio-global" class="nav-link" data-scroll-target="#relación-con-el-espacio-global">Relación con el espacio global</a></li>
   </ul></li>
   </ul>
@@ -305,7 +302,7 @@ window.Quarto = {
 </li>
 <li>Las corridas subsiguientes requieren un ciclo de lavado previo.</li>
 </ul>
-<p>👉 El desafío operativo consiste en <strong>modelar un sistema dinámico de corridas independientes que minimice el costo por muestra</strong>.</p>
+<p>El desafío operativo consiste en <strong>modelar un sistema dinámico de corridas independientes que minimice el costo por muestra</strong>.</p>
 </div>
 </div>
 </section>
@@ -440,8 +437,6 @@ la capacidad total de muestras procesadas por flow cell o el número máximo de 
 C = f(N, R)
 \]</span></p>
 <p>En esta representación, cada punto del mapa corresponde a un escenario promedio en el cual las <span class="math inline">\(N\)</span> muestras se distribuyen de la manera más homogénea posible entre <span class="math inline">\(R\)</span> corridas. Cuando <span class="math inline">\(N\)</span> no es divisible exactamente por <span class="math inline">\(R\)</span>, el modelo asigna corridas de tamaño <span class="math inline">\(\lfloor N/R \rfloor\)</span> y <span class="math inline">\(\lceil N/R \rceil\)</span>, preservando la mínima diferencia posible entre corridas.</p>
-<p>Este mapa no describe trayectorias clínicas específicas, sino un paisaje económico promedio que permite identificar regiones de mayor y menor eficiencia del sistema.</p>
-<p>Cuando <span class="math inline">\(N\)</span> no es divisible exactamente por <span class="math inline">\(R\)</span>, el modelo asigna corridas de tamaño <span class="math inline">\(\lfloor N/R \rfloor\)</span> y <span class="math inline">\(\lceil N/R \rceil\)</span>, preservando la diferencia mínima posible entre corridas.</p>
 <p>Esta representación no describe trayectorias clínicas específicas como las simulaciones estocásticas del Apéndice de Costos Simulados, sino un espacio económico promedio que permite visualizar tendencias globales de eficiencia e ineficiencia del sistema.</p>
 <section id="interpretación-corta" class="level3">
 <h3 class="anchored" data-anchor-id="interpretación-corta">4.1. Interpretación corta:</h3>
@@ -477,16 +472,17 @@ n \cdot r \leq 144
 <p>De este modo, el mapa describe exclusivamente el dominio operativo relevante del sistema FastPGT, excluyendo escenarios que implican la adquisición de múltiples kits y que no forman parte del régimen analizado.</p>
 <section id="representación-combinada-costo-absoluto-y-eficiencia-relativa" class="level3">
 <h3 class="anchored" data-anchor-id="representación-combinada-costo-absoluto-y-eficiencia-relativa">Representación combinada: costo absoluto y eficiencia relativa</h3>
-<p>La figura presenta un mapa unificado en el que se combinan dos dimensiones complementarias:</p>
+<p>La figura presenta una representación integrada en la que:</p>
 <ul>
-<li>Costo absoluto por muestra, en USD dentro de las celdas,</li>
-<li>Pérdida relativa de eficiencia respecto al mejor escenario posible para cada valor de <span class="math inline">\(r\)</span></li>
+<li>el color indica el costo absoluto por muestra (USD),</li>
+<li>la escala está estructurada para reflejar la eficiencia relativa respecto al óptimo.</li>
 </ul>
-<p>La pérdida relativa se define como:</p>
+<p>La pérdida relativa de eficiencia se define como:</p>
 <p><span class="math display">\[
-\text{Exceso}(n,r) = \frac{C(n,r)}{C_{\text{opt}}(r)} - 1
+\text{exc}(n,r) = \frac{C(n,r)}{C_{\text{opt}}(r)} - 1
 \]</span></p>
-<p>donde <span class="math inline">\(C_{\text{opt}}(r)\)</span> corresponde al menor costo alcanzable dentro de cada columna (es decir, para un número fijo de corridas).</p>
+<p>donde <span class="math inline">\(C_{\text{opt}}(r)\)</span> es el menor costo alcanzable para un número fijo de corridas.</p>
+<p>De este modo, el gráfico permite interpretar simultáneamente el costo real del sistema y su desviación respecto al óptimo operativo.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -496,62 +492,46 @@ n \cdot r \leq 144
 </div>
 </div>
 </div>
-<p>De este modo, el gráfico permite interpretar simultáneamente el costo real del sistema y su desviación respecto al óptimo operativo.</p>
-</section>
-<section id="interpretación-del-gráfico" class="level3">
-<h3 class="anchored" data-anchor-id="interpretación-del-gráfico">Interpretación del gráfico</h3>
-<p>El gráfico permite visualizar simultáneamente:</p>
+<p>El gráfico revela que la eficiencia del sistema depende críticamente de la organización de las corridas:</p>
 <ul>
-<li>el costo absoluto por muestra (gradiente de color), y</li>
-<li>la eficiencia relativa dentro de cada régimen de corridas.</li>
+<li>tamaños de corrida grandes <span class="math inline">\(n \geq 20\)</span> se sitúan sistemáticamente cerca del óptimo</li>
+<li>corridas pequeñas <span class="math inline">\(n \leq 6\)</span> inducen aumentos abruptos del costo</li>
+<li>el impacto negativo se amplifica a medida que aumenta el número total de corridas</li>
 </ul>
-<p>Las regiones azules corresponden a configuraciones cercanas al óptimo para ese valor de <span class="math inline">\(r\)</span>, mientras que las regiones amarillas y rojas indican pérdidas progresivas de eficiencia asociadas a la fragmentación del sistema.</p>
-<p>Se observa que:</p>
+<p>Esto refleja directamente la naturaleza discreta del sistema, dominada por:</p>
 <ul>
-<li>los tamaños de corrida grandes (<span class="math inline">\(n \geq 20\)</span>) tienden a concentrarse en zonas cercanas al óptimo,</li>
-<li>mientras que corridas pequeñas (<span class="math inline">\(n \leq 6\)</span>) generan aumentos abruptos del costo por muestra,</li>
-<li>especialmente cuando se incrementa el número total de corridas.</li>
+<li>límite de 6 corridas por flow cell</li>
+<li>capacidad máxima de 48 muestras por flow cell</li>
+<li>consumo escalonado de insumos</li>
 </ul>
-<p>Estos efectos reflejan directamente la estructura discreta del sistema, dominada por:</p>
+<p>Las líneas verticales discontinuas marcan las transiciones entre bloques de 6 corridas, indicando el punto en el que es necesario abrir una nueva flow cell.</p>
+<p>El mapa permite identificar rápidamente:</p>
 <ul>
-<li>límites de uso de flow cells (máximo 6 corridas),</li>
-<li>capacidad máxima de muestras por flow cell (48),</li>
-<li>consumo escalonado de insumos (RBK, RAA, WGA).</li>
+<li>configuraciones cercanas al óptimo</li>
+<li>zonas de operación aceptables</li>
+<li>regiones altamente ineficientes</li>
 </ul>
-</section>
-<section id="estructura-discreta-y-transiciones-operativas" class="level3">
-<h3 class="anchored" data-anchor-id="estructura-discreta-y-transiciones-operativas">Estructura discreta y transiciones operativas</h3>
-<p>El gráfico presenta una geometría escalonada característica, resultado de las transiciones discretas del sistema. Estas transiciones generan discontinuidades en el costo que no pueden capturarse mediante modelos continuos, y constituyen el principal determinante de la eficiencia operativa.</p>
-<p>Estas transiciones reflejan directamente:</p>
-<p>los límites de uso de flow cells (máximo 6 corridas), la capacidad máxima de muestras por flow cell (48), y el consumo escalonado de insumos (RBK, RAA, WGA).</p>
-<p>En conjunto, estas restricciones generan discontinuidades en el costo que no pueden capturarse mediante modelos continuos y constituyen el principal determinante de la eficiencia operativa.</p>
-</section>
-<section id="lectura-operativa" class="level3">
-<h3 class="anchored" data-anchor-id="lectura-operativa">Lectura operativa</h3>
-<p>Desde el punto de vista práctico, el mapa permite identificar rápidamente:</p>
-<ul>
-<li>configuraciones óptimas para un número dado de corridas,</li>
-<li>regiones de operación aceptables,</li>
-<li>y zonas de alto costo que deben evitarse.</li>
-</ul>
-<p>En particular, el gráfico evidencia que la eficiencia no depende únicamente del volumen total procesado, sino fundamentalmente de cómo se agrupan las muestras en cada corrida.</p>
+<p>En particular, evidencia que la eficiencia no depende únicamente del volumen total procesado, sino de cómo se agrupan las muestras en cada corrida.</p>
 </section>
 <section id="relación-con-el-espacio-global" class="level3">
 <h3 class="anchored" data-anchor-id="relación-con-el-espacio-global">Relación con el espacio global</h3>
-<p>A diferencia del mapa global de costos (<span class="math inline">\(C = f(N, R)\)</span>), que describe el comportamiento promedio del sistema, el presente mapa representa configuraciones operativas concretas.</p>
+<p>El mapa global describe el comportamiento promedio del sistema:</p>
+<p><span class="math display">\[ C = f(N, R) \]</span></p>
+<p>mientras que el presente mapa representa configuraciones operativas concretas:</p>
+<p><span class="math display">\[ C = f(n, r) \]</span></p>
 <p>Ambas representaciones son complementarias:</p>
 <ul>
-<li><p>el espacio global captura la <strong>tendencia económica promedio</strong> del sistema,</p></li>
-<li><p>mientras que el espacio operativo describe <strong>estrategias reales de ejecución</strong>.</p></li>
+<li>el espacio global captura la tendencia económica</li>
+<li>el espacio operativo describe estrategias de laboratorio</li>
 </ul>
-<p>En conjunto, permiten comprender tanto la física económica del sistema como las decisiones prácticas necesarias para optimizar su desempeño.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>En conjunto, permiten comprender tanto la estructura económica del sistema como las decisiones necesarias para optimizar su desempeño.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Importante
+Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
