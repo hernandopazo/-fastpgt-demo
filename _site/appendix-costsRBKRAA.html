@@ -217,6 +217,7 @@ window.Quarto = {
   <li><a href="#representación-combinada-costo-absoluto-y-eficiencia-relativa" id="toc-representación-combinada-costo-absoluto-y-eficiencia-relativa" class="nav-link" data-scroll-target="#representación-combinada-costo-absoluto-y-eficiencia-relativa">Representación combinada: costo absoluto y eficiencia relativa</a></li>
   <li><a href="#relación-con-el-espacio-global" id="toc-relación-con-el-espacio-global" class="nav-link" data-scroll-target="#relación-con-el-espacio-global">Relación con el espacio global</a></li>
   </ul></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">6. Conclusiones</a></li>
   </ul>
 </nav>
     </div>
@@ -445,7 +446,7 @@ C = f(N, R)
 <section id="idea-clave" class="level3">
 <h3 class="anchored" data-anchor-id="idea-clave">Idea clave:</h3>
 <p>El sistema no presenta un óptimo único y continuo, sino múltiples regiones de eficiencia determinadas por restricciones discretas de uso de insumos.</p>
-<p>Este siguiente heatmap muestra el <strong>espacio global de costos</strong>, donde se representa el <strong>costo promedio por muestra según número total de muestras (N) y corridas (R)</strong></p>
+<p>El siguiente heatmap muestra el <strong>espacio global de costos</strong>, donde se representa el <strong>costo promedio por muestra según número total de muestras (N) y corridas (R)</strong></p>
 <p>Los espacios vacíos representan combinaciones estructuralmente inviables dentro del sistema, en particular aquellas en las que el número de corridas excede el número total de muestras (<span class="math inline">\(R &gt; N\)</span>) o que violan las restricciones de capacidad del modelo.</p>
 <p>A diferencia de versiones restringidas del modelo, este mapa incluye explícitamente configuraciones altamente subóptimas, como corridas de muy bajo tamaño, permitiendo visualizar de manera explícita las regiones de alto costo asociadas a la fragmentación extrema del sistema.</p>
 <div class="cell">
@@ -476,7 +477,7 @@ n \cdot r \leq 144
 <p>La figura presenta una representación integrada en la que:</p>
 <ul>
 <li>el color representa la eficiencia relativa respecto al óptimo,</li>
-<li>la escala está estructurada para reflejar la eficiencia relativa respecto al óptimo.</li>
+<li>mientras que la magnitud del valor asociado a cada celda corresponde al costo absoluto por muestra (USD).</li>
 </ul>
 <p>La pérdida relativa de eficiencia se define como:</p>
 <p><span class="math display">\[
@@ -493,7 +494,8 @@ n \cdot r \leq 144
 </div>
 </div>
 </div>
-<p>Configuraciones con costos absolutos similares pueden presentar eficiencias relativas muy distintas, dependiendo de su posición dentro de cada régimen de corridas.</p>
+<p>En cada celda, el valor numérico indica el costo absoluto por muestra (USD), mientras que el color indica qué tan lejos se encuentra esa configuración del mejor escenario posible para ese número de corridas.</p>
+<p>De este modo, configuraciones con costos absolutos similares pueden presentar eficiencias relativas muy distintas dependiendo de su posición dentro de cada régimen de corridas.</p>
 <p>El gráfico revela que la eficiencia del sistema depende críticamente de la organización de las corridas:</p>
 <ul>
 <li>tamaños de corrida grandes <span class="math inline">\(n \geq 20\)</span> se sitúan sistemáticamente cerca del óptimo</li>
@@ -527,6 +529,16 @@ n \cdot r \leq 144
 <li>el espacio operativo describe estrategias de laboratorio</li>
 </ul>
 <p>En conjunto, permiten comprender tanto la estructura económica del sistema como las decisiones necesarias para optimizar su desempeño.</p>
+</section>
+</section>
+<section id="conclusiones" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones">6. Conclusiones</h2>
+<ul>
+<li><p>El costo por muestra del FastPGT no depende únicamente del volumen total procesado, sino de cómo se distribuyen las muestras entre corridas.</p></li>
+<li><p>Configuraciones con costos absolutos similares pueden diferir significativamente en eficiencia relativa, evidenciando que la organización operativa del sistema es el principal determinante del desempeño económico.</p></li>
+<li><p>En particular, la fragmentación en corridas pequeñas genera pérdidas sustanciales de eficiencia, mientras que tamaños de corrida mayores permiten una amortización óptima de los insumos dentro de cada ciclo de flow cell.</p></li>
+</ul>
+<hr>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -542,7 +554,6 @@ Nota
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
