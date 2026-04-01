@@ -153,9 +153,11 @@ Los valores bajos indican configuraciones en las que los insumos se amortizan me
 
 El sistema no presenta un óptimo único y continuo, sino múltiples regiones de eficiencia determinadas por restricciones discretas de uso de insumos.
 
-Este siguiente heatmap mustra el **espacio global de costos**, donde se representa el **costo promedio por muestra según número total de muestras (N) y corridas (R)**
+Este siguiente heatmap muestra el **espacio global de costos**, donde se representa el **costo promedio por muestra según número total de muestras (N) y corridas (R)**
 
-Los espacios vacíos no representan necesariamente combinaciones imposibles, sino configuraciones excluidas del dominio analizado por corresponder a tamaños de corrida fuera del rango operativo considerado en este modelo. Específicamente, cada una de las corridas no puede contener menos de 1 ni mas de 24 muestras.
+Los espacios vacíos representan combinaciones estructuralmente inviables dentro del sistema, en particular aquellas en las que el número de corridas excede el número total de muestras ($R > N$) o que violan las restricciones de capacidad del modelo.
+
+A diferencia de versiones restringidas del modelo, este mapa incluye  explícitamente configuraciones altamente subóptimas, como corridas de muy bajo tamaño, permitiendo visualizar de manera explícita las regiones de alto costo asociadas a la fragmentación extrema del sistema.
 
 ```{r}
 library(tidyverse)
@@ -282,7 +284,7 @@ De este modo, el mapa describe exclusivamente el dominio operativo relevante del
 
 La figura presenta una representación integrada en la que:
 
-- el color indica el costo absoluto por muestra (USD),
+-  el color representa la eficiencia relativa respecto al óptimo,
 -  la escala está estructurada para reflejar la eficiencia relativa respecto al óptimo.
 
 La pérdida relativa de eficiencia se define como:
@@ -423,6 +425,7 @@ grid_op <- grid_op %>%
     costo = map2_dbl(n, r, calc_cost_nr)
   )
 
+
 # óptimo por r
 optimos <- grid_op %>%
   group_by(r) %>%
@@ -514,6 +517,9 @@ ggplot(grid_op, aes(x = r, y = n, fill = exceso_pct)) +
 
 
 ```
+
+Configuraciones con costos absolutos similares pueden presentar eficiencias relativas muy distintas, dependiendo de su posición dentro de cada régimen de corridas.
+
 
 El gráfico revela que la eficiencia del sistema depende críticamente de la organización de las corridas:
 

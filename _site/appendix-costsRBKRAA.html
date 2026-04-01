@@ -445,8 +445,9 @@ C = f(N, R)
 <section id="idea-clave" class="level3">
 <h3 class="anchored" data-anchor-id="idea-clave">Idea clave:</h3>
 <p>El sistema no presenta un óptimo único y continuo, sino múltiples regiones de eficiencia determinadas por restricciones discretas de uso de insumos.</p>
-<p>Este siguiente heatmap mustra el <strong>espacio global de costos</strong>, donde se representa el <strong>costo promedio por muestra según número total de muestras (N) y corridas (R)</strong></p>
-<p>Los espacios vacíos no representan necesariamente combinaciones imposibles, sino configuraciones excluidas del dominio analizado por corresponder a tamaños de corrida fuera del rango operativo considerado en este modelo. Específicamente, cada una de las corridas no puede contener menos de 1 ni mas de 24 muestras.</p>
+<p>Este siguiente heatmap muestra el <strong>espacio global de costos</strong>, donde se representa el <strong>costo promedio por muestra según número total de muestras (N) y corridas (R)</strong></p>
+<p>Los espacios vacíos representan combinaciones estructuralmente inviables dentro del sistema, en particular aquellas en las que el número de corridas excede el número total de muestras (<span class="math inline">\(R &gt; N\)</span>) o que violan las restricciones de capacidad del modelo.</p>
+<p>A diferencia de versiones restringidas del modelo, este mapa incluye explícitamente configuraciones altamente subóptimas, como corridas de muy bajo tamaño, permitiendo visualizar de manera explícita las regiones de alto costo asociadas a la fragmentación extrema del sistema.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -474,7 +475,7 @@ n \cdot r \leq 144
 <h3 class="anchored" data-anchor-id="representación-combinada-costo-absoluto-y-eficiencia-relativa">Representación combinada: costo absoluto y eficiencia relativa</h3>
 <p>La figura presenta una representación integrada en la que:</p>
 <ul>
-<li>el color indica el costo absoluto por muestra (USD),</li>
+<li>el color representa la eficiencia relativa respecto al óptimo,</li>
 <li>la escala está estructurada para reflejar la eficiencia relativa respecto al óptimo.</li>
 </ul>
 <p>La pérdida relativa de eficiencia se define como:</p>
@@ -492,6 +493,7 @@ n \cdot r \leq 144
 </div>
 </div>
 </div>
+<p>Configuraciones con costos absolutos similares pueden presentar eficiencias relativas muy distintas, dependiendo de su posición dentro de cada régimen de corridas.</p>
 <p>El gráfico revela que la eficiencia del sistema depende críticamente de la organización de las corridas:</p>
 <ul>
 <li>tamaños de corrida grandes <span class="math inline">\(n \geq 20\)</span> se sitúan sistemáticamente cerca del óptimo</li>
