@@ -1215,5 +1215,13 @@ DT::datatable(
 ```
 :::
 
+::: callout-important
 
+## 5. Conclusiones
+
+Las simulaciones de costos muestran valores competitivos para cualquiera de los 3 escenarios ensayados. No obstante, **queda revisar si la amplificación WGA con phy29 funciona como pensamos, si los rendimientos de FC, RAA y RBK son exactamente los considerados en los supuestos y si los tiempos de los diferentes ensayos son compatibles para cada uno de los escenarios**.
+
+Estos supuestos podrán verificarse o modificarse luego de los ensyaos experimentales realizados por Pufo. 
+
+:::
 
