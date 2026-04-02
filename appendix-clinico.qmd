@@ -1,5 +1,5 @@
 ---
-title: "Apéndice Médico-Clínico"
+title: "Apéndice Clínico"
 number-sections: false
 
 lang: es
@@ -8,32 +8,35 @@ csl: nature.csl
 ---
 
 ::: callout-note
-## **Contenido**
 
-1. Marco clínico del FastPGT
-2. Estrategia transferencia en fresco
-3. Estrategia vitrificar y congelar sólo euploides
+## Links
 
 **Insumos**: [Apéndice técnico](appendix-technical.qmd).
 
-**Delivery 4**:  [Apéndice económico](appendix-costs.qmd). [Documento Ppal](index.qmd).
+**Delivery 4**:  [Apéndice económico](appendix-costsRBKRAA.qmd). [Documento Ppal](index.qmd).
 :::
 
-# 1. Marco Clínico de FastPGT-A
+# 1. Marco Clínico de FastPGT
 
-FastPGT-A permite obtener resultados de eu/aneuploidía embrionaria en una ventana compatible con el mismo día de la biopsia (día 5 post-punción). Esta reducción sustancial del tiempo diagnóstico modifica el paradigma operativo tradicional del PGT-A, en el cual los resultados demoran 10–14 días y obligan a un esquema universal de vitrificación y transferencia diferida.
+FastPGT permite obtener resultados de eu/aneuploidía embrionaria en una ventana temporal que coincide con el mismo día de la biopsia (D5 post-punción). Esta reducción sustancial del tiempo diagnóstico modifica el paradigma operativo tradicional del PGT-A, en el cual los resultados demoran 10–14 días y obligan a un esquema universal de vitrificación y transferencia diferida.
 
 La disponibilidad temprana del resultado no implica una única conducta clínica, sino que habilita al menos **dos estrategias diferenciadas**, las cuales pueden seleccionarse en función del perfil endocrino, endometrial y clínico de la paciente:
 
-- **Transferencia embrionaria en fresco (mismo ciclo)**
-
-- **Freeze-all modificado (ciclo diferido optimizado)**
+- Transferencia embrionaria en fresco (mismo ciclo).
+- Freeze-all modificado (ciclo diferido optimizado).
 
 La elección no es tecnológica sino médica, basada en criterios objetivos y preferencias informadas.
 
+::: callout-important
+
+En los ciclos de IVF sin PGT, la transferencia en fresco (FET) constituye una práctica ampliamente establecida. La introducción del PGT-A convencional transformó este paradigma al imponer un esquema universal de vitrificación debido a limitaciones temporales del diagnóstico. FastPGT-A restituye la posibilidad de transferencia en fresco en el contexto de evaluación genética, reintroduciendo una estrategia fisiológica previamente desplazada.
+
+
+:::
+
 ---
 
-# 2. Transferencia Embrionaria en Fresco
+# 2. Transferencia Embrionaria en Fresco (FET)
 
 ## 2.1 Concepto
 
@@ -55,9 +58,9 @@ Esta estrategia es posible únicamente cuando el diagnóstico genético se obtie
 
 - Día 0: Punción ovárica  
 - Días 1–5: Desarrollo embrionario  
-- Día 5 (mañana): Biopsia + preparación de biblioteca  
-- Día 5 (tarde): Secuenciación MinION + resultado  
-- Día 5–6: Transferencia en fresco  
+- Día 5 (mañana): Biopsia + preparación de librerías  
+- Día 5 (tarde): Secuenciación + resultado  
+- Día 6: Transferencia en fresco  
 - Día 16–20: Test de embarazo  
 
 **Duración total estimada:** ~20–25 días desde punción hasta test.
@@ -103,6 +106,7 @@ Contraindicaciones relativas:
 
 - Evita costos de vitrificación y FET
 - Reducción indirecta de carga operativa
+- Posible reducción de insumos de congelamiento de embriones (mediano plazo)
 
 ---
 
@@ -115,8 +119,8 @@ Contraindicaciones relativas:
 
 ### Logísticos
 
-- Necesidad de coordinación estricta el día 5
-- Ventana estrecha de decisión clínica
+- Necesidad de coordinación estricta en el mismo momento posterior a la biopsia.
+- Ventana estrecha de decisión clínica.
 
 ### Clínicos
 
