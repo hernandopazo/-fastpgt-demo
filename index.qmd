@@ -1,5 +1,5 @@
 ---
-title: "FastPGT: Producto 2pq"
+title: "FastPGT"
 subtitle: "Ánálisis genético de embriones y transferencia en fresco en clínicas IVF"
 
 date: today
@@ -9,7 +9,7 @@ author:
   - name: Nicolás de Gobbo
     affiliation: [EGE – FCEN - UBA]
   - name: Vanesa Rawe
-    affiliation: [Reprofert S.L.]
+    affiliation: [Reprobank S.L.]
   - name: Mariana Berenstein
     affiliation: [Berenstein Consulting S.L.]
   - name: Hernán Dopazo
@@ -76,7 +76,7 @@ El enfoque se basa en el uso de **secuenciación en tiempo real** mediante Oxfor
 Estas propiedades permiten adaptar el ensayo al número real de embriones disponibles y al tiempo clínico efectivo, sin comprometer la robustez diagnóstica requerida para PGT-A.
 
 ::: callout-note
-**FastPGT elimina la necesidad de vitrificación post-biopsia**, reduce la fragmentación del proceso clínico y **devuelve a la clínica un mayor control sobre los tiempos del tratamiento**, sin dependencia de laboratorios externos ni calendarios diferidos.
+**FastPGT elimina el camino de vitrificación post-biopsia como única opción**, reduciendo la fragmentación del proceso clínico y **devolviendo a la clínica un mayor control sobre los tiempos del tratamiento**, sin dependencia de laboratorios externos ni calendarios diferidos.
 :::
 
 ## 4. Escenarios operativos de FastPGT
@@ -108,7 +108,7 @@ Los fundamentos técnicos de estos escenarios se desarrollan en el [**Apéndice 
 
 -   Los escenarios **FastPGT (5–10 embriones)** permiten obtener resultados genéticos dentro de **ventanas temporales compatibles con transferencia embrionaria en fresco**, sin requerir vitrificación post-biopsia.
 -   El costo por embrión en estos escenarios se mantiene **competitivo** sin necesidad de aumentar su precio de venta.
--   En el caso de proponer un aumento del precio de venta para este preoducto, este queda ampliamente compensado por los **ahorros directos del laboratorio y de la clínica** asociados a la necesidad de congelar embriones.
+-   En el caso de proponer un aumento del precio de venta para este servicio, este queda ampliamente compensado por los **ahorros directos del laboratorio y de la clínica** asociados a la necesidad de vitrificar embriones.
 -  El escenario intermedio es un escenario de prueba de costos. No representa hoy una ventaja plantearlo como alternativa.
 -   El escenario **clásico o de batch (24 embriones)** representa una alternativa económicamente eficiente cuando el tiempo no es crítico, pero **no habilita transferencia en fresco** y reproduce la lógica operativa del PGT-A convencional.
 
@@ -125,7 +125,7 @@ La posibilidad de realizar transferencia embrionaria en fresco reduce manipulaci
 Para una descripción detallada sobre el ahorro implícito de la adopción de FastPGT en la clínica, ver [Ventajas económicas del FET](appendix-costsRBKRAA.qmd#sec-ecofet).
 
 
-## 6. FastPGT primer producto 2PQ
+## 6. FastPGT primer servicio 2PQ
 
 FastPGT no constituye únicamente una optimización técnica del PGT-A, sino un **habilitador tecnológico** para nuevos modelos de servicio basados en diagnóstico genómico rápido. Esta puede ser una variable importante de la genómica, no explotada en el país. La secuenciación rápida del genoma completo (rWGS) experimentada en otros países, y presentada a referentes d eneonatología nacional, a través del **Proyecto Yaguarecito** puede ser otro de los productos 2PQ que nos diferencien como marca. 
 

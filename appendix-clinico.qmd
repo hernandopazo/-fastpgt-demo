@@ -1,5 +1,5 @@
 ---
-title: "Apéndice Clínico"
+title: "Apéndice Clínico-Embriológico"
 number-sections: false
 
 lang: es
