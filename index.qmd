@@ -1,6 +1,6 @@
 ---
 title: "FastPGT"
-subtitle: "Ánálisis genético de embriones y transferencia en fresco en clínicas IVF"
+subtitle: "Ánálisis de aneuploidías y transferencia embrionaria en fresco en clínicas IVF"
 
 date: today
 date-format: "D [de] MMMM [de] YYYY"
@@ -27,7 +27,7 @@ bibliography: ONT-PGT.bib
 csl: nature.csl
 
 abstract: |
-  **FastPGT** es una estrategia de análisis genético de embriones basada en la secuenciación rápida, de muy baja cobertura, que permite **obtener resultados clínicos dentro del mismo ciclo de cultivo embrionario**. Este enfoque permite habilitar la **transferencia embrionaria en fresco**, superando las limitaciones temporales, operativas y económicas de los esquemas convencionales practicados en las clínicas de IVF. En este informe se describen las **características técnicas, experimentales y económicas** que muestran la viabilidad del **FastPGT** en el mercado de las clínicas de FIV. 
+  **FastPGT** es una estrategia de análisis genético de embriones basada en la secuenciación rápida del genoma  a muy baja cobertura, que permite obtener resultados dentro de una ventana temporal compatible con **la transferencia embrionaria en el mismo ciclo de estimulación ovárica**. Este enfoque supera las limitaciones temporales y operativas del PGT convencional, en el cual la punción ovárica y la transferencia pueden estar separadas por más de 30 días. En este informe se describen los fundamentos técnicos, experimentales y económicos que demuestran la viabilidad de **FastPGT** y su potencial para transformar la práctica clínica en centros de fertilización asistida. 
 ---
 
 ## 1. Objetivo
