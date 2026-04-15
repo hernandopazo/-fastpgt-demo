@@ -1,5 +1,6 @@
 ---
-title: "Apéndice Inversión"
+title: "Inversión"
+subtitle: "Arranque y Análisis a 3 años"
 number-sections: false
 
 lang: es
