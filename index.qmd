@@ -87,7 +87,7 @@ El análisis conjunto de los resultados experimentales y del modelo económico p
 -   los **tiempos de secuenciación estimados** bajo esquemas de *early stop*,
 -   y el **prorrateo de costos por corrida y por embrión** bajo políticas realistas de reutilización del *flow cell*.
 
-Los fundamentos técnicos de estos escenarios se desarrollan en el [**Apéndice Experimental**](appendix-experimental.qmd#sec-times) y los supuestos económicos en el [**Apéndice Económico**](appendix-costsRBKRAA.qmd#sec-costos-corridas).
+Los fundamentos técnicos de estos escenarios se desarrollan en el [**Apéndice Experimental**](appendix-experimental/fase1-havanna.qmd#sec-times) y los supuestos económicos en el [**Apéndice Económico**](appendix-costsRBKRAA.qmd#sec-costos-corridas).
 
 [^2]: Mb = Megabases de nucleótidos del ADN
 

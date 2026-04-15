@@ -3,8 +3,8 @@ project:
   render:
     - index.qmd
     - appendix-technical.qmd
-    - appendix-experimental-fase1.qmd
-    - appendix-experimental-fase2-rbk.qmd
+    - appendix-experimental/fase1.qmd
+    - appendix-experimental/fase2-rbk.qmd
     - appendix-costsRBKRAA.qmd
     - appendix-simulations.qmd
     - appendix-clinico.qmd
@@ -20,9 +20,9 @@ website:
       - text: "Apéndice Experimental"
         contents:
           - text: "Fase 1 – Havanna"
-            href: appendix-experimental/fase1.qmd
+            href: appendix-experimental/fase1.html
           - text: "Fase 2 – RBK"
-            href: appendix-experimental/fase2-rbk.qmd
+            href: appendix-experimental/fase2-rbk.html
       - appendix-costsRBKRAA.qmd
       - appendix-simulations.qmd
       - appendix-clinico.qmd

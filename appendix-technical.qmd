@@ -12,7 +12,7 @@ csl: nature.csl
 **Insumos**: [Library Original](https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24). [Library RBK](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html).  [Extension RAA114](https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html). [Starter kit. MiniION Mk1D](https://store.nanoporetech.com/minion.html).  [Reporte Havanna - FCEN](inputs/FCEN/report_Nanopore_seq.html). 
  
 
-**Delivery 4**: [Apéndice experimental](appendix-experimental.qmd). 
+**Delivery 4**: [Apéndice experimental](appendix-experimental/fase1-havanna.qmd). 
 
 :::
 

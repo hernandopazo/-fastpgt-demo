@@ -44,5 +44,8 @@
   },
   "appendix-simulations.qmd": {
     "appendix-simulations.html": "534e5169"
+  },
+  "appendix-experimental/fase2-rbk.qmd": {
+    "fase2-rbk.html": "68772db3"
   }
 }

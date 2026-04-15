@@ -1,13 +1,15 @@
 ---
-title: "Fase 2 – Evaluación operativa RBK"
+title: "Fase 2 - Ensayo RBK"
+number-sections: false
+
+lang: es
+bibliography: ../ONT-PGT.bib
+csl: ../nature.csl
 ---
 
-## Fase 2 – Evaluación operativa RBK
+::: callout-note
+## Links
+**Insumos**: [Apéndice técnico](appendix-technical.qmd). [Reporte Havanna FCEN](inputs/FCEN/report_Nanopore_seq.html).
 
-Esta fase evalúa el comportamiento del sistema FastPGT bajo condiciones reales de uso del Rapid Barcoding Kit (RBK), incluyendo:
-
-- número de corridas por flow cell  
-- impacto del reuso (wash)  
-- consumo efectivo de reactivos  
-- costo por embrión en escenarios operativos  
-
+**Delivery 4**:  [Apéndice económico](appendix-costsRBKRAA.qmd).
+:::
