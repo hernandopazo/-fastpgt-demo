@@ -38,7 +38,7 @@ Este documento presenta los elementos necesarios para comprender el problema, la
 
 ## 2. Problema
 
-En los esquemas convencionales de Diagnóstico Genético Preimplantacional de Aneuploidías **(PGT-A)**[^1], el **tiempo de entrega de resultados** suele extenderse entre varios días o semanas. Esta limitación temporal obliga, en la práctica del laboratorio de embriología, a **vitrificar el embrión** luego de la biopsia y **posponer la transferencia del o de los embriones seleccionados a un ciclo posterior** (@fig-cycle).
+En los esquemas convencionales del **Diagnóstico Genético Preimplantacional de Aneuploidías, (PGT-A)**[^1], el **tiempo de entrega de resultados** suele extenderse entre varios días o semanas. Esta limitación temporal obliga, en la práctica del laboratorio de embriología, a **vitrificar el embrión** luego de la biopsia y **posponer la transferencia del o de los embriones seleccionados a un ciclo posterior** (@fig-cycle).
 
 [^1]: El objetivo del PGT-A es detectar ganancias o pérdidas de material genético (aneuploidias)  antes de la transferencia del emnbrión al útero.
 
@@ -116,6 +116,8 @@ Los fundamentos técnicos de estos escenarios se desarrollan en el [**Apéndice 
 Estos escenarios definen un **marco operativo flexible**, en el cual nuestra tecnología de FastPGT puede adaptarse tanto, a contextos clínicos (FET) orientados a rapidez de decisión,como a esquemas de procesamiento por volumen, manteniendo coherencia clínica, técnica y económica.
 :::
 
+
+
 ## 5. Impacto clínico y económico
 
 La posibilidad de realizar transferencia embrionaria en fresco reduce manipulaciones técnicas, simplifica el flujo asistencial y preserva la sincronía embrión–endometrio. Desde el punto de vista económico, los ahorros asociados a la eliminación de vitrificación, warming y ciclos diferidos superan ampliamente el costo incremental del test genético.
@@ -124,12 +126,6 @@ La posibilidad de realizar transferencia embrionaria en fresco reduce manipulaci
 
 Para una descripción detallada sobre el ahorro implícito de la adopción de FastPGT en la clínica, ver [Ventajas económicas del FET](appendix-costsRBKRAA.qmd#sec-ecofet).
 
-
-## 6. FastPGT primer servicio 2PQ
-
-FastPGT no constituye únicamente una optimización técnica del PGT-A, sino un **habilitador tecnológico** para nuevos modelos de servicio basados en diagnóstico genómico rápido. Esta puede ser una variable importante de la genómica, no explotada en el país. La secuenciación rápida del genoma completo (rWGS) experimentada en otros países, y presentada a referentes d eneonatología nacional, a través del **Proyecto Yaguarecito** puede ser otro de los productos 2PQ que nos diferencien como marca. 
-
-En este contexto, **2PQ: Precision & Quick Genomics** se plantea como una plataforma orientada a proveer diagnóstico genómico de alta precisión en escenarios donde el tiempo de respuesta es crítico, tanto en reproducción asistida como en medicina neonatal.
 
 
 ::: callout-note
@@ -144,7 +140,7 @@ En este contexto, **2PQ: Precision & Quick Genomics** se plantea como una plataf
 Los apéndices que acompañan este documento proporcionan el detalle técnico, experimental y económico necesario para una evaluación completa y fundamentada.
 :::
 
-## 7. Calculadora interactiva FastPGT
+## 6. Calculadora interactiva FastPGT
 
 La simulación de costos por corrida de FastPGT puede ensayarse utilizando la **Calculadora FastPGT-A**. La aplicación puede ejecutarse desde cualquier ubicación en la terminal:
 
