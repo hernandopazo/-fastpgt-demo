@@ -186,11 +186,11 @@ Si bien el **ajuste definitivo** de la profundidad de lectura y del tamaño de v
 
 ::::: columns
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/VB5_plot.png){width="100%"} **C**
+![](../figures/downsampling/plots45/VB5_plot.png){width="100%"} **C**
 :::
 
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/VB6_plot.png){width="100%"} **D**
+![](../figures/downsampling/plots45/VB6_plot.png){width="100%"} **D**
 :::
 :::::
 :::::::::
