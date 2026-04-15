@@ -139,3 +139,5 @@ git push
 https://2pq-fastpgt.netlify.app
 
   
+  
+quarto::quarto_render("archivo.qmd", as_job = TRUE)

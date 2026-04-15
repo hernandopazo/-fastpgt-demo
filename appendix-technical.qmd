@@ -12,7 +12,7 @@ csl: nature.csl
 **Insumos**: [Library Original](https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24). [Library RBK](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html).  [Extension RAA114](https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html). [Starter kit. MiniION Mk1D](https://store.nanoporetech.com/minion.html).  [Reporte Havanna - FCEN](inputs/FCEN/report_Nanopore_seq.html). 
  
 
-**Delivery 4**: [Apéndice experimental](appendix-experimental/fase1-havanna.qmd). 
+**Delivery 4**: [Apéndice experimental- Fase 1](appendix-experimental/fase1-havanna.qmd). [Apéndice experimental- Fase 2](appendix-experimental/fase2-rbk.qmd). 
 
 :::
 
@@ -222,7 +222,7 @@ Los supuestos operativos asociados a la amplificación genómica, la profundidad
 Como hemos insistido en el [Documento principal](index.qmd), la tecnología ONT nos permite evaluar en **tiempo real** un  aspecto central del ensayo:  la **dinámica temporal de producción de datos**, expresada tanto en **bases secuenciadas** como en **número de lecturas** a lo largo de la corrida.
 
 
-La @fig-tiempos muestra la **evolución temporal** de producción de bases (**A**) y lecturas (**B**) producidas en el [Ensayo Havanna ](appendix-experimental.qmd#sec-Havanna-assay). Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (*estimated*) y filtradas por calidad (*passed*)— presentan un **crecimiento continuo y aproximadamente lineal** a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.
+La @fig-tiempos muestra la **evolución temporal** de producción de bases (**A**) y lecturas (**B**) producidas en el [Ensayo Havanna ](appendix-experimental/fase1-havanna.qmd#sec-Havanna-assay). Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (*estimated*) y filtradas por calidad (*passed*)— presentan un **crecimiento continuo y aproximadamente lineal** a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.
 
 :::::: {#fig-tiempos}
 ::::: columns
