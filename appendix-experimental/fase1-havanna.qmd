@@ -3,15 +3,15 @@ title: "Fase 1 - Ensayo Havanna"
 number-sections: false
 
 lang: es
-bibliography: ONT-PGT.bib
-csl: nature.csl
+bibliography: ../ONT-PGT.bib
+csl: ../nature.csl
 ---
 
 ::: callout-note
 ## Links
-**Insumos**: [Apéndice técnico](appendix-technical.qmd). [Reporte Havanna FCEN](inputs/FCEN/report_Nanopore_seq.html).
+**Insumos**: [Apéndice técnico](../appendix-technical.qmd). [Reporte Havanna FCEN](../inputs/FCEN/report_Nanopore_seq.html).
 
-**Delivery 4**:  [Apéndice económico](appendix-costsRBKRAA.qmd).
+**Delivery 4**:  [Apéndice económico](../appendix-costsRBKRAA.qmd).
 :::
 
 
@@ -23,10 +23,10 @@ En enero 2026 el servicio de genómica de la FCEN secuenció muestras de ADN tom
 1.  Las muestras consistieron en **15 ADN congelados** (-20ºC),
     extraídos de biopsias embrionarias previamente amplificadas con
     Sureplex, derivadas de estudios de PGT-A realizados durante los años
-    2016 al 2019, utilizando  [secuenciación Illumina](appendix-technical.qmd#sec-pgt-illumina).
+    2016 al 2019, utilizando  [secuenciación Illumina](../appendix-technical.qmd#sec-pgt-illumina).
 
 2.  La secuenciación en FCEN se llevó a cabo en un equipo
-    **PromethION 2 Solo** (@fig-prometion-f A), con un flow cell FLO-PRO114M[^3] (@fig-prometion-f B), el cual produce **≈30 veces más secuencia por unidad de tiempo** que el [flow cell del MinION](appendix-technical.qmd#sec-pgt-ont). 
+    **PromethION 2 Solo** (@fig-prometion-f A), con un flow cell FLO-PRO114M[^3] (@fig-prometion-f B), el cual produce **≈30 veces más secuencia por unidad de tiempo** que el [flow cell del MinION](../appendix-technical.qmd#sec-pgt-ont). 
     
 3.  La corrida se detuvo a las 18 hrs y produjo **37.24 Gb**; **21.4Gb (Q≥8 ≈ 57.5%)** y 10.5 (28.2%) fail. El **total de lecturas ~60M; 42M (Q≥8 ≈ 70.0%)**, 19M (31,6%) fail. El **N50 = 552pb**. 
 
@@ -37,25 +37,25 @@ En enero 2026 el servicio de genómica de la FCEN secuenció muestras de ADN tom
 :::::: {#fig-prometion-f}
 ::::: columns
 ::: {.column width="50%"}
-![](figures/prometion.png){width="100%"} **A**
+![](../figures/prometion.png){width="100%"} **A**
 :::
 
 ::: {.column width="50%"}
-![](figures/fc_prometion.png){width="100%"} **B**
+![](../figures/fc_prometion.png){width="100%"} **B**
 :::
 :::::
 ::::::
 
 
 ::: callout-note
-Este rendimiento es verificable si se considera que se obtuvieron 37Gb en 18 hs de corrida (\~2.05 Gb/h). Comparando la totalidad de Gb producidos por Tan y col. ( [QC_in=1.07 Gb](appendix-technical.qmd#sec-pgt-compara) + QC_out \~35%), la cantidad producida es de **≈ 32** veces más.
+Este rendimiento es verificable si se considera que se obtuvieron 37Gb en 18 hs de corrida (\~2.05 Gb/h). Comparando la totalidad de Gb producidos por Tan y col. ( [QC_in=1.07 Gb](../appendix-technical.qmd#sec-pgt-compara) + QC_out \~35%), la cantidad producida es de **≈ 32** veces más.
 :::
 
 
 
 ## 2. Ensayo Havanna- Resultados por muestra {#sec-solo-muestras}
 
-El ensayo Havanna generó por muestra, **1.03 Gb**, y **2.3 M de lecturas**[^4]. Esto es, el total de bases y lecturas producidas por Tan, V.J. el al., (2023), en su [ensayo para 24 muestras](appendix-technical.qmd#sec-pgt-compara).
+El ensayo Havanna generó por muestra, **1.03 Gb**, y **2.3 M de lecturas**[^4]. Esto es, el total de bases y lecturas producidas por Tan, V.J. el al., (2023), en su [ensayo para 24 muestras](../appendix-technical.qmd#sec-pgt-compara).
 
 [^4]: Valores estimados a partir de medianas.
 
@@ -142,21 +142,21 @@ Las @fig-aneuplo muestra 4 ideogramas de embriones aneuploides correspondientes 
 ::::::::: {#fig-aneuplo}
 ::::: columns
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/LC16_plot.png){width="100%"} **A**
+![](../figures/downsampling/plots45/LC16_plot.png){width="100%"} **A**
 :::
 
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/MRV6_plot.png){width="100%"} **B**
+![](../figures/downsampling/plots45/MRV6_plot.png){width="100%"} **B**
 :::
 :::::
 
 ::::: columns
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/Q2_plot.png){width="100%"} **C**
+![](../figures/downsampling/plots45/Q2_plot.png){width="100%"} **C**
 :::
 
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/LG6_plot.png){width="100%"} **D**
+![](../figures/downsampling/plots45/LG6_plot.png){width="100%"} **D**
 :::
 :::::
 :::::::::
@@ -176,11 +176,11 @@ Si bien el **ajuste definitivo** de la profundidad de lectura y del tamaño de v
 ::::::::: {#fig-euplo}
 ::::: columns
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/LC17_plot.png){width="100%"} **A**
+![](../figures/downsampling/plots45/LC17_plot.png){width="100%"} **A**
 :::
 
 ::: {.column width="50%"}
-![](figures/downsampling/plots45/LC19_plot.png){width="100%"} **B**
+![](../figures/downsampling/plots45/LC19_plot.png){width="100%"} **B**
 :::
 :::::
 
