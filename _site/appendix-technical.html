@@ -139,12 +139,23 @@ div.csl-indent {
  <span class="menu-text">Apéndice Técnico</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./appendix-experimental.html" class="sidebar-item-text sidebar-link">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true">
  <span class="menu-text">Apéndice Experimental</span></a>
-  </div>
-</li>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+ <span class="menu-text">appendix-experimental-fase1.qmd</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">appendix-experimental-fase2-rbk.qmd</span>
+  </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendix-costsRBKRAA.html" class="sidebar-item-text sidebar-link">
@@ -232,7 +243,7 @@ div.csl-indent {
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Insumos</strong>: <a href="https://nanoporetech.com/document/ligation-sequencing-amplicons-native-barcoding-v14-sqk-nbd114-24">Library Original</a>. <a href="https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html">Library RBK</a>. <a href="https://store.nanoporetech.com/rapid-adapter-auxiliary-v14.html">Extension RAA114</a>. <a href="https://store.nanoporetech.com/minion.html">Starter kit. MiniION Mk1D</a>. <a href="inputs/FCEN/report_Nanopore_seq.html">Reporte Havanna - FCEN</a>.</p>
-<p><strong>Delivery 4</strong>: <a href="./appendix-experimental.html">Apéndice experimental</a>.</p>
+<p><strong>Delivery 4</strong>: <a href="appendix-experimental.qmd">Apéndice experimental</a>.</p>
 </div>
 </div>
 <section id="consideraciones-básicas-del-pgt-a" class="level2">
@@ -582,7 +593,7 @@ Importante
 <section id="dinámica-de-la-producción-de-secuencias" class="level2">
 <h2 class="anchored" data-anchor-id="dinámica-de-la-producción-de-secuencias">5. Dinámica de la producción de secuencias</h2>
 <p>Como hemos insistido en el <a href="./index.html">Documento principal</a>, la tecnología ONT nos permite evaluar en <strong>tiempo real</strong> un aspecto central del ensayo: la <strong>dinámica temporal de producción de datos</strong>, expresada tanto en <strong>bases secuenciadas</strong> como en <strong>número de lecturas</strong> a lo largo de la corrida.</p>
-<p>La <a href="#fig-tiempos" class="quarto-xref">Figura&nbsp;5</a> muestra la <strong>evolución temporal</strong> de producción de bases (<strong>A</strong>) y lecturas (<strong>B</strong>) producidas en el <a href="./appendix-experimental.html#sec-Havanna-assay">Ensayo Havanna</a>. Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (<em>estimated</em>) y filtradas por calidad (<em>passed</em>)— presentan un <strong>crecimiento continuo y aproximadamente lineal</strong> a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.</p>
+<p>La <a href="#fig-tiempos" class="quarto-xref">Figura&nbsp;5</a> muestra la <strong>evolución temporal</strong> de producción de bases (<strong>A</strong>) y lecturas (<strong>B</strong>) producidas en el <a href="appendix-experimental.qmd#sec-Havanna-assay">Ensayo Havanna</a>. Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (<em>estimated</em>) y filtradas por calidad (<em>passed</em>)— presentan un <strong>crecimiento continuo y aproximadamente lineal</strong> a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.</p>
 <div id="fig-tiempos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tiempos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

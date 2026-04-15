@@ -1,16 +1,15 @@
 project:
   type: website
   render:
-      - index.qmd
-      - appendix-technical.qmd
-      - appendix-experimental.qmd
-      - appendix-costsRBKRAA.qmd
-      - appendix-simulations.qmd
-      - appendix-clinico.qmd
-      - appendix-inversion.qmd
-      - appendix-modelo.qmd
-
- 
+    - index.qmd
+    - appendix-technical.qmd
+    - appendix-experimental-fase1.qmd
+    - appendix-experimental-fase2-rbk.qmd
+    - appendix-costsRBKRAA.qmd
+    - appendix-simulations.qmd
+    - appendix-clinico.qmd
+    - appendix-inversion.qmd
+    - appendix-modelo.qmd
 
 website:
   title: "FastPGT"
@@ -18,13 +17,15 @@ website:
     contents:
       - index.qmd
       - appendix-technical.qmd
-      - appendix-experimental.qmd
-      - appendix-costsRBKRAA.qmd 
+      - text: "Apéndice Experimental"
+        contents:
+          - appendix-experimental-fase1.qmd
+          - appendix-experimental-fase2-rbk.qmd
+      - appendix-costsRBKRAA.qmd
       - appendix-simulations.qmd
       - appendix-clinico.qmd
       - appendix-inversion.qmd
       - appendix-modelo.qmd
-
 
 format:
   html:
