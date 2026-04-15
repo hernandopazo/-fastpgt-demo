@@ -19,8 +19,10 @@ website:
       - appendix-technical.qmd
       - text: "Apéndice Experimental"
         contents:
-          - appendix-experimental-fase1.qmd
-          - appendix-experimental-fase2-rbk.qmd
+          - text: "Fase 1 – Havanna"
+            href: appendix-experimental/fase1.qmd
+          - text: "Fase 2 – RBK"
+            href: appendix-experimental/fase2-rbk.qmd
       - appendix-costsRBKRAA.qmd
       - appendix-simulations.qmd
       - appendix-clinico.qmd
