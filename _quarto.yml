@@ -12,36 +12,26 @@ project:
     - appendix-modelo.qmd
 
 website:
+  title: "FastPGT"
   sidebar:
     collapse-level: 1
     contents:
-      - href: index.qmd
-        text: "FastPGT"
-        
-      - href: appendix-technical.qmd
-        text: "Apéndice Técnico"
-        
-      - href: appendix-clinico.qmd
-        text: "Apéndice Clínico-Embriológico"
-        
+      - index.qmd
+      - appendix-technical.qmd
+      - appendix-clinico.qmd
+
       - section: "Apéndice Experimental"
         contents:
-          - href: appendix-experimental/fase1-havanna.qmd
-            text: "Fase 1 – Havanna"
-          - href: appendix-experimental/fase2-rbk.qmd
-            text: "Fase 2 – RBK"
+          - appendix-experimental/fase1-havanna.qmd
+          - appendix-experimental/fase2-rbk.qmd
 
       - section: "Apéndice Económico"
         contents:
-          - href: appendix-economico/costsRBKRAA.qmd
-            text: "Modelo de Costos"
-          - href: appendix-economico/simulations.qmd
-            text: "Simulaciones"
-          - href: appendix-economico/inversion.qmd
-            text: "Inversión"
+          - appendix-economico/costsRBKRAA.qmd
+          - appendix-economico/simulations.qmd
+          - appendix-economico/inversion.qmd
 
-      - href: appendix-modelo.qmd
-        text: "Apéndice Modelo"
+      - appendix-modelo.qmd
 
 format:
   html:
