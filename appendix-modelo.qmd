@@ -17,7 +17,7 @@ csl: nature.csl
 
 **Insumos**: [Apéndice técnico](appendix-technical.qmd). Analytical: [Insumos ONT](/inputs/insumos/Analytical/LP-1102D.pdf)
 
-**Delivery 4**: [Documento Ppal](../index.qmd).
+**Delivery 4**: [Documento Ppal](index.qmd).
 :::
 
 # 1. Objetivo del Apéndice
