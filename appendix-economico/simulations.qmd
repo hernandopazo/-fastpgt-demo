@@ -1,6 +1,6 @@
 ---
 title: "Simulación de Costos"
-subtitle: "Simulaciones FastPGT vs Classic PGT"
+subtitle: "Análisis Simulado"
 number-sections: false
 
 lang: es

@@ -1,6 +1,6 @@
 ---
-title: "Apéndice Económico"
-subtitle: "Modelo de costos"
+title: "Modelo de Costos"
+subtitle: "Análisis Analítico"
 number-sections: false
 
 lang: es
