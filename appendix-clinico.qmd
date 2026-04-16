@@ -13,7 +13,7 @@ csl: nature.csl
 
 **Insumos**: [Apéndice técnico](appendix-technical.qmd).
 
-**Delivery 4**:  [Apéndice económico](appendix-costsRBKRAA.qmd). [Documento Ppal](index.qmd).
+**Delivery 4**:  [Apéndice económico](appendix-economico/costsRBKRAA.qmd). [Documento Ppal](../index.qmd).
 :::
 
 # 1. Marco Clínico de FastPGT

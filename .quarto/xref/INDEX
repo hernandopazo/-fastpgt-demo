@@ -50,5 +50,14 @@
   },
   "appendix-experimental/fase1-havanna.qmd": {
     "fase1-havanna.html": "b006d85e"
+  },
+  "appendix-economico/costsRBKRAA.qmd": {
+    "costsRBKRAA.html": "e8d06a04"
+  },
+  "appendix-economico/simulations.qmd": {
+    "simulations.html": "2ece6701"
+  },
+  "appendix-economico/inversion.qmd": {
+    "inversion.html": "9268fd01"
   }
 }
