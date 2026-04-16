@@ -1,29 +1,29 @@
 {
   "index.qmd": {
-    "index.html": "9cc75fe0"
+    "index.html": "d385af98"
   },
   "appendix-technical.qmd": {
-    "appendix-technical.html": "7300adbb"
+    "appendix-technical.html": "a8a72e16"
   },
   "appendix-clinico.qmd": {
-    "appendix-clinico.html": "bcdf966a"
+    "appendix-clinico.html": "69d48070"
   },
   "appendix-experimental/fase1-havanna.qmd": {
-    "fase1-havanna.html": "41dc895b"
+    "fase1-havanna.html": "4dedeff6"
   },
   "appendix-experimental/fase2-rbk.qmd": {
-    "fase2-rbk.html": "3191bf26"
+    "fase2-rbk.html": "3dd8a5b7"
   },
   "appendix-economico/costsRBKRAA.qmd": {
-    "costsRBKRAA.html": "9b8c43f9"
+    "costsRBKRAA.html": "cb338f84"
   },
   "appendix-economico/simulations.qmd": {
-    "simulations.html": "f36b57cb"
+    "simulations.html": "542ec52c"
   },
   "appendix-economico/inversion.qmd": {
-    "inversion.html": "5694db41"
+    "inversion.html": "a98a974c"
   },
   "appendix-modelo.qmd": {
-    "appendix-modelo.html": "1e05ad6f"
+    "appendix-modelo.html": "14d0d249"
   }
 }
