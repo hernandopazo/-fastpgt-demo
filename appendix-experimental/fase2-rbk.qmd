@@ -11,5 +11,5 @@ csl: ../nature.csl
 ## Links
 **Insumos**: [Apéndice técnico](../appendix-technical.qmd). [Reporte Havanna FCEN](../inputs/FCEN/report_Nanopore_seq.html).
 
-**Delivery 4**:  [Apéndice económico](../appendix-costsRBKRAA.qmd).
+**Delivery 4**:  [Apéndice económico](../appendix-economico/costsRBKRAA.qmd).
 :::

@@ -1,63 +1,29 @@
 {
-  "appendix-havanna.qmd": {
-    "appendix-havanna.html": "cb1c9830"
-  },
-  "primer_report.qmd": {
-    "primer_report.html": "4a974909"
-  },
   "index.qmd": {
-    "index.html": "852204fb"
-  },
-  "appendix-costs.qmd": {
-    "appendix-costs.html": "bba66998"
+    "index.html": "9cc75fe0"
   },
   "appendix-technical.qmd": {
-    "appendix-technical.html": "5f534243"
-  },
-  "appendix-capex2pq.qmd": {
-    "appendix-capex2pq.html": "2d3706ed"
-  },
-  "appendix-experimental.qmd": {
-    "appendix-experimental.html": "49392161"
+    "appendix-technical.html": "7300adbb"
   },
   "appendix-clinico.qmd": {
-    "appendix-clinico.html": "6199baed"
-  },
-  "appendix-inversion.qmd": {
-    "appendix-inversion.html": "a8c6a28e"
-  },
-  "appendix-modelo.qmd": {
-    "appendix-modelo.html": "efb25aaf"
-  },
-  "appendix-costsRBK.qmd": {
-    "appendix-costsRBK.html": "aaf81202",
-    "appendix-costsRBK.tex": "90aa8a4e"
-  },
-  "appendix-costsRBKRAA.qmd": {
-    "appendix-costsRBKRAA.html": "b527891b"
-  },
-  "appendix-simulador.qmd": {
-    "appendix-simulador.html": "9aee0320"
-  },
-  "dashboard.qmd": {
-    "dashboard.html": "d7498d0d"
-  },
-  "appendix-simulations.qmd": {
-    "appendix-simulations.html": "534e5169"
-  },
-  "appendix-experimental/fase2-rbk.qmd": {
-    "fase2-rbk.html": "68772db3"
+    "appendix-clinico.html": "bcdf966a"
   },
   "appendix-experimental/fase1-havanna.qmd": {
-    "fase1-havanna.html": "b006d85e"
+    "fase1-havanna.html": "41dc895b"
+  },
+  "appendix-experimental/fase2-rbk.qmd": {
+    "fase2-rbk.html": "3191bf26"
   },
   "appendix-economico/costsRBKRAA.qmd": {
-    "costsRBKRAA.html": "e8d06a04"
+    "costsRBKRAA.html": "9b8c43f9"
   },
   "appendix-economico/simulations.qmd": {
-    "simulations.html": "2ece6701"
+    "simulations.html": "f36b57cb"
   },
   "appendix-economico/inversion.qmd": {
-    "inversion.html": "9268fd01"
+    "inversion.html": "5694db41"
+  },
+  "appendix-modelo.qmd": {
+    "appendix-modelo.html": "1e05ad6f"
   }
 }

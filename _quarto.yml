@@ -3,12 +3,12 @@ project:
   render:
     - index.qmd
     - appendix-technical.qmd
+    - appendix-clinico.qmd
     - appendix-experimental/fase1-havanna.qmd
     - appendix-experimental/fase2-rbk.qmd
     - appendix-economico/costsRBKRAA.qmd
     - appendix-economico/simulations.qmd
     - appendix-economico/inversion.qmd
-    - appendix-clinico.qmd
     - appendix-modelo.qmd
 
 website:
@@ -17,10 +17,13 @@ website:
     contents:
       - href: index.qmd
         text: "FastPGT"
-
+        
       - href: appendix-technical.qmd
         text: "Apéndice Técnico"
-
+        
+      - href: appendix-clinico.qmd
+        text: "Apéndice Clínico-Embriológico"
+        
       - section: "Apéndice Experimental"
         contents:
           - href: appendix-experimental/fase1-havanna.qmd
@@ -36,9 +39,6 @@ website:
             text: "Simulaciones"
           - href: appendix-economico/inversion.qmd
             text: "Inversión"
-
-      - href: appendix-clinico.qmd
-        text: "Apéndice Clínico-Embriológico"
 
       - href: appendix-modelo.qmd
         text: "Apéndice Modelo"
