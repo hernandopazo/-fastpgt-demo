@@ -32,7 +32,7 @@ abstract: |
 
 ## 1. Objetivo
 
-El objetivo de este informe es doble: por un lado, mostrar que **FastPGT** es una estrategia **técnicamente viable y económicamente competitiva** frente al PGT-A convencional, y por otro, delinear una **propuesta general de inversión** para el desarrollo de este producto en: **2PQ: Precision & Quick Genomics**, una empresa de **diagnóstico genómico rápido** en escenarios donde el tiempo de respuesta es clínicamente crítico.
+El objetivo de este informe es doble: por un lado, mostrar que **FastPGT** es una estrategia **técnicamente viable, económicamente competitiva y comercialmente superadora** frente al PGT-A convencional, y por otro, delinear una **propuesta general de inversión** para el desarrollo de este producto en: **2PQ: Precision & Quick Genomics**, una empresa de **diagnóstico genómico rápido** en escenarios donde el tiempo de respuesta es clínicamente crítico.
 
 Este documento presenta los elementos necesarios para comprender el problema, la solución propuesta y los escenarios operativos viables. Los fundamentos técnicos, experimentales y económicos se desarrollan en los **Apéndices** que acompañan este informe.
 
@@ -118,13 +118,18 @@ Estos escenarios definen un **marco operativo flexible**, en el cual nuestra tec
 
 
 
-## 5. Impacto clínico y económico
+## 5. Impacto clínico, económico y comercial
 
-La posibilidad de realizar transferencia embrionaria en fresco reduce manipulaciones técnicas, simplifica el flujo asistencial y preserva la sincronía embrión–endometrio. Desde el punto de vista económico, los ahorros asociados a la eliminación de vitrificación, warming y ciclos diferidos superan ampliamente el costo incremental del test genético.
 
-**Desde el punto de vista de la clínica, FastPGT permite redistribuir el costo del diagnóstico genético dentro del proceso global de FIV**, mejorando la eficiencia clínica y la experiencia del paciente.
+FastPGT introduce un cambio estructural en la línea temporal del tratamiento de FIV al habilitar la transferencia embrionaria en fresco. Esto elimina la necesidad de criopreservación y ciclos diferidos, simplificando el flujo asistencial y reduciendo intervenciones adicionales como la preparación endometrial y la reprogramación clínica. Como consecuencia, disminuye el número de visitas y la carga logística para el paciente.
 
-Para una descripción detallada sobre el ahorro implícito de la adopción de FastPGT en la clínica, ver [Ventajas económicas del FET](appendix-economico/costsRBKRAA.qmd#sec-ecofet).
+Más importante aún, esta continuidad del proceso permite preservar la sincronía embrión–endometrio dentro de un mismo contexto fisiológico, evitando la fragmentación temporal característica del modelo convencional. **El resultado es un esquema clínico más integrado, menos dependiente de pasos intermedios y, en conjunto, más eficiente tanto desde el punto de vista operativo como biológico**.
+
+Desde el punto de vista económico, este cambio se traduce en la eliminación de costos distribuidos a lo largo del proceso convencional: criopreservación, almacenamiento, ciclos diferidos y reprogramaciones clínicas. En este contexto, el test genético deja de ser un costo adicional aislado y pasa a integrarse dentro del flujo global del tratamiento. **FastPGT permite así redistribuir el costo del diagnóstico genético, compensando —y en muchos escenarios superando— su costo incremental mediante ahorros operativos acumulativos**.
+
+En paralelo, el **impacto comercial es directo**. La reducción de más de 30 días en los tiempos del proceso **disminuye la incertidumbre y la ansiedad del paciente, mejora la aceptación inicial del PGT y reduce la probabilidad de abandono. Esto se traduce en mayores tasas de conversión y retención**, al tiempo que introduce un diferencial competitivo claro y fácilmente comunicable: la posibilidad de obtener resultados genéticos en tiempo récord y avanzar más rápidamente hacia una potencial transferencia.
+
+En conjunto, **FastPGT no solo mejora un componente del proceso, sino que redefine su lógica completa: integra eficiencia clínica, racionalización económica y valor percibido por el paciente, posicionando la velocidad como un eje central del beneficio terapéutico y estratégico**.
 
 
 

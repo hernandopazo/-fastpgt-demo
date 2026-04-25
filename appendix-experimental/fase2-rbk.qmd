@@ -13,3 +13,47 @@ csl: ../nature.csl
 
 **Delivery 4**:  [Apéndice económico](../appendix-economico/costsRBKRAA.qmd).
 :::
+
+:::: {#tbl-barcodes tbl-cap="Muestras utilizadas como referencias."}
+::: {style="width: 95%; margin: 0 auto; font-size: 0.85em;"}
+| Número | Etiqueta | Diagnóstico | Run 1 (5) | Run 2 (8) | Run 3 (10) |
+|----------|----------|-------------|-----------|-----------|------------|
+| 1 | AC1 | XX, +9, +16, +21 |  1 | 1 | 1 |
+| 2| CB5 | XX, -5, +12, +20 |  1 |  |  |
+| 3| CB7 | XY, -2, +18, -19 |  1 |  |  |
+| 4| CB9 | XY |  1 | 1 | 1 |
+| 5| CG2 | XY, +11(q23.3-qter), -22(q11.2-qter) |  | 1 |  |
+| 6| CG3 | XX, -9p(mos), -11(q24.1-qter)(mos) |   | 1 | 1 |
+| 7| CG6 | XY, +11(q23.3-qter), -13, -16, -22(q11.2-qter) |  |  |  |
+| 8| CG5 | XX, +11(q23.3-qter), -22(q11.2-qter) |   |  | 1 |
+| 9| CG8 | XY, +11(q23.3-qter), -22(q11.2-qter) |   |  | 1 |
+| 10| CH2 | XY, -3(p25.3-pter)(mos) |   |  |  |
+| 11| CH3 | XXY, +8(p22-pter) |  1 |  |  |
+| 12| CH7 | XX, +4(q26-qter)(mos) |  | 1 |  |
+| 13| CH8 | XY |   |  |  |
+| 14| D2 | XX |  | 1 | 1 |
+| 15| D3 | XY |   |  |  |
+| 16| D4 | XXY |   | 1 |  |
+| 17| D6 | XX |  |  |  |
+| 18| D7 | XX |   |  |  |
+| 19| DS1 | XX |   |  |  |
+| 20| DS3 | X -2, +9, +11, -19 |   | 1 | 1 |
+| 21| DS4 | XY, -19, +22 |   |  | 1 |
+| 22| DS5 | XX -8(q21.13-24.12), -19 |   |  | 1 |
+| 23| GP10 | XY, -21, +22 |   |  | 1 |
+| 24| GP8 | XX |   |  |  |
+| 25| GZ2 | XY, -11(q12.2-qter) |   |  |  |
+| 26| JD1 | XY, -15, -19p(mos) |   |  |  |
+| 26| JD4 | XY, +10(p12.1-pter), -22 |   |  |  |
+| 27| RB5 | XX -4(q28.1-28.3), -5 |  |  |  |
+| 28| ST1 | XX, +2, +3, -4, +15, -21 | |  |  |
+| 29| ST2 | XX, -15(q14-cent)(mos) alto nivel de mosaicismo |  |  |  |
+| 30| VB1 | XX, -16 | |  |  |
+| 31| VB3 | XX, +16, -X(q21.33-cent) |  |  |  |
+| 32| VB5 | XX |   |  |  |
+| 33| VB6 | XY |  |  |  |
+| 34| VR3 | XX, +9, +18 |  |  |  |
+
+:::
+:::
+
