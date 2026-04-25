@@ -121,29 +121,17 @@ Estos escenarios definen un **marco operativo flexible**, en el cual nuestra tec
 ## 5. Impacto clínico, económico y comercial
 
 
-FastPGT introduce un cambio estructural en la línea temporal del tratamiento de FIV al habilitar la transferencia embrionaria en fresco. Esto elimina la necesidad de criopreservación y ciclos diferidos, simplificando el flujo asistencial y reduciendo intervenciones adicionales como la preparación endometrial y la reprogramación clínica. Como consecuencia, disminuye el número de visitas y la carga logística para el paciente.
+FastPGT introduce un cambio en la línea temporal del tratamiento de FIV habilitando la transferencia embrionaria en fresco. Esto elimina la necesidad de criopreservación y ciclos diferidos, simplifica el flujo asistencial reduciendo intervenciones adicionales como la preparación endometrial y la reprogramación clínica. Como consecuencia, disminuye el número de visitas y la carga logística para el paciente y la clínica.
 
-Más importante aún, esta continuidad del proceso permite preservar la sincronía embrión–endometrio dentro de un mismo contexto fisiológico, evitando la fragmentación temporal característica del modelo convencional. **El resultado es un esquema clínico más integrado, menos dependiente de pasos intermedios y, en conjunto, más eficiente tanto desde el punto de vista operativo como biológico**.
+Esta continuidad del proceso permite preservar la sincronía embrión–endometrio dentro de un mismo contexto fisiológico, evitando la fragmentación temporal característica del modelo convencional. El resultado es **un esquema clínico más integrado**, menos dependiente de pasos intermedios y, en conjunto, más eficiente tanto desde el punto de vista operativo como biológico.
 
-Desde el punto de vista económico, este cambio se traduce en la eliminación de costos distribuidos a lo largo del proceso convencional: criopreservación, almacenamiento, ciclos diferidos y reprogramaciones clínicas. En este contexto, el test genético deja de ser un costo adicional aislado y pasa a integrarse dentro del flujo global del tratamiento. **FastPGT permite así redistribuir el costo del diagnóstico genético, compensando —y en muchos escenarios superando— su costo incremental mediante ahorros operativos acumulativos**.
+Desde el punto de vista económico, este cambio se traduce en la **eliminación de costos distribuidos a lo largo del proceso convencional**: criopreservación, almacenamiento, ciclos diferidos y reprogramaciones clínicas. En este contexto, el test genético deja de ser un costo adicional aislado y pasa a integrarse dentro del flujo global del tratamiento. FastPGT permite así redistribuir el costo del diagnóstico genético, compensando —y en muchos escenarios superando— su costo incremental mediante ahorros operativos acumulativos.
 
-En paralelo, el **impacto comercial es directo**. La reducción de más de 30 días en los tiempos del proceso **disminuye la incertidumbre y la ansiedad del paciente, mejora la aceptación inicial del PGT y reduce la probabilidad de abandono. Esto se traduce en mayores tasas de conversión y retención**, al tiempo que introduce un diferencial competitivo claro y fácilmente comunicable: la posibilidad de obtener resultados genéticos en tiempo récord y avanzar más rápidamente hacia una potencial transferencia.
+En paralelo, el **impacto comercial es directo**. La reducción de más de 30 días en los tiempos del proceso disminuye la incertidumbre y la ansiedad del paciente, mejora la aceptación inicial del PGT y reduce la probabilidad de abandono. Esto se traduce en mayores tasas de conversión y retención, al tiempo que introduce un diferencial competitivo claro y fácilmente comunicable: la posibilidad de obtener resultados genéticos en tiempo récord y avanzar más rápidamente hacia una potencial transferencia.
 
-En conjunto, **FastPGT no solo mejora un componente del proceso, sino que redefine su lógica completa: integra eficiencia clínica, racionalización económica y valor percibido por el paciente, posicionando la velocidad como un eje central del beneficio terapéutico y estratégico**.
+En conjunto, **FastPGT no solo mejora un componente del proceso, sino que redefine su lógica completa: integra eficiencia clínica, racionalización económica y valor percibido por el paciente**, posicionando la velocidad como un eje central del beneficio terapéutico y estratégico.
 
 
-
-::: callout-note
-## **Conclusiones**
-
--   Dados los estudios de cobertura genómica y secuenciación en tiempo real, **FastPGT es técnicamente viable**.
--   La **evidencia experimental disponible** demuestra equivalencia diagnóstica con el PGT-A convencional para CNV ≥10 Mb.
--   El modelo operativo permite **corridas flexibles de 5–10 embriones**, compatibles con transferencia embrionaria en fresco.
--   Desde el punto de vista económico, FastPGT es **competitivo por embrión** y genera **ahorros netos relevantes** al eliminar vitrificación y ciclos diferidos.
--   FastPGT se posiciona como una **plataforma tecnológica robusta** para innovación en diagnóstico genómico aplicado a reproducción asistida.
-
-Los apéndices que acompañan este documento proporcionan el detalle técnico, experimental y económico necesario para una evaluación completa y fundamentada.
-:::
 
 ## 6. Calculadora interactiva FastPGT
 
@@ -176,3 +164,21 @@ function copyCommand() {
 ```
 
 > Una vez ejecutado, abrir en el navegador la URL mostrada en consola (ej: http://127.0.0.1:xxxx)
+
+
+
+## 7. Conclusiones
+
+::: callout-note
+
+## resumen
+
+-   Dados los estudios de cobertura genómica y secuenciación en tiempo real, **FastPGT es técnicamente viable**.
+-   La **evidencia experimental disponible** demuestra equivalencia diagnóstica con el PGT-A convencional para CNV ≥10 Mb.
+-   El modelo operativo permite **corridas flexibles de 5–10 embriones**, compatibles con transferencia embrionaria en fresco.
+-   Desde el punto de vista económico, FastPGT es **competitivo por embrión** y genera **ahorros netos relevantes** al eliminar vitrificación y ciclos diferidos.
+-   FastPGT se posiciona como una **plataforma tecnológica robusta** para innovación en diagnóstico genómico aplicado a reproducción asistida.
+
+Los apéndices que acompañan este documento proporcionan el detalle técnico, experimental y económico necesario para una evaluación completa y fundamentada.
+:::
+
