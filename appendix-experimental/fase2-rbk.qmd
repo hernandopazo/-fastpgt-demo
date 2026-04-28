@@ -20,7 +20,7 @@ csl: ../nature.csl
 
 
 
-## 1. Ensayo RBK
+## 1. Resumen Inicial
 
 En abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN tomadas del freezer de Reprofert:
 
@@ -32,11 +32,11 @@ En abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN toma
     
 3.  Se realizaron 3 corridas los dias 11 y 16 de abril 
 
-  - **Run 1**. 5 muestras (BCD01-BCD05) con un runtime de 2.0 hs  
+  - **Run 1**. 5 muestras (BCD01-BCD05) con un runtime de 2.0 hs.
   - **Run 2**. 8 muestras (BCD08-BCD013)con un runtime de 4 hs, 47 min
   - **Run 3**. 10 muestras (BCD14-BCD023) con un runtime de 6 hs, 12 min
   
-[^1]: Con excepción de las muestras CG(2,3,5,6,8) que provienen de un solo caso de PGT-SR realizado en Cooper Genomics con tecnología Illumina, el resto de muestras se analizaron en Biocódices SA, utilizando librerías y software de Yikon Genomics con secuenciación Illumina.
+[^1]: Con excepción de las muestras CG(2,3,5,6,8) que provienen de un solo caso de PGT-SR realizado con tecnología Illumina por Cooper Genomics, el resto de muestras se analizaron en Biocódices SA, con librerías y software de Yikon Genomics y secuenciación Illumina.
 
 La Tabla 1 muestra los códigos y resultados de cada una de estas corridas.
 
@@ -117,4 +117,24 @@ kable(
 
 ```
 
+::: callout-important
+
+
+El método funciona!
+
+:::
+
+
+## 2. Desarrollo
+
+### 2.1. Calidad y Cantidad de ADN en las muestras.
+
+### 2.2. Formación de Librerias RBK.
+
+### 2.3.  Runs 1, 2 y 3
+
+### 2.4. Análisis de Datos
+
+
+## 3. Conclusiones
 
