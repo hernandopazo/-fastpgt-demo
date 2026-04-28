@@ -11,7 +11,8 @@ csl: ../nature.csl
 ## Links
 **Insumos**: [Libreria RBK](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html). 
 [Starter kit MinION Mk1D](https://store.nanoporetech.com/minion.html).
-[Reporte-Run1](/inputs/Nico_info/rbk_results/report_FBF54235_20260411_1438_6214133c.html). [Reporte-Run2](/inputs/Nico_info/rbk_results/report_FBF54235_20260411_1800_f9fc89ce.html). [Reporte-Run3](/inputs/Nico_info/rbk_results/report_FBF54235_20260416_0916_95c7d263.html).
+
+**Reportes**: [Run1](/inputs/Nico_info/rbk_results/report_FBF54235_20260411_1438_6214133c.html). [Run2](/inputs/Nico_info/rbk_results/report_FBF54235_20260411_1800_f9fc89ce.html). [Run3](/inputs/Nico_info/rbk_results/report_FBF54235_20260416_0916_95c7d263.html).
 
 **Delivery 4**:  [Apéndice económico](../appendix-economico/costsRBKRAA.qmd).
 :::
