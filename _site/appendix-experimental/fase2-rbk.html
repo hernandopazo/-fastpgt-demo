@@ -68,6 +68,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -183,8 +185,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#ensayo-rbk" id="toc-ensayo-rbk" class="nav-link active" data-scroll-target="#ensayo-rbk">1. Ensayo RBK</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -218,327 +226,215 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Insumos</strong>: <a href="../appendix-technical.html">Apéndice técnico</a>. <a href="../inputs/FCEN/report_Nanopore_seq.html">Reporte Havanna FCEN</a>.</p>
+<p><strong>Insumos</strong>: <a href="https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html">Libreria RBK</a>. <a href="https://store.nanoporetech.com/minion.html">Starter kit MinION Mk1D</a>. <a href="../inputs/Nico_info/rbk_results/report_FBF54235_20260411_1438_6214133c.html">Reporte-Run1</a>. <a href="../inputs/Nico_info/rbk_results/report_FBF54235_20260411_1800_f9fc89ce.html">Reporte-Run2</a>. <a href="../inputs/Nico_info/rbk_results/report_FBF54235_20260416_0916_95c7d263.html">Reporte-Run3</a>.</p>
 <p><strong>Delivery 4</strong>: <a href="../appendix-economico/costsRBKRAA.html">Apéndice económico</a>.</p>
 </div>
 </div>
-<div id="tbl-barcodes" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-barcodes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabla&nbsp;1: Muestras utilizadas como referencias.
-</figcaption>
-<div aria-describedby="tbl-barcodes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div style="width: 95%; margin: 0 auto; font-size: 0.85em;">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 19%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 17%">
-</colgroup>
+<section id="ensayo-rbk" class="level2">
+<h2 class="anchored" data-anchor-id="ensayo-rbk">1. Ensayo RBK</h2>
+<p>En abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN tomadas del freezer de Reprofert:</p>
+<ol type="1">
+<li><p>Las muestras consistieron en <strong>23 ADN congelados</strong> (-20ºC), extraídos de biopsias embrionarias previamente amplificadas con Sureplex, derivadas de estudios de PGT-A realizados en Biocódices SA, durante los años 2017 al 2019, utilizando secuenciación Illumina y librerías y software de Yikon Genomics <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p></li>
+<li><p>La secuenciación se llevó a cabo en un equipo <strong>MinION Mk1B</strong>, con un flow cell <strong>FLO-MIN114</strong>.</p></li>
+<li><p>Se realizaron 3 corridas los dias 11 y 16 de abril</p></li>
+</ol>
+<ul>
+<li><strong>Run 1</strong>. 5 muestras (BCD01-BCD05) con un runtime de 2.0 hs<br>
+</li>
+<li><strong>Run 2</strong>. 8 muestras (BCD08-BCD013)con un runtime de 4 hs, 47 min</li>
+<li><strong>Run 3</strong>. 10 muestras (BCD14-BCD023) con un runtime de 6 hs, 12 min</li>
+</ul>
+<p>La Tabla 1 muestra los códigos y resultados de cada una de estas corridas.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small">
+<caption>Tabla 1: Muestras, formulación genómica de referencia y resultados.</caption>
 <thead>
 <tr class="header">
-<th>Número</th>
-<th>Etiqueta</th>
-<th>Diagnóstico</th>
-<th>Run 1 (5)</th>
-<th>Run 2 (8)</th>
-<th>Run 3 (10)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Etiqueta</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Diagnóstico</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Run 1</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Run 2</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Run 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>AC1</td>
-<td>XX, +9, +16, +21</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">AC1</td>
+<td style="text-align: left; width: 25em;">XX, +9, +16, +21</td>
+<td style="text-align: center; width: 5em;">-</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode14_CNV_calling_results.html" target="_blank">BC14</a></td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>CB5</td>
-<td>XX, -5, +12, +20</td>
-<td>1</td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">CB5</td>
+<td style="text-align: left; width: 25em;">XX, -5, +12, +20</td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode01_CNV_calling_results.html" target="_blank">BC01</a></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td>CB7</td>
-<td>XY, -2, +18, -19</td>
-<td>1</td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">CB7</td>
+<td style="text-align: left; width: 25em;">XY, -2, +18, -19</td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode02_CNV_calling_results.html" target="_blank">BC02</a></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>CB9</td>
-<td>XY</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">CB9</td>
+<td style="text-align: left; width: 25em;">XY</td>
+<td style="text-align: center; width: 5em;">-</td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode06_CNV_calling_results.html" target="_blank">BC06</a></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>CG2</td>
-<td>XY, +11(q23.3-qter), -22(q11.2-qter)</td>
-<td></td>
-<td>1</td>
-<td></td>
+<td style="text-align: left; width: 7em;">CG2</td>
+<td style="text-align: left; width: 25em;">XY, +11(q23.3-qter), -22(q11.2-qter)</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode07_CNV_calling_results.html" target="_blank">BC07</a></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode15_CNV_calling_results.html" target="_blank">BC15</a></td>
 </tr>
 <tr class="even">
-<td>6</td>
-<td>CG3</td>
-<td>XX, -9p(mos), -11(q24.1-qter)(mos)</td>
-<td></td>
-<td>1</td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">CG3</td>
+<td style="text-align: left; width: 25em;">XX, -9p(mos), -11(q24.1-qter)(mos)</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode16_CNV_calling_results.html" target="_blank">BC16</a></td>
 </tr>
 <tr class="odd">
-<td>7</td>
-<td>CG6</td>
-<td>XY, +11(q23.3-qter), -13, -16, -22(q11.2-qter)</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">CG6</td>
+<td style="text-align: left; width: 25em;">XY, +11(q23.3-qter), -13, -16, -22(q11.2-qter)</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="even">
-<td>8</td>
-<td>CG5</td>
-<td>XX, +11(q23.3-qter), -22(q11.2-qter)</td>
-<td></td>
-<td></td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">CG5</td>
+<td style="text-align: left; width: 25em;">XX, +11(q23.3-qter), -22(q11.2-qter)</td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode03_CNV_calling_results.html" target="_blank">BC03</a></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode08_CNV_calling_results.html" target="_blank">BC08</a></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode17_CNV_calling_results.html" target="_blank">BC17</a></td>
 </tr>
 <tr class="odd">
-<td>9</td>
-<td>CG8</td>
-<td>XY, +11(q23.3-qter), -22(q11.2-qter)</td>
-<td></td>
-<td></td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">CG8</td>
+<td style="text-align: left; width: 25em;">XY, +11(q23.3-qter), -22(q11.2-qter)</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode18_CNV_calling_results.html" target="_blank">BC18</a></td>
 </tr>
 <tr class="even">
-<td>10</td>
-<td>CH2</td>
-<td>XY, -3(p25.3-pter)(mos)</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">CH2</td>
+<td style="text-align: left; width: 25em;">XY, -3(p25.3-pter)(mos)</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="odd">
-<td>11</td>
-<td>CH3</td>
-<td>XXY, +8(p22-pter)</td>
-<td>1</td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">CH3</td>
+<td style="text-align: left; width: 25em;">XXY, +8(p22-pter)</td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode04_CNV_calling_results.html" target="_blank">BC04</a></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="even">
-<td>12</td>
-<td>CH7</td>
-<td>XX, +4(q26-qter)(mos)</td>
-<td></td>
-<td>1</td>
-<td></td>
+<td style="text-align: left; width: 7em;">CH7</td>
+<td style="text-align: left; width: 25em;">XX, +4(q26-qter)(mos)</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode09_CNV_calling_results.html" target="_blank">BC09</a></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode19_CNV_calling_results.html" target="_blank">BC19</a></td>
 </tr>
 <tr class="odd">
-<td>13</td>
-<td>CH8</td>
-<td>XY</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">CH8</td>
+<td style="text-align: left; width: 25em;">XY</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="even">
-<td>14</td>
-<td>D2</td>
-<td>XX</td>
-<td></td>
-<td>1</td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">D2</td>
+<td style="text-align: left; width: 25em;">XX</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode10_CNV_calling_results.html" target="_blank">BC10</a></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="odd">
-<td>15</td>
-<td>D3</td>
-<td>XY</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">D3</td>
+<td style="text-align: left; width: 25em;">XY</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="even">
-<td>16</td>
-<td>D4</td>
-<td>XXY</td>
-<td></td>
-<td>1</td>
-<td></td>
+<td style="text-align: left; width: 7em;">D4</td>
+<td style="text-align: left; width: 25em;">XXY</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode11_CNV_calling_results.html" target="_blank">BC11</a></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="odd">
-<td>17</td>
-<td>D6</td>
-<td>XX</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">D6</td>
+<td style="text-align: left; width: 25em;">XX</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="even">
-<td>18</td>
-<td>D7</td>
-<td>XX</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">D7</td>
+<td style="text-align: left; width: 25em;">XX</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="odd">
-<td>19</td>
-<td>DS1</td>
-<td>XX</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">DS1</td>
+<td style="text-align: left; width: 25em;">XX</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
 </tr>
 <tr class="even">
-<td>20</td>
-<td>DS3</td>
-<td>X -2, +9, +11, -19</td>
-<td></td>
-<td>1</td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">DS3</td>
+<td style="text-align: left; width: 25em;">X -2, +9, +11, -19</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode12_CNV_calling_results.html" target="_blank">BC12</a></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode20_CNV_calling_results.html" target="_blank">BC20</a></td>
 </tr>
 <tr class="odd">
-<td>21</td>
-<td>DS4</td>
-<td>XY, -19, +22</td>
-<td></td>
-<td></td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">DS4</td>
+<td style="text-align: left; width: 25em;">XY, -19, +22</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode21_CNV_calling_results.html" target="_blank">BC21</a></td>
 </tr>
 <tr class="even">
-<td>22</td>
-<td>DS5</td>
-<td>XX -8(q21.13-24.12), -19</td>
-<td></td>
-<td></td>
-<td>1</td>
+<td style="text-align: left; width: 7em;">DS5</td>
+<td style="text-align: left; width: 25em;">XX -8(q21.13-24.12), -19</td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode22_CNV_calling_results.html" target="_blank">BC22</a></td>
 </tr>
 <tr class="odd">
-<td>23</td>
-<td>GP10</td>
-<td>XY, -21, +22</td>
-<td></td>
-<td></td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>24</td>
-<td>GP8</td>
-<td>XX</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>25</td>
-<td>GZ2</td>
-<td>XY, -11(q12.2-qter)</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>26</td>
-<td>JD1</td>
-<td>XY, -15, -19p(mos)</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>26</td>
-<td>JD4</td>
-<td>XY, +10(p12.1-pter), -22</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>27</td>
-<td>RB5</td>
-<td>XX -4(q28.1-28.3), -5</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>28</td>
-<td>ST1</td>
-<td>XX, +2, +3, -4, +15, -21</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>29</td>
-<td>ST2</td>
-<td>XX, -15(q14-cent)(mos) alto nivel de mosaicismo</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>30</td>
-<td>VB1</td>
-<td>XX, -16</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>31</td>
-<td>VB3</td>
-<td>XX, +16, -X(q21.33-cent)</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>32</td>
-<td>VB5</td>
-<td>XX</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>33</td>
-<td>VB6</td>
-<td>XY</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>34</td>
-<td>VR3</td>
-<td>XX, +9, +18</td>
-<td></td>
-<td></td>
-<td></td>
+<td style="text-align: left; width: 7em;">GP10</td>
+<td style="text-align: left; width: 25em;">XY, -21, +22</td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode05_CNV_calling_results.html" target="_blank">BC05</a></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode13_CNV_calling_results.html" target="_blank">BC13</a></td>
+<td style="text-align: center; width: 5em;"><a href="../inputs/Nico_info/rbk_results/barcode23_CNV_calling_results.html" target="_blank">BC23</a></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</figure>
-</div>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Con excepción de las muestras CG[2,3,5,6,8] que provienen de un solo caso de PGT-SR realizado en Cooper Genomics con tecnología genómica y bioinformática Illumina.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

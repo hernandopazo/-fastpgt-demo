@@ -9,51 +9,112 @@ csl: ../nature.csl
 
 ::: callout-note
 ## Links
-**Insumos**: [Apéndice técnico](../appendix-technical.qmd). [Reporte Havanna FCEN](../inputs/FCEN/report_Nanopore_seq.html).
+**Insumos**: [Libreria RBK](https://store.nanoporetech.com/rapid-barcoding-sequencing-kit-24-v14.html). 
+[Starter kit MinION Mk1D](https://store.nanoporetech.com/minion.html).
+[Reporte-Run1](/inputs/Nico_info/rbk_results/report_FBF54235_20260411_1438_6214133c.html). [Reporte-Run2](/inputs/Nico_info/rbk_results/report_FBF54235_20260411_1800_f9fc89ce.html). [Reporte-Run3](/inputs/Nico_info/rbk_results/report_FBF54235_20260416_0916_95c7d263.html).
 
 **Delivery 4**:  [Apéndice económico](../appendix-economico/costsRBKRAA.qmd).
 :::
 
-:::: {#tbl-barcodes tbl-cap="Muestras utilizadas como referencias."}
-::: {style="width: 95%; margin: 0 auto; font-size: 0.85em;"}
-| Número | Etiqueta | Diagnóstico | Run 1 (5) | Run 2 (8) | Run 3 (10) |
-|----------|----------|-------------|-----------|-----------|------------|
-| 1 | AC1 | XX, +9, +16, +21 |  1 | 1 | 1 |
-| 2| CB5 | XX, -5, +12, +20 |  1 |  |  |
-| 3| CB7 | XY, -2, +18, -19 |  1 |  |  |
-| 4| CB9 | XY |  1 | 1 | 1 |
-| 5| CG2 | XY, +11(q23.3-qter), -22(q11.2-qter) |  | 1 |  |
-| 6| CG3 | XX, -9p(mos), -11(q24.1-qter)(mos) |   | 1 | 1 |
-| 7| CG6 | XY, +11(q23.3-qter), -13, -16, -22(q11.2-qter) |  |  |  |
-| 8| CG5 | XX, +11(q23.3-qter), -22(q11.2-qter) |   |  | 1 |
-| 9| CG8 | XY, +11(q23.3-qter), -22(q11.2-qter) |   |  | 1 |
-| 10| CH2 | XY, -3(p25.3-pter)(mos) |   |  |  |
-| 11| CH3 | XXY, +8(p22-pter) |  1 |  |  |
-| 12| CH7 | XX, +4(q26-qter)(mos) |  | 1 |  |
-| 13| CH8 | XY |   |  |  |
-| 14| D2 | XX |  | 1 | 1 |
-| 15| D3 | XY |   |  |  |
-| 16| D4 | XXY |   | 1 |  |
-| 17| D6 | XX |  |  |  |
-| 18| D7 | XX |   |  |  |
-| 19| DS1 | XX |   |  |  |
-| 20| DS3 | X -2, +9, +11, -19 |   | 1 | 1 |
-| 21| DS4 | XY, -19, +22 |   |  | 1 |
-| 22| DS5 | XX -8(q21.13-24.12), -19 |   |  | 1 |
-| 23| GP10 | XY, -21, +22 |   |  | 1 |
-| 24| GP8 | XX |   |  |  |
-| 25| GZ2 | XY, -11(q12.2-qter) |   |  |  |
-| 26| JD1 | XY, -15, -19p(mos) |   |  |  |
-| 26| JD4 | XY, +10(p12.1-pter), -22 |   |  |  |
-| 27| RB5 | XX -4(q28.1-28.3), -5 |  |  |  |
-| 28| ST1 | XX, +2, +3, -4, +15, -21 | |  |  |
-| 29| ST2 | XX, -15(q14-cent)(mos) alto nivel de mosaicismo |  |  |  |
-| 30| VB1 | XX, -16 | |  |  |
-| 31| VB3 | XX, +16, -X(q21.33-cent) |  |  |  |
-| 32| VB5 | XX |   |  |  |
-| 33| VB6 | XY |  |  |  |
-| 34| VR3 | XX, +9, +18 |  |  |  |
 
-:::
-:::
+
+
+## 1. Ensayo RBK
+
+En abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN tomadas del freezer de Reprofert:
+
+1.  Las muestras consistieron en **23 ADN congelados** (-20ºC),
+    extraídos de biopsias embrionarias previamente amplificadas con
+    Sureplex, derivadas de estudios de PGT-A realizados en Biocódices SA, durante los años
+    2017 al 2019, utilizando secuenciación Illumina y librerías y software de Yikon Genomics [^1].
+
+2.  La secuenciación se llevó a cabo en un equipo **MinION Mk1B**, con un flow cell **FLO-MIN114**.
+    
+3.  Se realizaron 3 corridas los dias 11 y 16 de abril 
+
+  - **Run 1**. 5 muestras (BCD01-BCD05) con un runtime de 2.0 hs  
+  - **Run 2**. 8 muestras (BCD08-BCD013)con un runtime de 4 hs, 47 min
+  - **Run 3**. 10 muestras (BCD14-BCD023) con un runtime de 6 hs, 12 min
+  
+[^1]: Con excepción de las muestras CG[2,3,5,6,8] que  provienen de un solo caso de PGT-SR realizado en Cooper Genomics con tecnología genómica y bioinformática Illumina.
+
+La Tabla 1 muestra los códigos y resultados de cada una de estas corridas.
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tibble)
+library(dplyr)
+library(knitr)
+
+
+link_bc <- function(x) {
+  ifelse(
+    is.na(x) | x == "",
+    "",
+    ifelse(
+      x == "-",
+      "-",
+      paste0(
+        '<a href="/inputs/Nico_info/rbk_results/barcode',
+        stringr::str_extract(x, "\\d+"),
+        '_CNV_calling_results.html" target="_blank">',
+        x,
+        '</a>'
+      )
+    )
+  )
+}
+
+tabla_barcodes <- tribble(
+  ~Etiqueta, ~Diagnóstico, ~`Run 1`, ~`Run 2`, ~`Run 3`,
+  "AC1",  "XX, +9, +16, +21", "-",    "",     "BC14",
+  "CB5",  "XX, -5, +12, +20", "BC01", "",     "",
+  "CB7",  "XY, -2, +18, -19", "BC02", "",     "",
+  "CB9",  "XY", "-", "BC06", "",
+  "CG2",  "XY, +11(q23.3-qter), -22(q11.2-qter)", "", "BC07", "BC15",
+  "CG3",  "XX, -9p(mos), -11(q24.1-qter)(mos)", "", "", "BC16",
+  "CG6",  "XY, +11(q23.3-qter), -13, -16, -22(q11.2-qter)", "", "", "",
+  "CG5",  "XX, +11(q23.3-qter), -22(q11.2-qter)", "BC03", "BC08", "BC17",
+  "CG8",  "XY, +11(q23.3-qter), -22(q11.2-qter)", "", "", "BC18",
+  "CH2",  "XY, -3(p25.3-pter)(mos)", "", "", "",
+  "CH3",  "XXY, +8(p22-pter)", "BC04", "", "",
+  "CH7",  "XX, +4(q26-qter)(mos)", "", "BC09", "BC19",
+  "CH8",  "XY", "", "", "",
+  "D2",   "XX", "", "BC10", "",
+  "D3",   "XY", "", "", "",
+  "D4",   "XXY", "", "BC11", "",
+  "D6",   "XX", "", "", "",
+  "D7",   "XX", "", "", "",
+  "DS1",  "XX", "", "", "",
+  "DS3",  "X -2, +9, +11, -19", "", "BC12", "BC20",
+  "DS4",  "XY, -19, +22", "", "", "BC21",
+  "DS5",  "XX -8(q21.13-24.12), -19", "", "", "BC22",
+  "GP10", "XY, -21, +22", "BC05", "BC13", "BC23"
+) %>%
+  mutate(across(starts_with("Run"), link_bc))
+
+library(kableExtra)
+
+kable(
+  tabla_barcodes,
+  caption = "Tabla 1: Muestras, formulación genómica de referencia y resultados.",
+  escape = FALSE,
+  align = c("l", "l", "c", "c", "c"),
+  format = "html"
+) %>%
+  kable_styling(
+    full_width = FALSE,
+    position = "center",
+    font_size = 13
+  ) %>%
+  column_spec(1, width = "7em") %>%
+  column_spec(2, width = "25em") %>%
+  column_spec(3:5, width = "5em")
+
+```
+
 
