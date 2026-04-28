@@ -1,5 +1,160 @@
 [
   {
+    "objectID": "appendix-modelo.html",
+    "href": "appendix-modelo.html",
+    "title": "Apéndice Modelo",
+    "section": "",
+    "text": "NotaContenido\n\n\n\n\nGASTOS FIJOS\nProyecto Fast y Regular PGT\nYaguarecito\nCash Flow a 3 años\n\nInsumos: Apéndice técnico. Analytical: Insumos ONT\nDelivery 4: Documento Ppal.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#arquitectura-general-de-la-red-2pq",
+    "href": "appendix-modelo.html#arquitectura-general-de-la-red-2pq",
+    "title": "Apéndice Modelo",
+    "section": "2. Arquitectura General de la Red 2pq",
+    "text": "2. Arquitectura General de la Red 2pq\nEl modelo propuesto se basa en una estructura híbrida con:\n\n2.1. Nodo Central 2pq (Capital)\nFunciones principales:\n\nLaboratorio húmedo propio (opcional).\nDesarrollo y validación del pipeline analítico.\nControl de calidad maestro.\nBenchmark multicéntrico.\nActualización y versionado de algoritmos.\nAgregación de métricas poblacionales.\nPublicaciones científicas multicéntricas.\n\nEl nodo central actúa como:\n\nCentro de referencia analítica y metodológica.\n\n\n\n\n2.2. Nodos Provinciales (Laboratorios Bioquímicos Distribuidos)\nFunciones:\n\nRecepción de muestras.\nWGA (cuando aplique).\nPreparación de librerías ONT.\nSecuenciación local.\nBasecalling.\nPreprocesamiento inicial.\nEnvío de datos o ejecución local del pipeline 2pq.\n\nCada nodo mantiene:\n\nResponsabilidad clínica local.\nIdentificación del paciente.\nEmisión formal del informe (según modelo regulatorio adoptado).",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#flujo-operativo",
+    "href": "appendix-modelo.html#flujo-operativo",
+    "title": "Apéndice Modelo",
+    "section": "3. Flujo Operativo",
+    "text": "3. Flujo Operativo\n\n3.1. FastPGT\n\nClínica IVF realiza biopsia embrionaria.\nLaboratorio provincial procesa muestra y secuencia ONT.\nDatos (BAM / matrices de cobertura) son:\n\nenviados a 2pq, o\nanalizados mediante contenedor 2pq local.\n\n2pq ejecuta:\n\nnormalización de cobertura,\ndetección de CNVs,\nmodelo de mosaicismo,\ncálculo de métricas QC,\nscore de confianza.\n\nSe devuelve:\n\ninforme estructurado,\nmétricas técnicas auditables,\níndice de confiabilidad.\n\n\n\n\n\n3.2. Yaguarecito (rWGS Neonatal)\n\nHospital realiza extracción y secuenciación.\nLaboratorio local ejecuta pipeline preliminar.\n2pq realiza:\n\npriorización estandarizada de variantes,\nmétricas de calidad del análisis,\narmonización ACMG,\nanálisis multicéntrico agregado.\n\nSe retorna:\n\nreporte validado,\nmétricas comparativas,\nindicadores de desempeño del nodo.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#rol-de-2pq-analizador-y-agregador",
+    "href": "appendix-modelo.html#rol-de-2pq-analizador-y-agregador",
+    "title": "Apéndice Modelo",
+    "section": "4. Rol de 2pq: Analizador y Agregador",
+    "text": "4. Rol de 2pq: Analizador y Agregador\nEl modelo define a 2pq como:\n\nMotor analítico especializado.\nEstandarizador de métricas.\nAgregador multicéntrico.\nGenerador de benchmarking.\nCentro de validación metodológica.\n\n2pq no requiere:\n\nCentralizar genomas completos.\nCustodiar datos clínicos identificables.\nSustituir al laboratorio local.\n\nEl valor agregado se centra en:\n\nUniformidad técnica.\nValidación cruzada.\nComparabilidad entre centros.\nConstrucción de conocimiento agregado.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#estandarización-analítica",
+    "href": "appendix-modelo.html#estandarización-analítica",
+    "title": "Apéndice Modelo",
+    "section": "5. Estandarización Analítica",
+    "text": "5. Estandarización Analítica\nEl núcleo del modelo es la definición de estándares uniformes:\n\n5.1. Métricas Técnicas (FastPGT)\n\nCobertura horizontal efectiva (% genoma muestreado).\nUniformidad de cobertura.\nZ-score cromosómico.\nScore de ruido WGA.\nÍndice de mosaicismo estimado.\nConfidence score global.\n\n\n\n5.2. Métricas Diagnósticas (Yaguarecito)\n\nTasa de resolución diagnóstica.\nTiempo a diagnóstico.\nDistribución de patrones de herencia.\nFrecuencia génica agregada.\nRendimiento del pipeline por centro.\n\nEstas métricas permiten:\n\nComparación entre nodos.\nIdentificación de sesgos técnicos.\nMejora continua del sistema.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#modelos-operativos-alternativos",
+    "href": "appendix-modelo.html#modelos-operativos-alternativos",
+    "title": "Apéndice Modelo",
+    "section": "6. Modelos Operativos Alternativos",
+    "text": "6. Modelos Operativos Alternativos\n\nModelo A – Centralización Analítica\n\nEnvío de datos crudos a 2pq.\nAnálisis completo central.\nRetorno de informe validado.\n\nMayor control técnico, mayor carga regulatoria.\n\n\n\nModelo B – Contenedor Federado\n\nEjecución local del pipeline 2pq.\nEnvío únicamente de métricas agregadas.\nValidación y certificación central.\n\nMenor riesgo regulatorio, mayor escalabilidad.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#gobernanza-y-responsabilidad",
+    "href": "appendix-modelo.html#gobernanza-y-responsabilidad",
+    "title": "Apéndice Modelo",
+    "section": "7. Gobernanza y Responsabilidad",
+    "text": "7. Gobernanza y Responsabilidad\nSe contemplan dos esquemas posibles:\n\n2pq como laboratorio de referencia.\n2pq como proveedor técnico especializado.\n\nEn ambos casos:\n\nEl nodo local mantiene responsabilidad clínica primaria.\n2pq aporta validación metodológica y estandarización.\n\nLa definición final dependerá del marco regulatorio vigente.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#ventajas-estratégicas",
+    "href": "appendix-modelo.html#ventajas-estratégicas",
+    "title": "Apéndice Modelo",
+    "section": "8. Ventajas Estratégicas",
+    "text": "8. Ventajas Estratégicas\nEl modelo federado 2pq permite:\n\nEscalabilidad nacional sin centralización masiva de datos.\nConstrucción de dataset multicéntrico único en la región.\nDesarrollo de estándares nacionales de PGT-ONT.\nPosicionamiento científico internacional.\nReducción de fricción política territorial.\nMinimización del riesgo regulatorio asociado a transferencia de datos sensibles.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#proyección-futura",
+    "href": "appendix-modelo.html#proyección-futura",
+    "title": "Apéndice Modelo",
+    "section": "9. Proyección Futura",
+    "text": "9. Proyección Futura\nA medida que la red crezca, será posible:\n\nImplementar entrenamiento federado de modelos.\nGenerar curvas poblacionales propias.\nDesarrollar índices nacionales de calidad.\nPublicar análisis multicéntricos validados.\nExtender el modelo a otros dominios genómicos.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-modelo.html#conclusión",
+    "href": "appendix-modelo.html#conclusión",
+    "title": "Apéndice Modelo",
+    "section": "10. Conclusión",
+    "text": "10. Conclusión\nEl modelo federado 2pq no busca centralizar datos, sino centralizar inteligencia analítica.\nAl combinar:\n\nDescentralización territorial,\nEstandarización metodológica,\nAgregación multicéntrica,\n\nse crea una infraestructura nacional de diagnóstico genómico robusta, escalable y científicamente estratégica.",
+    "crumbs": [
+      "Apéndice Modelo"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/simulations.html",
+    "href": "appendix-economico/simulations.html",
+    "title": "Simulación de Costos",
+    "section": "",
+    "text": "NotaLinks\n\n\n\nPresupuestos: Apéndice económico\nDelivery 4: Documento Principal",
+    "crumbs": [
+      "Apéndice Económico",
+      "Simulación de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/simulations.html#simulación-de-costos-fastpgt",
+    "href": "appendix-economico/simulations.html#simulación-de-costos-fastpgt",
+    "title": "Simulación de Costos",
+    "section": "1. Simulación de costos FastPGT",
+    "text": "1. Simulación de costos FastPGT\nA continuación modelamos el uso completo de un kit Rapid Barcoding (RBK) con capacidad total de 144 muestras bajo un régimen operativo FAST.\nA diferencia de los modelos determinísticos previos, las corridas no se consideran independientes, sino que forman una secuencia acumulativa tal que:\n\\[\n\\sum_{i=1}^{R} n_i = 144\n\\]\ndonde \\(n_i\\) representa el número de muestras procesadas en la corrida \\(i\\), y \\(R\\) es el número total de corridas necesarias para consumir el kit completo.\n\n1.1 Modelo de generación de corridas\nEl tamaño de cada corrida se modela como una variable aleatoria siguiendo una distribución normal truncada:\n\\[\nn_i \\sim \\mathcal{N}(\\mu = 5.5,\\ \\sigma = 1.5), \\quad n_i \\in [4,10]\n\\]\nEsta elección refleja un régimen clínico más realista que una distribución uniforme, donde:\n\nla mayoría de las corridas se concentran en tamaños intermedios (5–6 muestras),\nlos valores extremos (corridas muy pequeñas o grandes) son menos frecuentes,\nexiste variabilidad inherente en la llegada de muestras.\n\nLa secuencia de corridas se genera iterativamente hasta alcanzar exactamente 144 muestras, ajustando la última corrida si es necesario para cumplir esta restricción.\n\n\n\n\n\n\nNota\n\n\n\nEl objetivo de esta simulación es:\n\nestimar el costo promedio por muestra bajo condiciones realistas,\ncuantificar la variabilidad del sistema,\nidentificar escenarios de mayor y menor eficiencia,\nanalizar el impacto de la fragmentación de corridas sobre el costo.\nEste enfoque proporciona una representación más fiel del comportamiento operativo del sistema FastPGT en condiciones clínicas reales.\nSe realizaron 300 simulaciones independientes, cada una correspondiente a un ciclo completo de consumo de un kit RBK (144 barcodes), modelado como una secuencia de corridas hasta alcanzar dicha capacidad.\n\n\n\n\n\n1.2 Naturaleza estocástica del modelo\nDado que la generación de \\(n_i\\) es aleatoria, cada simulación produce:\n\nun número distinto de corridas \\(R\\),\nun número variable de flow cells utilizados,\nuna estructura diferente de eventos (lavados, cambios de FC, uso de RAA).\n\nPor lo tanto, el costo por muestra emerge como una variable aleatoria:\n\\[\nC_{\\text{muestra}} \\sim f(\\{n_i\\})\n\\]\ndonde \\(f\\) representa la dinámica completa del sistema.\nEste enfoque permite capturar la variabilidad real del proceso y evaluar no solo el costo esperado, sino también su dispersión y escenarios extremos.\n\n\n\nDistribución de muestras por corrida (simulación)\n\n\n\n\n\n\n\n\n\nLa distribución observada presenta una forma aproximadamente normal, centrada en 5–6 muestras por corrida, con límites entre 4 y 10.\nEsto refleja adecuadamente la variabilidad clínica esperada, donde:\n\nla mayoría de las corridas son de tamaño pequeño,\nlos extremos (corridas muy pequeñas o grandes) son menos frecuentes.\n\nLa ligera distorsión en los valores bajos se debe al ajuste del último run para completar exactamente 144 muestras.\n\n\n\nResumen de costos\n\n\n\nResumen estadístico del costo por muestra en FastPGT\n\n\n\n\n\n\n\n\n\n\nCosto min (USD)\nCosto medio (USD)\nDesvío estándar\nP10\nP90\nCosto max (USD)\n\n\n\n\n72\n83.36\n3.25\n84.04\n84.71\n84.93\n\n\n\n\n\nLa tabla muestra que:\n\nEl costo por muestra en el modelo FastPGT bajo condiciones realistas muestra un valor medio de aproximadamente 83.6 USD, con una variabilidad moderada (desvío estándar de 3.08 USD).\nLa distribución se concentra en un rango relativamente estrecho, con valores entre 84 y 84.7 USD para los percentiles 10 y 90, lo que indica un comportamiento operativo bastante estable en la mayoría de los escenarios.\nSe observan valores mínimos cercanos a 72.2 USD, correspondientes a configuraciones altamente eficientes, y máximos que alcanzan 96.7 USD en escenarios más fragmentados.\nEn conjunto, estos resultados confirman que el costo por muestra no es fijo, sino que depende de la estructura de corridas y del aprovechamiento de los recursos del sistema.\n\n\n\n\nResumen de valores operativos\n\n\n\nResumen operativo del sistema (corridas y uso de flow cells)\n\n\n\n\n\n\n\n\n\n\nCorridas (min)\nCorridas (p90)\nCorridas (max)\nFC (min)\nFC (p90)\nFC (max)\n\n\n\n\n22\n28\n29\n4\n5\n5\n\n\n\n\n\nLa tabla muestra que:\n\nDesde el punto de vista operativo, el sistema requiere un mínimo de 23 corridas para consumir completamente un kit RBK, pudiendo alcanzar hasta 31 en escenarios más fragmentados, con un percentil 90 en torno a 28 corridas.\nEsta variabilidad se traduce directamente en el uso de flow cells, con un mínimo de 4 y un máximo de 6, siendo 5 el valor más frecuente en condiciones típicas.\nEstos resultados reflejan la naturaleza discreta del sistema, donde pequeñas variaciones en el tamaño de las corridas impactan significativamente en el número total de ciclos necesarios y, en consecuencia, en la eficiencia global del proceso.\n\n\n\n\nDistribución del costo por muestra\n\n\n\n\n\n\n\n\n\nLa distribución del costo presenta dos características relevantes:\n\nUn pico principal (~83–84 USD)\nRepresenta el régimen operativo típico bajo condiciones realistas.\nUn pico secundario a menor costo (~70–72 USD)\nCorresponde a escenarios excepcionalmente eficientes, en los que:\n\nel número total de corridas es menor,\nel número de flow cells utilizados se reduce,\nla fragmentación de muestras es menor,\nel aprovechamiento de recursos es más cercano al óptimo.\n\n\nEste comportamiento multimodal surge de la naturaleza discreta del sistema, en particular:\n\nel reemplazo de flow cells cada 6 corridas,\nel uso condicionado de reactivos (RAA, wash),\nla estructura secuencial de las corridas.\n\n\n\n\n\n\n\n\nNotaInterpretación global\n\n\n\nLos resultados muestran que el costo por muestra no es un valor fijo, sino una variable emergente dependiente de la organización de las corridas.\nEn particular:\n\nuna mayor fragmentación (corridas pequeñas frecuentes) aumenta el costo,\nuna mejor agrupación de muestras reduce significativamente el costo,\nexisten escenarios de alta eficiencia, aunque no representan el comportamiento promedio.\n\nEsto confirma que el sistema FastPGT está gobernado por dinámicas operativas discretas, más que por una relación lineal entre insumos y muestras procesadas.\n\nImplicancias operativas\nEste análisis permite:\n\ncuantificar el impacto económico de la variabilidad clínica,\nidentificar condiciones de operación eficientes,\nfundamentar estrategias de optimización, como:\n\nestablecimiento de tamaños mínimos de corrida,\nagrupamiento parcial de muestras,\nplanificación del uso de flow cells.\n\n\nEn conjunto, el modelo proporciona una herramienta robusta para la toma de decisiones operativas y económicas en entornos de PGT rápido.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Simulación de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/simulations.html#simulación-bajo-régimen-intermedio",
+    "href": "appendix-economico/simulations.html#simulación-bajo-régimen-intermedio",
+    "title": "Simulación de Costos",
+    "section": "2. Simulación bajo régimen intermedio",
+    "text": "2. Simulación bajo régimen intermedio\nModificando el escenario anterior, definimos:\n\\[\nn_i \\sim \\mathcal{N}(\\mu = 16,\\ \\sigma = 2), \\quad n_i \\in [11,22]\n\\] donde:\n\\(n_i\\) es el número de muestras por corrida, que siguen una distribución normal truncada \\((N)\\) con extremos entre 11 y 22, de media: \\(\\mu\\) y distribución standard: \\(\\sigma\\),\nEste modelo refleja condiciones operativas donde las muestras se agrupan antes de ser procesadas, optimizando el uso de recursos.\n\nTabla de Costos\n\n\n\nResumen de costos bajo régimen intermedio\n\n\nCosto medio (USD)\nDesvío estándar\nP10\nMediana (P50)\nP90\n\n\n\n\n61.6\n0.89\n61.5\n61.5\n61.8\n\n\n\n\n\n\n\nTabla de Operación\n\n\n\nResumen operativo bajo régimen intermedio\n\n\n\n\n\n\n\n\n\n\n\n\nCorridas (min)\nCorridas (mediana)\nCorridas (p90)\nCorridas (max)\nFC (min)\nFC (mediana)\nFC (p90)\nFC (max)\n\n\n\n\n8\n9\n10\n11\n3\n4\n4\n5\n\n\n\n\n\n\n\nDistribución de muestras por corrida (PGT intermedio)\n\n\n\n\n\n\n\n\n\n\n\nGráfico de Costos",
+    "crumbs": [
+      "Apéndice Económico",
+      "Simulación de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/simulations.html#simulación-bajo-régimen-pgt-clásico-batch",
+    "href": "appendix-economico/simulations.html#simulación-bajo-régimen-pgt-clásico-batch",
+    "title": "Simulación de Costos",
+    "section": "3. Simulación bajo régimen PGT clásico / batch",
+    "text": "3. Simulación bajo régimen PGT clásico / batch\nEn este escenario, el tamaño de corrida es fijo y determinístico, por lo que no se modela como una variable aleatoria. En consecuencia, la variabilidad del sistema desaparece y el costo por muestra converge a un valor único.\ndonde:\n\\[\n\\sum_{i=1}^{R} n_i = 144, \\quad n_i = 24 \\ \\forall i\n\\] Siendo el valor \\(R\\):\n\\[\nR = \\frac{144}{24} = 6\n\\] En este régimen, el sistema deja de ser estocástico y pasa a ser completamente determinístico. La estructura de corridas está completamente definida a priori, eliminando la variabilidad observada en los escenarios FAST e intermedio.\nEste modelo refleja condiciones operativas donde las muestras se guardan hasta completar un batch de corrida, exactamente como se hace en los escenarios clásicos de PGT-A.\n\nTabla de Costos\n\n\n\nResumen de costos bajo régimen batch (PGT estándar)\n\n\nCosto medio (USD)\nDesvío estándar\nP10\nMediana (P50)\nP90\n\n\n\n\n49.5\n0\n49.5\n49.5\n49.5\n\n\n\n\n\n\n\nTabla de Operación\n\n\n\nResumen operativo bajo régimen batch\n\n\n\n\n\n\n\n\n\n\n\n\nCorridas (min)\nCorridas (mediana)\nCorridas (p90)\nCorridas (max)\nFC (min)\nFC (mediana)\nFC (p90)\nFC (max)\n\n\n\n\n6\n6\n6\n6\n3\n3\n3\n3\n\n\n\n\n\n\n\nDistribución de muestras por corrida (PGT estándar)\n\n\n\n\n\n\n\n\n\n\n\nGráfico de Costos\n\n\n\n\n\n\n\n\n\n\n\nInterpretación del régimen PGT clásico o batch\nEl régimen batch presenta la reducción máxima de la variabilidad del sistema, con el menor número de corridas necesarias para consumir un kit RBK.\nLa distribución del costo en el régimen batch no presenta varianza baja, lo que hace que la estimación de densidad resulte poco informativa. Por este motivo, se utilizan representaciones basadas en histogramas, que reflejan mejor la concentración de valores.\nEl aumento en el tamaño promedio de corrida reduce la fragmentación del proceso, lo que se traduce en una mayor eficiencia económica y una disminución del costo por muestra.\n\n\n\n\n\n\nNotaComparación de los costos por muestra: FAST vs Intermedio vs PGT clásico / batch\n\n\n\n\nEn comparación con el régimen FAST, el escenario intermedio y batch representan un comportamiento más estable y predecible, con una la reducción de costos importantes, y curiosamnete, no tan diferentes, lo cual genera una ventaja operacional importante: No hay mucha diferencia entre los costos BATCH vs INTERMEDIO lo cual relaja la decisión del laboratorio sobre qué procedimiento y cuanto tiempo deben esperar las muestras.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Simulación de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/simulations.html#tabla-de-simulaciones",
+    "href": "appendix-economico/simulations.html#tabla-de-simulaciones",
+    "title": "Simulación de Costos",
+    "section": "4. Tabla de simulaciones",
+    "text": "4. Tabla de simulaciones\n\n4.1. FastPGT\nThe full simulation output contains 23 variables capturing operational and economic states. For clarity, a reduced subset of key variables is presented here.\n\n\n\nResumen de simulación\n\n\nRun\nSamples\nTotal Samples\nRBK #\nRBK Cycle\nRAA Cycle\nFlow Cell #\nEvent\nRun Cost (USD)\nCumulative Cost (USD)\nAvg Cost / Sample (USD)\n\n\n\n\n1\n5.00\n5\n1\n1\n0\n1\nArranca_RBK\n256.83\n2,968.00\n593.60\n\n\n2\n7.00\n12\n1\n2\n0\n1\nWash\n391.89\n3,000.33\n250.03\n\n\n3\n4.00\n16\n1\n3\n0\n1\nWash\n237.79\n3,032.67\n189.54\n\n\n4\n8.00\n24\n1\n4\n0\n1\nWash\n443.26\n3,065.00\n127.71\n\n\n5\n4.00\n28\n1\n5\n0\n1\nWash\n237.79\n3,097.33\n110.62\n\n\n6\n4.00\n32\n1\n6\n0\n1\nWash\n237.79\n3,129.67\n97.80\n\n\n7\n7.00\n39\n1\n7\n1\n2\nNuevo FC + Compra RAA\n450.06\n4,797.67\n123.02\n\n\n8\n5.00\n44\n1\n8\n2\n2\nWash\n379.66\n4,830.00\n109.77\n\n\n9\n10.00\n54\n1\n9\n3\n2\nWash\n636.49\n4,862.33\n90.04\n\n\n10\n7.00\n61\n1\n10\n4\n2\nWash\n482.39\n4,894.67\n80.24\n\n\n11\n5.00\n66\n1\n11\n5\n2\nWash\n379.66\n4,927.00\n74.65\n\n\n12\n4.00\n70\n1\n12\n6\n2\nWash\n328.29\n4,959.33\n70.85\n\n\n13\n4.00\n74\n1\n13\n1\n3\nNuevo FC + Compra RAA\n295.96\n6,627.33\n89.56\n\n\n14\n5.00\n79\n1\n14\n2\n3\nWash\n379.66\n6,659.67\n84.30\n\n\n15\n6.00\n85\n1\n15\n3\n3\nWash\n431.02\n6,692.00\n78.73\n\n\n16\n4.00\n89\n1\n16\n4\n3\nWash\n328.29\n6,724.33\n75.55\n\n\n17\n5.00\n94\n1\n17\n5\n3\nWash\n379.66\n6,756.67\n71.88\n\n\n18\n7.00\n101\n1\n18\n6\n3\nWash + Compra WGA\n482.39\n8,603.40\n85.18\n\n\n19\n6.00\n107\n1\n19\n1\n4\nNuevo FC + Compra RAA\n398.69\n10,271.40\n95.99\n\n\n20\n6.00\n113\n1\n20\n2\n4\nWash\n431.02\n10,303.73\n91.18\n\n\n21\n5.00\n118\n1\n21\n3\n4\nWash\n379.66\n10,336.07\n87.59\n\n\n22\n6.00\n124\n1\n22\n4\n4\nWash\n431.02\n10,368.40\n83.62\n\n\n23\n6.00\n130\n1\n23\n5\n4\nWash\n431.02\n10,400.73\n80.01\n\n\n24\n5.00\n135\n1\n24\n6\n4\nWash\n379.66\n10,433.07\n77.28\n\n\n25\n4.00\n139\n1\n25\n1\n5\nNuevo FC + Compra RAA\n295.96\n12,101.07\n87.06\n\n\n26\n4.00\n143\n1\n26\n2\n5\nWash\n328.29\n12,133.40\n84.85\n\n\n27\n1.00\n144\n1\n27\n3\n5\nWash\n174.20\n12,165.73\n84.48\n\n\nNA\n5.33\n144\n1\nNA\nNA\n5\nPROMEDIO\n370.68\n12,165.73\n84.48\n\n\n\n\n\n\n\n\n\n\n\nNotaClick to see the full simulation\n\n\n\n\n\nThis simulation output contains all operational state variables and is provided here for reproducibility.\n\n\n\n\n\n\n\n\n\n\n\n4.2. PGT Intermedio\n\n\n\nResumen de simulación (Intermedio)\n\n\nRun\nSamples\nTotal Samples\nRBK #\nRBK Cycle\nRAA Cycle\nFlow Cell #\nEvent\nRun Cost (USD)\nCumulative Cost (USD)\nAvg Cost / Sample (USD)\n\n\n\n\n1\n17.0\n17\n1\n1\n0\n1\nArranca_RBK\n873.21\n2,968.00\n174.59\n\n\n2\n15.0\n32\n1\n2\n0\n1\nWash\n802.81\n3,000.33\n93.76\n\n\n3\n14.0\n46\n1\n3\n0\n1\nWash\n751.45\n3,032.67\n65.93\n\n\n4\n13.0\n59\n1\n4\n0\n2\nNuevo FC\n667.75\n4,157.67\n70.47\n\n\n5\n14.0\n73\n1\n5\n0\n2\nWash\n751.45\n4,190.00\n57.40\n\n\n6\n18.0\n91\n1\n6\n0\n2\nWash\n956.91\n4,222.33\n46.40\n\n\n7\n17.0\n108\n1\n7\n1\n3\nNuevo FC + Compra WGA + Compra RAA\n963.71\n7,704.73\n71.34\n\n\n8\n13.0\n121\n1\n8\n2\n3\nWash\n790.58\n7,737.07\n63.94\n\n\n9\n16.0\n137\n1\n9\n3\n3\nWash\n944.68\n7,769.40\n56.71\n\n\n10\n7.0\n144\n1\n10\n4\n4\nNuevo FC\n450.06\n8,894.40\n61.77\n\n\nNA\n14.4\n144\n1\nNA\nNA\n4\nPROMEDIO\n795.26\n8,894.40\n61.77\n\n\n\n\n\n\n\n\n\n\n\nNotaClick to see the full simulation\n\n\n\n\n\nThis simulation output contains all operational state variables and is provided here for reproducibility.\n\n\n\n\n\n\n\n\n\n\n\n4.3. PGT Clásico o batch\n\n\n\nResumen de simulación (Batch)\n\n\nRun\nSamples\nTotal Samples\nRBK #\nRBK Cycle\nRAA Cycle\nFlow Cell #\nEvent\nRun Cost (USD)\nCumulative Cost (USD)\nAvg Cost / Sample (USD)\n\n\n\n\n1\n24\n24\n1\n1\n0\n1\nArranca_RBK\n1,232.77\n2,968.00\n123.67\n\n\n2\n24\n48\n1\n2\n0\n1\nWash\n1,265.10\n3,000.33\n62.51\n\n\n3\n24\n72\n1\n3\n0\n2\nNuevo FC\n1,232.77\n4,125.33\n57.30\n\n\n4\n24\n96\n1\n4\n0\n2\nWash\n1,265.10\n4,157.67\n43.31\n\n\n5\n24\n120\n1\n5\n0\n3\nNuevo FC + Compra WGA\n1,232.77\n7,097.07\n59.14\n\n\n6\n24\n144\n1\n6\n0\n3\nWash\n1,265.10\n7,129.40\n49.51\n\n\nNA\n24\n144\n1\nNA\nNA\n3\nPROMEDIO\n1,248.93\n7,129.40\n49.51\n\n\n\n\n\n\n\n\n\n\n\nNotaClick to see the full simulation (Batch)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportante5. Conclusiones\n\n\n\nLas simulaciones de costos muestran valores competitivos para cualquiera de los 3 escenarios ensayados. No obstante, queda revisar si la amplificación WGA con phy29 funciona como pensamos, si los rendimientos de FC, RAA y RBK son exactamente los considerados en los supuestos y si los tiempos de los diferentes ensayos son compatibles para cada uno de los escenarios.\nEstos supuestos podrán verificarse o modificarse luego de los ensyaos experimentales realizados por Pufo.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Simulación de Costos"
+    ]
+  },
+  {
     "objectID": "appendix-experimental/fase2-rbk.html",
     "href": "appendix-experimental/fase2-rbk.html",
     "title": "Fase 2 - Ensayo RBK",
@@ -15,7 +170,7 @@
     "href": "appendix-experimental/fase2-rbk.html#ensayo-rbk",
     "title": "Fase 2 - Ensayo RBK",
     "section": "1. Ensayo RBK",
-    "text": "1. Ensayo RBK\nEn abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN tomadas del freezer de Reprofert:\n\nLas muestras consistieron en 23 ADN congelados (-20ºC), extraídos de biopsias embrionarias previamente amplificadas con Sureplex, derivadas de estudios de PGT-A realizados en Biocódices SA, durante los años 2017 al 2019, utilizando secuenciación Illumina y librerías y software de Yikon Genomics 1.\nLa secuenciación se llevó a cabo en un equipo MinION Mk1B, con un flow cell FLO-MIN114.\nSe realizaron 3 corridas los dias 11 y 16 de abril\n\n\nRun 1. 5 muestras (BCD01-BCD05) con un runtime de 2.0 hs\n\nRun 2. 8 muestras (BCD08-BCD013)con un runtime de 4 hs, 47 min\nRun 3. 10 muestras (BCD14-BCD023) con un runtime de 6 hs, 12 min\n\nLa Tabla 1 muestra los códigos y resultados de cada una de estas corridas.\n\n\n\nTabla 1: Muestras, formulación genómica de referencia y resultados.\n\n\nEtiqueta\nDiagnóstico\nRun 1\nRun 2\nRun 3\n\n\n\n\nAC1\nXX, +9, +16, +21\n-\n\nBC14\n\n\nCB5\nXX, -5, +12, +20\nBC01\n\n\n\n\nCB7\nXY, -2, +18, -19\nBC02\n\n\n\n\nCB9\nXY\n-\nBC06\n\n\n\nCG2\nXY, +11(q23.3-qter), -22(q11.2-qter)\n\nBC07\nBC15\n\n\nCG3\nXX, -9p(mos), -11(q24.1-qter)(mos)\n\n\nBC16\n\n\nCG6\nXY, +11(q23.3-qter), -13, -16, -22(q11.2-qter)\n\n\n\n\n\nCG5\nXX, +11(q23.3-qter), -22(q11.2-qter)\nBC03\nBC08\nBC17\n\n\nCG8\nXY, +11(q23.3-qter), -22(q11.2-qter)\n\n\nBC18\n\n\nCH2\nXY, -3(p25.3-pter)(mos)\n\n\n\n\n\nCH3\nXXY, +8(p22-pter)\nBC04\n\n\n\n\nCH7\nXX, +4(q26-qter)(mos)\n\nBC09\nBC19\n\n\nCH8\nXY\n\n\n\n\n\nD2\nXX\n\nBC10\n\n\n\nD3\nXY\n\n\n\n\n\nD4\nXXY\n\nBC11\n\n\n\nD6\nXX\n\n\n\n\n\nD7\nXX\n\n\n\n\n\nDS1\nXX\n\n\n\n\n\nDS3\nX -2, +9, +11, -19\n\nBC12\nBC20\n\n\nDS4\nXY, -19, +22\n\n\nBC21\n\n\nDS5\nXX -8(q21.13-24.12), -19\n\n\nBC22\n\n\nGP10\nXY, -21, +22\nBC05\nBC13\nBC23",
+    "text": "1. Ensayo RBK\nEn abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN tomadas del freezer de Reprofert:\n\nLas muestras consistieron en 23 ADN congelados (-20ºC), extraídos de biopsias embrionarias previamente amplificadas con Sureplex y derivadas a estudios de PGT-A reportados entre 2017 y 2019 1.\nLa secuenciación se llevó a cabo en un equipo MinION Mk1B, con un flow cell FLO-MIN114.\nSe realizaron 3 corridas los dias 11 y 16 de abril\n\n\nRun 1. 5 muestras (BCD01-BCD05) con un runtime de 2.0 hs\n\nRun 2. 8 muestras (BCD08-BCD013)con un runtime de 4 hs, 47 min\nRun 3. 10 muestras (BCD14-BCD023) con un runtime de 6 hs, 12 min\n\nLa Tabla 1 muestra los códigos y resultados de cada una de estas corridas.\n\n\n\nTabla 1: Muestras, formulación genómica de referencia y resultados.\n\n\nCódigo\nDiagnóstico\nRun 1\nRun 2\nRun 3\n\n\n\n\nAC1\nXX, +9, +16, +21\n-\n\nBC14\n\n\nCB5\nXX, -5, +12, +20\nBC01\n\n\n\n\nCB7\nXY, -2, +18, -19\nBC02\n\n\n\n\nCB9\nXY\n-\nBC06\n\n\n\nCG2\nXY, +11(q23.3-qter), -22(q11.2-qter)\n\nBC07\nBC15\n\n\nCG3\nXX, -9p(mos), -11(q24.1-qter)(mos)\n\n\nBC16\n\n\nCG6\nXY, +11(q23.3-qter), -13, -16, -22(q11.2-qter)\n\n\n\n\n\nCG5\nXX, +11(q23.3-qter), -22(q11.2-qter)\nBC03\nBC08\nBC17\n\n\nCG8\nXY, +11(q23.3-qter), -22(q11.2-qter)\n\n\nBC18\n\n\nCH2\nXY, -3(p25.3-pter)(mos)\n\n\n\n\n\nCH3\nXXY, +8(p22-pter)\nBC04\n\n\n\n\nCH7\nXX, +4(q26-qter)(mos)\n\nBC09\nBC19\n\n\nCH8\nXY\n\n\n\n\n\nD2\nXX\n\nBC10\n\n\n\nD3\nXY\n\n\n\n\n\nD4\nXXY\n\nBC11\n\n\n\nD6\nXX\n\n\n\n\n\nD7\nXX\n\n\n\n\n\nDS1\nXX\n\n\n\n\n\nDS3\nX -2, +9, +11, -19\n\nBC12\nBC20\n\n\nDS4\nXY, -19, +22\n\n\nBC21\n\n\nDS5\nXX -8(q21.13-24.12), -19\n\n\nBC22\n\n\nGP10\nXY, -21, +22\nBC05\nBC13\nBC23",
     "crumbs": [
       "Apéndice Experimental",
       "Fase 2 - Ensayo RBK"
@@ -26,10 +181,563 @@
     "href": "appendix-experimental/fase2-rbk.html#footnotes",
     "title": "Fase 2 - Ensayo RBK",
     "section": "Notas",
-    "text": "Notas\n\n\nCon excepción de las muestras CG[2,3,5,6,8] que provienen de un solo caso de PGT-SR realizado en Cooper Genomics con tecnología genómica y bioinformática Illumina.↩︎",
+    "text": "Notas\n\n\nCon excepción de las muestras CG(2,3,5,6,8) que provienen de un solo caso de PGT-SR realizado en Cooper Genomics con tecnología Illumina, el resto de muestras se analizaron en Biocódices SA, utilizando librerías y software de Yikon Genomics con secuenciación Illumina.↩︎",
     "crumbs": [
       "Apéndice Experimental",
       "Fase 2 - Ensayo RBK"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html",
+    "href": "appendix-clinico.html",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "",
+    "text": "NotaLinks\n\n\n\nInsumos: Apéndice técnico.\nDelivery 4: Apéndice económico. Documento Ppal.",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#concepto",
+    "href": "appendix-clinico.html#concepto",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "2.1 Concepto",
+    "text": "2.1 Concepto\nConsiste en realizar la transferencia embrionaria el mismo día o dentro de las 24 horas posteriores a la obtención del resultado genético, aprovechando la ventana fisiológica de implantación del ciclo estimulado.\nEsta estrategia es posible únicamente cuando el diagnóstico genético se obtiene dentro de una ventana compatible con la sincronía embrión–endometrio.\n\n\n\n\n\n\n\n\nFigura 1",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#timeline-estimado",
+    "href": "appendix-clinico.html#timeline-estimado",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "2.2 Timeline estimado",
+    "text": "2.2 Timeline estimado\n\nDía 0: Punción ovárica\n\nDías 1–5: Desarrollo embrionario\n\nDía 5 (mañana): Biopsia + preparación de librerías\n\nDía 5 (tarde): Secuenciación + resultado\n\nDía 6: Transferencia en fresco\n\nDía 16–20: Test de embarazo\n\nDuración total estimada: ~20–25 días desde punción hasta test.",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#criterios-clínicos-orientativos",
+    "href": "appendix-clinico.html#criterios-clínicos-orientativos",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "2.3 Criterios clínicos orientativos",
+    "text": "2.3 Criterios clínicos orientativos\nIndicadores favorables:\n\nRespuesta ovárica normal o moderada\n\nEstradiol en trigger &lt; 3,500–4,000 pg/mL\n\nGrosor endometrial 7–12 mm con patrón trilaminar\n\nAusencia de riesgo clínico de OHSS (Ovarian hyperstimulation syndrome)\n≥1 embrión euploide confirmado\n\nSin historia de falla de implantación recurrente\n\nContraindicaciones relativas:\n\nAlta respuesta ovárica (&gt;20 ovocitos)\n\nEstradiol elevado\n\nRiesgo de OHSS\n\nEndometrio subóptimo",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#potenciales-ventajas",
+    "href": "appendix-clinico.html#potenciales-ventajas",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "2.4 Potenciales ventajas",
+    "text": "2.4 Potenciales ventajas\n\nClínicas\n\nSincronía embrión–endometrio fisiológica\nDesarrollo embrionario continuo (sin vitrificación)\nReducción de manipulaciones\nTiempo a embarazo minimizado\n\n\n\nOperativas\n\nEliminación de vitrificación y warming\nSimplificación del flujo asistencial\nReducción de ciclos diferidos\n\n\n\nEconómicas\n\nEvita costos de vitrificación y FET\nReducción indirecta de carga operativa\nPosible reducción de insumos de congelamiento de embriones (mediano plazo)",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#riesgos-y-limitaciones",
+    "href": "appendix-clinico.html#riesgos-y-limitaciones",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "2.5 Riesgos y limitaciones",
+    "text": "2.5 Riesgos y limitaciones\n\nFisiológicos\n\nPosible alteración de receptividad endometrial en ciclos con estradiol elevado\nEvidencia mixta en literatura respecto a comparación con FET\n\n\n\nLogísticos\n\nNecesidad de coordinación estricta en el mismo momento posterior a la biopsia.\nVentana estrecha de decisión clínica.\n\n\n\nClínicos\n\nNo aplicable a todos los perfiles\nRequiere validación robusta del método rápido",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#concepto-1",
+    "href": "appendix-clinico.html#concepto-1",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "3.1 Concepto",
+    "text": "3.1 Concepto\nConsiste en vitrificar únicamente los embriones euploides identificados el día 5 y realizar transferencia en un ciclo posterior con preparación endometrial optimizada.\nLa diferencia respecto al protocolo tradicional es que la información genética está disponible inmediatamente, eliminando la espera de 10–14 días.\n\n\n\n\n\n\n\n\nFigura 2",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#timeline-estimado-1",
+    "href": "appendix-clinico.html#timeline-estimado-1",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "3.2 Timeline estimado",
+    "text": "3.2 Timeline estimado\n\nDía 0: Punción\n\nDía 5: Biopsia + resultado + vitrificación selectiva\n\nDías 6–25: Recuperación\n\nDías 26–35: Preparación endometrial\n\nDía 36: FET\n\nDía 46–50: Test\n\nDuración total estimada: ~40–50 días.\nEn comparación con protocolos tradicionales diferidos (60–70 días), se reduce el tiempo total en aproximadamente 2–3 semanas.",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#indicaciones-frecuentes",
+    "href": "appendix-clinico.html#indicaciones-frecuentes",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "3.3 Indicaciones frecuentes",
+    "text": "3.3 Indicaciones frecuentes\n\nAlta respuesta ovárica\n\nEstradiol elevado\n\nRiesgo de OHSS\n\nEndometrio subóptimo\n\nHistoria de falla de implantación\n\nPreferencia por mayor control del timing",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#ventajas",
+    "href": "appendix-clinico.html#ventajas",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "3.4 Ventajas",
+    "text": "3.4 Ventajas\n\nClínicas\n\nEndometrio preparado en entorno hormonal controlado\nEliminación de riesgo de OHSS\nMayor flexibilidad para estudios adicionales (ERA, etc.)\nCerteza de euploidía antes de FET\n\n\n\nOperativas\n\nMayor control de agenda clínica\nDistribución de carga de trabajo\nVitrificación selectiva",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "appendix-clinico.html#limitaciones",
+    "href": "appendix-clinico.html#limitaciones",
+    "title": "Apéndice Clínico-Embriológico",
+    "section": "3.5 Limitaciones",
+    "text": "3.5 Limitaciones\n\nMayor tiempo total hasta embarazo\nRequiere ciclo adicional\nManipulación embrionaria adicional (vitrificación/warming)\nCostos asociados a FET",
+    "crumbs": [
+      "Apéndice Clínico-Embriológico"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "FastPGT",
+    "section": "",
+    "text": "El objetivo de este informe es doble: por un lado, mostrar que FastPGT es una estrategia técnicamente viable, económicamente competitiva y comercialmente superadora frente al PGT-A convencional, y por otro, delinear una propuesta general de inversión para el desarrollo de este producto en: 2PQ: Precision & Quick Genomics, una empresa de diagnóstico genómico rápido en escenarios donde el tiempo de respuesta es clínicamente crítico.\nEste documento presenta los elementos necesarios para comprender el problema, la solución propuesta y los escenarios operativos viables. Los fundamentos técnicos, experimentales y económicos se desarrollan en los Apéndices que acompañan este informe.",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#objetivo",
+    "href": "index.html#objetivo",
+    "title": "FastPGT",
+    "section": "",
+    "text": "El objetivo de este informe es doble: por un lado, mostrar que FastPGT es una estrategia técnicamente viable, económicamente competitiva y comercialmente superadora frente al PGT-A convencional, y por otro, delinear una propuesta general de inversión para el desarrollo de este producto en: 2PQ: Precision & Quick Genomics, una empresa de diagnóstico genómico rápido en escenarios donde el tiempo de respuesta es clínicamente crítico.\nEste documento presenta los elementos necesarios para comprender el problema, la solución propuesta y los escenarios operativos viables. Los fundamentos técnicos, experimentales y económicos se desarrollan en los Apéndices que acompañan este informe.",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#problema",
+    "href": "index.html#problema",
+    "title": "FastPGT",
+    "section": "2. Problema",
+    "text": "2. Problema\nEn los esquemas convencionales del Diagnóstico Genético Preimplantacional de Aneuploidías, (PGT-A)1, el tiempo de entrega de resultados suele extenderse entre varios días o semanas. Esta limitación temporal obliga, en la práctica del laboratorio de embriología, a vitrificar el embrión luego de la biopsia y posponer la transferencia del o de los embriones seleccionados a un ciclo posterior (Figura 1).\n\n\n\n\n\n\n\n\nFigura 1\n\n\n\nEste enfoque introduce una serie de consecuencias clínicas y operativas relevantes en el centro de fertilización asistida, entre las que se incluyen la interrupción del desarrollo embrionario mediante vitrificación y desvitrificación (warming), el aumento de manipulaciones técnicas, la necesidad de ciclos diferidos con mayor complejidad logística de las clínicas, y un incremento significativo del costo total del tratamiento para el paciente. Adicionalmente, la prolongación del proceso se asocia a mayor ansiedad del paciente y mayores tasas de abandono.\n\n\n\n\n\n\nNota\n\n\n\nEl PGT-A convencional genera flujos de trabajo fragmentados en el tratamiento de los pacientes de las clínicas de IVF.",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#solución-fastpgt",
+    "href": "index.html#solución-fastpgt",
+    "title": "FastPGT",
+    "section": "3. Solución: FastPGT",
+    "text": "3. Solución: FastPGT\nFastPGT propone un cambio de paradigma: obtener un resultado del PGT-A dentro de una ventana temporal compatible con la transferencia embrionaria en fresco (FET), sin necesidad de vitrificación post-biopsia (Figura 2).\n\n\n\n\n\n\n\n\nFigura 2\n\n\n\nEl enfoque se basa en el uso de secuenciación en tiempo real mediante Oxford Nanopore Technologies (ONT), y explota diversas características operativas clave de esta tecnología:\n\nAdquisición y evaluación dinámica de los datos,\nCorte temprano (early stop) una vez alcanzada la información mínima requerida,\nReuso controlado del flow cell, optimizando el costo por ensayo.\nOptimización del uso de bardoces a través de la extensión de reactivos, lo que evita el desperdicio de insumos costosos en corridas de pocas muestras.\n\nEstas propiedades permiten adaptar el ensayo al número real de embriones disponibles y al tiempo clínico efectivo, sin comprometer la robustez diagnóstica requerida para PGT-A.\n\n\n\n\n\n\nNota\n\n\n\nFastPGT elimina el camino de vitrificación post-biopsia como única opción, reduciendo la fragmentación del proceso clínico y devolviendo a la clínica un mayor control sobre los tiempos del tratamiento, sin dependencia de laboratorios externos ni calendarios diferidos.",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#escenarios-operativos-de-fastpgt",
+    "href": "index.html#escenarios-operativos-de-fastpgt",
+    "title": "FastPGT",
+    "section": "4. Escenarios operativos de FastPGT",
+    "text": "4. Escenarios operativos de FastPGT\nEl análisis conjunto de los resultados experimentales y del modelo económico permite definir un serie de escenarios operativos viables para la implementación clínica de FastPGT. Estos escenarios se derivan directamente de:\n\nlos umbrales de datos por embrión evaluados experimentalmente (45–75 Mb2),\nlos tiempos de secuenciación estimados bajo esquemas de early stop,\ny el prorrateo de costos por corrida y por embrión bajo políticas realistas de reutilización del flow cell.\n\nLos fundamentos técnicos de estos escenarios se desarrollan en el Apéndice Experimental y los supuestos económicos en el Apéndice Económico.\n\n4.1. Resumen operativo de escenarios FastPGT\n\n\n\n\n\n\n\n\n\n\n\nEscenario\nEmbriones\nMb / embrión\nTiempo seq*\nCosto / embrión (US$)**\n\n\n\n\nFastPGT (baja carga)\n4–10\n~45 Mb\n~1–2 h\n~83.3\n\n\nFastPGT (carga intermedia)\n11–22\n~45–75 Mb\n~10-20 h\n~61.6\n\n\nBatch : PGT clásico\n24\n~45 Mb\n≥20 h\n~49.5\n\n\n\n* Tiempos estimados para MinION R10.4.1 bajo esquemas de early stop definidos por Gb passed, según rangos de rendimiento documentados en el Apéndice Experimental.\n** Costos estimados para políticas de reutilización del flow cell con 4 ≤ k ≤ 6, según el modelo detallado en el Apéndice Económico.\n\n\n\n4.2. Interpretación operativa\n\nLos escenarios FastPGT (5–10 embriones) permiten obtener resultados genéticos dentro de ventanas temporales compatibles con transferencia embrionaria en fresco, sin requerir vitrificación post-biopsia.\nEl costo por embrión en estos escenarios se mantiene competitivo sin necesidad de aumentar su precio de venta.\nEn el caso de proponer un aumento del precio de venta para este servicio, este queda ampliamente compensado por los ahorros directos del laboratorio y de la clínica asociados a la necesidad de vitrificar embriones.\nEl escenario intermedio es un escenario de prueba de costos. No representa hoy una ventaja plantearlo como alternativa.\nEl escenario clásico o de batch (24 embriones) representa una alternativa económicamente eficiente cuando el tiempo no es crítico, pero no habilita transferencia en fresco y reproduce la lógica operativa del PGT-A convencional.\n\n\n\n\n\n\n\nNota\n\n\n\nEstos escenarios definen un marco operativo flexible, en el cual nuestra tecnología de FastPGT puede adaptarse tanto, a contextos clínicos (FET) orientados a rapidez de decisión,como a esquemas de procesamiento por volumen, manteniendo coherencia clínica, técnica y económica.",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#impacto-clínico-económico-y-comercial",
+    "href": "index.html#impacto-clínico-económico-y-comercial",
+    "title": "FastPGT",
+    "section": "5. Impacto clínico, económico y comercial",
+    "text": "5. Impacto clínico, económico y comercial\nFastPGT introduce un cambio en la línea temporal del tratamiento de FIV habilitando la transferencia embrionaria en fresco. Esto elimina la necesidad de criopreservación y ciclos diferidos, simplifica el flujo asistencial reduciendo intervenciones adicionales como la preparación endometrial y la reprogramación clínica. Como consecuencia, disminuye el número de visitas y la carga logística para el paciente y la clínica.\nEsta continuidad del proceso permite preservar la sincronía embrión–endometrio dentro de un mismo contexto fisiológico, evitando la fragmentación temporal característica del modelo convencional. El resultado es un esquema clínico más integrado, menos dependiente de pasos intermedios y, en conjunto, más eficiente tanto desde el punto de vista operativo como biológico.\nDesde el punto de vista económico, este cambio se traduce en la eliminación de costos distribuidos a lo largo del proceso convencional: criopreservación, almacenamiento, ciclos diferidos y reprogramaciones clínicas. En este contexto, el test genético deja de ser un costo adicional aislado y pasa a integrarse dentro del flujo global del tratamiento. FastPGT permite así redistribuir el costo del diagnóstico genético, compensando —y en muchos escenarios superando— su costo incremental mediante ahorros operativos acumulativos.\nEn paralelo, el impacto comercial es directo. La reducción de más de 30 días en los tiempos del proceso disminuye la incertidumbre y la ansiedad del paciente, mejora la aceptación inicial del PGT y reduce la probabilidad de abandono. Esto se traduce en mayores tasas de conversión y retención, al tiempo que introduce un diferencial competitivo claro y fácilmente comunicable: la posibilidad de obtener resultados genéticos en tiempo récord y avanzar más rápidamente hacia una potencial transferencia.\nEn conjunto, FastPGT no solo mejora un componente del proceso, sino que redefine su lógica completa: integra eficiencia clínica, racionalización económica y valor percibido por el paciente, posicionando la velocidad como un eje central del beneficio terapéutico y estratégico.",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#calculadora-interactiva-fastpgt",
+    "href": "index.html#calculadora-interactiva-fastpgt",
+    "title": "FastPGT",
+    "section": "6. Calculadora interactiva FastPGT",
+    "text": "6. Calculadora interactiva FastPGT\nLa simulación de costos por corrida de FastPGT puede ensayarse utilizando la Calculadora FastPGT-A. La aplicación puede ejecutarse desde cualquier ubicación en la terminal:\n\ncd ~/Documents/2pq/FastPGT && R -e “shiny::runApp(‘FastPGT_app’)”\n\n\n📋 Copiar comando\n\n\n\nUna vez ejecutado, abrir en el navegador la URL mostrada en consola (ej: http://127.0.0.1:xxxx)",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#conclusiones",
+    "href": "index.html#conclusiones",
+    "title": "FastPGT",
+    "section": "7. Conclusiones",
+    "text": "7. Conclusiones\n\n\n\n\n\n\nNotaresumen\n\n\n\n\nDados los estudios de cobertura genómica y secuenciación en tiempo real, FastPGT es técnicamente viable.\nLa evidencia experimental disponible demuestra equivalencia diagnóstica con el PGT-A convencional para CNV ≥10 Mb.\nEl modelo operativo permite corridas flexibles de 5–10 embriones, compatibles con transferencia embrionaria en fresco.\nDesde el punto de vista económico, FastPGT es competitivo por embrión y genera ahorros netos relevantes al eliminar vitrificación y ciclos diferidos.\nFastPGT se posiciona como una plataforma tecnológica robusta para innovación en diagnóstico genómico aplicado a reproducción asistida.\n\nLos apéndices que acompañan este documento proporcionan el detalle técnico, experimental y económico necesario para una evaluación completa y fundamentada.",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "FastPGT",
+    "section": "Notas",
+    "text": "Notas\n\n\nEl objetivo del PGT-A es detectar ganancias o pérdidas de material genético (aneuploidias) antes de la transferencia del emnbrión al útero.↩︎\nMb = Megabases de nucleótidos del ADN↩︎",
+    "crumbs": [
+      "FastPGT"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html",
+    "href": "appendix-technical.html",
+    "title": "Apéndice Técnico",
+    "section": "",
+    "text": "NotaLinks\n\n\n\nInsumos: Library Original. Library RBK. Extension RAA114. Starter kit. MiniION Mk1D. Reporte Havanna - FCEN.\nDelivery 4: Apéndice experimental- Fase 1. Apéndice experimental- Fase 2.",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#consideraciones-básicas-del-pgt-a",
+    "href": "appendix-technical.html#consideraciones-básicas-del-pgt-a",
+    "title": "Apéndice Técnico",
+    "section": "1. Consideraciones básicas del PGT-A",
+    "text": "1. Consideraciones básicas del PGT-A\nEn los estudios de PGT-A, el parámetro que garantiza el diagnóstico preciso es la cobertura horizontal uniforme. Este parámetro se mide a través de la distribución de lecturas secuenciadas a lo largo de los 23 pares de cromosomas. Cuanto más homogénea la distribución de lecturas, más preciso es el análisis informático posterior.\nEsta homogeneidad de lecturas no depende solamente del proceso de secuenciación, sino de otros parámeros como:\n\nMétodo de WGA\nSesgo de amplificación\nGC bias\nFiltrado de lecturas\nMapeo genómico\nTamaño de bins\nVariabilidad entre muestras\n\nPara la detección de aneuploidías, se utiliza software de descubrimiento de CNVs1 que analizan, de diferentes maneras, muchos de estos parámetros. Estos programas realizan comparaciones relativas de densidad de lecturas para determinar la ganancia o pérdida de regiones genómicas específicas. Para esto, se utiliza una estrategia de descubrimiento de ventanas móviles (bins), típicamente del orden de 0.5–1 Mb.\nLa sensibilidad y estabilidad del análisis dependen principalmente de:\n\nla uniformidad global de la amplificación genómica,\nel número total de lecturas válidas,\nel tamaño de esas lecturas,\nel tamaño de ventana utilizado,\ny el coeficiente de variación (CV) del perfil de cobertura.\n\nEn cualquier tipo de PGT-A, la mayor o menor profundidad local (en unra región determinada del genoma) es irrelevante; lo verdaderamente determinante es la estabilidad estadística de cobertura relativa entre regiones.",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#sec-pgt-illumina",
+    "href": "appendix-technical.html#sec-pgt-illumina",
+    "title": "Apéndice Técnico",
+    "section": "2.1. PGT-A: Secuenciación Illumina",
+    "text": "2.1. PGT-A: Secuenciación Illumina\nEn el contexto del PGT-A, la tecnología de secuenciación Illumina representa el standard. Esta se basa en la secuenciación de lecturas cortas de tamaño fijo a través de ciclos de secuenciación, donde el volumen de secuencia esta fijado a priori por la cantidad de insumos que contiene el cartucho de secuenciación y la capacidad del flow-cell utilizado. El esquema general es de 24 muestras, una celda de flujo pequeña (económica), lecturas de 55 pb, 1 Mb de cobertura genómica por embrión de 1Mb y un tiempo total de secuenciación de no menos de 6-7 hs, a las que hay que sumar otro tanto de formación de librerías.\n\n\n\n\n\n\nImportante\n\n\n\nEn Illuimina el esquema de secuenciación se define de antemano, por lo que la duración de la corrida, como el volumen de datos generado no puede modificarse. Es decir, no existe una opción de “early-stop”.\n\n\nLas Figura 1 A y B muestra el proceso de análisis y variación de parámetros de un estudio PGT-A con valores standard de tecnología Illumina. Las figuras C y D muestran la evolución de los parámetros de calidad en diferentes estudios. Nótese la perdida de definición a medida que aumenta el coeficiente e variación (CV) desde ~ 0.1 a ~ 0.25.\n\n\n\n\n\n A\n\n B\n\n\n\n\n C\n\n D\n\n\n\n\nFigura 1",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#sec-pgt-ont",
+    "href": "appendix-technical.html#sec-pgt-ont",
+    "title": "Apéndice Técnico",
+    "section": "2.2. PGT-A: Secuenciación ONT",
+    "text": "2.2. PGT-A: Secuenciación ONT\nEn su ensayo comparativo ONT vs Illumina, Tan, V.J., et al., (2023)1 demostraron que la tecnología Oxford Nanopore Technologies (ONT) puede utilizarse de manera equivalente para resolver los PGT-A, alcanzando resoluciones diagnósticas comparables mediante un enfoque de secuenciación de ultra-baja cobertura. Sin embargo, en dicho estudio la secuenciación ONT se emplea bajo un paradigma esencialmente batch-completo, en el cual la corrida se extiende por un tiempo predefinido y el análisis se realiza una vez completada la adquisición de datos.\nLa Figura 2 muestra el secuenciador MinION (A) y un flow cell (B) como el utilizado en este ensayo 2.\n\n\n\n\n\n A\n\n B\n\n\n\n\nFigura 2",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#sec-PGT-fast",
+    "href": "appendix-technical.html#sec-PGT-fast",
+    "title": "Apéndice Técnico",
+    "section": "2.3. PGT-A: Secuenciación FastPGT",
+    "text": "2.3. PGT-A: Secuenciación FastPGT\nFastPGT introduce una variante operativa fundamental sobre el enfoque de Tan et al (2023): la posibilidad de terminar la corrida en el momento deseado evaluando dne tiempo real la calidad y cantidad de los datos secuenciados. Es decir, en lugar de fijar el tiempo de corrida, FastPGT define criterios de corte temprano (early stop) basados en la cantidad acumulada de datos de calidad agregados por muestra. Solo los necesarios para una lectura robusta del PGT-A.\nFastPGT no modifica el objetivo diagnóstico ni los criterios de resolución del PGT-A, sino que optimiza el flujo operativo, permitiendo detener la secuenciación una vez alcanzada la información mínima para la detección robusta de CNVs ≥10 Mb.\n\n\n\n\n\n\nImportante\n\n\n\nEsta estrategia, sumada a la reducción del número de muestras por corrida, reduce de manera significativa el tiempo total del secuenciación, habilitando escenarios clínicos como la transferencia embrionaria en fresco (FET) la cual es incompatible con los enfoques en batch realizados de forma clásica en los PGT-A realizados hasat la fecha.",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#sec-pgt-compara",
+    "href": "appendix-technical.html#sec-pgt-compara",
+    "title": "Apéndice Técnico",
+    "section": "2.4. Comparativa de Tecnologías PGT-A",
+    "text": "2.4. Comparativa de Tecnologías PGT-A\nLa Tabla 1 muestra las principales diferencias operativas entre estas tres estrategias de PGT-A.\n\nA pesar de las diferencias en la longitud de lectura y el número de lecturas por muestra, los enfoques operan en un régimen de ultra-baja cobertura con volúmenes totales de datos comparables y resoluciones de cobertura genómica equivalentes para la detección de CNV ≥10 Mb.\n\n\n\n\nTabla 1: Comparación de métricas operativas entre PGT-A estándar (Illumina), PGT-A ONT y FastPGT.\n\n\n\n\n\n\n\n\n\n\n\n\nParámetro\nPGT-A estándar (Illumina)\nPGT-A ONT\nFastPGT\n\n\n\n\nPlataforma\nIllumina (MiSeq)\nOxford Nanopore MinION\nOxford Nanopore MinION\n\n\nTipo de lectura\nCorta\nLarga\nLarga\n\n\nMuestras por corrida\n~22–27\n~24\n~5–10\n\n\nLongitud efectiva lectura\n~50–75 bp\n~445 bp\n~445 bp\n\n\nLecturas crudas por muestra\n~0.7–1.2 M\n~100.000–200.000\n~135.000 Variable\n\n\nLecturas válidas por muestra\n~750–1.000 K\n~100.000\n~100.000\n\n\nBases totales por muestra\n~41–80 Mb\n~45 Mb\n45 Mb (objetivo)\n\n\nBases totales por corrida\n~1.0–1.5 Gb\n~1.0–1.1 Gb\n~0.23–0.45 Gb\n\n\nCobertura horizontal\n~1.0–1.5%\n~1–2%\n~1–2%\n\n\nTamaño de ventana (bin)\n~1 Mb\n~1 Mb\n~1 Mb\n\n\nResolución CNV\n≥10 Mb\n≥10 Mb\n≥10 Mb\n\n\nTiempo de secuenciación\n≥7 - 8 h\n~ 24 h\n2 – 3 h\n\n\nCriterio de corte de corrida\nTiempo fijo / reads fijos\nTiempo fijo\nGb Passed\n\n\nEarly stop\nNo disponible\nNo utilizado\nImplementado\n\n\nReuso del flow cell\nNo aplicable\nPosible\nSi, parte del diseño\n\n\nReuso del Kit de Librería\nNo aplicable\nNo necesario\nSi, parte del diseño\n\n\nFlexibilidad operativa\nBaja\nMedia\nAlta\n\n\nTransferencia en fresco\nNo\nNo\nPosible\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\nLa adquisición de datos en tiempo real, la definición de criterios de corte temprano (early stop) y el reuso controlado del flow cell introducen ventajas operativas específicas del enfoque ONT, particularmente relevantes para estrategias orientadas a la transferencia embrionaria en fresco.",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#amplificación-genómica-formación-de-librerías-y-tiempos-comparados",
+    "href": "appendix-technical.html#amplificación-genómica-formación-de-librerías-y-tiempos-comparados",
+    "title": "Apéndice Técnico",
+    "section": "3. Amplificación genómica, formación de librerías y tiempos comparados",
+    "text": "3. Amplificación genómica, formación de librerías y tiempos comparados\nLa Figura 3 resume el flujo de trabajo completo del PGT-A, incluyendo no solo la etapa de secuenciación sino también los pasos previos de amplificación genómica completa (WGA) y formación de librerías.\n\n\n\n\n\n\nFigura 3\n\n\n\nEn los esquemas convencionales basados en Illumina, estos pasos representan una fracción sustancial del tiempo total del ensayo, con una WGA típicamente basada en PCR (p. ej. SurePlex) de ~2.5–3 h, seguida de protocolos de preparación de librerías de ~2-3 h adicionales. En conjunto, el tiempo previo a la secuenciación se sitúa en el orden de 6-7 horas, al que se suma un tiempo de corrida de ~6–8 horas, configurando un proceso total (12-15 hs) para 24 muestras, los cual no sólo excede ampliamente la ventana temporal deseable para el FastPGT, sino que lo hace económicamente imposible para un número de muestras menor a 24.\nSi bien existen alternativas comerciales económicas para la preparación de librerías compatibles con plataformas Illumina (p. ej. Yikon Genomics u otros proveedores), estas estrategias no modifican de manera sustancial la estructura temporal ni económica del flujo de trabajo en batch.\nEn particular, la etapa de WGA continúa siendo el principal cuello de botella inicial, y los protocolos de preparación de librerías —aunque puedan reducir costos por muestra o simplificar ciertos pasos— mantienen tiempos operativos comparables y no eliminan la necesidad de corridas en batch completas.\n\n\n\n\n\n\nNota\n\n\n\nEn consecuencia, el esquema Illumina permanece condicionado por una lógica secuencial rígida, en la cual ni el volumen de datos ni el tiempo total pueden adaptarse dinámicamente a la necesidad clínica para posibilitar la transferencia en fresco.\n\n\nEn contraste, el esquema FastPGT representado en la Figura 3 y Figura 4 introduce una optimización simultánea de tiempos y costos a lo largo de todo el flujo. Esto incluye:\n\nel uso de WGA isotérmica (p. ej. phi29-XT), con tiempos más cortos y menor complejidad operativa;\nprotocolos rápidos de formación de librerías (ONT Rapid Barcoding y Rapid Adapter), del orden de 30–60 minutos;\nuna secuenciación basada en adquisición en tiempo real con criterios de corte temprano (early stop), y\nel reuso del flowcell\n\nA este esquema se le suma un elemento económico diferencial clave: la posibilidad de maximizar el rendimiento de todos los barcodes del kit (RBK) mediante el uso de insumos de extendión (RAA) que minimizan la pérdida de reactivos en corridas de pocas muestras y el reuso del flowcell en múltiples corridas\n\n\n\n\n\n\nImportante\n\n\n\nEn conjunto, estas características transforman el proceso en un sistema dinámico, en el cual tanto el tiempo como el costo efectivo por muestra se ajustan a la cantidad real de datos requeridos, minimizando al máximo los tiempos y los costos.",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#sec-flujo",
+    "href": "appendix-technical.html#sec-flujo",
+    "title": "Apéndice Técnico",
+    "section": "4. Flujo de trabajo FastPGT",
+    "text": "4. Flujo de trabajo FastPGT\nLa Figura 4 representa el flujo de trabajo del FastPGT.\nEl proceso integra amplificación genómica, construcción de librerías y secuenciación en tiempo real, incorporando criterios operativos de corte temprano que optimizan tiempos y recursos.\n\n\n\n\n\n\nFigura 4\n\n\n\nA partir de la biopsia embrionaria, el ADN genómico es sometido a una etapa de Whole Genome Amplification (WGA), utilizando amplificación isotérmica (p. ej. phi29-XT). El objetivo de esta etapa no es alcanzar cobertura profunda, sino generar una representación suficientemente uniforme del genoma que permita inferencias fiables a ultra-baja cobertura, condición clave para el análisis de aneuploidías en PGT-A.\nEl ADN amplificado es procesado mediante sequence tagmentation, seguido de la ligación de barcodes nativos, asignando un identificador molecular único a cada embrión. Este esquema permite la multiplexación de múltiples muestras en una misma corrida de secuenciación sin perder trazabilidad individual. Tras la purificación y cuantificación, las muestras barcodiadas se combinan en un pool equimolar, sobre el cual se realiza una única reacción de ligación de adaptadores Nanopore.\nLa librería final se prepara en la mezcla de carga y se secuencia en un flowcell R10.4.1. Durante la corrida, el sistema MinKNOW adquiere señales eléctricas en tiempo real que son convertidas en secuencias mediante algoritmos de basecalling. Esta adquisición continua habilita la definición de criterios operativos de corte temprano (early stop), basados en la cantidad acumulada de datos por embrión (por ejemplo, ~45 Mb), optimizando el uso del flowcell y permitiendo su lavado y reutilización en corridas sucesivas.\nEl resultado del proceso es un conjunto de lecturas demultiplexadas por barcode, con cobertura horizontal suficiente para el control de calidad, la estimación de cobertura genómica y la detección de aneuploidías. Este enfoque integra eficiencia técnica, control temporal y optimización de recursos, y constituye la base operativa que diferencia al FastPGT de los esquemas convencionales de PGT-A.\n\n\n\n\n\n\nImportante\n\n\n\nLos supuestos operativos asociados a la amplificación genómica, la profundidad de secuenciación y los criterios de suficiencia de datos se evalúan de manera empírica en los apéndices experimentales y económicos que acompañan este documento.",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#dinámica-de-la-producción-de-secuencias",
+    "href": "appendix-technical.html#dinámica-de-la-producción-de-secuencias",
+    "title": "Apéndice Técnico",
+    "section": "5. Dinámica de la producción de secuencias",
+    "text": "5. Dinámica de la producción de secuencias\nComo hemos insistido en el Documento principal, la tecnología ONT nos permite evaluar en tiempo real un aspecto central del ensayo: la dinámica temporal de producción de datos, expresada tanto en bases secuenciadas como en número de lecturas a lo largo de la corrida.\nLa Figura 5 muestra la evolución temporal de producción de bases (A) y lecturas (B) producidas en el Ensayo Havanna. Como puede observarse, tanto las bases como las lecturas —en sus versiones totales (estimated) y filtradas por calidad (passed)— presentan un crecimiento continuo y aproximadamente lineal a lo largo del tiempo, lo que indica un rendimiento estable del flow cell durante la corrida.\n\n\n\n\n\n A\n\n B\n\n\n\n\nFigura 5\n\n\n\nEste parámetro es importante ya que nos permitiría predecir en los primero minutos de corrida si el flow cell es apto y puede completar el ensayo. Si no lo es, se opta por detener la corrida y utilizar un nuevo flow cell.\n\n5.1. Dinámica del uso de poros y calidad de las secuencias\nPara analizar el rendimiento de la corrida se consideran dos variables dinámicas principales:\n(i) el número de poros activos disponibles para secuenciación y\n(ii) la calidad de las lecturas generadas a lo largo del tiempo.\nAmbas variables evolucionan durante la corrida y constituyen parámetros críticos de monitoreo, que deben ser evaluados tanto en la fase inicial como durante la ejecución del ensayo, ya que condicionan directamente el rendimiento efectivo del flow cell y la confiabilidad de los datos obtenidos.\nLa Figura 6 muestra la dinámica temporal del uso de poros en el flow cell (A) y la distribución de calidad de las lecturas (B) a lo largo de la corrida. Como puede observarse, a lo largo de aproximadamente 18 h de secuenciación, el número de poros activos disminuye progresivamente —un comportamiento esperado— mientras que la calidad de las lecturas se mantiene estable, lo cual representa una condición deseable para ensayos de secuenciación orientados a aplicaciones clínicas.\n\n\n\n\n\n A\n\n B\n\n\n\n\nFigura 6\n\n\n\n\n\n\n\n\n\nImportante\n\n\n\nEarly Stop\nEl monitoreo sistemático de estos parámetros —tanto durante la corrida como antes de una eventual reutilización del flow cell— permite un control ajustado del uso de los recursos de secuenciación, garantizando estándares elevados de calidad. En este contexto, la disponibilidad de métricas en tiempo real habilita además la definición de criterios operativos de corte temprano (early stop), basados en la cantidad de datos efectivos generados (Gb passed), evitando corridas innecesariamente prolongadas y optimizando la eficiencia global del ensayo.",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-technical.html#footnotes",
+    "href": "appendix-technical.html#footnotes",
+    "title": "Apéndice Técnico",
+    "section": "Notas",
+    "text": "Notas\n\n\nCopy Number Variants↩︎\nEste FC contiene 512 poros, y dada la fecha del estudio, posiblemente hayan utilizado el modelo R9.4.1 (FLO-MIN106).↩︎",
+    "crumbs": [
+      "Apéndice Técnico"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html",
+    "href": "appendix-experimental/fase1-havanna.html",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "",
+    "text": "NotaLinks\n\n\n\nInsumos: Apéndice técnico. Reporte Havanna FCEN.\nDelivery 4: Apéndice económico.",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#sec-Havanna-assay",
+    "href": "appendix-experimental/fase1-havanna.html#sec-Havanna-assay",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "1. Ensayo Havanna- Rendimiento",
+    "text": "1. Ensayo Havanna- Rendimiento\nEn enero 2026 el servicio de genómica de la FCEN secuenció muestras de ADN tomadas del freezer de Reprofert:\n\nLas muestras consistieron en 15 ADN congelados (-20ºC), extraídos de biopsias embrionarias previamente amplificadas con Sureplex, derivadas de estudios de PGT-A realizados durante los años 2016 al 2019, utilizando secuenciación Illumina.\nLa secuenciación en FCEN se llevó a cabo en un equipo PromethION 2 Solo (Figura 1 A), con un flow cell FLO-PRO114M1 (Figura 1 B), el cual produce ≈30 veces más secuencia por unidad de tiempo que el flow cell del MinION.\nLa corrida se detuvo a las 18 hrs y produjo 37.24 Gb; 21.4Gb (Q≥8 ≈ 57.5%) y 10.5 (28.2%) fail. El total de lecturas ~60M; 42M (Q≥8 ≈ 70.0%), 19M (31,6%) fail. El N50 = 552pb.\n\n\n\n\n\n\n A\n\n B\n\n\n\n\nFigura 1\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nEste rendimiento es verificable si se considera que se obtuvieron 37Gb en 18 hs de corrida (~2.05 Gb/h). Comparando la totalidad de Gb producidos por Tan y col. ( QC_in=1.07 Gb + QC_out ~35%), la cantidad producida es de ≈ 32 veces más.",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#sec-solo-muestras",
+    "href": "appendix-experimental/fase1-havanna.html#sec-solo-muestras",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "2. Ensayo Havanna- Resultados por muestra",
+    "text": "2. Ensayo Havanna- Resultados por muestra\nEl ensayo Havanna generó por muestra, 1.03 Gb, y 2.3 M de lecturas2. Esto es, el total de bases y lecturas producidas por Tan, V.J. el al., (2023), en su ensayo para 24 muestras.\n\n\n\nTabla 1: Rendimiento por muestra (barcodes únicos utilizados en la formación de la librería).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEtiqueta\nBarcode\nTotal bases (Mb)\nPassed bases (%)\nTotal reads (k)\nPassed reads (%)\n\n\n\n\nLC10\nbarcode01\n1286.39\n83.9\n2600.86\n84.5\n\n\nLC16\nbarcode02\n2271.32\n87.0\n4617.92\n87.4\n\n\nLC17\nbarcode03\n1437.46\n85.7\n2938.75\n86.1\n\n\nLC19\nbarcode04\n2372.81\n85.0\n4752.55\n85.0\n\n\nVB5\nbarcode05\n1407.03\n81.6\n2849.74\n82.6\n\n\nVB6\nbarcode06\n2047.36\n85.2\n4203.68\n85.7\n\n\nMVR3\nbarcode07\n1264.43\n83.8\n2608.02\n84.6\n\n\nMVR6\nbarcode08\n1073.98\n85.5\n2167.51\n85.7\n\n\nMVR7\nbarcode09\n723.67\n85.1\n1545.97\n85.6\n\n\nQ2\nbarcode10\n1117.75\n83.4\n2170.88\n84.2\n\n\nAV6\nbarcode11\n1624.30\n81.3\n3146.70\n81.9\n\n\nAV13\nbarcode12\n1079.89\n83.0\n2141.44\n83.4\n\n\nLG6\nbarcode13\n1173.17\n88.5\n2177.87\n88.8\n\n\nMS14\nbarcode14\n1487.06\n87.6\n3317.96\n88.2\n\n\nLN9\nbarcode15\n1152.78\n82.3\n2445.44\n82.9\n\n\n\n\n\n\n\nLa Tabla 1 muestra los parámetros de rendimiento para cada una de las muestras.\n\n\n\n\n\n\n\nNotaUtilidad del exceso de secuencia\n\n\n\nAunque la producción de lecturas supera ampliamente lo necesario para un PGT-A clásico o el FastPGT, esta abundancia nos permite abordar aproximaciones no clásicas del PGT-A. Concretamente, podríamos analizar la presencia de polimorfismos (SNPs) comunes dispersos a ~1 Kb de distancia en el genoma humano, para preguntarnos por la presencia de poliploidías, haploidías, disomías uniparentales, contaminaciones externas, y parentesco entre embriones de una misma pareja, todas características del servicio de PGT-A Plus.\nLa aplicación de estrategias de downsampling para la generación de subconjuntos reducidos y aleatorios de lecturas (por ejemplo, 5%, 10%, 25%), nos permite explorar de manera sistemática la combinación óptima de parámetros operativos para estos ensayos no clásicos. En particular, este enfoque posibilita evaluar el impacto del número de corridas porflow cell, la cantidad de lavados admisibles, el número de muestras porcorrida y el tiempo efectivo de secuenciación, con el objetivo dedefinir umbrales mínimos y conservadores de datos requeridos compatiblescon un diagnóstico robusto y tiempos de respuesta clínicamenterelevantes, tanto para el PGT-A clásico, el FastPGT y el PGT-A Plus.",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#comparación-de-ploidía-con-controles-clínicos",
+    "href": "appendix-experimental/fase1-havanna.html#comparación-de-ploidía-con-controles-clínicos",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "3. Comparación de ploidía con controles clínicos",
+    "text": "3. Comparación de ploidía con controles clínicos\nDado que cada una de las muestras secuenciadas tiene un promedio de ~30 veces mas secuencias que los controles ensayados con tecnología Illumina, nos propusimos reducir la cantidad de secuencia de cada muestra utilizando una técnica de downsampling estadístico del número de lecturas originales, desde 2.3M a 100K, para ajustarlas a los valores del número de bases que tiene el ensayo Illumina y comparar los resultados de ploidía inferidos.\nLuego del análisis de los datos en ventanas por cromoosmas, los resultados fueron estos:\n\n\n\nTabla 2: Comparación control-Illumina vs downsampling-Havanna (~45Mb).\n\n\n\n\n\n\n\n\n\n\n\n\n\nEtiqueta\nBarcode\nPGT-A ONT~45 Mb\nPGT-A Illumina\nAnálisis Inicial\n\n\n\n\nLC10\nbarcode01\n-13, XY\n-13, XY\n12-2019\n\n\nLC16\nbarcode02\n+15, +16, XY\n+15, +16, XY\n12-2019\n\n\nLC17\nbarcode03\nEuploide, XX\nEuploide, XX\n12-2019\n\n\nLC19\nbarcode04\nEuploide, XX\nEuploide, XX\n12-2019\n\n\nVB5\nbarcode05\nEuploide, XX\nEuploide, XY\n12-2017\n\n\nVB6\nbarcode06\nEuploide, XY\nEuploide, XX\n12-2017\n\n\nMVR3\nbarcode07\nEuploide, XY\nEuploide, XY\n04-2018\n\n\nMVR6\nbarcode08\n+18, XXX\n+18, XXX\n04-2018\n\n\nMVR7\nbarcode09\nEuploide, XY\nEuploide, XY\n04-2018\n\n\nQ2\nbarcode10\nComplejo, XY\nComplejo, XY\n08-2019\n\n\nAV6\nbarcode11\nEuploide, XY\nEuploide, XY\n12-2018\n\n\nAV13\nbarcode12\nEuploide, XY\nEuploide, XY\n12-2018\n\n\nLG6\nbarcode13\n+8, XX\n+8, XX\n08-2018\n\n\nMS14\nbarcode14\nEuploide, XY\nEuploide, XY\n09-2019\n\n\nLN9\nbarcode15\nEuploide, XY\nEuploide, XY\n06-2018\n\n\n\n\n\n\n\nLa Tabla 2 muestra la comparación entre los resultados reportados clínicamente, con sus respectivas fechas de análisis, luego de un downsampling de ~45Mb por muestra realizado en nuestro ensayo Havanna. Como puede verse, los resultdos son idénticos!\n\n\n\n\n\n\nNotaSobre la confirmación clínica de los casos\n\n\n\nEn nuestro ensayo, los controles de referencia provienen de reportes diagnósticos finales, cuyo objetivo principal es aceptar o rechazar la transferencia embrionaria en función de la presencia de anomalías genéticas mas o menos relevantes y diversas. En este contexto, la información consignada suele centrarse en el evento genético dominante o accompañante de otro/s, sin incluir muchas veces una descripción exhaustiva de todas las alteraciones detectadas o de la totalidad del perfil genómico del embrión.\nEn consecuencia, al utilizar estos reportes como referencia comparativa, nuestro criterio de validación se basa en verificar que al menos un de las anomalías genéticas reportada sea también identificada por la estrategia evaluada. La concordancia en la detección de este evento constituye, por tanto, el criterio operativo para considerar el resultado como positivo y clínicamente equivalente, aun cuando no se disponga de una caracterización genómica completa o detallada en el reporte original.\n\n\n\n3.1. Discusión sobre algunos casos particulares\nLas Figura 2 muestra 4 ideogramas de embriones aneuploides correspondientes a las muestras barcode02 (A), barcode08 (B), barcode010 (C) y barcode13 (D).\n\n\n\n\n\n A\n\n B\n\n\n\n\n C\n\n D\n\n\n\n\nFigura 2\n\n\n\nMientras que en A las trisomías de los chr15 y chr16 son evidentes en el embrión XY, la ganacia del chr18 y la trisomía del chrX reportada en B no resultan completas aunque efectivamente se observan muy elevadas3. En el caso del ideograma C, la pérdida del chr20 y el mosaico del chr16 pueden llevar a auna descripción de Complejo XY. Finalmente, la ganancia del chr8 en un embrion XX es un resultado mínimo reportable desde nuestro propio ensayo.\nLas Figura 3 muestra 4 ideogramas de embriones euploides correspondientes a las muestras barcode03 (A), barcode04 (B), barcode05 (C) y barcode06 (D). La única inconsistencia observada en estos casos corresponde a una ganancia parcial del primer segmento del chrX en el barcode06, lo cual puede ser un artefacto, dado que utilizando un número mayor de lecturas (downsampling ~75Mb) esta aneuploidía parcial desaparece.\n\n\n\n\n\n\nImportante\n\n\n\nSi bien el ajuste definitivo de la profundidad de lectura y del tamaño de ventana en FastPGT debe continuar en evaluación, los resultados de downsampling practicados en este ensayo permiten definir con buena precisión rangos operativos iniciales, orientados a maximizar la eficiencia costo-beneficio de cada corrida.\n\n\n\n\n\n\n\n A\n\n B\n\n\n\n\n C\n\n D\n\n\n\n\nFigura 3",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#estrategia-de-downsampling-para-fastpgt",
+    "href": "appendix-experimental/fase1-havanna.html#estrategia-de-downsampling-para-fastpgt",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "4. Estrategia de downsampling para FastPGT",
+    "text": "4. Estrategia de downsampling para FastPGT\nComo se ha descrito previamente, cada muestra producida en el ensayo Havanna presenta entre 25 y 32 veces más lecturas que las requeridas para un PGT-A convencional. Este exceso de secuencia permite ensayar diferentes alternativas técnicas mediante downsampling, con el objetivo de identificar un compromiso óptimo entre calidad diagnóstica, tiempo de secuenciación y costo por corrida.\nEn este informe, que se basa en un conjunto acotado de 15 muestras (de las cuales 5 son aneuploides), se evalúan tres niveles operativos de profundidad por embrión:\n\nA) Mínimo validado (Tan et al.): 0.045 Gb / embrión (≈45 Mb)\n\nB) Intermedio conservador: 0.075 Gb / embrión (75 Mb)\n\nC) Robusto: 0.10 Gb / embrión (100 Mb)\n\nEl nivel A representa el umbral mínimo validado en literatura para detección robusta de aneuploidías ≥10 Mb, mientras que los niveles B y C introducen márgenes adicionales frente a variabilidad de WGA, ruido técnico y muestras subóptimas. Niveles superiores (≥0.20 Gb/embrión) podrían ser explorados en el futuro para aplicaciones extendidas (p. ej. PGT-SR o PGT Plus), pero exceden los objetivos del presente informe.",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#gb-totales",
+    "href": "appendix-experimental/fase1-havanna.html#gb-totales",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "4.1. Gb totales por corrida (5–10 embriones)",
+    "text": "4.1. Gb totales por corrida (5–10 embriones)\nLa Tabla resume los volúmenes totales de datos (Gb passed) requeridos por corrida en función del número de embriones y del nivel de profundidad por embrión.\n\n\n\n\nEmbriones por corrida\n0.045 Gb/emb\n0.075 Gb/emb\n0.10 Gb/emb\n\n\n\n\n5\n0.225\n0.375\n0.50\n\n\n6\n0.270\n0.450\n0.60\n\n\n7\n0.315\n0.525\n0.70\n\n\n8\n0.360\n0.600\n0.80\n\n\n9\n0.405\n0.675\n0.90\n\n\n10\n0.450\n0.750\n1.00\n\n\n\n\nEstos valores definen los umbrales operativos de secuenciación para planificar corridas FastPGT en escenarios de 5 a 10 embriones.",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#esc-corridas",
+    "href": "appendix-experimental/fase1-havanna.html#esc-corridas",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "4.2. Lecturas por embrión en diferentes escenarios",
+    "text": "4.2. Lecturas por embrión en diferentes escenarios\nAsumiendo una longitud media de lectura de aproximadamente 445 bp/read, los volúmenes anteriores corresponden a los siguientes órdenes de magnitud en número de lecturas por embrión:\n\nMínimo validado = 0.045 Gb / embrión → ~100.000 reads/embrión\n\nIntermedio = 0.075 Gb / embrión → ~170.000 reads/embrión\n\nRobusto = 0.10 Gb / embrión → ~225.000 reads/embrión\n\nEstos valores se utilizan como referencia operacional inicial para comparar perfiles de cobertura genómica obtenidos mediante downsampling y para el diseño de corridas FastPGT.",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#sec-times",
+    "href": "appendix-experimental/fase1-havanna.html#sec-times",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "4.3. Tiempos de secuenciación esperados (MinION R10.4.1)",
+    "text": "4.3. Tiempos de secuenciación esperados (MinION R10.4.1)\nLos tiempos de secuenciación se estiman como:\nt = (Gb passed objetivo) / (Gb/h passed)\nPara acotar rangos realistas, se consideran dos escenarios de rendimiento:\n\nEscenario conservador (0.18 Gb/h passed): consistente con rendimientos medios reportados en corridas largas de MinION R10.4.1 (≈12–13 Gb en 72 h).\nEscenario operativo (0.34 Gb/h passed): derivado del rendimiento observado en el ensayo Havanna en PromethION (37 Gb raw en 18 h), escalado por número de canales (FLO-PRO114M vs FLO-MIN114) y convertido a passed.\n\n\n4.3.1. Escenario mínimo (Tan-like): 0.045 Gb por embrión\n\n\n\n\n\n\n\n\n\n\n\n\nEmbriones\nGb totales\n0.18 Gb/h\n0.34 Gb/h\nMin (h:m)\nMax (h:m)\n\n\n\n\n5\n0.225\n75 min\n40 min\n0 h 40 m\n1 h 15 m\n\n\n6\n0.270\n90 min\n48 min\n0 h 48 m\n1 h 30 m\n\n\n7\n0.315\n105 min\n56 min\n0 h 56 m\n1 h 45 m\n\n\n8\n0.360\n120 min\n64 min\n1 h 04 m\n2 h 00 m\n\n\n9\n0.405\n135 min\n72 min\n1 h 12 m\n2 h 15 m\n\n\n10\n0.450\n150 min\n79 min\n1 h 19 m\n2 h 30 m\n\n\n\n\n\n\n4.3.2. Escenario Intermedio: 0.075 Gb por embrión\n\n\n\n\n\n\n\n\n\n\n\n\nEmbriones\nGb totales\n0.18 Gb/h\n0.34 Gb/h\nMin (h:m)\nMax (h:m)\n\n\n\n\n5\n0.375\n125 min\n66 min\n1 h 06 m\n2 h 05 m\n\n\n6\n0.450\n150 min\n79 min\n1 h 19 m\n2 h 30 m\n\n\n7\n0.525\n175 min\n93 min\n1 h 33 m\n2 h 55 m\n\n\n8\n0.600\n200 min\n106 min\n1 h 46 m\n3 h 20 m\n\n\n9\n0.675\n225 min\n119 min\n1 h 59 m\n3 h 45 m\n\n\n10\n0.750\n250 min\n133 min\n2 h 13 m\n4 h 10 m\n\n\n\n\n\n\n4.3.3. Escenario Robusto: 0.10 Gb por embrión\n\n\n\n\n\n\n\n\n\n\n\n\nEmbriones\nGb totales\n0.18 Gb/h\n0.34 Gb/h\nMin (h:m)\nMax (h:m)\n\n\n\n\n5\n0.50\n167 min\n88 min\n1 h 28 m\n2 h 47 m\n\n\n6\n0.60\n200 min\n106 min\n1 h 46 m\n3 h 20 m\n\n\n7\n0.70\n233 min\n123 min\n2 h 03 m\n3 h 53 m\n\n\n8\n0.80\n267 min\n141 min\n2 h 21 m\n4 h 27 m\n\n\n9\n0.90\n300 min\n159 min\n2 h 39 m\n5 h 00 m\n\n\n10\n1.00\n333 min\n176 min\n2 h 56 m\n5 h 33 m\n\n\n\n\n\n\n\n\n\n\nNotaSíntesis operativa y criterio de early stop\n\n\n\nEn conjunto, los escenarios evaluados muestran que FastPGT puede operar de manera confiable con corridas de 5 a 10 embriones, alcanzando los requerimientos mínimos de cobertura para PGT-A (≈45–100 Mb por embrión) dentro de ventanas temporales clínicamente compatibles con transferencia en fresco.\nBajo supuestos conservadores de rendimiento para MinION R10.4.1 (0.18–0.34 Gb/h passed), los tiempos totales de secuenciación se ubican típicamente entre ~1.5 y 5.5 horas, dependiendo del número de embriones y de la profundidad objetivo por muestra. En escenarios operativos habituales (5–8 embriones, 0.075–0.10 Gb/emb), los tiempos esperados se mantienen por debajo de ~3–4 horas.\nEl uso de criterios de corte temprano (early stop) basados en Gb passed —en lugar de tiempos fijos de corrida— permite: - adaptar dinámicamente la duración de cada corrida al número real de embriones, - evitar la sobreproducción innecesaria de datos, - optimizar el uso y reuso del flow cell, y - reducir el costo efectivo por embrión.\nEstos umbrales operativos constituyen la base para la estimación económica de costos por corrida y por embrión, desarrollada en el Apéndice Económico, donde se analizan distintos escenarios de reuso del flow cell y escalamiento del servicio.",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-experimental/fase1-havanna.html#footnotes",
+    "href": "appendix-experimental/fase1-havanna.html#footnotes",
+    "title": "Fase 1 - Ensayo Havanna",
+    "section": "Notas",
+    "text": "Notas\n\n\nEste FC contiene 2675 poros.↩︎\nValores estimados a partir de medianas.↩︎\nUn desvio tan pronunciado de la normalidad (sin llegar a +1) podría ser reportado como ganancia en mosaicismo, pero es evidente que por la magnitud, o por el tipo de algoritmo que analiza el dato, prefirieron reportar ganancia completa en ambos cromosomas.↩︎",
+    "crumbs": [
+      "Apéndice Experimental",
+      "Fase 1 - Ensayo Havanna"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/costsRBKRAA.html",
+    "href": "appendix-economico/costsRBKRAA.html",
+    "title": "Modelo de Costos",
+    "section": "",
+    "text": "NotaLinks\n\n\n\nPresupuestos: Migliore Laclaustra: WGA phi29-XT. Analytical: 1. MinION + Wask kit + FC + Library Inicial ONT. 2. Starter kit + RAA ONT. 3. RBK.6x24. 4. RBK.6x96\nDelivery 4: Documento Principal",
+    "crumbs": [
+      "Apéndice Económico",
+      "Modelo de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/costsRBKRAA.html#introducción-al-sistema-de-costos",
+    "href": "appendix-economico/costsRBKRAA.html#introducción-al-sistema-de-costos",
+    "title": "Modelo de Costos",
+    "section": "1. Introducción al sistema de costos",
+    "text": "1. Introducción al sistema de costos\nEl modelo económico de PGT con tecnología ONT se basa en la utilización eficiente de insumos genómicos, organizados en tres categorías:\n\nCostos directos por muestra\n\nWGA (Whole Genome Amplification): amplificación del ADN embrionario. Este costo es estrictamente proporcional al número de muestras y no depende de la estrategia operativa.\n\n\n\nCostos variables\n\nFlow Cells (FC): recurso limitado por:\n\nnúmero de corridas\nnúmero de muestras acumuladas\n\n\n\n\nCostos amortizables\n\nRBK (Rapid Barcoding Kit): librería genómica de 6 reacciones y 24 barcodes con capacidad de análisis de 144 muestras.\nRAA (Rapid Adapter Auxiliary): reactivos complementario de 6 reacciones de hasta 24 muestras que permite extender el uso del RBK optimizando los barcodes no utilizados en corridas pequeñas de FastPGT.\n\n\n\n\n\n\n\nImportanteCondiciones de contorno iniciales\n\n\n\n\nSe adquiere un RBK completo con capacidad para 144 muestras.\nEl número máximo de corridas por FC ≤ 6.\nEl número de muestras acumuladas en 1 mismo FC ≤ 48.\nEl rendimiento de la libreria puede optimizarse utilizando insumos complementarios (RAA).\nLa primera corrida en cada flow cell no requiere lavado.\n\nLas corridas subsiguientes requieren un ciclo de lavado previo.\n\nEl desafío operativo consiste en modelar un sistema dinámico de corridas independientes que minimice el costo por muestra.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Modelo de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/costsRBKRAA.html#formulación-del-modelo",
+    "href": "appendix-economico/costsRBKRAA.html#formulación-del-modelo",
+    "title": "Modelo de Costos",
+    "section": "2. Formulación del modelo",
+    "text": "2. Formulación del modelo\nEl costo por muestra se define como:\n\\[\nC_{muestra} = \\frac{C_{total}}{N}\n\\]\nEl costo total del sistema de corridas se define como:\n\\[\nC_{total} =\nN \\cdot C_{WGA} +\nRBK \\cdot C_{RBK} +\nRAA \\cdot C_{RAA} +\nFC \\cdot C_{FC} +\n(R - FC) \\cdot C_{wash}\n\\]\ndonde:\n\n\\(N\\): número total de muestras procesadas\n\n\\(R\\): número total de corridas realizadas\n\n\\(RBK\\): número de kits Rapid Barcoding requeridos\n\n\\(RAA\\): número de kits Rapid Adapter utilizados\n\n\\(FC\\): número total de flow cells requeridas\n\n\n\nCostos unitarios\n\n\\(C_{WGA}\\): costo de amplificación por muestra\n\n\\(C_{RBK}\\): costo por kit RBK\n\n\\(C_{RAA}\\): costo por kit RAA\n\n\\(C_{FC}\\): costo por flow cell\n\n\\(C_{wash}\\): costo por ciclo de lavado\n\n\n\n\nReglas de consumo de uso\n\n\\(RBK = \\left\\lceil \\frac{N}{144} \\right\\rceil\\)\n\\(RAA = \\left\\lceil \\frac{R}{6} \\right\\rceil\\)\n\\(FC = \\max\\left( \\left\\lceil \\frac{N}{48} \\right\\rceil,\\ \\left\\lceil \\frac{R}{6} \\right\\rceil \\right)\\)\n\n\nEl número de flow cells requeridas está determinado por el recurso que se agota primero:\nla capacidad total de muestras procesadas por flow cell o el número máximo de corridas permitido por unidad.\n\n\n\nNaturaleza del sistema\nA diferencia de modelos lineales clásicos, este sistema presenta:\n\nDiscontinuidades (saltos discretos): asociadas a la compra de nuevos insumos.\nRestricciones acopladas: donde el uso de flow cells depende simultáneamente de:\n\nacumulación de muestras,\nnúmero de corridas realizadas previamente.\nesto se evalua antes de cada corrida a través del rendimiento de poros operativos del FC.\n\nAmortización progresiva: donde el costo unitario disminuye al distribuir insumos parcialmente utilizados (ej. RBK) en múltiples corridas mediante RAA.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Modelo de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/costsRBKRAA.html#insumos-costos-y-rendimiento",
+    "href": "appendix-economico/costsRBKRAA.html#insumos-costos-y-rendimiento",
+    "title": "Modelo de Costos",
+    "section": "3. Insumos: costos y rendimiento",
+    "text": "3. Insumos: costos y rendimiento\n\n\n\n\n\n\n\n\n\n\nComponente\nCosto total (USD)\nRendimiento\nCosto unitario\n\n\n\n\nFlow Cell\n1,125.20\n6 corridas\n187.53 / corrida\n\n\nWash kit\n194.00\n6 lavados\n32.33 / lavado\n\n\nRBK Library (24)\n1,300.00\n144 muestras\n9.03 / muestra\n\n\nRAA114 Extension\n543.00\n6 corridas\n90.50 / corrida\n\n\nWGA phi29\n1,890.00\n100 muestras\n18.90 / muestra",
+    "crumbs": [
+      "Apéndice Económico",
+      "Modelo de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/costsRBKRAA.html#espacio-global-de-costos",
+    "href": "appendix-economico/costsRBKRAA.html#espacio-global-de-costos",
+    "title": "Modelo de Costos",
+    "section": "4. Espacio global de costos",
+    "text": "4. Espacio global de costos\nEl comportamiento económico global del sistema puede representarse como una función del número total de muestras procesadas (\\(N\\)) y del número total de corridas realizadas (\\(R\\)):\n\\[\nC = f(N, R)\n\\]\nEn esta representación, cada punto del mapa corresponde a un escenario promedio en el cual las \\(N\\) muestras se distribuyen de la manera más homogénea posible entre \\(R\\) corridas. Cuando \\(N\\) no es divisible exactamente por \\(R\\), el modelo asigna corridas de tamaño \\(\\lfloor N/R \\rfloor\\) y \\(\\lceil N/R \\rceil\\), preservando la mínima diferencia posible entre corridas.\nEsta representación no describe trayectorias clínicas específicas como las simulaciones estocásticas del Apéndice de Costos Simulados, sino un espacio económico promedio que permite visualizar tendencias globales de eficiencia e ineficiencia del sistema.\n\n4.1. Interpretación corta:\nLos valores bajos indican configuraciones en las que los insumos se amortizan mejor; los valores altos corresponden a escenarios más fragmentados o con subutilización de recursos.\n\n\nIdea clave:\nEl sistema no presenta un óptimo único y continuo, sino múltiples regiones de eficiencia determinadas por restricciones discretas de uso de insumos.\nEl siguiente heatmap muestra el espacio global de costos, donde se representa el costo promedio por muestra según número total de muestras (N) y corridas (R)\nLos espacios vacíos representan combinaciones estructuralmente inviables dentro del sistema, en particular aquellas en las que el número de corridas excede el número total de muestras (\\(R &gt; N\\)) o que violan las restricciones de capacidad del modelo.\nA diferencia de versiones restringidas del modelo, este mapa incluye explícitamente configuraciones altamente subóptimas, como corridas de muy bajo tamaño, permitiendo visualizar de manera explícita las regiones de alto costo asociadas a la fragmentación extrema del sistema.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Modelo de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/costsRBKRAA.html#espacio-operativo",
+    "href": "appendix-economico/costsRBKRAA.html#espacio-operativo",
+    "title": "Modelo de Costos",
+    "section": "5. Espacio operativo",
+    "text": "5. Espacio operativo\nPara la toma de decisiones reales, resulta más útil representar el sistema como una función del numero total de muestras o tamaño de corrida (\\(n\\)) y del número total de corridas acumuladas (\\(r\\)):\n\\[\nC = f(n, r)\n\\]\nEn este espacio, cada punto representa una estrategia operativa concreta en la cual todas las corridas tienen un tamaño fijo \\(n\\), acumuladas a lo largo de \\(r\\) corridas.\nA diferencia del espacio global presentado anteriormente, este análisis se restringe a configuraciones compatibles con el uso de un único kit RBK:\n\\[\nn \\cdot r \\leq 144\n\\]\nDe este modo, el mapa describe exclusivamente el dominio operativo relevante del sistema FastPGT, excluyendo escenarios que implican la adquisición de múltiples kits y que no forman parte del régimen analizado.\n\nRepresentación combinada: costo absoluto y eficiencia relativa\nLa figura presenta una representación integrada en la que:\n\nel color representa la eficiencia relativa respecto al óptimo,\nmientras que la magnitud del valor asociado a cada celda corresponde al costo absoluto por muestra (USD).\n\nLa pérdida relativa de eficiencia se define como:\n\\[\n\\text{exc}(n,r) = \\frac{C(n,r)}{C_{\\text{opt}}(r)} - 1\n\\]\ndonde \\(C_{\\text{opt}}(r)\\) es el menor costo alcanzable para un número fijo de corridas.\nDe este modo, el gráfico permite interpretar simultáneamente el costo real del sistema y su desviación respecto al óptimo operativo.\n\n\n\n\n\n\n\n\n\nEn cada celda, el valor numérico indica el costo absoluto por muestra (USD), mientras que el color indica qué tan lejos se encuentra esa configuración del mejor escenario posible para ese número de corridas.\nDe este modo, configuraciones con costos absolutos similares pueden presentar eficiencias relativas muy distintas dependiendo de su posición dentro de cada régimen de corridas.\nEl gráfico revela que la eficiencia del sistema depende críticamente de la organización de las corridas:\n\ntamaños de corrida grandes \\(n \\geq 20\\) se sitúan sistemáticamente cerca del óptimo\ncorridas pequeñas \\(n \\leq 6\\) inducen aumentos abruptos del costo\nel impacto negativo se amplifica a medida que aumenta el número total de corridas\n\nEsto refleja directamente la naturaleza discreta del sistema, dominada por:\n\nlímite de 6 corridas por flow cell\ncapacidad máxima de 48 muestras por flow cell\nconsumo escalonado de insumos\n\nLas líneas verticales discontinuas marcan las transiciones entre bloques de 6 corridas, indicando el punto en el que es necesario abrir una nueva flow cell.\nEl mapa permite identificar rápidamente:\n\nconfiguraciones cercanas al óptimo\nzonas de operación aceptables\nregiones altamente ineficientes\n\nEn particular, evidencia que la eficiencia no depende únicamente del volumen total procesado, sino de cómo se agrupan las muestras en cada corrida.\n\n\nRelación con el espacio global\nEl mapa global describe el comportamiento promedio del sistema:\n\\[ C = f(N, R) \\]\nmientras que el presente mapa representa configuraciones operativas concretas:\n\\[ C = f(n, r) \\]\nAmbas representaciones son complementarias:\n\nel espacio global captura la tendencia económica\nel espacio operativo describe estrategias de laboratorio\n\nEn conjunto, permiten comprender tanto la estructura económica del sistema como las decisiones necesarias para optimizar su desempeño.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Modelo de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/costsRBKRAA.html#conclusiones",
+    "href": "appendix-economico/costsRBKRAA.html#conclusiones",
+    "title": "Modelo de Costos",
+    "section": "6. Conclusiones",
+    "text": "6. Conclusiones\n\nEl costo por muestra del FastPGT no depende únicamente del volumen total procesado, sino de cómo se distribuyen las muestras entre corridas.\nConfiguraciones con costos absolutos similares pueden diferir significativamente en eficiencia relativa, evidenciando que la organización operativa del sistema es el principal determinante del desempeño económico.\nEn particular, la fragmentación en corridas pequeñas genera pérdidas sustanciales de eficiencia, mientras que tamaños de corrida mayores permiten una amortización óptima de los insumos dentro de cada ciclo de flow cell.\n\n\n\n\n\n\n\n\nNota\n\n\n\nLas ecuaciones analíticas presentadas en este apéndice son compatibles con el simulador utilizado en el Apéndice de Costos Simulados, ya que ambos comparten las mismas variables agregadas de salida —número total de corridas, muestras procesadas, flow cells requeridas, costo total y costo por muestra— así como las mismas reglas generales de consumo de insumos. Sin embargo, el modelo analítico constituye una representación agregada y determinística del sistema, mientras que la simulación reproduce trayectorias secuenciales explícitas de corridas y eventos operativos. Por este motivo, ambos enfoques deben considerarse complementarios y no estrictamente equivalentes.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Modelo de Costos"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/inversion.html",
+    "href": "appendix-economico/inversion.html",
+    "title": "Inversión",
+    "section": "",
+    "text": "NotaContenido\n\n\n\n\nGASTOS FIJOS\nProyecto Fast y Regular PGT\nYaguarecito\nCash Flow a 3 años\n\nInsumos: Apéndice técnico. Analytical: Insumos ONT\nDelivery 4: Documento Ppal.",
+    "crumbs": [
+      "Apéndice Económico",
+      "Inversión"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/inversion.html#año-1.-ingresos-y-egresos",
+    "href": "appendix-economico/inversion.html#año-1.-ingresos-y-egresos",
+    "title": "Inversión",
+    "section": "Año 1. Ingresos y Egresos",
+    "text": "Año 1. Ingresos y Egresos\n\nTabla resumen\n\n\n\n\n\nitem\nproject\ndetalle\nvalor_fmt\n\n\n\n\nGastos Capital\nFastPGT\nEquipamiento Arranque\n$24,500.00\n\n\nGO Variable\nFastPGT\nSerie Experimental 94\n$15,282.00\n\n\nGO Variable\nFastPGT\nSerie Gratuita 100\n$20,000.00\n\n\nGO Fijos\n2PQ\nSalarios y Alquiler Anualizado\n$155,500.00\n\n\nGastos Capital\nFastPGT\nSegundo MinION\n$4,500.00\n\n\nEGRESOS\nFastPGT\nGastos totales\n$362,792.00\n\n\nVENTAS TOTALES\nFastPGT\nVentas PGT Totales\n$287,600.00\n\n\nRESUMEN\nFastPGT\nVentas menos egresos\n-$75,192.00",
+    "crumbs": [
+      "Apéndice Económico",
+      "Inversión"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/inversion.html#año-2.-ingresos-y-egresos",
+    "href": "appendix-economico/inversion.html#año-2.-ingresos-y-egresos",
+    "title": "Inversión",
+    "section": "Año 2. Ingresos y Egresos",
+    "text": "Año 2. Ingresos y Egresos\n\nTabla resumen\n\n\n\n\n\nitem\nproject\ndetalle\nvalor_fmt\n\n\n\n\nGO Variable\nrWGS\nPrimera fase 25\n$23,000.00\n\n\nGO Variable\nrWGS\nSegunda fase 25\n$16,250.00\n\n\nGastos Capital\nFastPGT\nConsilidacion Labo\n$24,500.00\n\n\nEGRESOS\nFastPGT\nGastos totales\n$509,405.00\n\n\nVENTAS TOTALES\nFastPGT\nVentas PGT Totales\n$579,150.00\n\n\nRESUMEN\nFastPGT\nVentas menos egresos\n$69,745.00",
+    "crumbs": [
+      "Apéndice Económico",
+      "Inversión"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/inversion.html#año-3.-ingresos-y-egresos",
+    "href": "appendix-economico/inversion.html#año-3.-ingresos-y-egresos",
+    "title": "Inversión",
+    "section": "Año 3. Ingresos y Egresos",
+    "text": "Año 3. Ingresos y Egresos\n\n\n\n\n\nitem\nproject\ndetalle\nvalor_fmt\n\n\n\n\nGastos Capital\nrWGS\nPrometION 2 y Equipos\n$74,000.00\n\n\nEGRESOS\nrWGS\nGastos totales\n$63,750.00\n\n\nEGRESOS\nFastPGT\nGastos totales\n$744,051.50\n\n\nVENTA TOTALES\nrWGS\nVentas Yaguarecito\n$375,000.00\n\n\nVENTAS TOTALES\nFastPGT\nVentas PGT Totales\n$1,072,060.00\n\n\nRESUMEN\nFastPGT\nVentas menos egresos\n$328,008.50\n\n\nRESUMEN\nFastPGT + rWGS\nVentas menos egresos\n$515,840.50",
+    "crumbs": [
+      "Apéndice Económico",
+      "Inversión"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/inversion.html#tabla-resumen-anual",
+    "href": "appendix-economico/inversion.html#tabla-resumen-anual",
+    "title": "Inversión",
+    "section": "Tabla resumen anual",
+    "text": "Tabla resumen anual\n\n\n\n\n\nEscenario\nIngresos_USD\nEgresos_USD\nResultado_USD\n\n\n\n\nAño 1 (PGT)\n$287,600.00\n$362,792.00\n-$75,192.00\n\n\nAño 2 (PGT)\n$579,150.00\n$509,405.00\n$69,745.00\n\n\nAño 3 (PGT)\n$1,072,060.00\n$744,051.50\n$328,008.50\n\n\nAño 3 (PGT + rWGS)\n$1,447,060.00\n$881,801.50\n$565,258.50",
+    "crumbs": [
+      "Apéndice Económico",
+      "Inversión"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/inversion.html#gráfico-ingresos-vs-egresos-anuales",
+    "href": "appendix-economico/inversion.html#gráfico-ingresos-vs-egresos-anuales",
+    "title": "Inversión",
+    "section": "Gráfico Ingresos vs Egresos Anuales",
+    "text": "Gráfico Ingresos vs Egresos Anuales",
+    "crumbs": [
+      "Apéndice Económico",
+      "Inversión"
+    ]
+  },
+  {
+    "objectID": "appendix-economico/inversion.html#gráfico-resultado-neto",
+    "href": "appendix-economico/inversion.html#gráfico-resultado-neto",
+    "title": "Inversión",
+    "section": "Gráfico Resultado Neto",
+    "text": "Gráfico Resultado Neto",
+    "crumbs": [
+      "Apéndice Económico",
+      "Inversión"
     ]
   }
 ]

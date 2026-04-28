@@ -26,8 +26,7 @@ En abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN toma
 
 1.  Las muestras consistieron en **23 ADN congelados** (-20ºC),
     extraídos de biopsias embrionarias previamente amplificadas con
-    Sureplex, derivadas de estudios de PGT-A realizados en Biocódices SA, durante los años
-    2017 al 2019, utilizando secuenciación Illumina y librerías y software de Yikon Genomics [^1].
+    Sureplex y derivadas a estudios de PGT-A reportados entre 2017 y 2019 [^1].
 
 2.  La secuenciación se llevó a cabo en un equipo **MinION Mk1B**, con un flow cell **FLO-MIN114**.
     
@@ -37,7 +36,7 @@ En abril 2026 el servicio de genómica ONE BIOME secuenció muestras de ADN toma
   - **Run 2**. 8 muestras (BCD08-BCD013)con un runtime de 4 hs, 47 min
   - **Run 3**. 10 muestras (BCD14-BCD023) con un runtime de 6 hs, 12 min
   
-[^1]: Con excepción de las muestras CG[2,3,5,6,8] que  provienen de un solo caso de PGT-SR realizado en Cooper Genomics con tecnología genómica y bioinformática Illumina.
+[^1]: Con excepción de las muestras CG(2,3,5,6,8) que provienen de un solo caso de PGT-SR realizado en Cooper Genomics con tecnología Illumina, el resto de muestras se analizaron en Biocódices SA, utilizando librerías y software de Yikon Genomics con secuenciación Illumina.
 
 La Tabla 1 muestra los códigos y resultados de cada una de estas corridas.
 
@@ -71,7 +70,7 @@ link_bc <- function(x) {
 }
 
 tabla_barcodes <- tribble(
-  ~Etiqueta, ~Diagnóstico, ~`Run 1`, ~`Run 2`, ~`Run 3`,
+  ~Código, ~Diagnóstico, ~`Run 1`, ~`Run 2`, ~`Run 3`,
   "AC1",  "XX, +9, +16, +21", "-",    "",     "BC14",
   "CB5",  "XX, -5, +12, +20", "BC01", "",     "",
   "CB7",  "XY, -2, +18, -19", "BC02", "",     "",
