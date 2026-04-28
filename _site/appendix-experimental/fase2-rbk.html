@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#resumen-inicial" id="toc-resumen-inicial" class="nav-link active" data-scroll-target="#resumen-inicial">1. Resumen Inicial</a></li>
   <li><a href="#desarrollo" id="toc-desarrollo" class="nav-link" data-scroll-target="#desarrollo">2. Desarrollo</a>
   <ul class="collapse">
-  <li><a href="#calidad-y-cantidad-de-adn-en-las-muestras." id="toc-calidad-y-cantidad-de-adn-en-las-muestras." class="nav-link" data-scroll-target="#calidad-y-cantidad-de-adn-en-las-muestras.">2.1. Calidad y Cantidad de ADN en las muestras.</a></li>
+  <li><a href="#cantidad-y-calidad-de-adn" id="toc-cantidad-y-calidad-de-adn" class="nav-link" data-scroll-target="#cantidad-y-calidad-de-adn">2.1. Cantidad y calidad de ADN</a></li>
   <li><a href="#formación-de-librerias-rbk." id="toc-formación-de-librerias-rbk." class="nav-link" data-scroll-target="#formación-de-librerias-rbk.">2.2. Formación de Librerias RBK.</a></li>
   <li><a href="#runs-1-2-y-3" id="toc-runs-1-2-y-3" class="nav-link" data-scroll-target="#runs-1-2-y-3">2.3. Runs 1, 2 y 3</a></li>
   <li><a href="#análisis-de-datos" id="toc-análisis-de-datos" class="nav-link" data-scroll-target="#análisis-de-datos">2.4. Análisis de Datos</a></li>
@@ -259,7 +259,7 @@ ul.task-list li input[type="checkbox"] {
 <caption>Tabla 1: Muestras, formulación genómica de referencia y resultados.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Código</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Etiqueta</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Diagnóstico</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Run 1</th>
 <th style="text-align: center;" data-quarto-table-cell-role="th">Run 2</th>
@@ -448,11 +448,145 @@ Importante
 </section>
 <section id="desarrollo" class="level2">
 <h2 class="anchored" data-anchor-id="desarrollo">2. Desarrollo</h2>
-<section id="calidad-y-cantidad-de-adn-en-las-muestras." class="level3">
-<h3 class="anchored" data-anchor-id="calidad-y-cantidad-de-adn-en-las-muestras.">2.1. Calidad y Cantidad de ADN en las muestras.</h3>
+<section id="cantidad-y-calidad-de-adn" class="level3">
+<h3 class="anchored" data-anchor-id="cantidad-y-calidad-de-adn">2.1. Cantidad y calidad de ADN</h3>
+<p>Las muestras seleccionadas mostraban muy poco volumen. Sin embargo, la experiencia del ensayo Havanna demostró que, incluso los tubos con menos volumen servían para los ensayos de PGT en ONT.</p>
+<p>Por esto luego de purificar las muestras se optó por usar Nanodrop para cuantificar y medir la calidad.</p>
+<p>Dado que Nanodrop suele sobre-estimar la catidad de ADN en las muestras, sólo en los casos donde la masa medida lo permitía se midió la masa con Qubit.</p>
+<p>La tabla muestra los resultados.</p>
+<p>Como puede verse, la masa en ambos casos puede diferir basatante, siendo la medición de Qubit la más confiable.</p>
+<p>Por otro lado, los ratios de absorbancia 260/280 muestran valores cercanos a 1,80, lo cual muestra que la relacion ADN/proteina es muy buena en general. Más aún, los valores del ratio 290/230 cercanos a 2,0 muestran que no existe una contaminación inorgánica importante en la mayoría de las muestras.</p>
+<div style="width: 90%; margin: 0 auto; font-size: 0.85em;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Etiqueta</th>
+<th>Qbit (ng/ul)</th>
+<th>NanoDrop (ng/ul)</th>
+<th>260/280</th>
+<th>290/230</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AC1</td>
+<td></td>
+<td>26,00</td>
+<td>1,88</td>
+<td>2,26</td>
+</tr>
+<tr class="even">
+<td>CB5</td>
+<td></td>
+<td>19,20</td>
+<td>1,86</td>
+<td>1,74</td>
+</tr>
+<tr class="odd">
+<td>CB7</td>
+<td>13,60</td>
+<td>13,70</td>
+<td>1,91</td>
+<td>1,80</td>
+</tr>
+<tr class="even">
+<td>CB9</td>
+<td>13,40</td>
+<td>25,00</td>
+<td>1,94</td>
+<td>2,57</td>
+</tr>
+<tr class="odd">
+<td>CG2</td>
+<td></td>
+<td>58,30</td>
+<td>1,91</td>
+<td>2,47</td>
+</tr>
+<tr class="even">
+<td>CG3</td>
+<td></td>
+<td>43,40</td>
+<td>1,92</td>
+<td>2,49</td>
+</tr>
+<tr class="odd">
+<td>CG5</td>
+<td></td>
+<td>87,80</td>
+<td>1,88</td>
+<td>1,40</td>
+</tr>
+<tr class="even">
+<td>CG8</td>
+<td></td>
+<td>21,50</td>
+<td>1,92</td>
+<td>2,55</td>
+</tr>
+<tr class="odd">
+<td>CH3</td>
+<td></td>
+<td>18,20</td>
+<td>1,91</td>
+<td>2,27</td>
+</tr>
+<tr class="even">
+<td>CH7</td>
+<td></td>
+<td>57,90</td>
+<td>1,89</td>
+<td>2,05</td>
+</tr>
+<tr class="odd">
+<td>D2</td>
+<td></td>
+<td>18,60</td>
+<td>2,01</td>
+<td>2,89</td>
+</tr>
+<tr class="even">
+<td>D4</td>
+<td>9,90</td>
+<td>29,30</td>
+<td>1,98</td>
+<td>2,83</td>
+</tr>
+<tr class="odd">
+<td>DS3</td>
+<td></td>
+<td>50,90</td>
+<td>1,90</td>
+<td>2,34</td>
+</tr>
+<tr class="even">
+<td>DS4</td>
+<td>22,70</td>
+<td>71,80</td>
+<td>1,91</td>
+<td>2,43</td>
+</tr>
+<tr class="odd">
+<td>DS5</td>
+<td>57,90</td>
+<td>62,30</td>
+<td>1,97</td>
+<td>2,53</td>
+</tr>
+<tr class="even">
+<td>GP10</td>
+<td></td>
+<td>73,10</td>
+<td>1,88</td>
+<td>2,29</td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 <section id="formación-de-librerias-rbk." class="level3">
 <h3 class="anchored" data-anchor-id="formación-de-librerias-rbk.">2.2. Formación de Librerias RBK.</h3>
+<p>La cantidad mínima recomendada por el fabricante sugiere el uso de 200ng de masa por muestra.</p>
 </section>
 <section id="runs-1-2-y-3" class="level3">
 <h3 class="anchored" data-anchor-id="runs-1-2-y-3">2.3. Runs 1, 2 y 3</h3>

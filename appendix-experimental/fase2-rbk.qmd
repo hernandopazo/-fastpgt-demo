@@ -70,7 +70,7 @@ link_bc <- function(x) {
 }
 
 tabla_barcodes <- tribble(
-  ~Código, ~Diagnóstico, ~`Run 1`, ~`Run 2`, ~`Run 3`,
+  ~Etiqueta, ~Diagnóstico, ~`Run 1`, ~`Run 2`, ~`Run 3`,
   "AC1",  "XX, +9, +16, +21", "-",    "",     "BC14",
   "CB5",  "XX, -5, +12, +20", "BC01", "",     "",
   "CB7",  "XY, -2, +18, -19", "BC02", "",     "",
@@ -127,9 +127,49 @@ El método funciona!
 
 ## 2. Desarrollo
 
-### 2.1. Calidad y Cantidad de ADN en las muestras.
+### 2.1. Cantidad y calidad de ADN
+
+Las muestras seleccionadas mostraban muy poco volumen. Sin embargo, la experiencia del ensayo Havanna demostró que, incluso los tubos con menos volumen servían para los ensayos de PGT en ONT.
+
+Por esto luego de purificar las muestras se optó por usar Nanodrop para cuantificar y medir la calidad. 
+
+Dado que Nanodrop suele sobre-estimar la catidad de ADN en las muestras, sólo en los casos donde la masa medida lo permitía se midió la masa con Qubit.
+
+La tabla muestra los resultados.
+
+Como puede verse, la masa en ambos casos puede diferir basatante, siendo la medición de Qubit la más confiable.
+
+Por otro lado, los ratios de absorbancia 260/280 muestran valores cercanos a 1,80, lo cual muestra que la relacion ADN/proteina es muy buena en general. Más aún, los valores del ratio 290/230 cercanos a 2,0 muestran que no existe una contaminación inorgánica importante en la mayoría de las muestras.
+
+
+::: {style="width: 90%; margin: 0 auto; font-size: 0.85em;"}
+
+| Etiqueta | Qbit (ng/ul) | NanoDrop (ng/ul) | 260/280 | 290/230 |
+|----------|--------------|------------------|---------|---------|
+| AC1      |              | 26,00            | 1,88    | 2,26    |
+| CB5      |              | 19,20            | 1,86    | 1,74    |
+| CB7      | 13,60        | 13,70            | 1,91    | 1,80    |
+| CB9      | 13,40        | 25,00            | 1,94    | 2,57    |
+| CG2      |              | 58,30            | 1,91    | 2,47    |
+| CG3      |              | 43,40            | 1,92    | 2,49    |
+| CG5      |              | 87,80            | 1,88    | 1,40    |
+| CG8      |              | 21,50            | 1,92    | 2,55    |
+| CH3      |              | 18,20            | 1,91    | 2,27    |
+| CH7      |              | 57,90            | 1,89    | 2,05    |
+| D2       |              | 18,60            | 2,01    | 2,89    |
+| D4       | 9,90         | 29,30            | 1,98    | 2,83    |
+| DS3      |              | 50,90            | 1,90    | 2,34    |
+| DS4      | 22,70        | 71,80            | 1,91    | 2,43    |
+| DS5      | 57,90        | 62,30            | 1,97    | 2,53    |
+| GP10     |              | 73,10            | 1,88    | 2,29    |
+:::
+
+
+
 
 ### 2.2. Formación de Librerias RBK.
+
+La cantidad mínima recomendada por el fabricante sugiere el uso de 200ng de masa por muestra.
 
 ### 2.3.  Runs 1, 2 y 3
 
