@@ -173,6 +173,26 @@ La cantidad mínima recomendada por el fabricante sugiere el uso de 200ng de mas
 
 ### 2.3.  Runs 1, 2 y 3
 
+Los tres reportes de MinKNOW muestran que las corridas RBK se realizaron sobre el mismo flow cell **FBF54235**, en un equipo **MinION Mk1B**, usando química **FLO-MIN114** y kit **SQK-RBK114-24**. En todos los casos se utilizó basecalling de alta precisión, con umbral mínimo de calidad **Q ≥ 9**, alineamiento contra **GRCh38** y corridas detenidas manualmente por el usuario.
+
+| Corrida | Muestras | Runtime | Bases estimadas | Bases Q≥9 | Reads totales | Reads Q≥9 | N50 estimado | Poros remanentes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Run 1 | 5 | 2.01 h | 344.2 Mb | 255.6 Mb (82.3%) | 0.92 M | 0.78 M (82.5%) | 348 bp | 1020 |
+| Run 2 | 8 | 4.79 h | 984.8 Mb | 703.6 Mb (81.9%) | 2.48 M | 2.20 M (84.8%) | 337 bp | 937 |
+| Run 3 | 10 | 6.20 h | 899.7 Mb | 627.9 Mb (82.5%) | 2.24 M | 1.98 M (85.2%) | 334 bp | 725 |
+| **Total** | **23** | **13.00 h** | **2.23 Gb** | **1.59 Gb (82.2%)** | **5.64 M** | **4.96 M (84.6%)** | - | - |
+
+A nivel operativo, las tres corridas muestran un comportamiento consistente del flow cell durante el reuso. La velocidad de translocación mediana se mantuvo cercana a **400 bases/segundo** en las tres corridas, con valores medios de aproximadamente **402 bps** en Run 1 y Run 2, y **398 bps** en Run 3. La moda del Q-score se mantuvo estable alrededor de **Q14.5-Q14.8**, indicando que la calidad global del basecalling no se degradó de forma relevante a lo largo del experimento.
+
+El rendimiento por barcode utilizado fue marcadamente superior al ruido observado en barcodes no cargados. Considerando solo los barcodes correspondientes a las muestras efectivamente usadas, se obtuvieron aproximadamente:
+
+- **Run 1:** 258.0 Mb y 0.81 M reads en barcodes usados, con 92.0% de bases Q≥9.
+- **Run 2:** 715.5 Mb y 2.28 M reads en barcodes usados, con 92.0% de bases Q≥9.
+- **Run 3:** 636.7 Mb y 2.03 M reads en barcodes usados, con 91.3% de bases Q≥9.
+
+Estos resultados confirman que el esquema RBK permitió generar datos suficientes para análisis de baja cobertura en múltiples tandas sucesivas, manteniendo calidad de lectura, rendimiento por barcode y disponibilidad residual de poros compatibles con el concepto operativo de **FastPGT**.
+
+
 ### 2.4. Análisis de Datos
 
 
