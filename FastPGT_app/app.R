@@ -2,7 +2,6 @@ library(shiny)
 library(tidyverse)
 library(DT)
 
-rm(list = ls())
 source("R/simulator.R")
 
 
@@ -201,8 +200,7 @@ server <- function(input, output) {
       C_RBK = input$C_RBK,
       C_RAA = input$C_RAA,
       
-      # 🔥 convertir a unitario
-      C_WGA = input$C_WGA / 100,
+      C_WGA = input$C_WGA / 96,
       C_wash = input$C_wash / 6
     )
   })
@@ -213,6 +211,15 @@ server <- function(input, output) {
   sim <- reactive({
     req(length(runs()) > 0)
     simulate_runs(runs(), params = params())
+  })
+
+  optimal_cost <- reactive({
+    r <- resumen()$total_corridas
+    min(vapply(
+      2:24,
+      function(x) run_simulation(x, r, params = params())$resumen$costo_por_muestra,
+      numeric(1)
+    ))
   })
   
   
@@ -308,11 +315,7 @@ server <- function(input, output) {
     costo <- resumen()$costo_por_muestra
     r <- resumen()$total_corridas
     
-    baseline <- sapply(2:24, function(x){
-      run_simulation(x, r)$resumen$costo_por_muestra
-    })
-    
-    eficiencia <- costo / min(baseline)
+    eficiencia <- costo / optimal_cost()
     
     paste0("+", round((eficiencia - 1)*100, 1), "% vs óptimo")
   })
@@ -326,11 +329,7 @@ server <- function(input, output) {
     costo <- resumen()$costo_por_muestra
     r <- resumen()$total_corridas
     
-    baseline <- sapply(2:24, function(x){
-      run_simulation(x, r)$resumen$costo_por_muestra
-    })
-    
-    eficiencia <- costo / min(baseline)
+    eficiencia <- costo / optimal_cost()
     
     case_when(
       eficiencia <= 1.05 ~ "Óptimo",
@@ -677,4 +676,3 @@ server <- function(input, output) {
 
 
 shinyApp(ui, server)
-

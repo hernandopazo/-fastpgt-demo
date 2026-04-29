@@ -103,7 +103,7 @@ Este enfoque permite capturar la variabilidad real del proceso y evaluar no solo
 library(tidyverse)
 
 rm(list = ls())
-source("/Users/hernandopazzo/Documents/2pq/FastPGT/FastPGT_app/R/simulator.R")
+source(here::here("FastPGT_app", "R", "simulator.R"))
 
 # ---------------------------------------------------------
 # Parámetros (idénticos a la app)
@@ -113,7 +113,7 @@ params <- list(
   C_FC = 1125,
   C_RBK = 1300,
   C_RAA = 543,
-  C_WGA = 1890 / 100,
+  C_WGA = 1890 / 96,
   C_wash = 194 / 6
 )
 
@@ -830,7 +830,7 @@ For clarity, a reduced subset of key variables is presented here.
 library(dplyr)
 library(kableExtra)
 library(scales)
-source("/Users/hernandopazzo/Documents/2pq/FastPGT/FastPGT_app/R/simulator.R")
+source(here::here("FastPGT_app", "R", "simulator.R"))
 
 # copiá también la función (si no está en ese archivo)
 simulate_random_runs <- function() {
@@ -857,7 +857,7 @@ params <- list(
   C_FC = 1125,
   C_RBK = 1300,
   C_RAA = 543,
-  C_WGA = 1890 / 100,
+  C_WGA = 1890 / 96,
   C_wash = 194 / 6
 )
 
@@ -1224,4 +1224,3 @@ Las simulaciones de costos muestran valores competitivos para cualquiera de los 
 Estos supuestos podrán verificarse o modificarse luego de los ensyaos experimentales realizados por Pufo. 
 
 :::
-

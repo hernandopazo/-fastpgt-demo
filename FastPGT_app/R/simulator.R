@@ -12,11 +12,11 @@
 # -----------------------------
 
 params_default <- list(
-  C_FC   = 1125.20,
-  C_wash = 32.33,
+  C_FC   = 1125,
+  C_wash = 194 / 6,
   C_RBK  = 1300,
   C_RAA  = 543,
-  C_WGA  = 22.33
+  C_WGA  = 1890 / 96
 )
 
 # ============================================================
@@ -231,14 +231,14 @@ run_simulation <- function(n, r, params = params_default){
   
   res <- simulate_runs(runs, params)
   
-  resumen <- res %>%
-    dplyr::summarise(
+  resumen <- dplyr::summarise(
+    res,
       total_muestras = sum(muestras),
       total_corridas = dplyr::n(),
       flow_cells_usadas = max(FC_actual),
       costo_total = max(costo_acumulado),
       costo_por_muestra = costo_total / total_muestras
-    )
+  )
   
   list(
     detalle = res,
@@ -269,7 +269,5 @@ decision_run <- function(n, r, params = params_default){
     TRUE ~ "Ineficiente"
   )
 }
-
-
 
 

@@ -1,2 +1,14 @@
-/.quarto/
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+
+.quarto/
+**/.quarto/
 **/*.quarto_ipynb
+
+_site/
+FastPGT_app/dashboard.html
+FastPGT_app/dashboard_files/
+
+/.quarto/
